@@ -3,8 +3,7 @@ module.exports = function(grunt) {
         less: {
             development: {
                 options: {
-                    paths: ["./app/less"],
-                    yuicompress: true
+                    paths: ["./app/less"]
                 },
                 files: {
                     "./app/css/app.css": "./app/less/app.less"
