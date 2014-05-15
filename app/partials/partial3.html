@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>My AngularJS App</title>
+	<link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<link rel="stylesheet" href="../css/app.css"/>
+	<link rel="stylesheet" href="../css/olympia-icons.css"/>
+</head>
+<body>
+
+	<header class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<a href="#" class="logo">
+					<img src="../img/logo.png" alt="Olympia"/>
+				</a>
+			</div>
+			<div class="col-sm-9">
+				<div class="col-sm-9 well well-sm pull-right" style="background: #fff; margin-top: 20px; margin-bottom: 0px">
+					<div class="row">
+						<div class="col-sm-9">
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group" style="margin-bottom: 8px">
+												<input class="form-control input-sm" type="text">
+											</div>
+										</div>
+										<div class="col-sm-3">
+											<div class="form-group" style="margin-bottom: 8px">
+												<input class="form-control input-sm" type="text">
+											</div>
+										</div>
+										<div class="col-sm-3">
+											<button class="btn btn-info btn-sm btn-block pull-right" data-toggle="modal" data-target="#myModal">Login</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="checkbox" style="margin-top: 0; margin-bottom: 0;">
+												<label>
+													<input type="checkbox"> <a>Onthoud mijn innologgegeven</a>
+												</label>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<a href="#"  data-toggle="modal" data-target="#forgot-pass">Wachtwoord vergeten</a>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="col-sm-3 border-left">
+							<div class="row">
+								<div class="col-sm-12 text-center">
+									<p>Of log in met</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12 text-center">
+									<a href="#" class="website-icons"><i class="website-icons olympia-facebook3"></i></a>
+									<a href="#" class="website-icons"><i class="website-icons olympia-linkedin2"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="full-width-border" style="margin-top: 15px;">
+		<div class="container">
+			<nav>
+				<ul class="menu sf-menu" id="menu-227">
+					<li class="current">
+						<a href="javascript:void(0)" class="title">Ik zoek werk</a>
+						<ul>
+							<li>
+								<a href="/Vacatures" class="title">Alle vacatures</a>
+							</li>
+							<li>
+								<a href="/vacaturesperbranche" class="title">Vacatures per branche</a>
+							</li>
+							<li>
+								<a href="/werkgevers" class="title">Vacatures bij topbedrijven</a>
+							</li>
+							<li>
+								<a href="/Registration/RegisterIntro" class="title">Direct inschrijven bij Olympia</a>
+							</li>
+							<li>
+								<a href="/Vestigingen-Olympia-Uitzendbureau" class="title">Vestiging zoeken</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0)" class="title">Ik zoek personeel</a>
+						<ul>
+							<li>
+								<a href="/voorendoorondernemers" class="title">Voor en door ondernemers</a>
+							</li>
+							<li>
+								<a href="http://www.olympia.nl/toptalent" target="_blank" class="title">ONZE VISIE OP TOPTALENT</a>
+							</li>
+							<li>
+								<div class="title">Onze diensten</div>
+								<ul>
+									<li>
+										<a href="/onzediensten/uitzenden" class="title">Uitzenden</a>
+									</li>
+									<li>
+										<a href="/payrollservice" class="title">Payroll service</a>
+									</li>
+									<li>
+										<a href="/wervingenselectie" class="title">Werving en selectie</a>
+									</li>
+									<li>
+										<a href="/mastervendorservice" class="title">Master vendor service</a>
+									</li>
+									<li>
+										<a href="/inhouseservice" class="title">Inhouse Service</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="/vacatureplaatsen" class="title">Vacature aanmelden</a>
+							</li>
+							<li>
+								<a href="/Vestigingen-Olympia-Uitzendbureau?radius=25" class="title">Vestiging zoeken</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0)" class="title">Over Olympia</a>
+						<ul>
+							<li>
+								<a href="/welovetoworkforyou" class="title">We love to work for you</a>
+							</li>
+							<li>
+								<a href="http://www.ondernemenbijolympia.nl" target="_blank" class="title">Ondernemer worden?</a>
+							</li>
+							<li>
+								<a href="/contact" class="title">Contact</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="/mijn-olympia" class="title">Mijn Olympia</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div><!-- // navigation -->
+
+	<div class="container">		
+		<!-- <ol class="breadcrumb">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Vacatures</a></li>
+			<li><a href="#">Limburg</a></li>
+			<li><a href="#">Roermond</a></li>
+			<li><a href="#">Heftruckchauffeur (m/v)</a></li>
+			<li class="active">Sollicitatieformulier</li>
+		</ol> -->
+		<br/>
+		<!-- // Breadcrumb -->
+		<div class="row">
+			<div class="col-sm-8">
+				<h1 class="warning-text">Je sollicitatie is verzonden</h1>
+
+				<br/>
+				
+				<p class="text-justify">Bedankt Henk voor je sollicitatie op de vacature 'Heftruckchauffeur gezocht'. Wij hebben een bevestigingsmail gestuurd naar Henk1977-1@outlook.com met daarin de door ons ontvangen gegevens. Ook heb je een tweede mail ontvangen met je 'Mijn Olympia' account wachtwoord.</p>
+
+				<p class="text-justify">Heb je nog vragen naar aanleiding van je sollicitatie dan kan je contact opnemen met Marieke de Jager in Rotterdam via 078-1234567 of marieke.dejager@olympia.nl.
+				</p>
+				
+				<h3 class="warning-text">Maak je account compleet</h3>
+				
+				<br/>
+				
+				<p class="text-justify">Wij hebben een 'Mijn Olympia' account voor je aangemaakt.</p>
+				
+				<p class="text-justify">De gegevens van je 'Mijn Olympia' account kunnen worden hergebruikt bij een volgende sollicitatie. Ook kunnen wij op basis van je profiel andere interessante vacatures aanbieden. Zorg dat je profiel compleet is zodat wij jou beter van dienst kunnen zijn.
+				</p>
+
+				<br/>
+
+				
+				<div class="well well-sm no-bord-radius" style="padding: 0;">
+					<div style="width: 100%; background-color: #f5f5f5; padding: 9px;">
+						<div class="row">
+							<div class="col-sm-2">
+								<i style="font-size: 80px;" class="img-thumbnail olympia-user5"></i>
+							</div>
+							<div class="col-sm-6">
+								<h4>Henk Dunzelkamp</h4>
+								<div class="row">
+									<div class="col-xs-10">
+										<div class="progress" style="margin-bottom: 0px;">
+											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+												<span class="sr-only">50% Complete (success)</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-2">
+										<p>50%</p>
+									</div>
+								</div>
+								<p><a href="#">Maak profiel compleet ></a></p>
+							</div>
+							<div class="col-sm-4">
+								<button class="btn btn-primary" style="margin-top: 35px;">Maak je profiel compleet ></button>
+							</div>
+						</div>
+					</div>
+					<div style="width: 100%; background-color: #fff; padding: 9px;">
+						<p>wij hebben nu automatisch de volgende voorkeuren in jouw profiel aangemaakt. Controleer of dit correct is:</p>
+						<br>
+						<ul class="row list-unstyled">
+							<li class="col-sm-6"><p><strong>Plaats: </strong>Rotterdam (+10Km)</p></li>
+							<li class="col-sm-6"><p><strong>Vakgebied: </strong>Magazijn</p></li>
+							<li class="col-sm-6"><p><strong>Salaris: </strong>2000 - 2500</p></li>
+							<li class="col-sm-6"><p><strong>Branche: </strong>Techniek</p></li>
+							<li class="col-sm-6"><p><strong>Functie: </strong>Heftruckchauffeur Magazinjnmedewerker, Reachheftruckchauffeur</p></li>
+							<li class="col-sm-6"><p><strong>Dienstverband: </strong>Vast</p></li>
+							<li class="col-sm-6"><p><strong>Fulltime/parttime: </strong>Fulltime</p></li>
+							<li class="col-sm-6"><p><strong>Werk- en denkniveau: </strong>MAVO werk- en denkniveau</p></li>
+						</ul>
+						<p class="text-right">
+							<a href="#">Corrigeren</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<aside>
+					
+				</aside>
+			</div>
+		</div>
+
+		<br/>
+		<br/>
+		<br/>
+		
+
+		<div class="row">
+			<div class="col-sm-6">
+				<a href="#">
+					<i class="glyphicon glyphicon-chevron-left"></i> Terug naar vacature
+				</a>
+			</div>
+			<div class="col-sm-6 text-right">
+				<a href="#">
+					Heftruckchauffeur (36) vacatures <i class="glyphicon glyphicon-chevron-right"></i>
+				</a>
+			</div>
+		</div>
+
+		<br/>
+		<br/>
+		<br/>
+
+		<div class="row">
+			<div class="col-xs-12">
+				<h4 class="warning-text">Bekijk ook</h4>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-4">
+				<a href="#">
+					Heftruckchauffeur vacatures (36)
+				</a>
+			</div>
+			<div class="col-sm-4 text-center">
+				<a href="#">
+					Reachtruckchauffer vacatures (55)
+				</a>
+			</div>
+			<div class="col-sm-4 text-right">
+				<a href="#">
+					Transportmedewerker vacatures (158)
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<a href="#">
+					Magazijnmedewerker vacatures (107)
+				</a>
+			</div>
+			<div class="col-sm-4 text-center">
+				<a href="#">
+					Orderpicker vacatures (88)
+				</a>
+			</div>
+			<div class="col-sm-4 text-right">
+				<a href="#">
+					Alle vacatures (2598) hier
+				</a>
+			</div>
+		</div>
+	</div>
+	<footer class="container" style="font-size: 13px;">
+		<hr/>
+		<p class="info-text">
+			&copy; COPYRIGHT OLYMPIA UITZENDBUREAU
+			&nbsp;
+			<a class="info-text" href="#">Privacy statement</a> | <a class="info-text" href="#">Disclaimer</a> | <a class="info-text" href="#">Contact</a>
+		</p>
+		<br/>
+		<br/>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="../lib/jquery/dist/jquery.min.js"></script>
+	<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="../lib/jquery.validation/dist/jquery.validate.min.js"></script>
+	<script src="../js/input-file.js"></script>
+	<script src="../js/app.js"></script>
+	<script src="../lib/hoverIntent.js"></script>
+	<script src="../lib/superfish.min.js"></script>
+	<script src="../lib/supersubs.js"></script>
+	
+	<script>
+		$("#text-content").keyup(function() {
+			var text  = $(this).val();
+			$('#text-content-pop').val(text);
+			$('#text-content-count').text($(this).val().length);
+			$('#text-content-count-pop').text($(this).val().length);
+		});
+		$("#text-content-pop").keyup(function() {
+			var text  = $(this).val();
+			$('#text-content').val(text);
+			$('#text-content-count-pop').text(text.length);
+			$('#text-content-count').text(text.length);
+		});
+		$(document).ready(function () {
+			$("#menu-227").addClass('sf-menu');
+			$('#menu-227').superfish({
+				delay: 200,
+				speed: 'fast',
+				autoArrows: 1,
+				dropShadows: 1
+			});
+		});
+	</script>
+</body>
+</html>
