@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>OLYMPIA</title>
-	<link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<link href="../img/olympia-fav.ico" rel="shortcut icon" type="image/x-icon" />
 	<link rel="stylesheet" href="../css/app.css"/>
 	<link rel="stylesheet" href="../css/olympia-icons.css"/>
 	<link href="//fonts.googleapis.com/css?family=PT+Sans:400italic,400,700italic,700"/>
@@ -11,66 +11,63 @@
 <body>
 
 	<header class="container">
-		<div class="row">
-			<div class="col-sm-3">
-				<a href="#" class="logo">
+		<div class="row" >
+			<!-- This is for top most header info employer login and register -->
+			<div class='col-sm-12'>
+				<div class='col-sm-8' style='height: 15px'>
+					<div class='row'>
+					</div>
+				</div>
+				<div class='col-sm-1' style='height: 15px'>
+					<div class='row'>
+					</div>
+				</div>
+
+				<div class='col-sm-3' style='height: 15px'>
+					<div class='row'>
+						<div class='cssmenu'>
+							<ul id='top-header'>
+							   <li><a href='#' style='font-size: 10px;'><span>Employer Login</span></a></li>
+							   <li><span style='font-size: 10px;'>|</span></li>
+							   <li><a href='#' style='font-size: 10px;'><span>Register</span></a></li>
+							   <li>	<img src="../img/netherland-flag.jpg" alt='netherland' /></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- This is for logo -->
+			<div class="col-sm-12">
+				<a href="#" class="logo" style='margin-top: -10px'>
 					<img src="../img/logo.png" alt="Olympia"/>
 				</a>
 			</div>
-			<div class="col-sm-9">
-				<div class="col-sm-9 well well-sm pull-right" style="background: #fff; margin-top: 20px; margin-bottom: 0px">
-					<div class="row">
-						<div class="col-sm-9">
-							<div class="row">
-								<div class="col-sm-12">
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group" style="margin-bottom: 8px">
-												<input class="form-control input-sm" type="text">
-											</div>
-										</div>
-										<div class="col-sm-3">
-											<div class="form-group" style="margin-bottom: 8px">
-												<input class="form-control input-sm" type="text">
-											</div>
-										</div>
-										<div class="col-sm-3">
-											<button class="btn btn-info btn-sm btn-block pull-right" data-toggle="modal" data-target="#myModal">Login</button>
-										</div>
-
-									</div>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col-sm-12">
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="checkbox" style="margin-top: 0; margin-bottom: 0;">
-												<label>
-													<input type="checkbox"> <a>Onthoud mijn innologgegeven</a>
-												</label>
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<a href="#"  data-toggle="modal" data-target="#forgot-pass">Wachtwoord vergeten</a>
-										</div>
-									</div>
-								</div>
-
+			<!-- This is for main menu navigation -->
+			<div class="col-sm-12">
+				<div class='col-sm-4'>
+					<div class='row'>
+					</div>
+				</div>
+				<div class='col-sm-8'>
+					<div class="col-sm-8 pull-center" style="background: #fff; margin-top: -45px; margin-bottom: 0px">
+						<div class="row">
+							<div class='cssmenu'>
+								<ul>
+								   <li class='active'><a href='#'><span>Home</span></a></li>
+								   <li><a href='#'><span>Wie Zijn wij?</span></a></li>
+								   <li><a href='#'><span>Jobs</span></a></li>
+								   <li><a href='#'><span>Upload je CV</span></a></li>
+								   <li class='last'><a href='#'><span>Contact</span></a></li>
+								</ul>
 							</div>
 						</div>
-						<div class="col-sm-3 border-left">
-							<div class="row">
-								<div class="col-sm-12 text-center">
-									<p>Of log in met</p>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-12 text-center">
-									<a href="#" class="website-icons"><i class="website-icons olympia-facebook3"></i></a>
-									<a href="#" class="website-icons"><i class="website-icons olympia-linkedin2"></i></a>
-								</div>
+					</div>
+					<div class="col-sm-4 pull-right" style="background: #fff; margin-top: -45px; margin-bottom: 0px">
+						<div class='row'>
+							<div class='cssmenu'>
+								<ul>
+									<li><button type="button" style='color:#151379; font-size:15px; margin-top:-10px; margin-left:0px; font-weight:700;padding-left:25px;padding-right:25px;' class="btn btn-default btn-sm">WERKGEVERS</button></li>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -80,1305 +77,174 @@
 	</header>
 
 	<div class="full-width-border" style="margin-top: 15px;">
-		<div class="container">
+		<div class="container" class='strong-grey' id='selected-tab'>
 			<nav>
-				<ul class="menu sf-menu" id="menu-227">
-					<li class="current">
-						<a href="javascript:void(0)" class="title">Ik zoek werk</a>
-						<ul>
-							<li>
-								<a href="/Vacatures" class="title">Alle vacatures</a>
-							</li>
-							<li>
-								<a href="/vacaturesperbranche" class="title">Vacatures per branche</a>
-							</li>
-							<li>
-								<a href="/werkgevers" class="title">Vacatures bij topbedrijven</a>
-							</li>
-							<li>
-								<a href="/Registration/RegisterIntro" class="title">Direct inschrijven bij Olympia</a>
-							</li>
-							<li>
-								<a href="/Vestigingen-Olympia-Uitzendbureau" class="title">Vestiging zoeken</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a href="javascript:void(0)" class="title">Ik zoek personeel</a>
-						<ul>
-							<li>
-								<a href="/voorendoorondernemers" class="title">Voor en door ondernemers</a>
-							</li>
-							<li>
-								<a href="http://www.olympia.nl/toptalent" target="_blank" class="title">ONZE VISIE OP TOPTALENT</a>
-							</li>
-							<li>
-								<div class="title">Onze diensten</div>
-								<ul>
-									<li>
-										<a href="/onzediensten/uitzenden" class="title">Uitzenden</a>
-									</li>
-									<li>
-										<a href="/payrollservice" class="title">Payroll service</a>
-									</li>
-									<li>
-										<a href="/wervingenselectie" class="title">Werving en selectie</a>
-									</li>
-									<li>
-										<a href="/mastervendorservice" class="title">Master vendor service</a>
-									</li>
-									<li>
-										<a href="/inhouseservice" class="title">Inhouse Service</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<a href="/vacatureplaatsen" class="title">Vacature aanmelden</a>
-							</li>
-							<li>
-								<a href="/Vestigingen-Olympia-Uitzendbureau?radius=25" class="title">Vestiging zoeken</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a href="javascript:void(0)" class="title">Over Olympia</a>
-						<ul>
-							<li>
-								<a href="/welovetoworkforyou" class="title">We love to work for you</a>
-							</li>
-							<li>
-								<a href="http://www.ondernemenbijolympia.nl" target="_blank" class="title">Ondernemer worden?</a>
-							</li>
-							<li>
-								<a href="/contact" class="title">Contact</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a href="/mijn-olympia" class="title">Mijn Olympia</a>
-					</li>
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs">
+				  <li class="active" id="first-tab"><a href="#home" data-toggle="tab">Zoek in 15133 vacatures</a></li>
+				  <li id="second-tab"><a href="#" data-toggle="tab">582 Evenmenten</a></li>
+				  <li id="third-tab"><a href="javascriptvoid(0)" data-toggle="tab">777 Buiterland</a></li>
+				  <li id="fourth-tab"><a href="javascriptvoid(0)" data-toggle="tab">555 stage&#39;s</a></li>
 				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+			    	<div class="tab-pane active" id="first-content-tab">
+			  			<div class='container strong-grey container-size'>
+			  				<div class='row'>
+			  					<div class='col-sm-2'>
+			  						<div class='row'>
+			  						</div>
+			  					</div>
+			  					<div class='col-sm-10'>
+			  						<div class='row'>
+			  							<form for="top search">
+				  							<div class='col-sm-4'>
+					  							<div class='search-tab'>
+					  								<span id='search-tab-text' for='job title'>wat</span>
+					  								<input type='text' placeholder='Job title, skills or company' id='search-tab-input'>
+					  								<a href='#' id='search-tab-link' ><span for='navigation'>vitgebrid zoeken >></span></a>
+					  							</div>
+				  							</div>
+				  							<div class='col-sm-4' style='float:left; margin-left:-20px'>
+					  							<div class='search-tab'>
+					  								<span id='search-tab-text' for='city or post code'>waar</span>
+					  								<input type='text' placeholder='City or post code' id='search-tab-input' disabled />
+												        <select class="btn btn-primary dropdown-toggle" id='area-radius' data-toggle="dropdown" >
+												        	<option value="5">5 km</option>
+								                            <option value="10">10 km</option>
+								                            <option value="20">20 km</option>
+								                            <option value="30">30 km</option>
+								                            <option selected="selected" value="50">50 km</option>
+								                            <option value="75">75 km</option>
+								                            <option value="100">100 km</option>
+								                            <option value="150">150 km</option>
+								                            <option value="200">200 km</option>
+								                        </select>
+					  							</div>
+				  							</div>
+				  							<div class='col-sm-1'>
+				  								<div class='search-tab'>
+				  									<button type="submit" class="btn btn-default">
+				  										<span class="glyphicon glyphicon-search"></span> &nbsp;&nbsp;Zoek
+				  									</button>
+				  								</div>
+				  							</div>
+				  						</form>
+			  						</div>
+			  					</div>
+			  				</div>
+			  			</div>
+			  		</div>
+					<div class="tab-pane" id="second-content-tab">
+						<div class='container strong-yellow container-size'>
+			  			</div>
+					</div>
+					<div class="tab-pane" id="third-tab"></div>
+					<div class="tab-pane" id="fourth-tab"></div>
+				</div>
 			</nav>
 		</div>
 	</div><!-- // navigation -->
 
-	
-
-	<div class="container">		
-		<ol class="breadcrumb">
-			<li><a href="partial1.html">&lt; Terug naar de vacature</a></li>
-		</ol>
-		<!-- // Breadcrumb -->
-		<div class="row">
-			<div class="col-sm-12">
-				<h3 class="warning-text">Sollicitatieformulier voor de vacature:</h3>
+	<div class='main-container-center'>
+		<form action='' id='post-job' method=''>
+			<div class='row' >
+				<div class='col-sm-5'>
+				</div >
+				<div class='col-sm-7'>
+					<span id='heading-form'>Post a Job</span>
+				</div>
 			</div>
+			<div class='row'>
+				<div class='col-sm-1'></div>
+				<div class='col-sm-10' id='border-for-form'></div>
+				<div class='col-sm-1'></div>
 
-			<div class="col-sm-12">
-				<h4>Heftruckchauffeur</h4>
-				<hr>
 			</div>
-
-
-			<div class="col-sm-12">
-				<div class="alert alert-danger fade in" id="errorMsg">
-					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-					<h4>Oh snap! Je hebt fouten!</h4>
-					<ul class="row" id="errorList"></ul>
+			<div class='row'>
+				<div id='error-showing-space'>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-sm-3'>
+				</div >
+				<div class='col-sm-4' for='first content' id='form-component'>
+					<label >Job Types</label>
+					<select class='form-control' id='job-type'>
+						<option value='job' select='selected'>Job</option>
+						<option value='Internship'>Internship</option>
+						<option value='Event'>Event</option>
+					</select>
+				</div>
+			</div>
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-sm-3'>
+				</div >
+				<div class='col-sm-6' for='first content'>
+					<label id='form-component'>Give your job a title</label>
+					<input type='text' class='form-control' for='inserting job title' id='form-text-control' placeholder='Title'>
 				</div>
 			</div>
 
-			<div class="col-sm-8">
-				<p class="text-justify">
-					Onderstaand formulier bevat vragen die wij nodig hebben om de sollicitatie in behandeling te kunnen nemen. Je krijgt een bevestiging wanneer het formulier door ons succesvol wordt ontvangen en in behandeling wordt genomen.
-				</p>
-
-				<br/>
-
-				<h3 class="warning-text">1. Vul je emailadres in</h3>
-
-				<!-- <p class="text-justify">Nog geen account? Geen probleem, dan maken wij er één voor je aan op basis van onderstaand formulier!
-				</p> -->
-
-				<form id="jobForm-section1" role="form"  method="post">
-					<div class="row">
-						<div class="col-sm-8">
-							<div class="form-group">
-								<label for="email">E-mail adres</label>
-								<input type="email" name="email" class="form-control" id="email" data-required="true"/>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<!-- <label>&nbsp;</label>
-							<button class="btn btn-primary btn-block">Verder naar stap 2 <i class="glyphicon glyphicon-chevron-right"></i></button> -->
-						</div>
-						<div class="col-xs-12">
-							<div class="form-group">
-								<div class="radio">
-									<label>
-										<input type="radio" name="radioEmail" id="radio-email1" value="option1" data-required="true" checked/> Ik ben nieuw bij Olympia
-									</label>
-								</div>
-								<div class="radio">
-									<label>
-										<input type="radio" name="radioEmail" id="radio-email2" value="option2" data-required="true"/> Ik heb eerder gesolliciteerd via Olympia
-									</label>
-								</div>
-							</div>
-						</div>
-					</div>
-					<hr style="margin: 0 0 15px;"/>
-					<div class="row">
-						<div class="col-sm-12 text-justified" id="password-container-hide">
-							<p>
-								Wij zullen aan de hand van jouw sollicitatieformullier een Olympia Account voor je aanmaken. Hierdoor kan je de opgeslagen gegevens bij een volgende sollicitatie hergebruiken en nog veel meer!
-							</p>
-						</div>
-						<div class="col-sm-8" id="password-container">
-							<div class="form-group">
-								<label for="password">Wachtwoord</label>
-								<input type="password" name="password" class="form-control" id="password" data-required="true"/>
-							</div>
-						</div>
-
-						<div class="col-sm-7">
-							&nbsp;
-						</div>
-						<div class="col-sm-5">
-							<br>
-							<br>
-							<button type="submit" class="btn btn-primary btn-block">Verder naar persoonlijke gegevens <i class="olympia-arrow-down"></i></button>
-						</div>
-					</div>
-				</form><!-- // Section 1 -->
-				<br>
-				<!-- Section 2 start -->
-				<form id="jobForm-section2" role="form" method="post">
-
-					<h3 class="warning-text">2. Vul je persoonlijke gegevens in</h3>	
-
-					<div class="row">
-						<div class="col-sm-8">
-							<div class="form-group">
-								<label for="firstname">Voornaam</label>
-								<input type="text" class="form-control" name="firstname" id="firstname"/>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="form-group">
-								<label for="3">Tussenvoegsel (optioneel)</label>
-								<input type="text" class="form-control" id="3"/>
-							</div>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label for="lastname">Achternaam</label>
-						<input type="text" name="lastname" class="form-control" id="lastname"/>
-					</div>
-
-					<div class="form-group">
-						<label>Geslacht</label>
-						<br/>
-						<label class="radio-inline">
-							<input type="radio" name="Gaslachet" value="option1"> Man
-						</label>
-						<label class="radio-inline">
-							<input type="radio" name="Gaslachet" value="option2"> Vrouw
-						</label>
-					</div>
-
-					<div class="form-group">
-						<label for="month">Geboortedatum</label>
-						<div class="row">
-							<div class="col-sm-4">
-								<select class="form-control" id="month">
-									<option value="0" select="selected">Maand</option>
-									<option value="1">Januari</option>
-									<option value="2">Februari</option>
-									<option value="3">Maart</option>
-									<option value="4">April</option>
-									<option value="5">Mei</option>
-									<option value="6">Juni</option>
-									<option value="7">Juli</option>
-									<option value="8">Augustus</option>
-									<option value="9">September</option>
-									<option value="10">Oktober</option>
-									<option value="11">November</option>
-									<option value="12">December</option>
-								</select>
-							</div>
-							<div class="col-sm-4">
-								<select class="form-control" id="day">
-									<option value="0" select="selected">Dag</option>
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-									<option value="6">6</option>
-									<option value="7">7</option>
-									<option value="8">8</option>
-									<option value="9">9</option>
-									<option value="10">10</option>
-									<option value="11">11</option>
-									<option value="12">12</option>
-									<option value="13">13</option>
-									<option value="14">14</option>
-									<option value="15">15</option>
-									<option value="16">16</option>
-									<option value="17">17</option>
-									<option value="18">18</option>
-									<option value="19">19</option>
-									<option value="20">20</option>
-									<option value="21">21</option>
-									<option value="22">22</option>
-									<option value="23">23</option>
-									<option value="24">24</option>
-									<option value="25">25</option>
-									<option value="26">26</option>
-									<option value="27">27</option>
-									<option value="28">28</option>
-									<option value="29">29</option>
-									<option value="30">30</option>
-									<option value="31">31</option>
-								</select>
-							</div>
-							<div class="col-sm-4">
-								<select class="form-control" id="year" name="SelectedYear">
-									<option value="0" select="selected">Jaar</option>
-									<option value="1">2014</option>
-									<option value="2">2013</option>
-									<option value="3">2012</option>
-									<option value="4">2011</option>
-									<option value="5">2010</option>
-									<option value="6">2009</option>
-									<option value="7">2008</option>
-									<option value="8">2007</option>
-									<option value="9">2006</option>
-									<option value="10">2005</option>
-									<option value="11">2004</option>
-									<option value="12">2003</option>
-									<option value="13">2002</option>
-									<option value="14">2001</option>
-									<option value="15">2000</option>
-									<option value="16">1999</option>
-									<option value="17">1998</option>
-									<option value="18">1997</option>
-									<option value="19">1996</option>
-									<option value="20">1995</option>
-									<option value="21">1994</option>
-									<option value="22">1993</option>
-									<option value="23">1992</option>
-									<option value="24">1991</option>
-									<option value="25">1990</option>
-									<option value="26">1989</option>
-									<option value="27">1988</option>
-									<option value="28">1987</option>
-									<option value="29">1986</option>
-									<option value="30">1985</option>
-									<option value="31">1984</option>
-									<option value="32">1983</option>
-									<option value="33">1982</option>
-									<option value="34">1981</option>
-									<option value="35">1980</option>
-									<option value="36">1979</option>
-									<option value="37">1978</option>
-									<option value="38">1977</option>
-									<option value="39">1976</option>
-									<option value="40">1975</option>
-									<option value="41">1974</option>
-									<option value="42">1973</option>
-									<option value="43">1972</option>
-									<option value="44">1971</option>
-									<option value="45">1970</option>
-									<option value="46">1969</option>
-									<option value="47">1968</option>
-									<option value="48">1967</option>
-									<option value="49">1966</option>
-									<option value="50">1965</option>
-									<option value="51">1964</option>
-									<option value="52">1963</option>
-									<option value="53">1962</option>
-									<option value="54">1961</option>
-									<option value="55">1960</option>
-									<option value="56">1959</option>
-									<option value="57">1958</option>
-									<option value="58">1957</option>
-									<option value="59">1956</option>
-									<option value="60">1955</option>
-									<option value="61">1954</option>
-									<option value="62">1953</option>
-									<option value="63">1952</option>
-									<option value="64">1951</option>
-									<option value="65">1950</option>
-									<option value="66">1949</option>
-									<option value="67">1948</option>
-									<option value="68">1947</option>
-									<option value="69">1946</option>
-									<option value="70">1945</option>
-									<option value="71">1944</option>
-									<option value="72">1943</option>
-									<option value="73">1942</option>
-									<option value="74">1941</option>
-									<option value="75">1940</option>
-								</select>
-							</div>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<div class="row">
-							<div class="col-sm-6">
-								<label for="6">Telefoonnummer</label>
-								<input type="tel" name="Telefoonnummer" class="form-control" id="6"/>
-							</div>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label for="7">Straat</label>
-						<input type="text" name="Straat" class="form-control" id="7">
-					</div>
-
-					<div class="form-group">
-						<div class="row">
-							<div class="col-sm-3">
-								<label for="8">Huisnummer</label>
-								<input type="text" name="Huisnummer" class="form-control" id="8"/>
-							</div>
-							<div class="col-sm-3 col-sm-offset-1">
-								<label for="9">Toevoeging (optioneel)</label>
-								<input type="text" class="form-control" id="9">
-							</div>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<div class="row">
-							<div class="col-sm-4">
-								<label for="10">Postcode</label>
-								<input type="text" name="Postcode" class="form-control" id="10"/>
-							</div>
-							<div class="col-sm-8">
-								<label for="11">Woonplaats</label>
-								<input type="text" name="Woonplaats" class="form-control" id="11"/>
-							</div>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label for="12">Land</label>
-						<div class="row">
-							<div class="col-sm-4">
-								<select class="form-control" id="12">
-									<option>Nederland</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-								</select>
-							</div>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label>Rijbewijs</label>
-						<div class="row">
-							<div class="col-sm-8">
-								<label class="col-sm-2 checkbox-inline">
-									<input type="checkbox" id="inlineCheckbox1" value="option1"> A
-								</label>
-								<label class="col-sm-2 checkbox-inline">
-									<input type="checkbox" id="inlineCheckbox2" value="option2"> BE
-								</label>
-								<label class="col-sm-2 checkbox-inline">
-									<input type="checkbox" id="inlineCheckbox3" value="option3"> CE
-								</label>
-								<label class="col-sm-2 checkbox-inline">
-									<input type="checkbox" id="inlineCheckbox4" value="option4"> DE
-								</label>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-8">
-								<label class="col-sm-2 checkbox-inline">
-									<input type="checkbox" id="inlineCheckbox5" value="option5"> B
-								</label>
-								<label class="col-sm-2 checkbox-inline">
-									<input type="checkbox" id="inlineCheckbox6" value="option6"> C
-								</label>
-								<label class="col-sm-2 checkbox-inline">
-									<input type="checkbox" id="inlineCheckbox7" value="option7"> D
-								</label>
-								<label class="col-sm-2 checkbox-inline">
-									<input type="checkbox" id="inlineCheckbox8" value="option8"> Geen
-								</label>
-							</div>
-						</div>
-					</div>
-
-
-					
-					<br/>
-
-
-					<h3 class="warning-text">3. Ervaring &amp; Motivatie</h3>	
-
-					<br/>
-					
-					<div class="form-group">
-						<div class="row">
-							<div class="col-sm-12">
-								<label>CV toevoegen</label>
-								<p>Voeg je CV toe door een bestand te uploaden of door er hier één aan te maken. Kijk ook voor <a href="#">tips voor een goed CV</a> of een <a href="#">template</a> om een CV bestand aan te maken als je deze nog niet hebt.</p>
-							</div>
-							
-							<div class="col-sm-10">
-								<label class="radio-inline">
-									<input type="radio" name="cvChoice" value="cvUpload" checked> CV uploaden
-								</label>
-							</div>
-
-							<div class="col-sm-10">
-								<label class="radio-inline">
-									<input type="radio" name="cvChoice" value="cvWrite"> CV aanmaken (handmatig of met gebruik van linkedin)
-								</label>
-							</div>
-							
-							<div class="clearfix" style="margin-bottom: 25px;"></div>
-
-							<div class="col-sm-12">
-								<div class="well" style="background:#fff;" id="cvUpload">
-									<div class="row">
-										<div class="col-sm-12">
-											<label>CV uploaden</label>
-										</div>
-										<div class="col-sm-12">
-
-											<input type="file" id="cvUpload" class="filestyle" data-classButton="btn btn-default" data-buttonText="CV uploaden" data-input="false" name="cv"/> of sleep een bestand in deze zone. (.doc, .docx, .pdf)
-										</div>
-
-										<div class="col-sm-12" id="cvVal-div" style="display: none;">
-
-											<div class="row">
-												<div class="col-sm-5">
-													<br>
-													<span id="cvVal"></span>
-												</div>
-												<div class="col-sm-7">
-													<br>
-													<a id="removeCv" href="javascript:void(0)">Verwijderen</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="well" style="background:#fff;" id="cvWrite">
-									<div class="row">
-										<div class="col-sm-12">
-											<label>CV aanmaken</label>
-										</div>
-										<div class="col-sm-12">
-											Maak je CV hier handmatig aan of importeer deze informatie vanuit &nbsp;<button class="btn btn-default btn-linkedin"><img src="../img/import.png" height="16" style="position: relative; top: -4px;"> <strong>Linked</strong> <i class="olympia-linkedin2"></i></button>
-										</div>
-										<div class="col-sm-12">
-											<br/>
-											<label>Werk</label>
-											<div class="well well-lg text-center" style="border-style: dashed; border-width: 2px; background:#fff;">
-												<a href="#" data-toggle="modal" data-target="#pastWork"><i class="glyphicon glyphicon-plus"></i> Voeg een werkervaring toe</a>
-											</div>
-
-											<div class="well well-sm" id="pastwork-info-container">
-											
-											</div>
-											
-											<br/>
-											<label>Opleiding</label>
-											<div class="well well-lg text-center" style="border-style: dashed; border-width: 2px; background:#fff;">
-												<a href="#" data-toggle="modal" data-target="#educationPop"><i class="glyphicon glyphicon-plus"></i> Voeg een opleiding toe</a>
-											</div>
-
-											<div class="well well-sm" id="pastedu-info-container"></div>
-
-										</div>
-										<div class="col-sm-12">
-											<label for="13">Mocht je nog iets willen opmerken over je CV dan kan dat hier (optioneel):</label>
-											<textarea id="13" class="form-control" rows="3"></textarea>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label for="15">Wat is je werk- en denkniveau?:</label>
-						<div class="row">
-							<div class="col-sm-4">
-								<select class="form-control" id="15">
-									<option>Geen voorkeur</option>
-									<option>Havo</option>
-									<option>HBO</option>
-									<option>LBO</option>
-									<option>Mavo</option>
-									<option>MBO</option>
-									<option>Ongeschoold</option>
-									<option>Universitair</option>
-									<option>Ongeschoold</option>
-								</select>
-							</div>
-						</div>
-					</div>
-					<br>
-					<div class="form-group">
-						<label>Specifieke vragen voor deze functie:</label>
-						<div class="row">
-							<div class="col-sm-12">
-								<p>1. Ben je in het bezit van een Heftruckcertificaat?</p>
-							</div>
-							<div class="col-sm-2">
-								<label class="radio-inline">
-									<input type="radio" name="ques1" value="1"> Ja, namelijk
-								</label>
-							</div>
-							<div class="col-sm-4">
-								<input type="text" class="form-control" id="ques1-opt1-ans" disabled/>
-							</div>
-							<div class="clearfix"></div>
-							<div class="col-sm-10">
-								<label class="radio-inline">
-									<input type="radio" name="ques1" value="2"> Nee
-								</label>
-							</div>
-						</div>
-						<br/>
-						<br/>
-						<div class="row">
-							<div class="col-xs-12">
-								<p>2. Hoeveel jaar heb je ervaring als heftruckchauffeur?</p>
-							</div>
-							<div class="col-sm-4">
-								<select class="form-control" id="xp">
-									<option value="0">Selecteer</option>
-									<option value="1">1 - 2 Jaar</option>
-									<option value="2">3 - 5 Jaar</option>
-									<option value="3">&gt; 5 Jaar</option>
-								</select>
-							</div>
-						</div>
-					</div>
-					<br/>
-					<div class="form-group">
-						<div class="row">
-							<div class="col-sm-10">
-								<label for="text-content">Motivatie</label>
-								<p>Klik <a href="#">hier</a> voor tips voor het schrijven van een motivatie.
-									
-									<a href="#" id="zoomTextarea" class="pull-right" title="Click to Zoom" data-toggle="modal" data-target="#textBoxBig">
-										Vergroten <i class="olympia-expand2"></i>
-									</a>
-								</p>
-								
-								<textarea id="text-content" maxlength="4000" class="form-control" rows="5"></textarea>
-								<p>Aantal karakters: <span id="text-content-count">0</span> (max 4000 karakters)</p>
-								<p><a hrer="#" id="check-textarea"><i class="olympia-spell-check"></i> Spelling Check</a></p>
-							</div>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<div class="row">
-							<div class="col-sm-12">
-								<label>Kan Olympia uitzendbureau jou helpen met zoeken?</label>
-								<div class="radio">
-									<label>
-										<input type="radio" name="optionsRadios" id="optionsRadios1" value="1">
-										Ja, ik sta open voor andere heftruckchauffeur vactures en mogelijk gerelateerde functies
-									</label>
-								</div>
-								<div class="radio">
-									<label>
-										<input type="radio" name="optionsRadios" id="optionsRadios2" value="2">
-										Ja, ik sta open voor andere heftruckchauffeur vactures
-									</label>
-								</div>
-								<div class="radio">
-									<label>
-										<input type="radio" name="optionsRadios" id="optionsRadios1" value="3">
-										Nee, ik wil dat Olympia mij helpt met deze solicitatie
-									</label>
-								</div>
-							</div>
-						</div>
-					</div>	
-					<div class="form-group">
-						<div class="row">
-							<div class="col-sm-12">
-
-								<br/>
-								<br/>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" id="terms" name="terms" value="1">
-										Ja, ik ga akkoord met de <a href="#">privacy verklaring</a>
-									</label>
-								</div>
-
-								<br/>
-
-								<button class="btn btn-primary" id="form-submit">Verstuur sollicitatie</button>
-							</div>
-						</div>
-					</div>
-				</form>
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
 			</div>
-			<div class="col-sm-4">
-				<aside>
-					<div class="well">
-						
-						<h3 class="warning-text">Vacature</h3>
-						<h4>Heftruckchauffeur</h4>
-						<!-- <div class="row">
-							<div class="col-xs-12">
-								<img class="img-responsive img-rounded" src="../img/rockwool-logo.jpg"/>
-							</div>
-							<br/>
-							<br/>
-						</div> -->
-						<hr>
-						
-						<dl class="margin-top">
-							<dt>Plaats</dt>
-							<dd>Roermond</dd>
-
-							<dt>Fulltime / parttime</dt>
-							<dd>Fulltime</dd>
-
-							<dt>Aantal uur</dt>
-							<dd>40</dd>
-
-							<dt>Salaris</dt>
-							<dd>1500-2000</dd>
-
-							<dt>Dienstverband</dt>
-							<dd>Vast</dd>
-
-							<dt>Werk/denkniveau</dt>
-							<dd>MBO werk- en denkniveau</dd>
-
-							<dt>Branche</dt>
-							<dd>Transport</dd>
-
-							<dt>Vakgebied</dt>
-							<dd>Magazijn</dd>
-
-							<dt>Vacaturenummer <a id="tooltip1" class="website-icons small" data-container="body" data-toggle="popover" data-placement="top" data-original-title="Vacaturenummer" data-content="Het vacaturenummer kan gebruikt worden om te verwijzen naar deze vacature in de communicatie met een medewerker van Olympia"><i class="olympia-info3"></i></a></dt>
-							<dd>12345678</dd>
-						</dl>
-
-						<h4>Organisatie-omschrijving</h4>
-						<p>Rockwool in Roermond fabriceert een breed scala aan steenwolproducten. In vier Business Units wordt een compleet assortiment isolatieproducten ten behoeve van utiliteits- en woningbouw en industrie geproduceerd alsmede groeimedia voor de glastuinbouw, systeemplafonds, gevelbekledingsmaterialen en steenwolvezels met materiaal versterkende eigenschappen.</p>
-
-						<h4>Functie-omschrijving</h4>
-						<p>Je bent verantwoordelijk voor het aan- en afvoeren van goederen, het beheren van de opslag en het verzendklaar maken van goederen. Ook is het belangrijk om affiniteit en ervaring te hebben met het bedienen van machines.</p>
-
-						<h4>Ons aanbod</h4>
-
-						<ul class="bullet-list-colored">
-							<li><span>Goed salaris en ploegentoeslagen</span></li>
-							<li><span>Reiskostenvergoeding</span></li>
-						</ul>
-						<p>Het betreft in eerste instantie een baan op oproepbasis.</p>
-
-						<h4>Wij vragen</h4>
-
-						<ul class="bullet-list-colored">
-							<li><span>Ben je in het bezit van een Heftruckcertificaat?</span></li>
-							<li><span>Ben je in het bezit van eigen vervoer?</span></li>
-							<li><span>Hoeveel jaar heb je al ervaring als heftruckchauffeur?</span></li>
-						</ul>
-					</div>
-					<div class="well">
-						<h4 class="warning-text">Olympia contactpersoon voor deze vacature is:</h4>
-
-						<p>Marieke Jager, Rotterdam
-							<br/>
-							<a href="#">Toon vestiging</a>
-						</p>
-						<p>Heb je een vraag? Bel mij op 073-4567890 of <a href="#">stuur een bericht</a>
-						</p>
-					</div>
-				</aside>
+			<div class='row'>
+				<div class='col-sm-3'>
+				</div >
+				<div class='col-sm-6' for='first content'>
+					<label id='form-component'>Describe the work to be done</label>
+					<input type='text' class='form-control' for='inserting job title' id='form-text-control' placeholder='Dwscribe work...'>
+					<span>5000 characters left</span>
+				</div>
 			</div>
-		</div>
+
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-sm-3'>
+				</div >
+				<div class='col-sm-3' for='first content'>
+					<label id='form-component'>Start date</label><span style='color:#C3C3C3;'>(optional)</span>
+					<input type='text' class='form-control' for='inserting job title' id='form-text-control' placeholder=''>
+				</div>
+				<div class='col-sm-3' for='first content'>
+					<label id='form-component'>End date</label><span style='color:#C3C3C3;'>(optional)</span>
+					<input type='text' class='form-control' for='inserting job title' id='form-text-control' placeholder=''>
+				</div>
+			</div>
+			<div class='row'>
+				<div id='error-showing-space'>
+				</div>
+			</div>
+		</form>
 	</div>
 
-	<footer class="container" style="font-size: 13px;">
-		<hr/>
-		<p class="info-text">
-			&copy; COPYRIGHT OLYMPIA UITZENDBUREAU
-			&nbsp;
-			<a class="info-text" href="#">Privacy statement</a> | <a class="info-text" href="#">Disclaimer</a> | <a class="info-text" href="#">Contact</a>
-		</p>
-		<br/>
-		<br/>
+
+
+	<footer class="main-container-footer">
+		<div class='footer-size'>
+			<div class='row'>
+				<div class='col-sm-12 extra-row'>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-sm-12'>
+					<span id='footer-text'>&#169;Olympia - Alle Organisaties</span>
+				</div>
+			</div>
+		</div>
 	</footer>
 
-	<div class="modal fade" id="textBoxBig" tabindex="-1" role="dialog" aria-labelledby="textBoxBig" aria-hidden="true">
-		<div class="modal-dialog modal-lg">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h2 class="modal-title" id="myModalLabel">Vul hier je motivatie in:</h2>
-				</div>
-				<form role="form">
-					<div class="modal-body">
-						<div class="form-group">
-							<textarea id="text-content-pop" maxlength="4000" class="form-control" rows="15"></textarea>
-						</div>
-						<div class="form-group text-left">
-							<p>Aantal karakters: <span id="text-content-count-pop">0</span> (max 4000 karakters)</p>
-						</div>
-						<div class="row">
-							<div class="col-sm-6 text-left">
-								<a href="javascript:void(0)">
-									<i class="olympia-spell-check"></i> Spelling Check
-								</a>
-							</div>
-							<div class="col-sm-6">
-								<button type="button" class="btn btn-primary pull-right" data-dismiss="modal">OK <i class="glyphicon glyphicon-arrow-right"></i></button>
-								<button style="margin: 0 10px 0 0;" type="button" class="btn btn-default pull-right" data-dismiss="modal" aria-hidden="true">Annuleren</button>
-							</div>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
 
-	<div class="modal fade" id="pastWork" tabindex="-1" role="dialog" aria-labelledby="pastWork" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h2 class="modal-title" id="myModalLabel">Nieuwe werkervaring toevoegen</h2>
-				</div>
-				<form role="form" class="form-horizontal" >
-					<div class="modal-body">
-						
-						<div class="form-group">
-							<label for="Functie" class="col-sm-5 control-label">Functie</label>
-							<div class="col-sm-7">
-								<input type="text" class="form-control" id="pop-functie">
-							</div>
-						</div>
-						
-						<div class="form-group">
-							<label for="Bedrijf" class="col-sm-5 control-label">Bedrijf</label>
-							<div class="col-sm-7">
-								<input type="text" class="form-control" id="pop-bedrijf">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="Vestigingsplaats" class="col-sm-5 control-label">Vestigingsplaats bedrijf</label>
-							<div class="col-sm-7">
-								<input type="text" class="form-control" id="pop-Vestigingsplaats">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="Startdatum" class="col-sm-5 control-label">Startdatum werkervaring</label>
-							<div class="col-sm-7">
-								<div class="row">
-									<div class="col-sm-6">
-										<select class="form-control" id="pop-startdatum-maand-1">
-											<option value="0" select="selected">Maand</option>
-											<option value="1">Januari</option>
-											<option value="2">Februari</option>
-											<option value="3">Maart</option>
-											<option value="4">April</option>
-											<option value="5">Mei</option>
-											<option value="6">Juni</option>
-											<option value="7">Juli</option>
-											<option value="8">Augustus</option>
-											<option value="9">September</option>
-											<option value="10">Oktober</option>
-											<option value="11">November</option>
-											<option value="12">December</option>
-										</select>
-									</div>
-									<div class="col-sm-6">
-										<select class="form-control" id="pop-startdatum-jaar-1">
-											<option value="0" select="selected">Jaar</option>
-											<option value="1">2014</option>
-											<option value="2">2013</option>
-											<option value="3">2012</option>
-											<option value="4">2011</option>
-											<option value="5">2010</option>
-											<option value="6">2009</option>
-											<option value="7">2008</option>
-											<option value="8">2007</option>
-											<option value="9">2006</option>
-											<option value="10">2005</option>
-											<option value="11">2004</option>
-											<option value="12">2003</option>
-											<option value="13">2002</option>
-											<option value="14">2001</option>
-											<option value="15">2000</option>
-											<option value="16">1999</option>
-											<option value="17">1998</option>
-											<option value="18">1997</option>
-											<option value="19">1996</option>
-											<option value="20">1995</option>
-											<option value="21">1994</option>
-											<option value="22">1993</option>
-											<option value="23">1992</option>
-											<option value="24">1991</option>
-											<option value="25">1990</option>
-											<option value="26">1989</option>
-											<option value="27">1988</option>
-											<option value="28">1987</option>
-											<option value="29">1986</option>
-											<option value="30">1985</option>
-											<option value="31">1984</option>
-											<option value="32">1983</option>
-											<option value="33">1982</option>
-											<option value="34">1981</option>
-											<option value="35">1980</option>
-											<option value="36">1979</option>
-											<option value="37">1978</option>
-											<option value="38">1977</option>
-											<option value="39">1976</option>
-											<option value="40">1975</option>
-											<option value="41">1974</option>
-											<option value="42">1973</option>
-											<option value="43">1972</option>
-											<option value="44">1971</option>
-											<option value="45">1970</option>
-											<option value="46">1969</option>
-											<option value="47">1968</option>
-											<option value="48">1967</option>
-											<option value="49">1966</option>
-											<option value="50">1965</option>
-											<option value="51">1964</option>
-											<option value="52">1963</option>
-											<option value="53">1962</option>
-											<option value="54">1961</option>
-											<option value="55">1960</option>
-											<option value="56">1959</option>
-											<option value="57">1958</option>
-											<option value="58">1957</option>
-											<option value="59">1956</option>
-											<option value="60">1955</option>
-											<option value="61">1954</option>
-											<option value="62">1953</option>
-											<option value="63">1952</option>
-											<option value="64">1951</option>
-											<option value="65">1950</option>
-											<option value="66">1949</option>
-											<option value="67">1948</option>
-											<option value="68">1947</option>
-											<option value="69">1946</option>
-											<option value="70">1945</option>
-											<option value="71">1944</option>
-											<option value="72">1943</option>
-											<option value="73">1942</option>
-											<option value="74">1941</option>
-											<option value="75">1940</option>
-										</select>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="Einddatum" class="col-sm-5 control-label">Einddatum werkervaring</label>
-							<div class="col-sm-7">
-								<div class="row">
-									<div class="col-sm-6">
-										<select class="form-control" id="pop-einddatum-maaand-1">
-											<option value="0" select="selected">Maand</option>
-											<option value="1">Januari</option>
-											<option value="2">Februari</option>
-											<option value="3">Maart</option>
-											<option value="4">April</option>
-											<option value="5">Mei</option>
-											<option value="6">Juni</option>
-											<option value="7">Juli</option>
-											<option value="8">Augustus</option>
-											<option value="9">September</option>
-											<option value="10">Oktober</option>
-											<option value="11">November</option>
-											<option value="12">December</option>
-										</select>
-									</div>
-									<div class="col-sm-6">
-										<select class="form-control" id="pop-einddatum-jaar-1">
-											<option value="0">Jaar</option>
-											<option value="1">2014</option>
-											<option value="2">2013</option>
-											<option value="3">2012</option>
-											<option value="4">2011</option>
-											<option value="5">2010</option>
-											<option value="6">2009</option>
-											<option value="7">2008</option>
-											<option value="8">2007</option>
-											<option value="9">2006</option>
-											<option value="10">2005</option>
-											<option value="11">2004</option>
-											<option value="12">2003</option>
-											<option value="13">2002</option>
-											<option value="14">2001</option>
-											<option value="15">2000</option>
-											<option value="16">1999</option>
-											<option value="17">1998</option>
-											<option value="18">1997</option>
-											<option value="19">1996</option>
-											<option value="20">1995</option>
-											<option value="21">1994</option>
-											<option value="22">1993</option>
-											<option value="23">1992</option>
-											<option value="24">1991</option>
-											<option value="25">1990</option>
-											<option value="26">1989</option>
-											<option value="27">1988</option>
-											<option value="28">1987</option>
-											<option value="29">1986</option>
-											<option value="30">1985</option>
-											<option value="31">1984</option>
-											<option value="32">1983</option>
-											<option value="33">1982</option>
-											<option value="34">1981</option>
-											<option value="35">1980</option>
-											<option value="36">1979</option>
-											<option value="37">1978</option>
-											<option value="38">1977</option>
-											<option value="39">1976</option>
-											<option value="40">1975</option>
-											<option value="41">1974</option>
-											<option value="42">1973</option>
-											<option value="43">1972</option>
-											<option value="44">1971</option>
-											<option value="45">1970</option>
-											<option value="46">1969</option>
-											<option value="47">1968</option>
-											<option value="48">1967</option>
-											<option value="49">1966</option>
-											<option value="50">1965</option>
-											<option value="51">1964</option>
-											<option value="52">1963</option>
-											<option value="53">1962</option>
-											<option value="54">1961</option>
-											<option value="55">1960</option>
-											<option value="56">1959</option>
-											<option value="57">1958</option>
-											<option value="58">1957</option>
-											<option value="59">1956</option>
-											<option value="60">1955</option>
-											<option value="61">1954</option>
-											<option value="62">1953</option>
-											<option value="63">1952</option>
-											<option value="64">1951</option>
-											<option value="65">1950</option>
-											<option value="66">1949</option>
-											<option value="67">1948</option>
-											<option value="68">1947</option>
-											<option value="69">1946</option>
-											<option value="70">1945</option>
-											<option value="71">1944</option>
-											<option value="72">1943</option>
-											<option value="73">1942</option>
-											<option value="74">1941</option>
-											<option value="75">1940</option>
-										</select>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="form-group">
-							<label class="col-sm-5 control-label" for="FuntieBeschrijving">Funtie beschrijving</label><br/><br/>
-							<div class="col-sm-12">
-								<textarea id="FuntieBeschrijving" class="form-control" rows="3"></textarea>
-							</div>
-						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" class="close" data-dismiss="modal" aria-hidden="true">Annuleren</button>
-						<button id="manual-xp-add" type="button" class="btn btn-primary">Aanmaken</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-
-	<div class="modal fade" id="educationPop" tabindex="-1" role="dialog" aria-labelledby="educationPop" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h2 class="modal-title" id="myModalLabel">Nieuwe opleiding toevoegen</h2>
-				</div>
-				<form role="form" class="form-horizontal" >
-					<div class="modal-body">
-						
-						<div class="form-group">
-							<label for="opleiding" class="col-sm-5 control-label">Opleiding</label>
-							<div class="col-sm-7">
-								<input type="text" class="form-control" id="pop-edu-opleiding">
-							</div>
-						</div>
-						
-						<div class="form-group">
-							<label for="StartdatumOpleiding" class="col-sm-5 control-label">Startdatum werkervaring</label>
-							<div class="col-sm-7">
-								<div class="row">
-									<div class="col-sm-6">
-										<select class="form-control" id="pop-start-month">
-											<option value="0" select="selected">Maand</option>
-											<option value="1">Januari</option>
-											<option value="2">Februari</option>
-											<option value="3">Maart</option>
-											<option value="4">April</option>
-											<option value="5">Mei</option>
-											<option value="6">Juni</option>
-											<option value="7">Juli</option>
-											<option value="8">Augustus</option>
-											<option value="9">September</option>
-											<option value="10">Oktober</option>
-											<option value="11">November</option>
-											<option value="12">December</option>
-										</select>
-									</div>
-									<div class="col-sm-6">
-										<select class="form-control" id="pop-start-year">
-											<option value="0">Jaar</option>
-											<option value="1">2014</option>
-											<option value="2">2013</option>
-											<option value="3">2012</option>
-											<option value="4">2011</option>
-											<option value="5">2010</option>
-											<option value="6">2009</option>
-											<option value="7">2008</option>
-											<option value="8">2007</option>
-											<option value="9">2006</option>
-											<option value="10">2005</option>
-											<option value="11">2004</option>
-											<option value="12">2003</option>
-											<option value="13">2002</option>
-											<option value="14">2001</option>
-											<option value="15">2000</option>
-											<option value="16">1999</option>
-											<option value="17">1998</option>
-											<option value="18">1997</option>
-											<option value="19">1996</option>
-											<option value="20">1995</option>
-											<option value="21">1994</option>
-											<option value="22">1993</option>
-											<option value="23">1992</option>
-											<option value="24">1991</option>
-											<option value="25">1990</option>
-											<option value="26">1989</option>
-											<option value="27">1988</option>
-											<option value="28">1987</option>
-											<option value="29">1986</option>
-											<option value="30">1985</option>
-											<option value="31">1984</option>
-											<option value="32">1983</option>
-											<option value="33">1982</option>
-											<option value="34">1981</option>
-											<option value="35">1980</option>
-											<option value="36">1979</option>
-											<option value="37">1978</option>
-											<option value="38">1977</option>
-											<option value="39">1976</option>
-											<option value="40">1975</option>
-											<option value="41">1974</option>
-											<option value="42">1973</option>
-											<option value="43">1972</option>
-											<option value="44">1971</option>
-											<option value="45">1970</option>
-											<option value="46">1969</option>
-											<option value="47">1968</option>
-											<option value="48">1967</option>
-											<option value="49">1966</option>
-											<option value="50">1965</option>
-											<option value="51">1964</option>
-											<option value="52">1963</option>
-											<option value="53">1962</option>
-											<option value="54">1961</option>
-											<option value="55">1960</option>
-											<option value="56">1959</option>
-											<option value="57">1958</option>
-											<option value="58">1957</option>
-											<option value="59">1956</option>
-											<option value="60">1955</option>
-											<option value="61">1954</option>
-											<option value="62">1953</option>
-											<option value="63">1952</option>
-											<option value="64">1951</option>
-											<option value="65">1950</option>
-											<option value="66">1949</option>
-											<option value="67">1948</option>
-											<option value="68">1947</option>
-											<option value="69">1946</option>
-											<option value="70">1945</option>
-											<option value="71">1944</option>
-											<option value="72">1943</option>
-											<option value="73">1942</option>
-											<option value="74">1941</option>
-											<option value="75">1940</option>
-										</select>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="EinddatumOpleiding" class="col-sm-5 control-label">Einddatum werkervaring</label>
-							<div class="col-sm-7">
-								<div class="row">
-									<div class="col-sm-6">
-										<select class="form-control" id="pop-end-month">
-											<option value="0" select="selected">Maand</option>
-											<option value="1">Januari</option>
-											<option value="2">Februari</option>
-											<option value="3">Maart</option>
-											<option value="4">April</option>
-											<option value="5">Mei</option>
-											<option value="6">Juni</option>
-											<option value="7">Juli</option>
-											<option value="8">Augustus</option>
-											<option value="9">September</option>
-											<option value="10">Oktober</option>
-											<option value="11">November</option>
-											<option value="12">December</option>
-										</select>
-									</div>
-									<div class="col-sm-6">
-										<select class="form-control" id="pop-end-year">
-											<option value="0">Jaar</option>
-											<option value="1">2014</option>
-											<option value="2">2013</option>
-											<option value="3">2012</option>
-											<option value="4">2011</option>
-											<option value="5">2010</option>
-											<option value="6">2009</option>
-											<option value="7">2008</option>
-											<option value="8">2007</option>
-											<option value="9">2006</option>
-											<option value="10">2005</option>
-											<option value="11">2004</option>
-											<option value="12">2003</option>
-											<option value="13">2002</option>
-											<option value="14">2001</option>
-											<option value="15">2000</option>
-											<option value="16">1999</option>
-											<option value="17">1998</option>
-											<option value="18">1997</option>
-											<option value="19">1996</option>
-											<option value="20">1995</option>
-											<option value="21">1994</option>
-											<option value="22">1993</option>
-											<option value="23">1992</option>
-											<option value="24">1991</option>
-											<option value="25">1990</option>
-											<option value="26">1989</option>
-											<option value="27">1988</option>
-											<option value="28">1987</option>
-											<option value="29">1986</option>
-											<option value="30">1985</option>
-											<option value="31">1984</option>
-											<option value="32">1983</option>
-											<option value="33">1982</option>
-											<option value="34">1981</option>
-											<option value="35">1980</option>
-											<option value="36">1979</option>
-											<option value="37">1978</option>
-											<option value="38">1977</option>
-											<option value="39">1976</option>
-											<option value="40">1975</option>
-											<option value="41">1974</option>
-											<option value="42">1973</option>
-											<option value="43">1972</option>
-											<option value="44">1971</option>
-											<option value="45">1970</option>
-											<option value="46">1969</option>
-											<option value="47">1968</option>
-											<option value="48">1967</option>
-											<option value="49">1966</option>
-											<option value="50">1965</option>
-											<option value="51">1964</option>
-											<option value="52">1963</option>
-											<option value="53">1962</option>
-											<option value="54">1961</option>
-											<option value="55">1960</option>
-											<option value="56">1959</option>
-											<option value="57">1958</option>
-											<option value="58">1957</option>
-											<option value="59">1956</option>
-											<option value="60">1955</option>
-											<option value="61">1954</option>
-											<option value="62">1953</option>
-											<option value="63">1952</option>
-											<option value="64">1951</option>
-											<option value="65">1950</option>
-											<option value="66">1949</option>
-											<option value="67">1948</option>
-											<option value="68">1947</option>
-											<option value="69">1946</option>
-											<option value="70">1945</option>
-											<option value="71">1944</option>
-											<option value="72">1943</option>
-											<option value="73">1942</option>
-											<option value="74">1941</option>
-											<option value="75">1940</option>
-										</select>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="form-group">
-							<label for="opleiding" class="col-sm-5 control-label">Diploma behaald</label>
-							<div class="col-sm-7">
-								<label class="radio-inline">
-									<input type="radio" name="pop-diploma" id="inlineradio1" value="option1"> Ja
-								</label>
-								<label class="radio-inline">
-									<input type="radio" name="pop-diploma" id="inlineradio2" value="option2"> Nee
-								</label>
-							</div>
-						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" class="close" data-dismiss="modal" aria-hidden="true">Annuleren</button>
-						<button type="button" id="manual-edu-add" class="btn btn-primary">Aanmaken</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-
-	<div class="modal fade" id="errorAlert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
-				</div>
-				<div class="modal-body">
-					<p>Your form contains error please remove them before submitting the form.</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<!-- Scripts -->
 	<script src="../lib/jquery/dist/jquery.min.js"></script>
@@ -1388,29 +254,42 @@
 	<script src="../lib/hoverIntent.js"></script>
 	<script src="../lib/superfish.min.js"></script>
 	<script src="../lib/supersubs.js"></script>
-	
 	<script>
-		$("#text-content").keyup(function() {
-			var text  = $(this).val();
-			$('#text-content-pop').val(text);
-			$('#text-content-count').text($(this).val().length);
-			$('#text-content-count-pop').text($(this).val().length);
+	$(document).ready(function() {
+		$('#first-tab a:first').tab('show');
+
+		var current = "#first-content-tab";
+		
+		$('#first-tab a').click(function (e) {
+			  $('#first-content-tab').tab('show');
+			  $('#first-content-tab').addClass('active');
+			  $(current).removeClass('active');
+			  current = "#first-content-tab";
+			  console.log(current);
 		});
-		$("#text-content-pop").keyup(function() {
-			var text  = $(this).val();
-			$('#text-content').val(text);
-			$('#text-content-count-pop').text(text.length);
-			$('#text-content-count').text(text.length);
+		$('#second-tab a').click(function (e) {
+			$('#second-content-tab').tab('show');
+			$(current).removeClass('active');
+			$('#second-content-tab').addClass('active');
+			current = "#second-content-tab";
+			console.log(current);
 		});
-		$(document).ready(function () {
-			$("#menu-227").addClass('sf-menu');
-			$('#menu-227').superfish({
-				delay: 200,
-				speed: 'fast',
-				autoArrows: 1,
-				dropShadows: 1
-			});
+		$('#third-tab a').click(function (e) {
+			$('#third-content-tab').tab('show');
+			$(current).removeClass('active');
+			$('#third-content-tab').addClass('active');
+			current = "#third-content-tab";
+			console.log(current);
 		});
-	</script>
+		$('#fourth-tab a').click(function (e) {
+			$('#fourth-content-tab').tab('show');
+			$(current).removeClass('active');
+			$('#fourth-content-tab').addClass('active');
+			current = "#fourth-content-tab";
+			console.log(current);
+		});
+	});
+</script>
+
 </body>
 </html>
