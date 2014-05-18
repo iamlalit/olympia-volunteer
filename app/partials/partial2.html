@@ -6,6 +6,7 @@
 	<link href="../img/olympia-fav.ico" rel="shortcut icon" type="image/x-icon" />
 	<link rel="stylesheet" href="../css/app.css"/>
 	<link rel="stylesheet" href="../css/olympia-icons.css"/>
+	<link rel="stylesheet" href="../lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"/>
 	<link href="//fonts.googleapis.com/css?family=PT+Sans:400italic,400,700italic,700"/>
 </head>
 <body>
@@ -210,15 +211,40 @@
 				</div>
 			</div>
 			<div class='row'>
+				    <div class='col-sm-3'>
+				    </div>
+				    <div class="col-sm-3">
+			            <div class="form-group" >
+			                <label id='form-component'>Start date</label>
+			                <div class='input-group date' id='datetimepicker8' style="width:300px;">
+			                    <input type='text' class="form-control" />
+			                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+			                    </span>
+			                </div>
+			            </div>
+				    </div>
+					<div class='col-sm-4'>
+			            <div class="form-group">
+			            	 <label id='form-component'>End date</label>
+			                <div class='input-group date' id='datetimepicker9'  style="width:300px;">
+			                    <input type='text' class="form-control" />
+			                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+			                    </span>
+			                </div>
+			            </div>
+			        </div>
+			</div>
+
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row'>
 				<div class='col-sm-3'>
 				</div >
-				<div class='col-sm-3' for='first content'>
-					<label id='form-component'>Start date</label><span style='color:#C3C3C3;'>(optional)</span>
-					<input type='text' class='form-control' for='inserting job title' id='form-text-control' placeholder=''>
-				</div>
-				<div class='col-sm-3' for='first content'>
-					<label id='form-component'>End date</label><span style='color:#C3C3C3;'>(optional)</span>
-					<input type='text' class='form-control' for='inserting job title' id='form-text-control' placeholder=''>
+				<div class='col-sm-6' for='first content'>
+					<label id='form-component'>What Skills are needed?</label>
+					<input type='text' class='form-control' for='inserting job title' id='form-text-control'>
 				</div>
 			</div>
 			<div class='row'>
@@ -227,6 +253,7 @@
 			</div>
 		</form>
 	</div>
+	
 
 
 
@@ -249,6 +276,10 @@
 	<!-- Scripts -->
 	<script src="../lib/jquery/dist/jquery.min.js"></script>
 	<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<script src="../lib/moment/moment.js"></script>
+	<script src="../lib/moment/min/moment.min.js"></script>
+	<script src="../lib/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
 	<script src="../js/input-file.js"></script>
 	<script src="../js/app.js"></script>
 	<script src="../lib/hoverIntent.js"></script>
@@ -289,6 +320,26 @@
 			console.log(current);
 		});
 	});
+
+	
+        $(document).ready(function() {
+            $('#datetimepicker8').datetimepicker({
+            	pickTime: false
+            });
+            $('#datetimepicker9').datetimepicker({
+            	pickTime: false
+            });
+        
+            $("#datetimepicker8").on("dp.change",function (e) {
+               $('#datetimepicker9').data("DateTimePicker").setMinDate(e.date);
+
+            });
+        
+            $("#datetimepicker9").on("dp.change",function (e) {
+               $('#datetimepicker8').data("DateTimePicker").setMaxDate(e.date);
+            });
+    
+    	});
 </script>
 
 </body>
