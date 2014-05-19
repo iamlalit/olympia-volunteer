@@ -6,6 +6,7 @@
 	<link href="../img/olympia-fav.ico" rel="shortcut icon" type="image/x-icon" />
 	<link rel="stylesheet" href="../css/app.css"/>
 	<link rel="stylesheet" href="../css/olympia-icons.css"/>
+	<link rel="stylesheet" href="../css/bootstrap-tagsinput.css"/>
 	<link rel="stylesheet" href="../lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"/>
 	<link href="//fonts.googleapis.com/css?family=PT+Sans:400italic,400,700italic,700"/>
 </head>
@@ -15,60 +16,47 @@
 		<div class="row" >
 			<!-- This is for top most header info employer login and register -->
 			<div class='col-sm-12'>
-				<div class='col-sm-8' style='height: 15px'>
-					<div class='row'>
-					</div>
-				</div>
-				<div class='col-sm-1' style='height: 15px'>
+				<div class='col-sm-6' style='height: 15px'>
 					<div class='row'>
 					</div>
 				</div>
 
-				<div class='col-sm-3' style='height: 15px'>
+				<div class='pull-right' style='height: 15px'>
 					<div class='row'>
-						<div class='cssmenu'>
-							<ul id='top-header'>
-							   <li><a href='#' style='font-size: 10px;'><span>Employer Login</span></a></li>
-							   <li><span style='font-size: 10px;'>|</span></li>
-							   <li><a href='#' style='font-size: 10px;'><span>Register</span></a></li>
+						<div class='cssmenu' id='top-header'>
+							<ul >
+							   <li><a href='#' ><span>Employer Login</span></a></li>
+							   <li><span >|</span></li>
+							   <li><a href='#' ><span>Register</span></a></li>
 							   <li>	<img src="../img/netherland-flag.jpg" alt='netherland' /></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- This is for logo -->
-			<div class="col-sm-12">
-				<a href="#" class="logo" style='margin-top: -10px'>
-					<img src="../img/logo.png" alt="Olympia"/>
-				</a>
-			</div>
-			<!-- This is for main menu navigation -->
-			<div class="col-sm-12">
-				<div class='col-sm-4'>
-					<div class='row'>
+			<!-- This is for logo and main menu -->
+			<div class='row'>
+				<div class="col-sm-12">
+					<div class='col-sm-5'>
+						<a href="#" class="logo" style='margin-top: -10px'>
+							<img src="../img/logo.png" alt="Olympia"/>
+						</a>
 					</div>
-				</div>
-				<div class='col-sm-8'>
-					<div class="col-sm-8 pull-center" style="background: #fff; margin-top: -45px; margin-bottom: 0px">
-						<div class="row">
-							<div class='cssmenu'>
-								<ul>
-								   <li class='active'><a href='#'><span>Home</span></a></li>
-								   <li><a href='#'><span>Wie Zijn wij?</span></a></li>
-								   <li><a href='#'><span>Jobs</span></a></li>
-								   <li><a href='#'><span>Upload je CV</span></a></li>
-								   <li class='last'><a href='#'><span>Contact</span></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-4 pull-right" style="background: #fff; margin-top: -45px; margin-bottom: 0px">
-						<div class='row'>
-							<div class='cssmenu'>
-								<ul>
-									<li><button type="button" style='color:#151379; font-size:15px; margin-top:-10px; margin-left:0px; font-weight:700;padding-left:25px;padding-right:25px;' class="btn btn-default btn-sm">WERKGEVERS</button></li>
-								</ul>
+				
+				<!-- This is for main menu navigation -->
+					<div class='col-sm-7'>
+						<div class="pull-center" style="background: transparent; margin-top:55px;">
+							<div class="row">
+								<div class='cssmenu'>
+									<ul>
+										<li class='active'><a href='#'><span>Home</span></a></li>
+										<li><a href='#'><span>Wie Zijn wij?</span></a></li>
+										<li><a href='#'><span>Jobs</span></a></li>
+										<li><a href='#'><span>Upload je CV</span></a></li>
+										<li ><a href='#'><span>Contact</span></a></li>
+										<li class='last' style='vertical-align:middle'><button type="button" style='margin-top:-3px;' class="btn btn-default btn-xs">WERKGEVERS</button></li>
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -87,7 +75,6 @@
 				  <li id="third-tab"><a href="javascriptvoid(0)" data-toggle="tab">777 Buiterland</a></li>
 				  <li id="fourth-tab"><a href="javascriptvoid(0)" data-toggle="tab">555 stage&#39;s</a></li>
 				</ul>
-
 				<!-- Tab panes -->
 				<div class="tab-content">
 			    	<div class="tab-pane active" id="first-content-tab">
@@ -110,7 +97,7 @@
 				  							<div class='col-sm-4' style='float:left; margin-left:-20px'>
 					  							<div class='search-tab'>
 					  								<span id='search-tab-text' for='city or post code'>waar</span>
-					  								<input type='text' placeholder='City or post code' id='search-tab-input' disabled />
+					  								<input type='text' placeholder='City or post code' id='search-tab-input' />
 												        <select class="btn btn-primary dropdown-toggle" id='area-radius' data-toggle="dropdown" >
 												        	<option value="5">5 km</option>
 								                            <option value="10">10 km</option>
@@ -161,8 +148,8 @@
 				<div class='col-sm-1'></div>
 				<div class='col-sm-10' id='border-for-form'></div>
 				<div class='col-sm-1'></div>
-
 			</div>
+
 			<div class='row'>
 				<div id='error-showing-space'>
 				</div>
@@ -172,13 +159,14 @@
 				</div >
 				<div class='col-sm-4' for='first content' id='form-component'>
 					<label >Job Types</label>
-					<select class='form-control' id='job-type'>
+					<select class='form-control'>
 						<option value='job' select='selected'>Job</option>
 						<option value='Internship'>Internship</option>
 						<option value='Event'>Event</option>
 					</select>
 				</div>
 			</div>
+			
 			<div class='row'>
 				<div id='extra-space-label'>
 				</div>
@@ -188,7 +176,7 @@
 				</div >
 				<div class='col-sm-6' for='first content'>
 					<label id='form-component'>Give your job a title</label>
-					<input type='text' class='form-control' for='inserting job title' id='form-text-control' placeholder='Title'>
+					<input type='text' class='form-control' id='form-control-weight' for='inserting job title' id='form-text-control' placeholder='Title'>
 				</div>
 			</div>
 
@@ -201,7 +189,7 @@
 				</div >
 				<div class='col-sm-6' for='first content'>
 					<label id='form-component'>Describe the work to be done</label>
-					<input type='text' class='form-control' for='inserting job title' id='form-text-control' placeholder='Dwscribe work...'>
+					<input type='text' class='form-control' for='inserting job title' id='form-text-control' placeholder='Describe work...'>
 					<span>5000 characters left</span>
 				</div>
 			</div>
@@ -234,7 +222,173 @@
 			            </div>
 			        </div>
 			</div>
+			<!-- Skills -->
+			<div class='row'>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-9' id='form-component'>
+						<label id='form-component-arrangement-label'>What Skills are needed?</label>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-6' id='form-component-arrangement-input'>
+						<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+					</div>
+				</div>
+			</div>
+			<!-- Dipolma/Certificates -->
+			<div class='row'>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-9' id='form-component'>
+						<label id='form-component-arrangement-label'>What Diploma/Certificates are needed?</label>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-6' id='form-component-arrangement-input'>
+						<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+					</div>
+				</div>
+			</div>
+			<!--Time Comittment -->
+			<div class='row'>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-9' id='form-component'>
+						<label id='form-component-arrangement-label'>Time Comittment</label>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-6' id='form-component-arrangement-input'>
+						<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+					</div>
+				</div>
+			</div>
 
+			<div class='row'>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-9' id='form-component'>
+						<label id='form-component-arrangement-label'>Estimated Duration</label>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-6' id='form-component-arrangement-input'>
+						<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+					</div>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-9' id='form-component'>
+						<label id='form-component-arrangement-label'>Work Time Preference</label>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-6' id='form-component-arrangement-input'>
+						<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+					</div>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-9' id='form-component'>
+						<label id='form-component-arrangement-label'>Schedule</label>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-6' id='form-component-arrangement-input'>
+						<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+					</div>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-9' id='form-component'>
+						<label id='form-component-arrangement-label'>International volunteer option</label>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-6' id='form-component-arrangement-input'>
+						<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+					</div>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-9' id='form-component'>
+						<label id='form-component-arrangement-label'>Language</label>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-6' id='form-component-arrangement-input'>
+						<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+					</div>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-9' id='form-component'>
+						<label id='form-component-arrangement-label'>Miscelaneous</label>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-6' id='form-component-arrangement-input'>
+						<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+					</div>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div class='col-sm-3'>
+				</div >
+				<div class='col-sm-4' for='first content' id='form-component'>
+					<label >Marketplace Visibility</label>
+					<select class='form-control'>
+						<option value='Lorem' select='selected'>Lorem</option>
+						<option value='Ipsum'>Ipsum</option>
+						<option value='Consectetur'>Consectetur</option>
+					</select>
+				</div>
+			</div>
+			<!-- attach a document -->
 			<div class='row'>
 				<div id='extra-space-label'>
 				</div>
@@ -242,15 +396,207 @@
 			<div class='row'>
 				<div class='col-sm-3'>
 				</div >
-				<div class='col-sm-6' for='first content'>
-					<label id='form-component'>What Skills are needed?</label>
-					<input type='text' class='form-control' for='inserting job title' id='form-text-control'>
+				<div class='col-sm-4' for='first content' id='form-component'>
+					<label >Attach a document </label><span id='optional-text'> (optional)</span>
+					<input type="file" name="CV" accept="text/*" />
+				</div>
+			</div>
+			<!--less than 5mb-->
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-sm-3'>
+				</div >
+				<div class='col-sm-4' for='first content' id='form-component'>
+					<span id='optional-text'> Less than 5mb</span>
+				</div>
+			</div>
+			<!--address of volunteer-->
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-sm-3'>
+				</div >
+				<div class='col-sm-6' for='first content' id='form-component'>
+					<label >Address of the Volunteer Job </label><span id='optional-text'> (You can specify the multiple address)</span>
+					<div class='border-address'>
+						<label >Address</label>
+						<input type='text' class='form-control' id='form-control-weight' for='inserting address' id='form-text-control'>
+						<div class='row'>
+							<div id='extra-space-label'>
+							</div>
+						</div>
+						<input type='text' class='form-control' id='form-control-weight' for='inserting address' id='form-text-control'>
+						<div class='row'>
+							<div id='extra-space-label'>
+							</div>
+						</div>
+						<label >City</label>
+						<input type='text' class='form-control' id='form-control-weight' for='city' id='form-text-control'>
+						<div class='row'>
+							<div id='extra-space-label'>
+							</div>
+						</div>
+
+						<label >Country</label>
+						<select class='form-control'>
+							<option value='Lorem' select='selected'>Netherland</option>
+							<option value='Ipsum'>India</option>
+							<option value='Consectetur'>England</option>
+						</select>
+						<div class='row'>
+							<div id='extra-space-label'>
+							</div>
+						</div>
+
+						<label >Zipcode</label>
+						<input type='text' class='form-control' id='form-control-weight' for='inserting address' id='form-text-control' placeholder='Address'>
+						<div class='row'>
+							<div id='extra-space-label'>
+							</div>
+						</div>
+						<span ><a href='#' style='text-align:right;'>+Add another address</a></span>
+					</div>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div id='space-30'>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-6' id='form-component'>
+						<div class='border-heading'>
+							<label id='form-component-arrangement-label' style='vertical-align:middle;'>Customize Your application requirements</label>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!--horizontal line-->
+			<div class='row'>
+				<div class='col-sm-4'>
+				</div>
+				<div class='col-sm-4'>
+					<hr style="height:3px; background-color:#DDDDDD;">
+				</div>
+			</div>
+			<!-- checkboxes-->
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row'>
+			    <div class='col-sm-3'>
+			    </div>
+			    <div>
+			    <div class='col-sm-1  font-size-4 '>
+					<span class="glyphicon glyphicon-edit"></span>			    	
+			    </div>
+			    <div class='col-sm-5' id='form-component'>
+			    	<span>Ask applicants to write a cover letter introducing themselves.</span>
+			    	<div class="checkbox">
+				      <input type="checkbox" id='checkbox-cover'> <label style='font-weight:700'>Yes, require a cover letter</label>
+				  	</div>
+			    </div>
+			    <div class='col-sm-3'></div>
+			</div>
+			
+
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row'>
+			    <div class='col-sm-3'>
+			    </div>
+			    <div>
+			    <div class='col-sm-1'>
+			    </div>
+			    <div class='col-sm-5' id='form-component' style='margin-left:3px'>
+			    	<span>Ask applicants to complete the profile before applying to the job.</span>
+			    	<div class="checkbox">
+				      <input type="checkbox" id='checkbox-profile'> <label style='font-weight:700;'>Yes, complete their profile</label>
+				  </div>
+			    </div>
+			</div>
+			
+			<!--horizontal line-->
+			<div class='row'>
+				<div class='col-sm-4'>
+				</div>
+				<div class='col-sm-4'>
+					<hr style="height:3px; background-color:#DDDDDD;">
+				</div>
+			</div>
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			
+			<!-- Screening question-->
+			<div class='row' style=''>
+			    <div class='col-sm-3'>
+			    </div>
+			    <div>
+			    <div class='col-sm-1  font-size-4' style='margin-left:1.5%;'>
+					<span class="glyphicon glyphicon-list-alt"></span>			    	
+			    </div>
+			    <div class='col-sm-6' id='form-component'>
+			    	<label style='font-size:18px'>Screening Questions</label>
+			    	<label>Add a few question that youd like to ask your candidates to answer when applying to your job</label>
+					<div class='row'>
+						<div class='col-sm-10' id='form-component'>
+							<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add Questions" style='font-size:20px;'/>
+						</div>
+						<div class='col-sm-2'></div>
+			    </div>
+			    <div class='col-sm-2'></div>
+			</div>
+			
+			<!-- button group -->
+			<div class='row'>
+				<div id='error-showing-space'>
 				</div>
 			</div>
 			<div class='row'>
 				<div id='error-showing-space'>
 				</div>
 			</div>
+
+			<div class='row'>
+				<div class='col-sm-4'>
+				</div>
+				<div class='col-sm-4'>
+					<button class='btn btn-info' type="button">Preview</button>
+					<button class='btn btn-success' type="button">Post a Job</button>
+					<button class='btn btn-danger' type="button">Cancel</button>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div id='error-showing-space'>
+				</div>
+			</div>
+
+
 		</form>
 	</div>
 	
@@ -270,16 +616,18 @@
 			</div>
 		</div>
 	</footer>
-
-
-
+	
 	<!-- Scripts -->
 	<script src="../lib/jquery/dist/jquery.min.js"></script>
 	<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
-
+	<!-- date picker Scripts -->
 	<script src="../lib/moment/moment.js"></script>
 	<script src="../lib/moment/min/moment.min.js"></script>
 	<script src="../lib/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+	<script src="../lib/bootstrap-tagsinput-angular.js"></script>
+	<script src="../lib/bootstrap-tagsinput.min.js"></script>
+
 	<script src="../js/input-file.js"></script>
 	<script src="../js/app.js"></script>
 	<script src="../lib/hoverIntent.js"></script>
@@ -288,7 +636,6 @@
 	<script>
 	$(document).ready(function() {
 		$('#first-tab a:first').tab('show');
-
 		var current = "#first-content-tab";
 		
 		$('#first-tab a').click(function (e) {

@@ -1689,11 +1689,10 @@ output {
   font-size: 14px;
   line-height: 1.42857143;
   color: #555555;
-  background-color: #E9E9E8;
+  background-color: #ffffff;
   background-image: none;
   border: 1px solid #cccccc;
   border-radius: 4px;
-  font-size: 900;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
@@ -3630,7 +3629,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-bottom: -1px;
 }
 .nav-tabs > li > a {
-  margin-right: 2px;
   line-height: 1.42857143;
   border: 1px solid transparent;
   border-radius: 4px 4px 0 0;
@@ -6351,10 +6349,27 @@ a.list-group-item.active:focus .list-group-item-text {
   z-index: 3;
   font-weight: 700;
 }
+
+.cssmenu ul li button {
+  display: block;
+  margin-right: 20px;
+  margin-left: 20px;
+  text-decoration: none;
+  color: #8C8B8B;
+  z-index: 3;
+  font-weight: 700;
+}
+
 .cssmenu ul li a:hover,
 .cssmenu ul li.active a {
   color: #151379;
-  border-bottom: 2px solid #555555;
+  border-bottom: 2px solid #151379;
+}
+
+.cssmenu ul li button:hover,
+.cssmenu ul li.active button {
+  color: #151379;
+  border: 2px solid #55555;
 }
 .cssmenu ul li:hover,
 .cssmenu ul li.active {
@@ -6373,6 +6388,15 @@ a.list-group-item.active:focus .list-group-item-text {
   z-index: 3;
   font-weight: 700;
 }
+.cssmenu ul li button {
+  display: block;
+  text-decoration: none;
+  font-size: 15px;
+  color: #8C8B8B;
+  z-index: 3;
+  font-weight: 700;
+}
+
 
 #top-header{
   font-size: 10px;
@@ -6382,8 +6406,8 @@ a.list-group-item.active:focus .list-group-item-text {
   padding-left: 0px;
   padding-right: 0px;
 }
-#top-header ul > li > a{
-  font-size: 10px;
+#top-header ul  li  a{
+  font-size: 12px;
 }
 
 .strong-grey{
@@ -6516,7 +6540,6 @@ color: #424242;
 }
 #form-component{
   font-size: 15px;
-  font-weight: 700;
   text-decoration: none;
   color: #070707;
   font-style: bold;
@@ -6539,6 +6562,41 @@ color: #424242;
   font-weight: 700;
 }
 #form-text-control{
-  font-size: 15px;
-  font-weight: 700; 
+  font-size: 14px;
+}
+#form-component-arrangement-input{
+  margin-left: 0.5%;
+}
+
+#form-component-arrangement-label{
+  margin-left: 0.8%;
+}
+#optional-text{
+  color:#989898;
+}
+
+.border-address{
+  width:auto;
+  border: 5px solid #eeeeee;
+  border-radius: 14px;
+  padding:5px;
+  box-shadow: 5px 5px 3px #888888;
+}
+#space-30{
+ height:30px; 
+}
+
+#space-10{
+ height:10px; 
+}
+.border-heading{
+  width:auto;
+  border: 5px solid #eeeeee;
+  border-radius: 14px;
+  padding:5px;
+  background-color: #eeeeee;
+}
+
+.font-size-4{
+  font-size:4em;
 }
