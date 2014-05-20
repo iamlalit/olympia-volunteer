@@ -9,36 +9,52 @@
 	<link rel="stylesheet" href="../css/bootstrap-tagsinput.css"/>
 	<link rel="stylesheet" href="../lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"/>
 	<link href="//fonts.googleapis.com/css?family=PT+Sans:400italic,400,700italic,700"/>
+	<link href="../lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+	<!--<script type="text/javascript" src="js/jquery.js"></script> 
+	<script type="text/javascript" src="js/bootstrap.js"></script> -->
+
+
+	<link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="../css/font-awesome.css" rel="stylesheet">
+	<style>
+
+</style>
+
+
 </head>
 <body>
 
 	<header class="container">
 		<div class="row" >
 			<!-- This is for top most header info employer login and register -->
-			<div class='col-sm-12'>
-				<div class='col-sm-6' style='height: 15px'>
-					<div class='row'>
+			<div class='row'>
+				<div class='col-sm-12'>
+					<div class='col-sm-6' style='height: 15px'>
+						<div class='row'>
+						</div>
 					</div>
-				</div>
 
-				<div class='pull-right' style='height: 15px'>
-					<div class='row'>
-						<div class='cssmenu' id='top-header'>
-							<ul >
-							   <li><a href='#' ><span>Employer Login</span></a></li>
-							   <li><span >|</span></li>
-							   <li><a href='#' ><span>Register</span></a></li>
-							   <li>	<img src="../img/netherland-flag.jpg" alt='netherland' /></li>
-							</ul>
+					<div class='pull-right' style='height: 15px'>
+						<div class='row'>
+							<div class='cssmenu' id='top-header'>
+								<ul >
+								   <li><a href='#' ><span>Employer Login</span></a></li>
+								   <li><span >|</span></li>
+								   <li><a href='#' ><span>Register</span></a></li>
+								   <li>	<img src="../img/netherland-flag.jpg" alt='netherland' /></li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<!-- This is for logo and main menu -->
-			<div class='row'>
+			<div class='row' >
 				<div class="col-sm-12">
-					<div class='col-sm-5'>
-						<a href="#" class="logo" style='margin-top: -10px'>
+					<div class='col-sm-1'>
+					</div>
+					<div class='col-sm-4'style='margin-top: -20px'>
+						<a href="#" class="logo" >
 							<img src="../img/logo.png" alt="Olympia"/>
 						</a>
 					</div>
@@ -54,8 +70,9 @@
 										<li><a href='#'><span>Jobs</span></a></li>
 										<li><a href='#'><span>Upload je CV</span></a></li>
 										<li ><a href='#'><span>Contact</span></a></li>
-										<li class='last' style='vertical-align:middle'><button type="button" style='margin-top:-3px;' class="btn btn-default btn-xs">WERKGEVERS</button></li>
+										
 									</ul>
+									<button type="button" style='margin-top:-3px;' class="btn  btn-primary btn-sm">WERKGEVERS</button>
 								</div>
 							</div>
 						</div>
@@ -66,70 +83,35 @@
 	</header>
 
 	<div class="full-width-border" style="margin-top: 15px;">
-		<div class="container" class='strong-grey' id='selected-tab'>
+		<div class="container" id='selected-tab'>
 			<nav>
 				<!-- Nav tabs -->
 				<ul class="nav nav-tabs">
 				  <li class="active" id="first-tab"><a href="#home" data-toggle="tab">Zoek in 15133 vacatures</a></li>
 				  <li id="second-tab"><a href="#" data-toggle="tab">582 Evenmenten</a></li>
-				  <li id="third-tab"><a href="javascriptvoid(0)" data-toggle="tab">777 Buiterland</a></li>
-				  <li id="fourth-tab"><a href="javascriptvoid(0)" data-toggle="tab">555 stage&#39;s</a></li>
+				  <li id="third-tab"><a href="#" data-toggle="tab">777 Buiterland</a></li>
+				  <li id="fourth-tab"><a href="#" data-toggle="tab">555 stage&#39;s</a></li>
 				</ul>
 				<!-- Tab panes -->
 				<div class="tab-content">
 			    	<div class="tab-pane active" id="first-content-tab">
-			  			<div class='container strong-grey container-size'>
-			  				<div class='row'>
-			  					<div class='col-sm-2'>
-			  						<div class='row'>
-			  						</div>
-			  					</div>
-			  					<div class='col-sm-10'>
-			  						<div class='row'>
-			  							<form for="top search">
-				  							<div class='col-sm-4'>
-					  							<div class='search-tab'>
-					  								<span id='search-tab-text' for='job title'>wat</span>
-					  								<input type='text' placeholder='Job title, skills or company' id='search-tab-input'>
-					  								<a href='#' id='search-tab-link' ><span for='navigation'>vitgebrid zoeken >></span></a>
-					  							</div>
-				  							</div>
-				  							<div class='col-sm-4' style='float:left; margin-left:-20px'>
-					  							<div class='search-tab'>
-					  								<span id='search-tab-text' for='city or post code'>waar</span>
-					  								<input type='text' placeholder='City or post code' id='search-tab-input' />
-												        <select class="btn btn-primary dropdown-toggle" id='area-radius' data-toggle="dropdown" >
-												        	<option value="5">5 km</option>
-								                            <option value="10">10 km</option>
-								                            <option value="20">20 km</option>
-								                            <option value="30">30 km</option>
-								                            <option selected="selected" value="50">50 km</option>
-								                            <option value="75">75 km</option>
-								                            <option value="100">100 km</option>
-								                            <option value="150">150 km</option>
-								                            <option value="200">200 km</option>
-								                        </select>
-					  							</div>
-				  							</div>
-				  							<div class='col-sm-1'>
-				  								<div class='search-tab'>
-				  									<button type="submit" class="btn btn-default">
-				  										<span class="glyphicon glyphicon-search"></span> &nbsp;&nbsp;Zoek
-				  									</button>
-				  								</div>
-				  							</div>
-				  						</form>
-			  						</div>
-			  					</div>
-			  				</div>
+			  			<div class='main-container-header'>
+
 			  			</div>
+			  			<div></div>
 			  		</div>
 					<div class="tab-pane" id="second-content-tab">
-						<div class='container strong-yellow container-size'>
+						<div class='container light-yellow container-size'>
 			  			</div>
 					</div>
-					<div class="tab-pane" id="third-tab"></div>
-					<div class="tab-pane" id="fourth-tab"></div>
+					<div class="tab-pane" id="third-content-tab">
+						<div class='container light-orange container-size'>
+			  			</div>
+					</div>
+					<div class="tab-pane" id="fourth-content-tab">
+						<div class='container light-blue container-size'>
+			  			</div>
+					</div>
 				</div>
 			</nav>
 		</div>
@@ -137,6 +119,7 @@
 
 	<div class='main-container-center'>
 		<form action='' id='post-job' method=''>
+			<!--form Heading -->
 			<div class='row' >
 				<div class='col-sm-5'>
 				</div >
@@ -144,20 +127,23 @@
 					<span id='heading-form'>Post a Job</span>
 				</div>
 			</div>
+			<!-- border line -->
 			<div class='row'>
 				<div class='col-sm-1'></div>
 				<div class='col-sm-10' id='border-for-form'></div>
 				<div class='col-sm-1'></div>
 			</div>
-
+			<!--some extra space to show errors -->
 			<div class='row'>
 				<div id='error-showing-space'>
 				</div>
 			</div>
+			<!--form fields started -->
+			<!-- Job types -->
 			<div class='row'>
 				<div class='col-sm-3'>
 				</div >
-				<div class='col-sm-4' for='first content' id='form-component'>
+				<div class='col-sm-4' for='first content'>
 					<label >Job Types</label>
 					<select class='form-control'>
 						<option value='job' select='selected'>Job</option>
@@ -166,7 +152,7 @@
 					</select>
 				</div>
 			</div>
-			
+			<!--Title for a job-->
 			<div class='row'>
 				<div id='extra-space-label'>
 				</div>
@@ -175,11 +161,11 @@
 				<div class='col-sm-3'>
 				</div >
 				<div class='col-sm-6' for='first content'>
-					<label id='form-component'>Give your job a title</label>
+					<label>Give your job a title</label>
 					<input type='text' class='form-control' id='form-control-weight' for='inserting job title' id='form-text-control' placeholder='Title'>
 				</div>
 			</div>
-
+			<!--Description rich Text Editor -->
 			<div class='row'>
 				<div id='extra-space-label'>
 				</div>
@@ -187,24 +173,87 @@
 			<div class='row'>
 				<div class='col-sm-3'>
 				</div >
-				<div class='col-sm-6' for='first content'>
-					<label id='form-component'>Describe the work to be done</label>
-					<input type='text' class='form-control' for='inserting job title' id='form-text-control' placeholder='Describe work...'>
-					<span>5000 characters left</span>
+				<div class='col-sm-7' for='first content'>
+					<label >Describe the work to be done</label>
+					<div class="content">
+
+					<div id="alerts"></div>
+					    <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+					      <div class="btn-group">
+					      <div class="btn-group">
+					        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="Font"><i class="icon-font"></i><b class="caret"></b></a>
+					          <ul class="dropdown-menu">
+					          </ul>
+					        </div>
+					      <div class="btn-group">
+					        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="icon-text-height"></i>&nbsp;<b class="caret"></b></a>
+					          <ul class="dropdown-menu">
+					          <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+					          <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+					          <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+					          </ul>
+					      </div>
+					      <div class="btn-group">
+					        <a class="btn btn-default " data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="icon-bold"></i></a>
+					        <a class="btn btn-default " data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="icon-italic"></i></a>
+					        <!--<a class="btn" data-edit="strikethrough" title="Strikethrough"><i class="icon-strikethrough"></i></a> -->
+					        <a class="btn btn-default " data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="icon-underline"></i></a>
+					      </div>
+					      <div class="btn-group">
+					        <a class="btn btn-default " data-edit="insertunorderedlist" title="Bullet list"><i class="icon-list-ul"></i></a>
+					        <a class="btn btn-default " data-edit="insertorderedlist" title="Number list"><i class="icon-list-ol"></i></a>
+					        <a class="btn btn-default " data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="icon-indent-left"></i></a>
+					        <a class="btn btn-default " data-edit="indent" title="Indent (Tab)"><i class="icon-indent-right"></i></a>
+					      </div>
+					      <div class="btn-group">
+					        <a class="btn btn-default " data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="icon-align-left"></i></a>
+					        <a class="btn btn-default " data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="icon-align-center"></i></a>
+					        <a class="btn btn-default " data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="icon-align-right"></i></a>
+					        <a class="btn btn-default " data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="icon-align-justify"></i></a>
+					      </div>
+					      
+					      <div class="btn-group">
+							  <a class="btn  btn-default dropdown-toggle" data-toggle="dropdown" title="Hyperlink"><i class="icon-link"></i></a>
+							    <div class="dropdown-menu input-append">
+								    <input class="span2" placeholder="URL" type="text" data-edit="createLink"/>
+								    <button class="btn" type="button">Add</button>
+					        </div>
+					        <a class="btn btn-default" data-edit="unlink" title="Remove Hyperlink"><i class="icon-cut"></i></a>
+					      </div>
+							      
+					      <div class="btn-group">
+					        <a class="btn btn-default " title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="icon-picture"></i></a>
+					        <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
+					      </div>
+					      <div class="btn-group">
+					        <a class="btn btn-default " data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="icon-undo"></i></a>
+					        <a class="btn btn-default " data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>
+					      </div>
+					      <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="">
+					    </div>
+					    </div>
+					    <div id="editor"> </div>
+					    
+
+    
 				</div>
 			</div>
-
 			<div class='row'>
 				<div id='extra-space-label'>
 				</div>
 			</div>
-			<div class='row'>
+			<!--date time picker-->
+			<div class='row' >
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row' id='margin-1'>
 				    <div class='col-sm-3'>
 				    </div>
 				    <div class="col-sm-3">
 			            <div class="form-group" >
-			                <label id='form-component'>Start date</label>
-			                <div class='input-group date' id='datetimepicker8' style="width:300px;">
+			                <label>Start date</label>
+			                <div class='input-group date' id='datetimepicker8' style="max-width:300px;">
 			                    <input type='text' class="form-control" />
 			                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
 			                    </span>
@@ -213,8 +262,8 @@
 				    </div>
 					<div class='col-sm-4'>
 			            <div class="form-group">
-			            	 <label id='form-component'>End date</label>
-			                <div class='input-group date' id='datetimepicker9'  style="width:300px;">
+			            	 <label>End date</label>
+			                <div class='input-group date' id='datetimepicker9'  style="max-width:300px;">
 			                    <input type='text' class="form-control" />
 			                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
 			                    </span>
@@ -222,12 +271,12 @@
 			            </div>
 			        </div>
 			</div>
-			<!-- Skills -->
-			<div class='row'>
+			<!-- Skills tag input-->
+			<div class='row' id='margin-10'>
 				<div class='row'>
 					<div class='col-sm-3'>
 					</div >
-					<div class='col-sm-9' id='form-component'>
+					<div class='col-sm-9'>
 						<label id='form-component-arrangement-label'>What Skills are needed?</label>
 					</div>
 				</div>
@@ -239,12 +288,12 @@
 					</div>
 				</div>
 			</div>
-			<!-- Dipolma/Certificates -->
-			<div class='row'>
+			<!-- Dipolma/Certificates tag input-->
+			<div class='row' id='margin-10'>
 				<div class='row'>
 					<div class='col-sm-3'>
 					</div >
-					<div class='col-sm-9' id='form-component'>
+					<div class='col-sm-9' >
 						<label id='form-component-arrangement-label'>What Diploma/Certificates are needed?</label>
 					</div>
 				</div>
@@ -256,12 +305,12 @@
 					</div>
 				</div>
 			</div>
-			<!--Time Comittment -->
-			<div class='row'>
+			<!--Time Comittment tag input-->
+			<div class='row' id='margin-10'>
 				<div class='row'>
 					<div class='col-sm-3'>
 					</div >
-					<div class='col-sm-9' id='form-component'>
+					<div class='col-sm-9' >
 						<label id='form-component-arrangement-label'>Time Comittment</label>
 					</div>
 				</div>
@@ -273,12 +322,12 @@
 					</div>
 				</div>
 			</div>
-
-			<div class='row'>
+			<!--estimated duration tag input-->
+			<div class='row' id='margin-10'>
 				<div class='row'>
 					<div class='col-sm-3'>
 					</div >
-					<div class='col-sm-9' id='form-component'>
+					<div class='col-sm-9'>
 						<label id='form-component-arrangement-label'>Estimated Duration</label>
 					</div>
 				</div>
@@ -290,16 +339,16 @@
 					</div>
 				</div>
 			</div>
-
-			<div class='row'>
+			<!-- Time preference tag input-->
+			<div class='row' id='margin-10'>
 				<div class='row'>
 					<div class='col-sm-3'>
 					</div >
-					<div class='col-sm-9' id='form-component'>
+					<div class='col-sm-9'>
 						<label id='form-component-arrangement-label'>Work Time Preference</label>
 					</div>
 				</div>
-				<div class='row'>
+				<div class='row' >
 					<div class='col-sm-3'>
 					</div >
 					<div class='col-sm-6' id='form-component-arrangement-input'>
@@ -307,12 +356,12 @@
 					</div>
 				</div>
 			</div>
-
-			<div class='row'>
+			<!--schedule tag input -->
+			<div class='row' id='margin-10'>
 				<div class='row'>
 					<div class='col-sm-3'>
 					</div >
-					<div class='col-sm-9' id='form-component'>
+					<div class='col-sm-9'>
 						<label id='form-component-arrangement-label'>Schedule</label>
 					</div>
 				</div>
@@ -324,12 +373,12 @@
 					</div>
 				</div>
 			</div>
-
-			<div class='row'>
+			<!-- volunteer tag input -->
+			<div class='row' id='margin-10'>
 				<div class='row'>
 					<div class='col-sm-3'>
 					</div >
-					<div class='col-sm-9' id='form-component'>
+					<div class='col-sm-9'>
 						<label id='form-component-arrangement-label'>International volunteer option</label>
 					</div>
 				</div>
@@ -341,12 +390,12 @@
 					</div>
 				</div>
 			</div>
-
-			<div class='row'>
+			<!-- language tag input-->
+			<div class='row' id='margin-10'>
 				<div class='row'>
 					<div class='col-sm-3'>
 					</div >
-					<div class='col-sm-9' id='form-component'>
+					<div class='col-sm-9'>
 						<label id='form-component-arrangement-label'>Language</label>
 					</div>
 				</div>
@@ -358,12 +407,12 @@
 					</div>
 				</div>
 			</div>
-
-			<div class='row'>
+			<!-- miscelaneous tag input-->
+			<div class='row' id='margin-10'>
 				<div class='row'>
 					<div class='col-sm-3'>
 					</div >
-					<div class='col-sm-9' id='form-component'>
+					<div class='col-sm-9'>
 						<label id='form-component-arrangement-label'>Miscelaneous</label>
 					</div>
 				</div>
@@ -375,11 +424,11 @@
 					</div>
 				</div>
 			</div>
-
-			<div class='row'>
+			<!--marketplace dropdown -->
+			<div class='row' >
 				<div class='col-sm-3'>
 				</div >
-				<div class='col-sm-4' for='first content' id='form-component'>
+				<div class='col-sm-4' for='first content' id='margin-20'>
 					<label >Marketplace Visibility</label>
 					<select class='form-control'>
 						<option value='Lorem' select='selected'>Lorem</option>
@@ -393,10 +442,10 @@
 				<div id='extra-space-label'>
 				</div>
 			</div>
-			<div class='row'>
+			<div class='row' >
 				<div class='col-sm-3'>
 				</div >
-				<div class='col-sm-4' for='first content' id='form-component'>
+				<div class='col-sm-4' for='first content' id='margin-20'>
 					<label >Attach a document </label><span id='optional-text'> (optional)</span>
 					<input type="file" name="CV" accept="text/*" />
 				</div>
@@ -409,16 +458,16 @@
 			<div class='row'>
 				<div class='col-sm-3'>
 				</div >
-				<div class='col-sm-4' for='first content' id='form-component'>
+				<div class='col-sm-4' for='first content'  id='margin-20'>
 					<span id='optional-text'> Less than 5mb</span>
 				</div>
 			</div>
 			<!--address of volunteer-->
-			<div class='row'>
+			<div class='row'  id='margin-1'>
 				<div id='extra-space-label'>
 				</div>
 			</div>
-			<div class='row'>
+			<div class='row' id='margin-1'>
 				<div class='col-sm-3'>
 				</div >
 				<div class='col-sm-6' for='first content' id='form-component'>
@@ -464,12 +513,12 @@
 				</div>
 			</div>
 
-			<div class='row'>
+			<div class='row'  >
 				<div id='space-30'>
 				</div>
 			</div>
 
-			<div class='row'>
+			<div class='row'  id='margin-20'>
 				<div class='row'>
 					<div class='col-sm-3'>
 					</div >
@@ -494,14 +543,14 @@
 				<div id='extra-space-label'>
 				</div>
 			</div>
-			<div class='row'>
+			<div class='row'  id='margin-10'>
 			    <div class='col-sm-3'>
 			    </div>
 			    <div>
 			    <div class='col-sm-1  font-size-4 '>
 					<span class="glyphicon glyphicon-edit"></span>			    	
 			    </div>
-			    <div class='col-sm-5' id='form-component'>
+			    <div class='col-sm-5' >
 			    	<span>Ask applicants to write a cover letter introducing themselves.</span>
 			    	<div class="checkbox">
 				      <input type="checkbox" id='checkbox-cover'> <label style='font-weight:700'>Yes, require a cover letter</label>
@@ -510,28 +559,17 @@
 			    <div class='col-sm-3'></div>
 			</div>
 			
-
-			<div class='row'>
+			<div class='row'  id='margin-1'>
 				<div id='extra-space-label'>
 				</div>
 			</div>
-
-			<div class='row'>
-				<div id='extra-space-label'>
-				</div>
-			</div>
-
-			<div class='row'>
-				<div id='extra-space-label'>
-				</div>
-			</div>
-			<div class='row'>
+			<div class='row'  >
 			    <div class='col-sm-3'>
 			    </div>
 			    <div>
 			    <div class='col-sm-1'>
 			    </div>
-			    <div class='col-sm-5' id='form-component' style='margin-left:3px'>
+			    <div class='col-sm-5' id='margin-15'>
 			    	<span>Ask applicants to complete the profile before applying to the job.</span>
 			    	<div class="checkbox">
 				      <input type="checkbox" id='checkbox-profile'> <label style='font-weight:700;'>Yes, complete their profile</label>
@@ -539,6 +577,10 @@
 			    </div>
 			</div>
 			
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
 			<!--horizontal line-->
 			<div class='row'>
 				<div class='col-sm-4'>
@@ -552,18 +594,19 @@
 				</div>
 			
 			<!-- Screening question-->
-			<div class='row' style=''>
+			<div class='row' id='margin-10'>
 			    <div class='col-sm-3'>
 			    </div>
 			    <div>
-			    <div class='col-sm-1  font-size-4' style='margin-left:1.5%;'>
+			    <div class='col-sm-1  font-size-4' id='margin-20'>
 					<span class="glyphicon glyphicon-list-alt"></span>			    	
 			    </div>
-			    <div class='col-sm-6' id='form-component'>
-			    	<label style='font-size:18px'>Screening Questions</label>
-			    	<label>Add a few question that youd like to ask your candidates to answer when applying to your job</label>
-					<div class='row'>
-						<div class='col-sm-10' id='form-component'>
+			    <div class='col-sm-6'>
+			    	<label style='font-size:18px'>Screening Questions</label><div class='row'></div>
+			    	<span>Add a few question that youd like to ask your candidates to answer when applying to your job</span>
+			    	<div id='space-30'></div>
+					<div class='row '>
+						<div class='col-sm-10'>
 							<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add Questions" style='font-size:20px;'/>
 						</div>
 						<div class='col-sm-2'></div>
@@ -582,12 +625,12 @@
 			</div>
 
 			<div class='row'>
-				<div class='col-sm-4'>
+				<div class='col-sm-7'>
 				</div>
 				<div class='col-sm-4'>
-					<button class='btn btn-info' type="button">Preview</button>
-					<button class='btn btn-success' type="button">Post a Job</button>
-					<button class='btn btn-danger' type="button">Cancel</button>
+					<button class='btn btn-primary' type="button" style='padding:5px 15px 5px 15px; font-size:15px;'>Preview</button>
+					<button class='btn btn-success' type="button" style='padding:5px 15px 5px 15px; font-size:15px;'>Post a Job</button>
+					<button class='btn btn-danger' type="button" style='padding:5px 15px 5px 15px; font-size:15px;'>Cancel</button>
 				</div>
 			</div>
 
@@ -624,9 +667,13 @@
 	<script src="../lib/moment/moment.js"></script>
 	<script src="../lib/moment/min/moment.min.js"></script>
 	<script src="../lib/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-
+	<!--tag inputs -->
 	<script src="../lib/bootstrap-tagsinput-angular.js"></script>
 	<script src="../lib/bootstrap-tagsinput.min.js"></script>
+
+	<script src="../external/jquery.hotkeys.js"></script>
+	<script src="../external/google-code-prettify/prettify.js"></script>
+	<script src="../js/bootstrap-wysiwyg.js"></script>
 
 	<script src="../js/input-file.js"></script>
 	<script src="../js/app.js"></script>
@@ -687,6 +734,48 @@
             });
     
     	});
+
+     $(document).ready(function() {
+        $(function(){
+    function initToolbarBootstrapBindings() {
+      var fonts = ['Serif', 'Sans', 'Arial', 'Arial Black', 'Courier', 
+            'Courier New', 'Comic Sans MS', 'Helvetica', 'Impact', 'Lucida Grande', 'Lucida Sans', 'Tahoma', 'Times',
+            'Times New Roman', 'Verdana'],
+            fontTarget = $('[title=Font]').siblings('.dropdown-menu');
+      $.each(fonts, function (idx, fontName) {
+          fontTarget.append($('<li><a data-edit="fontName ' + fontName +'" style="font-family:\''+ fontName +'\'">'+fontName + '</a></li>'));
+      });
+      $('a[title]').tooltip({container:'body'});
+    	$('.dropdown-menu input').click(function() {return false;})
+		    .change(function () {$(this).parent('.dropdown-menu').siblings('.dropdown-toggle').dropdown('toggle');})
+        .keydown('esc', function () {this.value='';$(this).change();});
+
+      $('[data-role=magic-overlay]').each(function () { 
+        var overlay = $(this), target = $(overlay.data('target')); 
+        overlay.css('opacity', 0).css('position', 'absolute').offset(target.offset()).width(target.outerWidth()).height(target.outerHeight());
+      });
+      if ("onwebkitspeechchange"  in document.createElement("input")) {
+        var editorOffset = $('#editor').offset();
+        $('#voiceBtn').css('position','absolute').offset({top: editorOffset.top, left: editorOffset.left+$('#editor').innerWidth()-35});
+      } else {
+        $('#voiceBtn').hide();
+      }
+	};
+	function showErrorAlert (reason, detail) {
+		var msg='';
+		if (reason==='unsupported-file-type') { msg = "Unsupported format " +detail; }
+		else {
+			console.log("error uploading file", reason, detail);
+		}
+		$('<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>'+ 
+		 '<strong>File upload error</strong> '+msg+' </div>').prependTo('#alerts');
+	};
+    initToolbarBootstrapBindings();  
+	$('#editor').wysiwyg({ fileUploadError: showErrorAlert} );
+    window.prettyPrint && prettyPrint();
+  });
+});
+
 </script>
 
 </body>
