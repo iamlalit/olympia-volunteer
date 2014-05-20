@@ -61,7 +61,7 @@
 				
 				<!-- This is for main menu navigation -->
 					<div class='col-sm-7'>
-						<div class="pull-center" style="background: transparent; margin-top:55px;">
+						<div class="pull-center" style="background: transparent; margin-top:65px;">
 							<div class="row">
 								<div class='cssmenu'>
 									<ul>
@@ -72,7 +72,7 @@
 										<li ><a href='#'><span>Contact</span></a></li>
 										
 									</ul>
-									<button type="button" style='margin-top:-3px;' class="btn  btn-primary btn-sm">WERKGEVERS</button>
+									<button type="button" style='margin-top:-3px;' class="btn  btn-warning btn-sm">WERKGEVERS</button>
 								</div>
 							</div>
 						</div>
@@ -82,41 +82,79 @@
 		</div>
 	</header>
 
-	<div class="full-width-border" style="margin-top: 15px;">
+	<div>
 		<div class="container" id='selected-tab'>
 			<nav>
 				<!-- Nav tabs -->
 				<ul class="nav nav-tabs">
 				  <li class="active" id="first-tab"><a href="#home" data-toggle="tab">Zoek in 15133 vacatures</a></li>
-				  <li id="second-tab"><a href="#" data-toggle="tab">582 Evenmenten</a></li>
-				  <li id="third-tab"><a href="#" data-toggle="tab">777 Buiterland</a></li>
-				  <li id="fourth-tab"><a href="#" data-toggle="tab">555 stage&#39;s</a></li>
+				  <li id="second-tab" disable><a href="javascript:void(0)" data-toggle="tab">582 Evenmenten</a></li>
+				  <li id="third-tab" disable><a href="javascript:void(0)" data-toggle="tab">777 Buiterland</a></li>
+				  <li id="fourth-tab" disable><a href="javascript:void(0)" data-toggle="tab">555 stage&#39;s</a></li>
 				</ul>
 				<!-- Tab panes -->
-				<div class="tab-content">
-			    	<div class="tab-pane active" id="first-content-tab">
-			  			<div class='main-container-header'>
-
-			  			</div>
-			  			<div></div>
-			  		</div>
-					<div class="tab-pane" id="second-content-tab">
-						<div class='container light-yellow container-size'>
-			  			</div>
-					</div>
-					<div class="tab-pane" id="third-content-tab">
-						<div class='container light-orange container-size'>
-			  			</div>
-					</div>
-					<div class="tab-pane" id="fourth-content-tab">
-						<div class='container light-blue container-size'>
-			  			</div>
+				<div class='full-width-border'>
+					<div class="tab-content ">
+				    	<div class="tab-pane active" id="first-content-tab">
+				  				<fieldset>
+				  				<div class='row' >
+				  					<div class='col-sm-1'>
+				  					</div>
+				  					<div class='col-sm-10'>
+				  						<div class='row'>
+				  							<form for="top search" class="form-horizontal row" style='margin-top:50px;'>
+				  									<div class="col-lg-1">
+				  									</div>
+					  							    <div class="col-lg-4">
+												        <div class="form-group">
+												            <label for="exampleInput1" class="col-sm-2 control-label">wat</label>
+												            <div class="col-sm-10">
+												                <input type="text" class="form-control" id="exampleInput1" placeholder="Job title, skills or company">
+												            </div>
+												        </div>
+												    </div>
+						  							<div class="col-lg-4">
+												        <div class="form-group">
+												            <label for="exampleInput1" class="col-sm-1 control-label">wat</label>
+												            <div class="col-sm-11">
+												                <input type="text" class="form-control" id="exampleInput1" placeholder="City or post code" style="z-index: 10;">
+												                <select class="btn btn-warning dropdown-toggle pull-right"  data-toggle="dropdown" style="margin-top:-33px;">
+														        	<option value="5">5 km</option>
+										                            <option value="10">10 km</option>
+										                            <option value="20">20 km</option>
+										                            <option value="30">30 km</option>
+										                            <option selected="selected" value="50">50 km</option>
+										                            <option value="75">75 km</option>
+										                            <option value="100">100 km</option>
+										                            <option value="150">150 km</option>
+										                            <option value="200">200 km</option>
+									             	            </select>
+												            </div>
+												        </div>
+												    </div>
+						  							<div class='col-lg-2'>
+						  								<div class='search-tab'>
+						  									<button type="submit" class="btn btn-warning" style='margin-top:-45px'>
+						  										<span class="glyphicon glyphicon-search"></span> &nbsp;&nbsp;Zoek
+						  									</button>
+						  								</div>
+						  							</div>
+					  						</form>
+				  						</div>
+				  					</div>
+				  					<div class='col-sm-1'>
+				  					</div>
+				  				</div>
+				  			</fieldset>
+				  		</div>
+						<div class="tab-pane" id="second-content-tab"></div>
+						<div class="tab-pane" id="third-content-tab"></div>
+						<div class="tab-pane" id="fourth-content-tab"></div>
 					</div>
 				</div>
 			</nav>
 		</div>
 	</div><!-- // navigation -->
-
 	<div class='main-container-center'>
 		<form action='' id='post-job' method=''>
 			<!--form Heading -->
