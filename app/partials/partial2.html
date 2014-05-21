@@ -90,19 +90,19 @@
 
 
 	<div>
-		<div class="container" id='selected-tab'>
+		<div class="container" id='tabs'>
 			<nav>
 				<!-- Nav tabs -->
-				<ul class="nav nav-tabs">
-				  <li class="active" id="first-tab"><a href="#home" data-toggle="tab">Search Volunteer</a></li>
-				  <li id="second-tab" ><a href="javascript:void(0)" data-toggle="tab">Post a Job</a></li>
-				  <li id="third-tab" ><a href="javascript:void(0)" data-toggle="tab">View Job Postings</a></li>
-				  <li id="fourth-tab" ><a href="javascript:void(0)" data-toggle="tab">Messages</a></li>
+				<ul class="nav nav-tabs" id="tabsnav">
+				  <li class="active" ><a href="#tab-1" data-toggle="tab">Search Volunteer</a></li>
+				  <li><a href="#tab-2" data-toggle="tab">Post a Job</a></li>
+				  <li><a href="#tab-3" data-toggle="tab">View Job Postings</a></li>
+				  <li><a href="#tab-4" data-toggle="tab">Messages</a></li>
 				</ul>
 				<!-- Tab panes -->
 				<div class='full-width-border'>
 					<div class="tab-content ">
-				    	<div class="tab-pane active" id="first-content-tab">
+				    	<div class="tab-pane active" id="tab-1">
 				  			<fieldset>
 				  				<div class='row' >
 				  					<div class='col-sm-1'>
@@ -154,14 +154,63 @@
 				  				</div>
 				  			</fieldset>
 				  		</div>
-						<div class="tab-pane" id="second-content-tab">
-							<div class='light-grey'>akjsjdbk</div>
+						<div class="tab-pane" id="tab-2">
+							<fieldset>
+				  				<div class='row' >
+				  					<div class='col-sm-1'>
+				  					</div>
+				  					<div class='col-sm-10'>
+				  						<div class='row'>
+				  							<form for="top search" class="form-horizontal row" style='margin-top:10px;'>
+				  									<div class="col-lg-1">
+				  									</div>
+					  							    <div class="col-lg-4">
+												        <div class="form-group">
+												            <label for="exampleInput1" class="col-sm-2 control-label">wat</label>
+												            <div class="col-sm-10">
+												                <input type="text" class="form-control" id="exampleInput1" placeholder="Job title, skills or company">
+												            </div>
+												        </div>
+												    </div>
+						  							<div class="col-lg-4">
+												        <div class="form-group">
+												            <label for="exampleInput1" class="col-sm-1 control-label">waar</label>
+												            <div class="col-sm-11">
+												                <input type="text" class="form-control" id="exampleInput1" placeholder="City or post code" style="z-index: 10;">
+												                <select class="btn btn-warning dropdown-toggle pull-right"  data-toggle="dropdown" style="margin-top:-33px;">
+														        	<option value="5">5 km</option>
+										                            <option value="10">10 km</option>
+										                            <option value="20">20 km</option>
+										                            <option value="30">30 km</option>
+										                            <option selected="selected" value="50">50 km</option>
+										                            <option value="75">75 km</option>
+										                            <option value="100">100 km</option>
+										                            <option value="150">150 km</option>
+										                            <option value="200">200 km</option>
+									             	            </select>
+												            </div>
+												        </div>
+												    </div>
+						  							<div class='col-lg-1' style=' height:47px;'>
+						  								<div class='search-tab'>
+						  									<button type="submit" class="btn btn-warning" style='margin-top:-45px;'>
+						  										<span class="glyphicon glyphicon-search"></span> &nbsp;&nbsp;Zoek
+						  									</button>
+						  								</div>
+						  							</div>
+					  						</form>
+				  						</div>
+				  					</div>
+				  					<div class='col-sm-1'>
+				  					</div>
+				  				</div>
+				  			</fieldset>
 						</div>
-						<div class="tab-pane" id="third-content-tab">
-							<div class='light-yellow'>auidad</div>
+						<div class="tab-pane" id="tab-3">
+							<div class='light-yellow'><label>No Data</label></div>
 						</div>
-						<div class="tab-pane" id="fourth-content-tab">
-							<div class='light-orange'>asdhla</div>
+						<div class="tab-pane" id="tab-4">
+							<div class='light-orange'><label>No Data</label></div>
 						</div>
 					</div>
 				</div>

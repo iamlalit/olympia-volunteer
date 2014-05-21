@@ -1,43 +1,53 @@
 /*
 tab changing
 */
-$(document).ready(function() {
-		$('#second-tab a:first').tab('show');
-		var current = "#second-content-tab";
+// $(document).ready(function() {
+// 		$('#second-tab a:first').tab('show');
+// 		var current = "#second-content-tab";
 		
-		$('#first-tab a').click(function (e) {
-			  e.preventDefault();
-			  $('#first-content-tab').tab('show');
-			  $('#first-content-tab').addClass('active');
-			  $(current).removeClass('active');
-			  current = "#first-content-tab";
-			  console.log(current);
-		});
-		$('#second-tab a').click(function (e) {
-			e.preventDefault();
-			$('#second-content-tab').tab('show');
-			$(current).removeClass('active');
-			$('#second-content-tab').addClass('active');
-			current = "#second-content-tab";
-			console.log(current);
-		});
-		$('#third-tab a').click(function (e) {
-			e.preventDefault();
-			$('#third-content-tab').tab('show');
-			$(current).removeClass('active');
-			$('#third-content-tab').addClass('active');
-			current = "#third-content-tab";
-			console.log(current);
-		});
-		$('#fourth-tab a').click(function (e) {
-			e.preventDefault();
-			$('#fourth-content-tab').tab('show');
-			$(current).removeClass('active');
-			$('#fourth-content-tab').addClass('active');
-			current = "#fourth-content-tab";
-			console.log(current);
-		});
-	});
+// 		$('#first-content-tab a').click(function (e) {
+// 		  e.preventDefault()
+// 		  $(this).tab('show');
+// 		});
+// 		$('#second-content-tab a').click(function (e) {
+// 			e.preventDefault();
+// 			$(this).tab('show');
+// 			console.log(2);
+// 		});
+// 		$('#third-content-tab a').click(function (e) {
+// 			e.preventDefault();
+// 			$(this).tab('show');
+// 			console.log(3);
+// 		});
+// 		$('#fourth-content-tab a').click(function (e) {
+// 			e.preventDefault();
+// 			$(this).tab('show');
+// 			console.log(4);
+// 		});
+// 	});
+
+
+ $(document).ready(function() {
+  $('#tabs > div').hide(); // hide all child divs
+  $('#tabs div:first').show(); // show first child dive
+  $('#tabsnav li:first').addClass('active');
+
+  $('.menu-internal').click(function(){
+   $('#tabsnav li').removeClass('active');
+   var currentTab = $(this).attr('href');
+   $('#tabsnav li a[href="'+currentTab+'"]').parent().addClass('active');
+   $('#tabs > div').hide();
+   $(currentTab).show();
+   return false;
+  });
+  // Create a bookmarkable tab link
+  hash = window.location.hash;
+  elements = $('a[href="'+hash+'"]'); // look for tabs that match the hash
+  if (elements.length === 0) { // if there aren't any, then
+   $("ul.tabs li:first").addClass("active").show(); // show the first tab
+  } else { elements.click(); } // else, open the tab in the hash
+ });
+
 
 /*
 date time picker
