@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>OLYMPIA</title>
+	<link href="../img/olympia-fav.ico" rel="shortcut icon" type="image/x-icon" />
+	<link rel="stylesheet" href="../css/app.css"/>
+	<link rel="stylesheet" href="../css/olympia-icons.css"/>
+	<link rel="stylesheet" href="../css/bootstrap-tagsinput.css"/>
+	<link rel="stylesheet" href="../lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"/>
+	<link href="//fonts.googleapis.com/css?family=PT+Sans:400italic,400,700italic,700"/>
+	<link href="../lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+	<!--<script type="text/javascript" src="js/jquery.js"></script> 
+	<script type="text/javascript" src="js/bootstrap.js"></script> -->
+
+
+	<link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="../css/font-awesome.css" rel="stylesheet">
+	
+</head>
+<body>
+
+	<header >
+		<nav class="navbar navbar-default navbar-static-top" role="navigation">
+		  <div class="container-fluid" style="margin-left: 105px; margin-right: 105px ">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#" ><img src="../img/logo.png" alt="Olympia"/></a>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		    	<ul class="nav navbar-nav" style="margin-right:0px;">
+					<li class='active'><a href='#'><span>Home</span></a></li>
+					<li><a href='#'><span>Post a Job</span></a></li>
+					<li><a href='#'><span>View Job Postings</span></a></li>
+					<li ><a href='#'><span>Messages</span></a></li>
+				</ul>
+
+
+		      <ul class="nav navbar-nav navbar-right" style="margin-right:0px;">
+		        <li><a href="#"><span class="glyphicon glyphicon-envelope"></a></li>
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Language <b class="caret"></b></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="#">English</a></li>
+		            <li><a href="#">Deutch</a></li>
+		            <li><a href="#">Arabic</a></li>
+		          </ul>
+		        </li>
+		        
+		        <li></li>
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> Red Cross NL <b class="caret"></b></a>
+		          <ul class="dropdown-menu">
+		            <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class='glyphicon glyphicon-user'></i> Red Cross Asmin</a></li>
+		            <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class='glyphicon glyphicon-globe'></i> Onpath Volunteer</a></li>
+		            <li role="presentation" class="divider"></li>
+		            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Logout</a></li>
+			      </ul>
+		        </li>
+
+		        <li class='dropdown'>
+		        	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class='glyphicon glyphicon-cog'></i><b class="caret"></b></a>
+		        	<ul class="dropdown-menu">
+			            <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class='glyphicon glyphicon-user'></i> My Account</a></li>
+			            <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class='glyphicon glyphicon-cog'></i> Change Password</a></li>
+			            <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class='glyphicon glyphicon-cog'></i> Notification Settings</a></li>
+		          	</ul>
+		        </li>
+
+		      </ul>
+
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+	</header>
+
+	<fieldset>
+		<div class='row' >
+			<div class='col-sm-1'>
+			</div>
+			<div class='col-sm-11' style='padding-top:10px;padding-bottom:10px;'>
+				<form class="form-inline" role="form">
+					<div class='col-sm-2'>
+						<select class='form-control'>
+							<option value='Volunteers' select='selected'>Volunteers</option>
+							<option value='Organizations'>Organizations</option>
+							<option value='Volunteer Organizations'>Volunteer Organizations</option>
+							<option value='job' >Job</option>
+						</select>
+					</div>
+				    <div class="col-sm-3">
+					    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Keywords (eg name, interests or skills)" style="max-width:280px;">
+					 </div>
+					 <div class="col-sm-3">
+				    	<input type="password" class="form-control" id="exampleInputPassword2" placeholder="City or Post code" style="max-width:280px;">
+				  	 </div>
+				  <div class='col-sm-1'>
+				  	<select class="form-control" style="width:100px;">
+			        	<option value="5 km">5 km</option>
+                        <option value="10">10 km</option>
+                        <option value="20">20 km</option>
+                        <option value="30">30 km</option>
+                        <option selected="selected" value="50">50 km</option>
+                        <option value="75">75 km</option>
+                        <option value="100">100 km</option>
+                        <option value="150">150 km</option>
+                        <option value="200 km">200 km</option>
+     	            </select>
+     	        </div>
+     	        <div class='col-sm-1'>
+				  <button type="submit" class="btn btn-default btn-warning" style='margin-left:20px;'>Search</button>
+				</div>
+
+     	        <div class='col-sm-1' >
+				  <label style="margin-top:8px"><a href="#" >Advanced</a>
+				  </label>
+				</div>
+				</form>
+			</div>
+		</div>
+			
+	</fieldset>
+
+	<div class='main-container-center'>
+		<form action='' id='post-job' method=''>
+			<!--form Heading -->
+			<div class='row' >
+				<div class='col-sm-5'>
+				</div >
+				<div class='col-sm-7'>
+					<span id='heading-form'>Post a Job</span>
+				</div>
+			</div>
+			<!-- border line -->
+			<div class='row'>
+				<div class='col-sm-1'></div>
+				<div class='col-sm-10' id='border-for-form'></div>
+				<div class='col-sm-1'></div>
+			</div>
+			<!--some extra space to show errors -->
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<!--form fields started -->
+			<!-- Job types -->
+			<div class='row'>
+				<div class='col-sm-3'>
+				</div >
+				<div class='col-sm-4' for='first content'>
+					<label >Job Types</label>
+					<select class='form-control'>
+						<option value='job' select='selected'>Job</option>
+						<option value='Internship'>Internship</option>
+						<option value='Event'>Event</option>
+					</select>
+				</div>
+			</div>
+			<!--Title for a job-->
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-sm-3'>
+				</div >
+				<div class='col-sm-6' for='first content'>
+					<label>Give your job a title</label>
+					<input type='text' class='form-control' id='form-control-weight' for='inserting job title' id='form-text-control' placeholder='Title'>
+				</div>
+			</div>
+			<!--Description rich Text Editor -->
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-sm-3'>
+				</div >
+				<div class='col-sm-7' for='first content'>
+					<label >Describe the work to be done</label>
+					<div class="content">
+
+					<div id="alerts"></div>
+					    <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+					      <div class="btn-group">
+					      <div class="btn-group">
+					        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="Font"><i class="icon-font"></i><b class="caret"></b></a>
+					          <ul class="dropdown-menu">
+					          </ul>
+					        </div>
+					      <div class="btn-group">
+					        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="icon-text-height"></i>&nbsp;<b class="caret"></b></a>
+					          <ul class="dropdown-menu">
+					          <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+					          <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+					          <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+					          </ul>
+					      </div>
+					      <div class="btn-group">
+					        <a class="btn btn-default " data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="icon-bold"></i></a>
+					        <a class="btn btn-default " data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="icon-italic"></i></a>
+					        <!--<a class="btn" data-edit="strikethrough" title="Strikethrough"><i class="icon-strikethrough"></i></a> -->
+					        <a class="btn btn-default " data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="icon-underline"></i></a>
+					      </div>
+					      <div class="btn-group">
+					        <a class="btn btn-default " data-edit="insertunorderedlist" title="Bullet list"><i class="icon-list-ul"></i></a>
+					        <a class="btn btn-default " data-edit="insertorderedlist" title="Number list"><i class="icon-list-ol"></i></a>
+					        <a class="btn btn-default " data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="icon-indent-left"></i></a>
+					        <a class="btn btn-default " data-edit="indent" title="Indent (Tab)"><i class="icon-indent-right"></i></a>
+					      </div>
+					      <div class="btn-group">
+					        <a class="btn btn-default " data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="icon-align-left"></i></a>
+					        <a class="btn btn-default " data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="icon-align-center"></i></a>
+					        <a class="btn btn-default " data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="icon-align-right"></i></a>
+					        <a class="btn btn-default " data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="icon-align-justify"></i></a>
+					      </div>
+					      
+					      <div class="btn-group">
+							  <a class="btn  btn-default dropdown-toggle" data-toggle="dropdown" title="Hyperlink"><i class="icon-link"></i></a>
+							    <div class="dropdown-menu input-append">
+								    <input class="span2" placeholder="URL" type="text" data-edit="createLink"/>
+								    <button class="btn" type="button">Add</button>
+					        </div>
+					        <a class="btn btn-default" data-edit="unlink" title="Remove Hyperlink"><i class="icon-cut"></i></a>
+					      </div>
+							      
+					      <div class="btn-group">
+					        <a class="btn btn-default " title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="icon-picture"></i></a>
+					        <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
+					      </div>
+					      <div class="btn-group">
+					        <a class="btn btn-default " data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="icon-undo"></i></a>
+					        <a class="btn btn-default " data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>
+					      </div>
+					      <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="">
+					    </div>
+					    </div>
+					    <div id="editor"> </div>
+					    
+
+    
+				</div>
+			</div>
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<!--date time picker-->
+			<div class='row' >
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row' id='margin-1'>
+				    <div class='col-sm-3'>
+				    </div>
+				    <div class="col-sm-3">
+			            <div class="form-group" >
+			                <label>Start date</label>
+			                <div class='input-group date' id='datetimepicker8' style="max-width:300px;">
+			                    <input type='text' class="form-control" />
+			                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+			                    </span>
+			                </div>
+			            </div>
+				    </div>
+					<div class='col-sm-4'>
+			            <div class="form-group">
+			            	 <label>End date</label>
+			                <div class='input-group date' id='datetimepicker9'  style="max-width:300px;">
+			                    <input type='text' class="form-control" />
+			                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+			                    </span>
+			                </div>
+			            </div>
+			        </div>
+			</div>
+			<!-- Skills tag input-->
+			<div class='row' id='margin-10'>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-9'>
+						<label id='form-component-arrangement-label'>What Skills are needed?</label>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-6' id='form-component-arrangement-input'>
+						<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+					</div>
+				</div>
+			</div>
+			<!-- Dipolma/Certificates tag input-->
+			<div class='row' id='margin-10'>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-9' >
+						<label id='form-component-arrangement-label'>What Diploma/Certificates are needed?</label>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-6' id='form-component-arrangement-input'>
+						<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+					</div>
+				</div>
+			</div>
+			<!--Time Comittment tag input-->
+			<div class='row' id='margin-10'>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-9' >
+						<label id='form-component-arrangement-label'>Time Comittment</label>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-6' id='form-component-arrangement-input'>
+						<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+					</div>
+				</div>
+			</div>
+			<!--estimated duration tag input-->
+			<div class='row' id='margin-10'>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-9'>
+						<label id='form-component-arrangement-label'>Estimated Duration</label>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-6' id='form-component-arrangement-input'>
+						<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+					</div>
+				</div>
+			</div>
+			<!-- Time preference tag input-->
+			<div class='row' id='margin-10'>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-9'>
+						<label id='form-component-arrangement-label'>Work Time Preference</label>
+					</div>
+				</div>
+				<div class='row' >
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-6' id='form-component-arrangement-input'>
+						<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+					</div>
+				</div>
+			</div>
+			<!--schedule tag input -->
+			<div class='row' id='margin-10'>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-9'>
+						<label id='form-component-arrangement-label'>Schedule</label>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-6' id='form-component-arrangement-input'>
+						<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+					</div>
+				</div>
+			</div>
+			<!-- volunteer tag input -->
+			<div class='row' id='margin-10'>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-9'>
+						<label id='form-component-arrangement-label'>International volunteer option</label>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-6' id='form-component-arrangement-input'>
+						<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+					</div>
+				</div>
+			</div>
+			<!-- language tag input-->
+			<div class='row' id='margin-10'>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-9'>
+						<label id='form-component-arrangement-label'>Language</label>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-6' id='form-component-arrangement-input'>
+						<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+					</div>
+				</div>
+			</div>
+			<!-- miscelaneous tag input-->
+			<div class='row' id='margin-10'>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-9'>
+						<label id='form-component-arrangement-label'>Miscelaneous</label>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-6' id='form-component-arrangement-input'>
+						<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+					</div>
+				</div>
+			</div>
+			<!--marketplace dropdown -->
+			<div class='row' >
+				<div class='col-sm-3'>
+				</div >
+				<div class='col-sm-4' for='first content' id='margin-20'>
+					<label >Marketplace Visibility</label>
+					<select class='form-control'>
+						<option value='Lorem' select='selected'>Lorem</option>
+						<option value='Ipsum'>Ipsum</option>
+						<option value='Consectetur'>Consectetur</option>
+					</select>
+				</div>
+			</div>
+			<!-- attach a document -->
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row' >
+				<div class='col-sm-3'>
+				</div >
+				<div class='col-sm-4' for='first content' id='margin-20'>
+					<label >Attach a document </label><span id='optional-text'> (optional)</span>
+					<input type="file" name="CV" accept="text/*" />
+				</div>
+			</div>
+			<!--less than 5mb-->
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-sm-3'>
+				</div >
+				<div class='col-sm-4' for='first content'  id='margin-20'>
+					<span id='optional-text'> Less than 5mb</span>
+				</div>
+			</div>
+			<!--address of volunteer-->
+			<div class='row'  id='margin-1'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row' id='margin-1'>
+				<div class='col-sm-3'>
+				</div >
+				<div class='col-sm-6' for='first content'>
+					<label >Address of the Volunteer Job </label><span id='optional-text'> (You can specify the multiple address)</span>
+					<div class='border-address'>
+						<label >Address</label>
+						<input type='text' class='form-control' id='form-control-weight' for='inserting address' id='form-text-control'>
+						<div class='row'>
+							<div id='extra-space-label'>
+							</div>
+						</div>
+						<input type='text' class='form-control' id='form-control-weight' for='inserting address' id='form-text-control'>
+						<div class='row'>
+							<div id='extra-space-label'>
+							</div>
+						</div>
+						<label >City</label>
+						<input type='text' class='form-control' id='form-control-weight' for='city' id='form-text-control'>
+						<div class='row'>
+							<div id='extra-space-label'>
+							</div>
+						</div>
+
+						<label >Country</label>
+						<select class='form-control'>
+							<option value='Lorem' select='selected'>Netherland</option>
+							<option value='Ipsum'>India</option>
+							<option value='Consectetur'>England</option>
+						</select>
+						<div class='row'>
+							<div id='extra-space-label'>
+							</div>
+						</div>
+
+						<label >Zipcode</label>
+						<input type='text' class='form-control' id='form-control-weight' for='inserting address' id='form-text-control' placeholder='Address'>
+						<div class='row'>
+							<div id='extra-space-label'>
+							</div>
+						</div>
+						<span ><a href='#' style='text-align:right;'>+Add another address</a></span>
+					</div>
+				</div>
+			</div>
+
+			<div class='row'  >
+				<div id='space-30'>
+				</div>
+			</div>
+
+			<div class='row'  id='margin-20'>
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div >
+					<div class='col-sm-6'>
+						<div class='border-heading'>
+							<label id='form-component-arrangement-label' style='vertical-align:middle;'>Customize Your application requirements</label>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!--horizontal line-->
+			<div class='row'>
+				<div class='col-sm-4'>
+				</div>
+				<div class='col-sm-4'>
+					<hr style="height:3px; background-color:#DDDDDD;">
+				</div>
+			</div>
+			<!-- checkboxes-->
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row'  id='margin-10'>
+			    <div class='col-sm-3'>
+			    </div>
+			    <div>
+			    <div class='col-sm-1  font-size-4 '>
+					<span class="glyphicon glyphicon-edit"></span>			    	
+			    </div>
+			    <div class='col-sm-5' >
+			    	<span>Ask applicants to write a cover letter introducing themselves.</span>
+			    	<div class="checkbox">
+				      <input type="checkbox" id='checkbox-cover'> <label style='font-weight:700'>Yes, require a cover letter</label>
+				  	</div>
+			    </div>
+			    <div class='col-sm-3'></div>
+			</div>
+			
+			<div class='row'  id='margin-1'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row'  >
+			    <div class='col-sm-3'>
+			    </div>
+			    <div>
+			    <div class='col-sm-1'>
+			    </div>
+			    <div class='col-sm-5' id='margin-15'>
+			    	<span>Ask applicants to complete the profile before applying to the job.</span>
+			    	<div class="checkbox">
+				      <input type="checkbox" id='checkbox-profile'> <label style='font-weight:700;'>Yes, complete their profile</label>
+				  </div>
+			    </div>
+			</div>
+			
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<!--horizontal line-->
+			<div class='row'>
+				<div class='col-sm-4'>
+				</div>
+				<div class='col-sm-4'>
+					<hr style="height:3px; background-color:#DDDDDD;">
+				</div>
+			</div>
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			
+			<!-- Screening question-->
+			<div class='row' id='margin-10'>
+			    <div class='col-sm-3'>
+			    </div>
+			    <div>
+			    <div class='col-sm-1  font-size-4' id='margin-20'>
+					<span class="glyphicon glyphicon-list-alt"></span>			    	
+			    </div>
+			    <div class='col-sm-6'>
+			    	<label style='font-size:18px'>Screening Questions</label><div class='row'></div>
+			    	<span>Add a few question that youd like to ask your candidates to answer when applying to your job</span>
+			    	<div id='space-30'></div>
+					<div class='row '>
+						<div class='col-sm-10'>
+							<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add Questions" style='font-size:20px;'/>
+						</div>
+						<div class='col-sm-2'></div>
+			    </div>
+			    <div class='col-sm-2'></div>
+			</div>
+			
+			<!-- button group -->
+			<div class='row'>
+				<div id='error-showing-space'>
+				</div>
+			</div>
+			<div class='row'>
+				<div id='error-showing-space'>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div class='col-sm-7'>
+				</div>
+				<div class='col-sm-4'>
+					<button class='btn btn-primary' type="button" style='padding:5px 15px 5px 15px; font-size:15px;'>Preview</button>
+					<button class='btn btn-success' type="button" style='padding:5px 15px 5px 15px; font-size:15px;'>Post a Job</button>
+					<button class='btn btn-danger' type="button" style='padding:5px 15px 5px 15px; font-size:15px;'>Cancel</button>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div id='error-showing-space'>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<footer class="main-container-footer">
+		<div class='footer-size'>
+			<div class='row'>
+				<div class='col-sm-12 extra-row'>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-sm-12'>
+					<span id='footer-text'>&#169;Olympia - Alle Organisaties</span>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+	<!-- Scripts -->
+	<script src="../lib/jquery/dist/jquery.min.js"></script>
+	<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!-- date picker Scripts -->
+	<script src="../lib/moment/moment.js"></script>
+	<script src="../lib/moment/min/moment.min.js"></script>
+	<script src="../lib/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+	<!--tag inputs -->
+	<script src="../lib/bootstrap-tagsinput-angular.js"></script>
+	<script src="../lib/bootstrap-tagsinput.min.js"></script>
+	<!-- rich text editor -->
+	<script src="../external/jquery.hotkeys.js"></script>
+	<script src="../external/google-code-prettify/prettify.js"></script>
+	<script src="../js/bootstrap-wysiwyg.js"></script>
+
+	<script src="../lib/typeahead.js/dist/typeahead/typeahead.js"></script>
+	<script src="../js/control.js"></script>
+
+	<script src="../js/input-file.js"></script>
+	<script src="../js/app.js"></script>
+	<script src="../lib/hoverIntent.js"></script>
+	<script src="../lib/superfish.min.js"></script>
+	<script src="../lib/supersubs.js"></script>
+
+</body>
+</html>

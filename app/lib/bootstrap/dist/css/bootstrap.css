@@ -757,8 +757,7 @@ pre code {
 .container-fluid {
   padding-right: 15px;
   padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+
 }
 .row {
   margin-right: -15px;
@@ -1934,7 +1933,6 @@ select[multiple].input-lg {
   }
   .form-inline .form-control {
     display: inline-block;
-    width: auto;
     vertical-align: middle;
   }
   .form-inline .input-group > .form-control {
@@ -3017,7 +3015,7 @@ input[type="button"].btn-block {
   min-width: 160px;
   padding: 5px 0;
   margin: 2px 0 0;
-  font-size: 14px;
+  font-size: 12px;
   list-style: none;
   background-color: #fff;
   background-clip: padding-box;
@@ -3039,7 +3037,8 @@ input[type="button"].btn-block {
 }
 .dropdown-menu > li > a {
   display: block;
-  padding: 3px 20px;
+  padding-top: 2px;
+  padding-left: 3px;
   clear: both;
   font-weight: normal;
   line-height: 1.42857143;
@@ -3739,7 +3738,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-brand {
   float: left;
   height: 50px;
-  padding: 15px 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 0px;
+  padding-top: 0px
   font-size: 18px;
   line-height: 20px;
 }
