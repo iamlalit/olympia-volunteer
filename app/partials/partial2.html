@@ -42,7 +42,7 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		    	<ul class="nav navbar-nav" style="margin-right:0px;">
-					<li class='active'><a href='#'><span>Home</span></a></li>
+					<li ><a href='#'><span>Home</span></a></li>
 					<li><a href='#'><span>Post a Job</span></a></li>
 					<li><a href='#'><span>View Job Postings</span></a></li>
 					<li ><a href='#'><span>Messages</span></a></li>
@@ -94,117 +94,114 @@
 			<nav>
 				<!-- Nav tabs -->
 				<ul class="nav nav-tabs" id="tabsnav">
-				  <li class="active" ><a href="#tab-1" data-toggle="tab">Search Volunteer</a></li>
-				  <li><a href="#tab-2" data-toggle="tab">Post a Job</a></li>
-				  <li><a href="#tab-3" data-toggle="tab">View Job Postings</a></li>
-				  <li><a href="#tab-4" data-toggle="tab">Messages</a></li>
+				  <li class="active" ><a href="#tab-1" data-toggle="tab">Zoek in 15133 Vacatures</a></li>
+				  <li><a href="#tab-2" data-toggle="tab">582 Evenmentem</a></li>
+				  <li><a href="#tab-3" data-toggle="tab">777 Buiterland</a></li>
+				  <li><a href="#tab-4" data-toggle="tab">555 Stage&#39;s</a></li>
 				</ul>
 				<!-- Tab panes -->
 				<div class='full-width-border'>
 					<div class="tab-content ">
 				    	<div class="tab-pane active" id="tab-1">
-				  			<fieldset>
-				  				<div class='row' >
-				  					<div class='col-sm-1'>
-				  					</div>
-				  					<div class='col-sm-10'>
-				  						<div class='row'>
-				  							<form for="top search" class="form-horizontal row" style='margin-top:10px;'>
-				  									<div class="col-lg-1">
-				  									</div>
-					  							    <div class="col-lg-4">
-												        <div class="form-group">
-												            <label for="exampleInput1" class="col-sm-2 control-label">wat</label>
-												            <div class="col-sm-10">
-												                <input type="text" class="form-control" id="exampleInput1" placeholder="Job title, skills or company">
-												            </div>
-												        </div>
-												    </div>
-						  							<div class="col-lg-4">
-												        <div class="form-group">
-												            <label for="exampleInput1" class="col-sm-1 control-label">waar</label>
-												            <div class="col-sm-11">
-												                <input type="text" class="form-control" id="exampleInput1" placeholder="City or post code" style="z-index: 10;">
-												                <select class="btn btn-warning dropdown-toggle pull-right"  data-toggle="dropdown" style="margin-top:-33px;">
-														        	<option value="5">5 km</option>
-										                            <option value="10">10 km</option>
-										                            <option value="20">20 km</option>
-										                            <option value="30">30 km</option>
-										                            <option selected="selected" value="50">50 km</option>
-										                            <option value="75">75 km</option>
-										                            <option value="100">100 km</option>
-										                            <option value="150">150 km</option>
-										                            <option value="200">200 km</option>
-									             	            </select>
-												            </div>
-												        </div>
-												    </div>
-						  							<div class='col-lg-1' style=' height:47px;'>
-						  								<div class='search-tab'>
-						  									<button type="submit" class="btn btn-warning" style='margin-top:-45px;'>
-						  										<span class="glyphicon glyphicon-search"></span> &nbsp;&nbsp;Zoek
-						  									</button>
-						  								</div>
-						  							</div>
-					  						</form>
-				  						</div>
-				  					</div>
-				  					<div class='col-sm-1'>
-				  					</div>
-				  				</div>
-				  			</fieldset>
+							<fieldset>
+								<div class='row' >
+									<div class='col-sm-1'>
+									</div>
+									<div class='col-sm-11' style='padding-top:10px;padding-bottom:10px;'>
+										<form class="form-inline" role="form">
+											<div class='col-sm-1'>
+											</div>
+
+											<div class='col-sm-2'>
+												<select class='form-control'>
+													<option value='Volunteers' select='selected'>Volunteers</option>
+													<option value='Organizations'>Organizations</option>
+													<option value='Volunteer Organizations'>Volunteer Organizations</option>
+													<option value='job' >Job</option>
+												</select>
+											</div>
+										    <div class="col-sm-3">
+											    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Keywords (eg name, interests or skills)" style="max-width:280px;">
+											 </div>
+											 <div class="col-sm-3">
+										    	<input type="password" class="form-control" id="exampleInputPassword2" placeholder="City or Post code" style="max-width:250px; margin-left:-50px;">
+										  	 </div>
+										  <div class='col-sm-1'>
+										  	<select class="form-control" style="width:100px; margin-left:-250px;">
+									        	<option value="5 km">5 km</option>
+						                        <option value="10">10 km</option>
+						                        <option value="20">20 km</option>
+						                        <option value="30">30 km</option>
+						                        <option selected="selected" value="50">50 km</option>
+						                        <option value="75">75 km</option>
+						                        <option value="100">100 km</option>
+						                        <option value="150">150 km</option>
+						                        <option value="200 km">200 km</option>
+						     	            </select>
+							     	       </div>
+							     	        <div class='col-sm-1'>
+											  <button type="submit" class="btn btn-default btn-warning" style='margin-left:-250px;'>Search</button>
+											</div>
+
+							     	        <div class='col-sm-1' >
+											  <label style="margin-top:8px"><a href="#" >Advanced</a>
+											  </label>
+											</div>
+										</form>
+									</div>
+								</div>
+							</fieldset>
+
 				  		</div>
 						<div class="tab-pane" id="tab-2">
 							<fieldset>
-				  				<div class='row' >
-				  					<div class='col-sm-1'>
-				  					</div>
-				  					<div class='col-sm-10'>
-				  						<div class='row'>
-				  							<form for="top search" class="form-horizontal row" style='margin-top:10px;'>
-				  									<div class="col-lg-1">
-				  									</div>
-					  							    <div class="col-lg-4">
-												        <div class="form-group">
-												            <label for="exampleInput1" class="col-sm-2 control-label">wat</label>
-												            <div class="col-sm-10">
-												                <input type="text" class="form-control" id="exampleInput1" placeholder="Job title, skills or company">
-												            </div>
-												        </div>
-												    </div>
-						  							<div class="col-lg-4">
-												        <div class="form-group">
-												            <label for="exampleInput1" class="col-sm-1 control-label">waar</label>
-												            <div class="col-sm-11">
-												                <input type="text" class="form-control" id="exampleInput1" placeholder="City or post code" style="z-index: 10;">
-												                <select class="btn btn-warning dropdown-toggle pull-right"  data-toggle="dropdown" style="margin-top:-33px;">
-														        	<option value="5">5 km</option>
-										                            <option value="10">10 km</option>
-										                            <option value="20">20 km</option>
-										                            <option value="30">30 km</option>
-										                            <option selected="selected" value="50">50 km</option>
-										                            <option value="75">75 km</option>
-										                            <option value="100">100 km</option>
-										                            <option value="150">150 km</option>
-										                            <option value="200">200 km</option>
-									             	            </select>
-												            </div>
-												        </div>
-												    </div>
-						  							<div class='col-lg-1' style=' height:47px;'>
-						  								<div class='search-tab'>
-						  									<button type="submit" class="btn btn-warning" style='margin-top:-45px;'>
-						  										<span class="glyphicon glyphicon-search"></span> &nbsp;&nbsp;Zoek
-						  									</button>
-						  								</div>
-						  							</div>
-					  						</form>
-				  						</div>
-				  					</div>
-				  					<div class='col-sm-1'>
-				  					</div>
-				  				</div>
-				  			</fieldset>
+								<div class='row' >
+									<div class='col-sm-1'>
+									</div>
+									<div class='col-sm-11' style='padding-top:10px;padding-bottom:10px;'>
+										<form class="form-inline" role="form">
+											<div class='col-sm-1'>
+											</div>
+
+											<div class='col-sm-2'>
+												<select class='form-control'>
+													<option value='Volunteers' select='selected'>Volunteers</option>
+													<option value='Organizations'>Organizations</option>
+													<option value='Volunteer Organizations'>Volunteer Organizations</option>
+													<option value='job' >Job</option>
+												</select>
+											</div>
+										    <div class="col-sm-3">
+											    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Keywords (eg name, interests or skills)" style="max-width:280px;">
+											 </div>
+											 <div class="col-sm-3">
+										    	<input type="password" class="form-control" id="exampleInputPassword2" placeholder="City or Post code" style="max-width:250px; margin-left:-50px;">
+										  	 </div>
+										  <div class='col-sm-1'>
+										  	<select class="form-control" style="width:100px; margin-left:-250px;">
+									        	<option value="5 km">5 km</option>
+						                        <option value="10">10 km</option>
+						                        <option value="20">20 km</option>
+						                        <option value="30">30 km</option>
+						                        <option selected="selected" value="50">50 km</option>
+						                        <option value="75">75 km</option>
+						                        <option value="100">100 km</option>
+						                        <option value="150">150 km</option>
+						                        <option value="200 km">200 km</option>
+						     	            </select>
+							     	       </div>
+							     	        <div class='col-sm-1'>
+											  <button type="submit" class="btn btn-default btn-warning" style='margin-left:-250px;'>Search</button>
+											</div>
+
+							     	        <div class='col-sm-1' >
+											  <label style="margin-top:8px"><a href="#" >Advanced</a>
+											  </label>
+											</div>
+										</form>
+									</div>
+								</div>
+							</fieldset>
 						</div>
 						<div class="tab-pane" id="tab-3">
 							<div class='light-yellow'><label>No Data</label></div>
