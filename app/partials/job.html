@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>OLYMPIA</title>
+	<link href="../img/olympia-fav.ico" rel="shortcut icon" type="image/x-icon" />
+	<link rel="stylesheet" href="../css/olympia-icons.css"/>
+	<link rel="stylesheet" href="../css/bootstrap-tagsinput.css"/>
+	<link rel="stylesheet" href="../lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"/>
+	<!-- fornt for heading -->
+	<link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,900italic,400,700,900' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700&subset=latin,cyrillic-ext,greek-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+	<!-- font for main content -->
+	<link href="//fonts.googleapis.com/css?family=PT+Sans:400italic,400,700italic,700"/>
+	<link rel="stylesheet" href="../css/app.css"/>
+	<link href="../lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="../css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="../css/job.css"/>
+</head>
+<body>
+
+	<header>
+			<div class='container-content'>
+				<div class='col-sm-12' id='tabs'>
+					<ul class="nav nav-tabs" id="tabsnav">
+						<li class="active"><a href="#tab-1" data-toggle="tab" class='menu-interval'>Recruit</a></li>
+						<li ><a href="#tab-2" data-toggle="tab" class='menu-interval'>Manage My Team</a></li>
+						<li><a href="#tab-3" data-toggle="tab" class='menu-interval'>Reports</a></li>
+						<li><a href="#tab-4" data-toggle="tab" class='menu-interval'>Messages</a></li>
+						
+						<li class='pull-right'><a href="#" id="icons-header-right" ><span class="glyphicon glyphicon-question-sign"></a></li>
+
+				        <li class='dropdown pull-right'>
+				        	<a href="#" class="dropdown-toggle" id="icons-header-right" data-toggle="dropdown"><i class='glyphicon glyphicon-cog'></i><b class="caret"></b></a>
+				        	<ul class="dropdown-menu">
+					            <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class='glyphicon glyphicon-user'></i> My Account</a></li>
+					            <li role="presentation" class="divider"></li>
+					            <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class='glyphicon glyphicon-cog'></i> Change Password</a></li>
+					            <li role="presentation" class="divider"></li>
+					            <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class='glyphicon glyphicon-cog'></i> Notification Settings</a></li>
+				          	</ul>
+				        </li>
+
+				        <li class='pull-right' ><a href="#" id="icons-header-right"><span class="glyphicon glyphicon-envelope"></a></li>
+
+						<li class="dropdown pull-right" style="margin-top:5px;">
+							<a href="#" class="dropdown-toggle" id="hover-header-right" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> Red Cross<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class='glyphicon glyphicon-user'></i> Red Cross Client</a></li>
+								<li role="presentation" class="divider"></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class='glyphicon glyphicon-globe'></i> Onpath Volunteer</a></li>
+								<li role="presentation" class="divider"></li>
+								<li role="presentation" id="separate-highlight"><a role="menuitem" tabindex="-1" href="#">Logout</a></li>
+							</ul>
+						</li>
+
+				        <li class="dropdown pull-right" style="margin-top:5px;">
+						    <a href="#" class="dropdown-toggle" id="hover-header-right" data-toggle="dropdown">Language <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">English</a></li>
+								<li role="presentation" class="divider"></li>
+								<li><a href="#">Deutch</a></li>
+								<li role="presentation" class="divider"></li>
+								<li><a href="#">Arabic</a></li>
+						    </ul>
+						
+
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="tab-1">
+							<div class='header-border'>
+								<ul class="nav nav-tabs">
+									<li ><a href='#' data-toggle="tab" class='menu-interval'>Jobs Posting</a></li>
+									<li class="active"><a href='#' data-toggle="tab" class='menu-interval'>Post a Job</a></li>
+									<li><a href='#' data-toggle="tab" class='menu-interval'>Find Freelancers</a></li>
+									<li><a href='#' data-toggle="tab" class='menu-interval'>Saved Freelancers</a></li>
+									<li class='search pull-right'>
+											<form class="form-inline" role="form">
+											  <div class="form-group">
+											    <select>
+									                <option value='Freelancers' select="selected">Find Freelancers</option>
+									                <option value='jobs'>Find Jobs</option>
+									            </select>
+											  </div>
+											  <div class="form-group">
+											    <label class="sr-only" for="exampleInputPassword2">Password</label>
+											    <input class="form-control" id="exampleInputPassword2" placeholder="Find Freelancers">
+											  </div>
+											  <button type="submit" class="btn btn-primary">Search</button>
+											</form>     
+									</li>
+								</ul>								
+							</div>
+						</div>
+						<div class="tab-pane" id="tab-2">
+							<div class='header-border'>
+								<ul class="nav nav-tabs">
+									<li class="active"><a href='#' data-toggle="tab" class='menu-interval'>My Freelancers</a></li>
+									<li><a href='#' data-toggle="tab" class='menu-interval'>Work Diary</a></li>
+									<li><a href='#' data-toggle="tab" class='menu-interval'>Contracts</a></li>
+									<li><a href='#' data-toggle="tab" class='menu-interval'>Activities</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="tab-pane" id="tab-3">
+							<div class='header-border'>
+								<ul class="nav nav-tabs">
+									<li class="active"><a href='#' data-toggle="tab" class='menu-interval'>Weekly Summary</a></li>
+									<li><a href='#' data-toggle="tab" class='menu-interval'>Transaction History</a></li>
+									<li><a href='#' data-toggle="tab" class='menu-interval'>Work Summary</a></li>
+									<li><a href='#' data-toggle="tab" class='menu-interval'>Activity Summary</a></li>
+									<li class='dropdown'><a href='#' data-toggle="tab" class='menu-interval'>More Reports</a>
+										<ul class="dropdown-menu">
+								            <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class='glyphicon glyphicon-user'></i>lorem ipsum</a></li>
+								            <li role="presentation" class="divider"></li>
+								            <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class='glyphicon glyphicon-cog'></i>lorem ipsum</a></li>
+								            <li role="presentation" class="divider"></li>
+								            <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><i class='glyphicon glyphicon-cog'></i>lorem ipsum</a></li>
+							          	</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="tab-pane" id="tab-4">
+							<div class='header-border'>
+								<ul class="nav nav-tabs">
+									<li class="active"><a href='#' data-toggle="tab" class='menu-interval'>Inbox</a></li>
+									<li><a href='#' data-toggle="tab" class='menu-interval'>Outbox</a></li>
+									<li><a href='#' data-toggle="tab" class='menu-interval'>Sent</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+	</header>
+
+
+	<div class='row'>
+		<div id='height-30'></div>
+	</div>	
+	<div class='main-container-center'>
+		<form action='' id='post-job' method=''>
+		
+			<div class='row'>
+				<div id='height-30'></div>
+			</div>	
+			<!--form Heading -->
+			
+			<div class='row' >
+				<div class='col-sm-12'>
+					<div class='col-sm-6'>
+						<div class='col-sm-3'>
+						</div>
+						<div class='col-sm-9'>
+							<span id='heading-form'>Post a Job</span>
+						</div>
+					</div>
+					<div class='col-sm-6'>
+					</div>
+				</div>
+			</div>
+			<!--some extra space to show errors -->
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<!--form fields started -->
+			<!-- Job types -->
+			<div class='row' >
+				<div class='col-sm-12'>
+					<div class='col-sm-6'>
+						<div class='col-sm-3'>
+						</div>
+						<div class='col-sm-9'>
+							<label >Job Types</label>
+							<select class='form-control'>
+								<option value='job' select='selected'>Job</option>
+								<option value='Internship'>Internship</option>
+								<option value='Event'>Event</option>
+							</select>
+						</div>
+					</div>
+					<div class='col-sm-6'>
+					</div>
+				</div>
+			</div>
+			<!--Title for a job-->
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row' >
+				<div class='col-sm-12'>
+					<div class='col-sm-6'>
+						<div class='col-sm-3'>
+						</div>
+						<div class='col-sm-9'>
+							<label>Give your job a title</label>
+							<input type='text' class='form-control' id='form-control-weight' for='inserting job title' id='form-text-control' placeholder='Title'>
+						</div>
+					</div>
+					<div class='col-sm-6'>
+					</div>
+				</div>
+			</div>
+			<!--Description rich Text Editor -->
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row' >
+				<div class='col-sm-12'>
+					<div class='col-sm-9'>
+						<div class='col-sm-2'>
+						</div>
+						<div class='col-sm-10'>
+							<label >Describe the work to be done</label>
+					<div class="content">
+
+					<div id="alerts"></div>
+					    <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+					      <div class="btn-group">
+					      <div class="btn-group">
+					        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="Font"><i class="icon-font"></i><b class="caret"></b></a>
+					          <ul class="dropdown-menu">
+					          </ul>
+					        </div>
+					      <div class="btn-group">
+					        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="icon-text-height"></i>&nbsp;<b class="caret"></b></a>
+					          <ul class="dropdown-menu">
+					          <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+					          <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+					          <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+					          </ul>
+					      </div>
+					      <div class="btn-group">
+					        <a class="btn btn-default " data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="icon-bold"></i></a>
+					        <a class="btn btn-default " data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="icon-italic"></i></a>
+					        <!--<a class="btn" data-edit="strikethrough" title="Strikethrough"><i class="icon-strikethrough"></i></a> -->
+					        <a class="btn btn-default " data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="icon-underline"></i></a>
+					      </div>
+					      <div class="btn-group">
+					        <a class="btn btn-default " data-edit="insertunorderedlist" title="Bullet list"><i class="icon-list-ul"></i></a>
+					        <a class="btn btn-default " data-edit="insertorderedlist" title="Number list"><i class="icon-list-ol"></i></a>
+					        <a class="btn btn-default " data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="icon-indent-left"></i></a>
+					        <a class="btn btn-default " data-edit="indent" title="Indent (Tab)"><i class="icon-indent-right"></i></a>
+					      </div>
+					      <div class="btn-group">
+					        <a class="btn btn-default " data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="icon-align-left"></i></a>
+					        <a class="btn btn-default " data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="icon-align-center"></i></a>
+					        <a class="btn btn-default " data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="icon-align-right"></i></a>
+					        <a class="btn btn-default " data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="icon-align-justify"></i></a>
+					      </div>
+					      
+					      <div class="btn-group">
+							  <a class="btn  btn-default dropdown-toggle" data-toggle="dropdown" title="Hyperlink"><i class="icon-link"></i></a>
+							    <div class="dropdown-menu input-append">
+								    <input class="span2" placeholder="URL" type="text" data-edit="createLink"/>
+								    <button class="btn" type="button">Add</button>
+					        </div>
+					        <a class="btn btn-default" data-edit="unlink" title="Remove Hyperlink"><i class="icon-cut"></i></a>
+					      </div>
+							      
+					      <div class="btn-group">
+					        <a class="btn btn-default " title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="icon-picture"></i></a>
+					        <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
+					      </div>
+					      <div class="btn-group">
+					        <a class="btn btn-default " data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="icon-undo"></i></a>
+					        <a class="btn btn-default " data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>
+					      </div>
+					      <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="">
+					    </div>
+					    </div>
+					    <div id="editor"> </div>
+						</div>
+					</div>
+					<div class='col-sm-6'>
+					</div>
+				</div>
+			</div>
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<!--date time picker-->
+			<div class='row' >
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row' >
+				<div class='col-sm-12'>
+						<div class='col-sm-7'>
+							<div class='col-sm-3'></div>
+							<div class="col-sm-4">
+					            <div class="form-group" >
+					                <label>Start date</label>
+					                <div class='input-group date' id='datetimepicker8' style="max-width:300px;">
+					                    <input type='text' class="form-control" />
+					                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+					                    </span>
+					                </div>
+					            </div>
+						    </div>
+							<div class='col-sm-4'>
+					            <div class="form-group">
+					            	 <label>End date</label>
+					                <div class='input-group date' id='datetimepicker9'  style="max-width:300px;">
+					                    <input type='text' class="form-control" />
+					                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+					                    </span>
+					                </div>
+					            </div>
+					        </div>
+						</div>
+					<div class='col-sm-6'>
+					</div>
+				</div>
+			</div>
+
+			<!-- Skills tag input-->
+			<div class='row' >
+				<div class='col-sm-12'>
+					<div class='col-sm-7'>
+						<div class='col-sm-3'>
+						</div>
+						<div class='col-sm-9'>
+							<label id='form-component-arrangement-label'>What Skills are needed?</label>
+							<div class='row' id='form-component-arrangement-input'>
+								<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Dipolma/Certificates tag input-->
+			<div class='row' >
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row' >
+				<div class='col-sm-12'>
+					<div class='col-sm-7'>
+						<div class='col-sm-3'>
+						</div>
+						<div class='col-sm-9'>
+							<label id='form-component-arrangement-label'>What Diploma/Certificates are needed?</label>
+							<div class='row' id='form-component-arrangement-input'>
+								<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+			<!--Time Comittment tag input-->
+			<div class='row' >
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row' >
+				<div class='col-sm-12'>
+					<div class='col-sm-7'>
+						<div class='col-sm-3'>
+						</div>
+						<div class='col-sm-9'>
+							<label id='form-component-arrangement-label'>Time Comittment</label>
+							<div class='row' id='form-component-arrangement-input'>
+								<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--estimated duration tag input-->
+			<div class='row' >
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row' >
+				<div class='col-sm-12'>
+					<div class='col-sm-7'>
+						<div class='col-sm-3'>
+						</div>
+						<div class='col-sm-9'>
+							<label id='form-component-arrangement-label'>Estimated Duration</label>
+							<div class='row' id='form-component-arrangement-input'>
+								<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Time preference tag input-->
+			<div class='row' >
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row' >
+				<div class='col-sm-12'>
+					<div class='col-sm-7'>
+						<div class='col-sm-3'>
+						</div>
+						<div class='col-sm-9'>
+							<label id='form-component-arrangement-label'>Work Time Preference</label>
+							<div class='row' id='form-component-arrangement-input'>
+								<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--schedule tag input -->
+			<div class='row' >
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row' >
+				<div class='col-sm-12'>
+					<div class='col-sm-7'>
+						<div class='col-sm-3'>
+						</div>
+						<div class='col-sm-9'>
+							<label id='form-component-arrangement-label'>Schedule</label>
+							<div class='row' id='form-component-arrangement-input'>
+								<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- volunteer tag input -->
+			<div class='row' >
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row' >
+				<div class='col-sm-12'>
+					<div class='col-sm-7'>
+						<div class='col-sm-3'>
+						</div>
+						<div class='col-sm-9'>
+							<label id='form-component-arrangement-label'>International volunteer option</label>
+							<div class='row' id='form-component-arrangement-input'>
+								<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- language tag input-->
+			<div class='row' >
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row' >
+				<div class='col-sm-12'>
+					<div class='col-sm-7'>
+						<div class='col-sm-3'>
+						</div>
+						<div class='col-sm-9'>
+							
+						<label id='form-component-arrangement-label'>Language</label>
+							<div class='row' id='form-component-arrangement-input'>
+								<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>		
+
+			<!-- miscelaneous tag input-->
+			<div class='row' >
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row' >
+				<div class='col-sm-12'>
+					<div class='col-sm-7'>
+						<div class='col-sm-3'>
+						</div>
+						<div class='col-sm-9'>
+							
+							<label id='form-component-arrangement-label'>Miscelaneous</label>
+							<div class='row' id='form-component-arrangement-input'>
+								<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add tags" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+
+
+			<!--marketplace dropdown -->
+			<div class='row' >
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row' >
+				<div class='col-sm-12'>
+					<div class='col-sm-7'>
+						<div class='col-sm-3'>
+						</div>
+						<div class='col-sm-7'>
+							<label >Marketplace Visibility</label>
+							<select class='form-control'>
+								<option value='Lorem' select='selected'>Lorem</option>
+								<option value='Ipsum'>Ipsum</option>
+								<option value='Consectetur'>Consectetur</option>
+							</select>
+						</div>
+					</div>
+					<div class='col-sm-5'>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- attach a document -->
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row' >
+				<div class="col-sm-11">
+					<div class='col-sm-2'></div>
+					<div class='col-sm-8' for='first content' >
+						<label >Attach a document </label><span id='optional-text'> (optional)</span>
+						<input type="file" name="CV" accept="text/*" />
+					</div>
+				</div>
+			</div>
+			<!--less than 5mb-->
+			<div class='row'>
+				<div id='height-10'>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-sm-6' for='first content'>
+					<div class='col-sm-2'></div>
+					<div class='col-sm-6'>
+						<div class='col-sm-4'></div>
+						<span id='optional-text'> Less than 5mb</span>
+					</div>
+				</div>
+			</div>
+			<!--address of volunteer-->
+			<div class='row'  id='margin-1'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-sm-1'>
+				</div >
+				<div class='col-sm-8' for='first content' id='margin-10'>
+					<div class='col-sm-1'></div>
+					<div class='col-sm-10'>
+						<label >Address of the Volunteer Job </label><span id='optional-text'> (You can specify the multiple address)</span>
+						<div class='border-address'>
+							<label >Address</label>
+							<input type='text' class='form-control' id='form-control-weight' for='inserting address' id='form-text-control'>
+							<div class='row'>
+								<div id='extra-space-label'>
+								</div>
+							</div>
+							<input type='text' class='form-control' id='form-control-weight' for='inserting address' id='form-text-control'>
+							<div class='row'>
+								<div id='extra-space-label'>
+								</div>
+							</div>
+							<label >City</label>
+							<input type='text' class='form-control' id='form-control-weight' for='city' id='form-text-control'>
+							<div class='row'>
+								<div id='extra-space-label'>
+								</div>
+							</div>
+
+							<label >Country</label>
+							<select class='form-control'>
+								<option value='Lorem' select='selected'>Netherland</option>
+								<option value='Ipsum'>India</option>
+								<option value='Consectetur'>England</option>
+							</select>
+							<div class='row'>
+								<div id='extra-space-label'>
+								</div>
+							</div>
+
+							<label >Zipcode</label>
+							<input type='text' class='form-control' id='form-control-weight' for='inserting address' id='form-text-control' placeholder='Address'>
+							<div class='row'>
+								<div id='extra-space-label'>
+								</div>
+							</div>
+							<span ><a href='#' style='text-align:right;'>+Add another address</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class='row'  >
+				<div id='space-30'>
+				</div>
+			</div>
+			<div class='row' >
+				<div class='col-sm-12'>
+					<div class='col-sm-8'>
+						<div class='col-sm-3'>
+						</div>
+						<div class='col-sm-9 border-heading'>
+							<label id='form-component-arrangement-label' style='vertical-align:middle;'>Customize Your application requirements</label>
+						</div>
+					</div>
+					<div class='col-sm-6'>
+					</div>
+				</div>
+			</div>
+
+			<!--horizontal line-->
+			<div class='row'>
+				<div class='col-sm-3'>
+				</div>
+				<div class='col-sm-4'>
+					<hr style="height:3px; background-color:#DDDDDD;">
+				</div>
+			</div>
+			<!-- checkboxes-->
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row'  id='margin-10'>
+			    <div class='col-sm-2'>
+			    </div>
+			    <div>
+			    <div class='col-sm-1  font-size-4 '>
+					<span class="glyphicon glyphicon-edit"></span>			    	
+			    </div>
+			    <div class='col-sm-5' >
+			    	<span>Ask applicants to write a cover letter introducing themselves.</span>
+			    	<div class="checkbox">
+				      <input type="checkbox" id='checkbox-cover'> <label style='font-weight:700'>Yes, require a cover letter</label>
+				  	</div>
+			    </div>
+			    <div class='col-sm-3'></div>
+			</div>
+			
+			<div class='row'  id='margin-1'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<div class='row'  >
+			    <div class='col-sm-2'>
+			    </div>
+			    <div>
+			    <div class='col-sm-1'>
+			    </div>
+			    <div class='col-sm-5' id='margin-20'>
+			    	<span>Ask applicants to complete the profile before applying to the job.</span>
+			    	<div class="checkbox">
+				      <input type="checkbox" id='checkbox-profile'> <label style='font-weight:700;'>Yes, complete their profile</label>
+				  </div>
+			    </div>
+			</div>
+			
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			</div>
+			<!--horizontal line-->
+			<div class='row'>
+				<div class='col-sm-3'>
+				</div>
+				<div class='col-sm-4'>
+					<hr style="height:3px; background-color:#DDDDDD;">
+				</div>
+			</div>
+			<div class='row'>
+				<div id='extra-space-label'>
+				</div>
+			
+			<!-- Screening question-->
+			<div class='row' id='margin-20'>
+			    <div class='col-sm-2'>
+			    </div>
+			    <div>
+			    <div class='col-sm-1  font-size-4' id='margin-20'>
+					<span class="glyphicon glyphicon-list-alt"></span>			    	
+			    </div>
+			    <div class='col-sm-6'>
+			    	<label style='font-size:18px'>Screening Questions</label><div class='row'></div>
+			    	<span>Add a few question that youd like to ask your candidates to answer when applying to your job</span>
+			    	<div id='space-30'></div>
+					<div class='row '>
+						<div class='col-sm-10'>
+							<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add Questions" style='font-size:20px;'/>
+						</div>
+						<div class='col-sm-2'></div>
+			    </div>
+			    <div class='col-sm-2'></div>
+			</div>
+			
+			<!-- button group -->
+			<div class='row'>
+				<div id='error-showing-space'>
+				</div>
+			</div>
+			<div class='row'>
+				<div id='error-showing-space'>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div class='col-sm-4'>
+				</div>
+				<div class='col-sm-4'>
+					<button class='btn btn-primary' type="button" style='padding:5px 15px 5px 15px; font-size:15px;'>Preview</button>
+					<button class='btn btn-success' type="button" style='padding:5px 15px 5px 15px; font-size:15px;'>Post a Job</button>
+					<button class='btn btn-danger' type="button" style='padding:5px 15px 5px 15px; font-size:15px;'>Cancel</button>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div id='error-showing-space'>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<!-- Scripts -->
+	<script src="../lib/jquery/dist/jquery.min.js"></script>
+	<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!-- date picker Scripts -->
+	<script src="../lib/moment/moment.js"></script>
+	<script src="../lib/moment/min/moment.min.js"></script>
+	<script src="../lib/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+	<!--tag inputs -->
+	<!--<script src="../lib/bootstrap-tagsinput-angular.js"></script>
+	<script src="../lib/bootstrap-tagsinput.min.js"></script>
+	<!-- rich text editor -->
+	<script src="../external/jquery.hotkeys.js"></script>
+	<script src="../external/google-code-prettify/prettify.js"></script>
+	<script src="../js/bootstrap-wysiwyg.js"></script>
+	<script src="../js/control.js"></script>
+	<!--<script src="../lib/typeahead.js/dist/typeahead/typeahead.js"></script>-->
+	<script src="../js/input-file.js"></script>
+	<script src="../js/app.js"></script>
+	<script src="../lib/hoverIntent.js"></script>
+	<script src="../lib/superfish.min.js"></script>
+	<script src="../lib/supersubs.js"></script>
+
+	<script type="text/javascript">
+		 $(document).ready(function() {
+			  $('#tabs > div').hide(); // hide all child divs
+			  $('#tabs div:first').show(); // show first child dive
+			  $('#tabsnav li:first').addClass('active');
+
+			  $('.menu-internal').click(function(){
+			   $('#tabsnav li').removeClass('active');
+			   var currentTab = $(this).attr('href');
+			   $('#tabsnav li a[href="'+currentTab+'"]').parent().addClass('active');
+			   $('#tabs > div').hide();
+			   $(currentTab).show();
+			   return false;
+			  });
+			  // Create a bookmarkable tab link
+			  hash = window.location.hash;
+			  elements = $('a[href="'+hash+'"]'); // look for tabs that match the hash
+			  if (elements.length === 0) { // if there aren't any, then
+			   $("ul.tabs li:first").addClass("active").show(); // show the first tab
+			  } else { elements.click(); } // else, open the tab in the hash
+		 });
+
+
+	</script>
+
+</body>
+</html>
