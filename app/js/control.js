@@ -153,7 +153,7 @@ $(document).ready(function() {
       $( this ).addClass("active"); 
       $(this).parents('.dropdown.pull-right').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
     });
-
+    /* to add css */
     $('#username .dropdown-menu li a').click(function() {
         var style = {
                   backgroundColor: "#ffffff",
@@ -169,11 +169,11 @@ $(document).ready(function() {
         }
         if($('#dropdown').data('open')) {
             $('#dropdown').data('open', false);
-            
         } else
             $('#dropdown').data('open', true);
             $("#username .dropdown-menu li a").css(style_empty);
             $(this).css(style);
+
     });
     $( document ).ready(function() {
       var style = {
@@ -184,7 +184,6 @@ $(document).ready(function() {
       }
       $("#username .dropdown-menu li #tab-header-1").css(style);
     });
-
 
 
 /*
