@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>OLYMPIA</title>
+	<link href="../img/olympia-fav.ico" rel="shortcut icon" type="image/x-icon" />
+	<link rel="stylesheet" href="../css/olympia-icons.css"/>
+	<link rel="stylesheet" href="../css/bootstrap-tagsinput.css"/>
+	<link rel="stylesheet" href="../lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"/>
+	<!-- fornt for heading -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700&subset=latin,cyrillic-ext,greek-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+	<!-- font for main content -->
+	<link href="//fonts.googleapis.com/css?family=PT+Sans:400italic,400,700italic,700"/>
+	<link href="../lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="../css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="../css/postjob.css"/>
+</head>
+<body>
+
+	<header>
+		<div class=''>
+		<nav class="navbar navbar-default" role="navigation">
+		  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#"><img src="../img/logo.png"></a>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <li ><a href="#tab-1" data-toggle="tab" class='menu-interval'>Search Volunteer</a></li>
+				<li class="active"><a href="#tab-2" data-toggle="tab" class='menu-interval'>Post a Job</a></li>
+				<li><a href="#tab-3" data-toggle="tab" class='menu-interval'>Job Postings</a></li>
+				<li><a href="#tab-4" data-toggle="tab" class='menu-interval'>Messages</a></li>
+		      </ul>
+		      
+		      <ul class="nav navbar-nav navbar-right">
+		        <li class='pull-right'><a href="#" id="icons-header-right" ><span class="glyphicon glyphicon-question-sign"></a></li>
+		        <li class='dropdown pull-right'>
+		        	<a href="#" class="dropdown-toggle" id="icons-header-right" data-toggle="dropdown"><i class='glyphicon glyphicon-cog'></i></a>
+		        	<ul class="dropdown-menu">
+			            <li role="presentation"><a role="menuitem" href="#"><i class='glyphicon glyphicon-user blue'></i> My Account</a></li>
+			            <li role="presentation" class="divider"></li>
+			            <li role="presentation"><a role="menuitem" href="#"><i class='glyphicon glyphicon-cog blue'></i> Change Password</a></li>
+			            <li role="presentation" class="divider"></li>
+			            <li role="presentation"><a role="menuitem" href="#"><i class='glyphicon glyphicon-cog blue'></i> Notification Settings</a></li>
+		          	</ul>
+		        </li>
+		        <li class='pull-right' ><a href="#" id="icons-header-right"><span class="glyphicon glyphicon-exclamation-sign"></a></li>
+				<li class="dropdown pull-right" style="margin-top:5px;" id="username">
+					<a href="#" class="dropdown-toggle"  id="hover-header-right" data-toggle="dropdown">Course_Agency &nbsp;<b class="caret blue"></b></a>
+					<ul class="dropdown-menu" >
+						<li role="presentation" ><a role="menuitem" ng-model="Client" href="#" id="tab-header-1"><img src="../img/client-icon.png">&nbsp;&nbsp;&nbsp;Course_Agency</a></li>
+						<li role="presentation" class="divider"></li>
+						<li role="presentation" ><a role="menuitem" ng-model="Client" href="#"  ><img src="../img/client-icon.png">&nbsp;&nbsp;&nbsp;course_client</a></li>
+						<li role="presentation" class="divider"></li>
+						<li role="presentation" ><a role="menuitem" ng-model="Client" href="#" ><img src="../img/user-icon.svg" height="25" width="25">&nbsp;&nbsp;&nbsp;Sandy Sharma</a></li>
+						<li role="presentation" class="divider"></li>
+						<li role="presentation" id="separate-highlight"> <a role="menuitem" href="#">Logout</a></li>
+					</ul>
+				</li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+	</header>
+
+	<div class="row">
+		<div class="row margin-top-15" ></div>
+		<div class="col-sm-1">
+		</div>
+		<div class="col-sm-10">
+			<div class='row  margin-left-71'>
+				<span id='heading-form'>Post a Job</span>
+			</div>
+			<div class='row'>
+				<div class='margin-top-15'>
+				</div>
+			</div>
+			<div class="row margin-left-57" id="jobs">
+				<div class="col-sm-8">
+					<label >Job Types</label>
+					<select class='form-control' id="job-type" style="width:400px;">
+						<option value='job' select='selected'>Job</option>
+						<option value='Internship'>Internship</option>
+						<option value='Event'>Event</option>
+					</select>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='margin-top-10'>
+				</div>
+			</div>
+			<div class="row margin-left-57" id="title">
+				<div class="col-sm-10" >
+					<label>Give your job a title</label>
+					<input type='text' style="width:690px;" class='form-control' id='form-control-weight' for='inserting job title' id='form-text-control' placeholder='Title' id="job-title">
+				</div>
+			</div>
+			<div class='row'>
+				<div class='margin-top-10'>
+				</div>
+			</div>
+			<div class="row margin-left-57">
+				<div class='col-sm-9'>
+					<label >Describe the work to be done</label>
+					<div class="content">
+
+						<div id="alerts"></div>
+					    <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+					      <div class="btn-group">
+					      <div class="btn-group">
+					        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="Font"><i class="icon-font"></i><b class="caret"></b></a>
+					          <ul class="dropdown-menu">
+					          </ul>
+					        </div>
+					      <div class="btn-group">
+					        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="icon-text-height"></i>&nbsp;<b class="caret"></b></a>
+					          <ul class="dropdown-menu">
+					          <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+					          <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+					          <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+					          </ul>
+					      </div>
+					      <div class="btn-group">
+					        <a class="btn btn-default " data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="icon-bold"></i></a>
+					        <a class="btn btn-default " data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="icon-italic"></i></a>
+					        <!--<a class="btn" data-edit="strikethrough" title="Strikethrough"><i class="icon-strikethrough"></i></a> -->
+					        <a class="btn btn-default " data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="icon-underline"></i></a>
+					      </div>
+					      <div class="btn-group">
+					        <a class="btn btn-default " data-edit="insertunorderedlist" title="Bullet list"><i class="icon-list-ul"></i></a>
+					        <a class="btn btn-default " data-edit="insertorderedlist" title="Number list"><i class="icon-list-ol"></i></a>
+					        <a class="btn btn-default " data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="icon-indent-left"></i></a>
+					        <a class="btn btn-default " data-edit="indent" title="Indent (Tab)"><i class="icon-indent-right"></i></a>
+					      </div>
+					      <div class="btn-group">
+					        <a class="btn btn-default " data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="icon-align-left"></i></a>
+					        <a class="btn btn-default " data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="icon-align-center"></i></a>
+					        <a class="btn btn-default " data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="icon-align-right"></i></a>
+					        <a class="btn btn-default " data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="icon-align-justify"></i></a>
+					      </div>
+					      
+					      <div class="btn-group">
+							  <a class="btn  btn-default dropdown-toggle" data-toggle="dropdown" title="Hyperlink"><i class="icon-link"></i></a>
+							    <div class="dropdown-menu input-append">
+								    <input class="span2" placeholder="URL" type="text" data-edit="createLink"/>
+								    <button class="btn" type="button">Add</button>
+					        </div>
+					        <a class="btn btn-default" data-edit="unlink" title="Remove Hyperlink"><i class="icon-cut"></i></a>
+					      </div>
+							      
+					      <div class="btn-group">
+					        <a class="btn btn-default " title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="icon-picture"></i></a>
+					        <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
+					      </div>
+					      <div class="btn-group">
+					        <a class="btn btn-default " data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="icon-undo"></i></a>
+					        <a class="btn btn-default " data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>
+					      </div>
+					      <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="">
+					    </div>
+					    </div>
+					    <div id="editor"> </div>
+						</div>
+					</div>
+			</div>
+			<div class='row'>
+				<div class='margin-top-10'>
+				</div>
+			</div>
+			<div class='row margin-left-57'>
+				<div class="col-sm-9">
+					<label >Attach a document </label><span id='optional-text'> (optional)</span>
+					<input type="file" name="CV" accept="text/*" />
+				</div>
+			</div>
+			<div class='row'>
+				<div id='margin-top-10'>
+				</div>
+			</div>
+			<div class='row margin-left-57'>
+				<div class='col-sm-8' for='first content'>
+					<span id='optional-text'> Less than 5mb</span>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div class='margin-top-10'>
+				</div>
+			</div>
+			<div class='row margin-left-57'>
+				<div class='col-sm-4'>
+		            <div class="form-group" >
+		                <label>Start date</label>
+		                <div class='input-group date' id='datetimepicker8' style="max-width:300px;">
+		                    <input type='text' class="form-control" />
+		                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+		                    </span>
+		                </div>
+		            </div>
+		        </div>
+				<div class='col-sm-4'>
+		            <div class="form-group">
+		            	<label>End date</label>
+		                <div class='input-group date' id='datetimepicker9'  style="max-width:300px;">
+		                    <input type='text' class="form-control" />
+		                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+		                    </span>
+		                </div>
+		            </div>
+		        </div>
+			</div>
+			<div class='row'>
+				<div class='margin-top-10'>
+				</div>
+			</div>
+			<div class='row margin-left-57' >
+				<div class='col-sm-11'>
+					<div class='border-heading'>
+						<label class="font-size-16"style='vertical-align:middle;'>Customize Your application requirements</label>
+					</div>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div class='margin-top-15'>
+				</div>
+			</div>
+			<div class="row margin-left-57">
+				<div class="col-sm-11">
+					<div class='col-sm-1  font-size-4 '>
+						<span class="glyphicon glyphicon-list-alt"></span>			    	
+				    </div>
+				    <div class="col-sm-6">
+				    	<label class="font-size-15">Preferred Skills and Diplomas</label>
+				    </div>
+				    <div class='col-sm-9' >
+				    	<span>
+							Specify the skills and diplomas you're looking for in a successful application. Volunteers may still apply if they do not meet your preferences, but they will be clearly notified that they are at a disadvantage.
+						</span>
+
+						<div class='row'>
+							<div class='margin-top-10'>
+							</div>
+						</div>
+						<button class="btn btn-primary" id="skills" value="Add Skills / Certificates" name="Add Skills / Certificates">Add Skills / Certificates</button>
+						<ul class="ishidden" id="group-skills">
+							<li style="list-style-type:none">
+								<label >What Skills are needed?</label>
+								<div id='form-component-arrangement-input'>
+									<input type="text" class='form-control' id='form-text' data-role="tagsinput" placeholder="Add Skills" />
+								</div>
+							</li>
+							<li style="list-style-type:none">
+								<label id='form-component-arrangement-label'>What Diploma/Certificates are needed?</label>
+								<div  id='form-component-arrangement-input'>
+									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add Diplomas" />
+								</div>
+							</li>
+						</ul>
+				    </div>
+				</div>
+			</div>
+
+			<div class="row margin-left-57">
+				<div class="col-sm-11">
+					<hr style="height:1px; background-color:#DDDDDD;">
+				</div>	
+			</div>
+
+
+			<div class="row margin-left-57">
+				<div class="col-sm-11">
+					<div class='col-sm-1  font-size-4 '>
+						<span class="glyphicon glyphicon-time"></span>			    	
+				    </div>
+				    <div class="col-sm-6">
+				    	<label class="font-size-15">Preferred Time commitments</label>
+				    </div>
+				    <div class='col-sm-9' >
+				    	<span>
+							Specify the time commitments you're looking for in a successful application. Volunteers may still apply if they do not meet your preferences, but they will be clearly notified that they are at a disadvantage.
+						</span>
+
+						<div class='row'>
+							<div class='margin-top-10'>
+							</div>
+						</div>
+						<button class="btn btn-primary" id="time">Add Time Comittments</button>
+						<ul class="ishidden" id="group-skills">
+							<li style="list-style-type:none">
+								<label >Time Comittment</label>
+								<div id='form-component-arrangement-input'>
+									<input type="text" class='form-control' id='form-text' data-role="tagsinput" placeholder="Add Time comittment" />
+								</div>
+							</li>
+							<li style="list-style-type:none">
+								<label id='form-component-arrangement-label'>Estimated Duration</label>
+								<div  id='form-component-arrangement-input'>
+									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add Estimated duration" />
+								</div>
+							</li>
+							<li style="list-style-type:none">
+								<label id='form-component-arrangement-label'>Work Time Preference</label>
+								<div  id='form-component-arrangement-input'>
+									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add Work Time Preference" />
+								</div>
+							</li>
+							<li style="list-style-type:none">
+								<label id='form-component-arrangement-label'>Schedule</label>
+								<div  id='form-component-arrangement-input'>
+									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add Schedule" />
+								</div>
+							</li>
+						</ul>
+				    </div>
+				</div>
+			</div>
+
+			<div class="row margin-left-57">
+				<div class="col-sm-11">
+					<hr style="height:1px; background-color:#DDDDDD;">
+				</div>	
+			</div>
+
+
+			<div class="row margin-left-57">
+				<div class="col-sm-11">
+					<div class='col-sm-1  font-size-4 '>
+						<span class="glyphicon glyphicon-tasks"></span>			    	
+				    </div>
+				    <div class="col-sm-6">
+				    	<label class="font-size-15">Miscellaneuos Preferences</label>
+				    </div>
+				    <div class='col-sm-9' >
+				    	<span>
+							Specify the language, International vlounterr option and other miscellaneous you're looking for in a successful application. Volunteers may still apply if they do not meet your preferences, but they will be clearly notified that they are at a disadvantage.
+						</span>
+
+						<div class='row'>
+							<div class='margin-top-10'>
+							</div>
+						</div>
+						<button class="btn btn-primary" id="miscleaneous">Add Miscellaneous</button>
+						<ul class="ishidden" id="group-skills">
+							<li style="list-style-type:none">
+								<label id='form-component-arrangement-label'>Language</label>
+								<div  id='form-component-arrangement-input'>
+									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add Languages" />
+								</div>
+							</li>
+							<li style="list-style-type:none">
+								<label id='form-component-arrangement-label'>International volunteer option</label>
+								<div  id='form-component-arrangement-input'>
+									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add International volunteer option" />
+								</div>
+							</li>
+							<li style="list-style-type:none">
+								<label id='form-component-arrangement-label'>Miscellaneous</label>
+								<div  id='form-component-arrangement-input'>
+									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add miscellaneous" />
+								</div>
+							</li>
+						</ul>
+				    </div>
+				</div>
+			</div>
+
+			<div class="row margin-left-57">
+				<div class="col-sm-11">
+					<hr style="height:1px; background-color:#DDDDDD;">
+				</div>	
+			</div>
+
+
+			<div class='row'>
+				<div class='margin-top-15'>
+				</div>
+			</div>
+			<div class="row margin-left-57">
+				<div class="col-sm-11">
+					<div class='col-sm-1  font-size-4 '>
+						<span class="glyphicon glyphicon-edit"></span>			    	
+				    </div>
+				    <div class="col-sm-6">
+				    	<label class="font-size-15">Cover Letter</label>
+				    </div>
+				    <div class='col-sm-9' >
+				    	<span>Ask applicants to write a cover letter introducing themselves.</span>
+				    	<div class="checkbox">
+					      <input type="checkbox" id='checkbox-cover'><span style='font-weight:700;'> Yes, require a cover letter</span>
+					  	</div>
+				    </div>
+				    <div class='col-sm-9 margin-left-80' >
+				    	<span>Ask applicants to complete the profile before applying to the job.</span>
+				    	<div class="checkbox">
+					      <input type="checkbox" id='checkbox-profile'> <span style='font-weight:700;'>Yes, complete their profile</span>
+					    </div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row margin-left-57">
+				<div class="col-sm-11">
+					<hr style="height:1px; background-color:#DDDDDD;">
+				</div>	
+			</div>
+
+			<div class='row'>
+				<div class='margin-top-15'>
+				</div>
+			</div>
+			<div class="row margin-left-57">
+				<div class="col-sm-11">
+					<div class='col-sm-1  font-size-4 '>
+						<span class="glyphicon glyphicon-th-list"></span>			    	
+				    </div>
+				    <div class="col-sm-6">
+				    	<label class="font-size-15">Screening Questions</label>
+				    </div>
+
+				    <div class='col-sm-9' >
+				    	<span>Add a few question that youd like to ask your candidates to answer when applying to your job</span>
+				    	<div class="margin-top-10"></div>
+				    	<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add Questions" style='font-size:20px;'/>
+				    </div>
+				</div>
+			</div>
+
+
+			<div style="margin-bottom:50px;">
+			</div>
+		
+			<div class='row'>
+				<div class='col-sm-4'>
+				</div>
+				<div class='col-sm-4'>
+					<button class='btn btn-primary' type="button" style='padding:5px 15px 5px 15px; font-size:15px;'>Preview</button>
+					<button class='btn btn-success' type="button" style='padding:5px 15px 5px 15px; font-size:15px;'>Post a Job</button>
+					<button class='btn btn-danger' type="button" style='padding:5px 15px 5px 15px; font-size:15px;'>Cancel</button>
+				</div>
+			</div>
+
+			
+			<div style="margin-bottom:50px;">
+			</div>
+
+	<footer class="main-container-footer">
+		<div class='footer-size'>
+			<div class='row'>
+				<div class='col-sm-12 extra-row'>
+				</div>
+			</div>
+			<div class='row' >
+				<div class='col-sm-2'>
+				</div>
+				<div class='col-sm-3'>
+					<div class='col-sm-5' >
+						<div class='row' >
+							<a href="#" id="footer-text">About Us </a>
+						</div>
+						<div class="margin-top-7"></div>
+						<div class='row'>
+							<a href="#" id="footer-text">Blog </a>
+						</div>
+						<div class="margin-top-7"></div>
+						<div class='row'>
+							<a href="#" id="footer-text">Feedback </a>
+						</div>
+						<div class="margin-top-7"></div>
+					</div>
+
+					<div class='col-sm-5'>
+						<div class='row'>
+							<a href="#" id="footer-text">Comunnity </a>
+						</div>
+						<div class="margin-top-7"></div>
+						<div class='row'>
+							<a href="#" id="footer-text">Trust & Safety</a>
+						</div>
+						<div class="margin-top-7"></div>
+						<div class='row'>
+							<a href="#" id="footer-text">Help & Support</a>
+						</div>
+						<div class="margin-top-7"></div>
+					</div>
+				</div>
+				<div class='col-sm-3' style="margin-left:-60px">
+					<div class='col-sm-6'>
+						<div class='row'>
+							<a href="#" id="footer-text">Enterprise Solution</a>
+						</div>
+						<div class="margin-top-7"></div>
+						<div class='row'>
+							<a href="#" id="footer-text">Terms of Services</a>
+						</div>
+						<div class="margin-top-7"></div>
+						<div class='row'>
+							<a href="#" id="footer-text">Privacy Policy</a>
+						</div>
+						<div class="margin-top-7"></div>
+					</div>
+					<div class='col-sm-5'>
+						<div class='row'>
+							<a href="#" id="footer-text">Tools</a>
+						</div>
+						<div class="margin-top-7"></div>
+						<div class='row'>
+							<a href="#" id="footer-text">Client Resources</a>
+						</div>
+						<div class="margin-top-7"></div>
+						<div class='row'>
+							<a href="#" id="footer-text">Help & Support</a>
+						</div>
+						<div class="margin-top-7"></div>
+					</div>
+				</div>
+				<div class='col-sm-3' style="margin-left:-40px;">
+					<div class="row">
+						<a href="#" class="footer-select">
+							<div class="footer-circle footer-circle-linkedin pull-right">
+								<i class="icon-linkedin font-size-20 icon-attr"> </i>
+							</div>
+						</a>
+						<a href="#">
+							<div class="footer-circle footer-circle-facebook pull-right">
+								<i class="icon-facebook font-size-20 icon-attr"> </i>
+							</div>
+						</a>
+						<a href="#">
+							<div class="footer-circle footer-circle-twitter pull-right">
+								<i class="icon-twitter font-size-20 icon-attr"> </i>
+							</div>
+						</a>
+						<a href="#">
+							<div class="footer-circle footer-circle-google pull-right">
+								<i class="icon-google-plus font-size-20 icon-attr"> </i>
+							</div>
+						</a>
+					</div>
+					<div class="row pull-right" id='footer-copyrights'>
+						<span >&#169;&nbsp;Olympia Volunteer Corporation</span>
+					</div>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-sm-12 extra-row'>
+				</div>
+				<div class='col-sm-12 margin-top-10'>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+		
+
+
+		</div>
+		<div class="col-sm-1">
+		</div>
+	</div>
+
+	<footer>
+	</footer>
+	
+	<!-- Scripts -->
+	<script src="../lib/jquery/dist/jquery.min.js"></script>
+	<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!-- date picker Scripts -->
+	<script src="../lib/moment/moment.js"></script>
+	<script src="../lib/moment/min/moment.min.js"></script>
+	<script src="../lib/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+	<!--tag inputs -->
+	<script src="../lib/bootstrap-tagsinput-angular.js"></script>
+	<script src="../lib/bootstrap-tagsinput.min.js"></script>
+	<!-- rich text editor -->
+	<script src="../external/jquery.hotkeys.js"></script>
+	<script src="../external/google-code-prettify/prettify.js"></script>
+	<script src="../js/bootstrap-wysiwyg.js"></script>
+
+	<script src="../lib/typeahead.js/dist/typeahead.bundle.min.js"></script>
+	<script src="../js/control.js"></script>
+
+	<script src="../js/input-file.js"></script>
+	<script src="../js/app.js"></script>
+	<script src="../lib/hoverIntent.js"></script>
+	<script src="../lib/superfish.min.js"></script>
+	<script src="../lib/supersubs.js"></script>
+
+
+</body>
+</html>

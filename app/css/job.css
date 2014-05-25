@@ -28,7 +28,6 @@ CSS for job.html
 .container-content .nav-tabs > li > a {
 	border-radius: 8px 8px 0 0;
 	color:#ffffff;
-	font-family: Roboto Slab;
 }
 .container-content .nav-tabs > li > a:hover,
 .container-content .nav-tabs > li > a:focus {
@@ -104,6 +103,7 @@ CSS for job.html
 
 .container-content .nav-tabs  li  a#hover-header-right{
 	border-radius: 4px 4px 4px 4px;
+	font-size: 12px;
 	position: relative;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -233,11 +233,9 @@ CSS for job.html
 	-o-transform: rotate(56deg) skew(0deg,-20deg);
 	transform: rotate(56deg) skew(0deg,-20deg);
 }
-
 .header-border .search{
 	margin-top: 3px;
 }
-
 .search .form-inline select option{
 	color:#111111;
 }
@@ -245,13 +243,13 @@ CSS for job.html
 	color:#111111;
 }
 #heading-form{
-  font-size: 30px;
+  font-size: 26px;
+  font-family: Roboto Slab;
   color: #111111;
-  font-weight: 700;
+  font-weight: 500;
   text-align: left;
   text-decoration: none;
 }
-
 #height-10{
   height:10px;
 }
@@ -263,6 +261,13 @@ CSS for job.html
 }
 #height-40{
   height:40px;
+}
+.container-content .nav > li#logo > a{
+	padding: 0px;
+	margin-right:20px;
+} 
+.blue{
+	color: #0372b8;
 }
 
 

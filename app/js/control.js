@@ -71,6 +71,121 @@ $(document).ready(function() {
 
 });
 
+    /*popover for job dropdown */
+    var element_job = "<span>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie cons.</span>";
+    $("#job-type").popover({
+          title: "Title",
+          trigger: "focus"
+    });
+    $( "#job-type" ).focus(function(event) {
+        event.preventDefault();
+        $("#job-type").popover('show');
+        $("#jobs div.popover-content").replaceWith(element_job);
+        event.stopPropagation();
+    });
+    $( "#job-type" ).focusout(function() {
+        event.preventDefault();
+        $("#job-type").popover('hide');
+        event.stopPropagation();
+    });
+
+    /*popover for title */
+    var element_title = "<p>Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>" + 
+                        "<ul style='text-align:left; width:250px;'>" + 
+                        "<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy</li>" + 
+                        "<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy</li>" + 
+                        "<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy</li>" + 
+                      "</ul>";
+    $("#form-control-weight").popover({
+          title: "Title",
+          trigger: "focus"
+    });
+    $( "#form-control-weight" ).focus(function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        $("#title div.popover-content").replaceWith(element_title);
+        $("#form-control-weight").popover('show');
+    });
+    $( "#form-control-weight" ).focusout(function() {
+        event.preventDefault();
+        event.stopPropagation();
+        $("#form-control-weight").popover('hide');
+    });
+
+    /* adding extra questions */
+    $( "#skills" ).click(function() {
+      $( this ).next( "ul" ).toggle();
+      if($(this).is('.btn-primary')){
+            $(this).removeClass('btn-primary').addClass('btn-danger');
+            $( this ).text("Hide Skills / Certificates")
+        }else{
+            $(this).removeClass('btn-danger').addClass('btn-primary');
+            $( this ).text("Add Skills / Certificates")
+            //Do Stop
+        }
+    });
+    $( "#time" ).click(function() {
+      $( this ).next( "ul" ).toggle();
+      if($(this).is('.btn-primary')){
+            $(this).removeClass('btn-primary').addClass('btn-danger');
+            $( this ).text("Hide Time Comittments")
+        }else{
+            $(this).removeClass('btn-danger').addClass('btn-primary');
+            $( this ).text("Add Time Comittments")
+            //Do Stop
+        }
+    });
+    $( "#miscleaneous" ).click(function() {
+      $( this ).next( "ul" ).toggle();
+      if($(this).is('.btn-primary')){
+          $(this).removeClass('btn-primary').addClass('btn-danger');
+          $( this ).text("Hide Miscellaneous")
+        }else{
+          $(this).removeClass('btn-danger').addClass('btn-primary');
+          $( this ).text("Add Miscellaneous")
+          //Do Stop
+        }
+    });
+
+    /*header dropdown selection */
+    $("#username .dropdown-menu li a").click(function(){
+      var selText = $(this).text();
+      $( this ).addClass("active"); 
+      $(this).parents('.dropdown.pull-right').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
+    });
+
+    $('#username .dropdown-menu li a').click(function() {
+        var style = {
+                  backgroundColor: "#ffffff",
+                  borderRadius: "4px",
+                  color: "#4C4559",
+                  fontWeight: "600"
+        }
+        var style_empty = {
+                  backgroundColor: "",
+                  borderRadius: "",
+                  color: "",
+                  fontWeight: ""         
+        }
+        if($('#dropdown').data('open')) {
+            $('#dropdown').data('open', false);
+            
+        } else
+            $('#dropdown').data('open', true);
+            $("#username .dropdown-menu li a").css(style_empty);
+            $(this).css(style);
+    });
+    $( document ).ready(function() {
+      var style = {
+          backgroundColor: "#ffffff",
+          borderRadius: "4px",
+          color: "#4C4559",
+          fontWeight: "600"
+      }
+      $("#username .dropdown-menu li #tab-header-1").css(style);
+    });
+
+
 
 /*
 rich text editor
@@ -116,3 +231,8 @@ rich text editor
 		window.prettyPrint && prettyPrint();
 	});
 });
+
+$(".dropdown-menu li a").click(function(){
+      var selText = $(this).text();
+      $(this).parents('.btn-group').find('.dropdown-toggle').html(selText+' <b class="caret blue"></b>');
+    });
