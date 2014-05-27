@@ -64,7 +64,14 @@
 						<li role="presentation" class="divider"></li>
 						<li role="presentation" ><a role="menuitem" ng-model="Client" href="#" ><img src="../img/user-icon.svg" height="25" width="25">&nbsp;&nbsp;&nbsp;Sandy Sharma</a></li>
 						<li role="presentation" class="divider"></li>
-						<li role="presentation" id="separate-highlight" disabled> <a role="menuitem" href="#">Logout</a></li>
+						<li role="presentation" id="separate-highlight" disabled> 
+							<div class="elem1">
+								<label role="menuitem" style="text-align:left;">Logout</label>
+							</div>
+							<div class="elem1">
+								<a role="menuitem" href="#">Logout</a>
+							</div>
+						</li>
 					</ul>
 				</li>
 		      </ul>
@@ -193,7 +200,7 @@
 				</div>
 			</div>
 
-			<div class='row'>
+			<!-- <div class='row'>
 				<div class='margin-top-10'>
 				</div>
 			</div>
@@ -218,7 +225,7 @@
 		                </div>
 		            </div>
 		        </div>
-			</div>
+			</div> -->
 			<div class='row'>
 				<div class='margin-top-10'>
 				</div>
@@ -243,7 +250,7 @@
 				    <div class="col-sm-6">
 				    	<label class="font-size-15">Preferred Skills and Diplomas</label>
 				    </div>
-				    <div class='col-sm-9' >
+				    <div class='col-sm-11' >
 				    	<span>
 							Specify the skills and diplomas you're looking for in a successful application. Volunteers may still apply if they do not meet your preferences, but they will be clearly notified that they are at a disadvantage.
 						</span>
@@ -286,7 +293,7 @@
 				    <div class="col-sm-6">
 				    	<label class="font-size-15">Preferred Time commitments</label>
 				    </div>
-				    <div class='col-sm-9' >
+				    <div class='col-sm-11' >
 				    	<span>
 							Specify the time commitments you're looking for in a successful application. Volunteers may still apply if they do not meet your preferences, but they will be clearly notified that they are at a disadvantage.
 						</span>
@@ -297,20 +304,43 @@
 						</div>
 						<button class="btn btn-primary" id="time">Add Time Comittments</button>
 						<ul class="ishidden" id="group-skills">
+							<li style="list-style-type:none; margin-le">
+								<div class='col-sm-4'>
+		            				<div class="form-group" >
+						                <label>Start date</label>
+						                <div class='input-group date' id='datetimepicker8' style="max-width:300px;">
+						                    <input type='text' class="form-control" />
+						                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+						                    </span>
+						                </div>
+						            </div>
+						        </div>
+								<div class='col-sm-4'>
+						            <div class="form-group">
+						            	<label>End date</label>
+						                <div class='input-group date' id='datetimepicker9'  style="max-width:300px;">
+						                    <input type='text' class="form-control" />
+						                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+						                    </span>
+						                </div>
+						            </div>
+						        </div>
+							</li>
+
 							<li style="list-style-type:none">
 								<label >Time Comittment</label>
 								<div id='form-component-arrangement-input'>
 									<input type="text" class='form-control' id='form-text' data-role="tagsinput" placeholder="Add Time comittment" />
 								</div>
 							</li>
-							<li style="list-style-type:none">
+							<!-- <li style="list-style-type:none">
 								<label id='form-component-arrangement-label'>Estimated Duration</label>
 								<div  id='form-component-arrangement-input'>
 									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add Estimated duration" />
 								</div>
-							</li>
+							</li> -->
 							<li style="list-style-type:none">
-								<label id='form-component-arrangement-label'>Work Time Preference</label>
+								<label id='form-component-arrangement-label'>Days of Week</label>
 								<div  id='form-component-arrangement-input'>
 									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add Work Time Preference" />
 								</div>
@@ -339,9 +369,9 @@
 						<span class="glyphicon glyphicon-tasks"></span>			    	
 				    </div>
 				    <div class="col-sm-6">
-				    	<label class="font-size-15">Miscellaneuos Preferences</label>
+				    	<label class="font-size-15">Extra Preferences</label>
 				    </div>
-				    <div class='col-sm-9' >
+				    <div class='col-sm-11' >
 				    	<span>
 							Specify the language, International vlounterr option and other miscellaneous you're looking for in a successful application. Volunteers may still apply if they do not meet your preferences, but they will be clearly notified that they are at a disadvantage.
 						</span>
@@ -350,8 +380,14 @@
 							<div class='margin-top-10'>
 							</div>
 						</div>
-						<button class="btn btn-primary" id="miscleaneous">Add Miscellaneous</button>
+						<button class="btn btn-primary" id="miscleaneous">Add Extra Preferences</button>
 						<ul class="ishidden" id="group-skills">
+							<li style="list-style-type:none">
+								<label id='form-component-arrangement-label'>Appropriate For</label>
+								<div  id='form-component-arrangement-input'>
+									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add miscellaneous" />
+								</div>
+							</li>
 							<li style="list-style-type:none">
 								<label id='form-component-arrangement-label'>Language</label>
 								<div  id='form-component-arrangement-input'>
@@ -365,11 +401,12 @@
 								</div>
 							</li>
 							<li style="list-style-type:none">
-								<label id='form-component-arrangement-label'>Miscellaneous</label>
+								<label id='form-component-arrangement-label'>Extra Details</label>
 								<div  id='form-component-arrangement-input'>
 									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add miscellaneous" />
 								</div>
 							</li>
+							
 						</ul>
 				    </div>
 				</div>

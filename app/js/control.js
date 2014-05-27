@@ -72,7 +72,7 @@ $(document).ready(function() {
 });
 
     /*popover for job dropdown */
-    var element_job = "<span>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie cons.</span>";
+    var element_job = "<span style='text-align:left; width:250px;color: #7c7c7a;font-family: Helvetica,Arial,sans-serif;font-size: 13px;'>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie cons.</span>";
     $("#job-type").popover({
           title: "Title",
           trigger: "focus"
@@ -90,14 +90,14 @@ $(document).ready(function() {
     });
 
     /*popover for title */
-    var element_title = "<p>Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>" + 
-                        "<ul style='text-align:left; width:250px;'>" + 
+    var element_title = "<p style='text-align:left; width:250px;color: #7c7c7a;font-family: Helvetica,Arial,sans-serif;font-size: 13px;'>Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>" + 
+                        "<ul style='text-align:left; width:250px;color: #7c7c7a;font-family: Helvetica,Arial,sans-serif;font-size: 13px;'>" + 
                         "<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy</li>" + 
                         "<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy</li>" + 
                         "<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy</li>" + 
                       "</ul>";
     $("#form-control-weight").popover({
-          title: "Title",
+          title: "What's the title?",
           trigger: "focus"
     });
     $( "#form-control-weight" ).focus(function(event) {
@@ -139,10 +139,10 @@ $(document).ready(function() {
       $( this ).next( "ul" ).toggle();
       if($(this).is('.btn-primary')){
           $(this).removeClass('btn-primary').addClass('btn-danger');
-          $( this ).text("Hide Miscellaneous")
+          $( this ).text("Hide Extra Preferences")
         }else{
           $(this).removeClass('btn-danger').addClass('btn-primary');
-          $( this ).text("Add Miscellaneous")
+          $( this ).text("Add Extra Preferences")
           //Do Stop
         }
     });
