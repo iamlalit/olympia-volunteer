@@ -116,69 +116,15 @@
 				<div class='margin-top-10'>
 				</div>
 			</div>
-			<div class="row margin-left-57">
-				<div class='col-sm-9'>
+			<div class="row margin-left-57" id="describe-work">
+				<div class="form-group">
+					<div class='col-sm-8'>
 					<label >Describe the work to be done</label>
-					<div class="content">
-
-						<div id="alerts"></div>
-					    <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
-					      <div class="btn-group">
-					      <div class="btn-group">
-					        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="Font"><i class="icon-font"></i><b class="caret"></b></a>
-					          <ul class="dropdown-menu">
-					          </ul>
-					        </div>
-					      <div class="btn-group">
-					        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="icon-text-height"></i>&nbsp;<b class="caret"></b></a>
-					          <ul class="dropdown-menu">
-					          <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
-					          <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
-					          <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
-					          </ul>
-					      </div>
-					      <div class="btn-group">
-					        <a class="btn btn-default " data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="icon-bold"></i></a>
-					        <a class="btn btn-default " data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="icon-italic"></i></a>
-					        <!--<a class="btn" data-edit="strikethrough" title="Strikethrough"><i class="icon-strikethrough"></i></a> -->
-					        <a class="btn btn-default " data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="icon-underline"></i></a>
-					      </div>
-					      <div class="btn-group">
-					        <a class="btn btn-default " data-edit="insertunorderedlist" title="Bullet list"><i class="icon-list-ul"></i></a>
-					        <a class="btn btn-default " data-edit="insertorderedlist" title="Number list"><i class="icon-list-ol"></i></a>
-					        <a class="btn btn-default " data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="icon-indent-left"></i></a>
-					        <a class="btn btn-default " data-edit="indent" title="Indent (Tab)"><i class="icon-indent-right"></i></a>
-					      </div>
-					      <div class="btn-group">
-					        <a class="btn btn-default " data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="icon-align-left"></i></a>
-					        <a class="btn btn-default " data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="icon-align-center"></i></a>
-					        <a class="btn btn-default " data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="icon-align-right"></i></a>
-					        <a class="btn btn-default " data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="icon-align-justify"></i></a>
-					      </div>
-					      
-					      <div class="btn-group">
-							  <a class="btn  btn-default dropdown-toggle" data-toggle="dropdown" title="Hyperlink"><i class="icon-link"></i></a>
-							    <div class="dropdown-menu input-append">
-								    <input class="span2" placeholder="URL" type="text" data-edit="createLink"/>
-								    <button class="btn" type="button">Add</button>
-					        </div>
-					        <a class="btn btn-default" data-edit="unlink" title="Remove Hyperlink"><i class="icon-cut"></i></a>
-					      </div>
-							      
-					      <div class="btn-group">
-					        <a class="btn btn-default " title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="icon-picture"></i></a>
-					        <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
-					      </div>
-					      <div class="btn-group">
-					        <a class="btn btn-default " data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="icon-undo"></i></a>
-					        <a class="btn btn-default " data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>
-					      </div>
-					      <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="">
-					    </div>
-					    </div>
-					    <div id="editor"> </div>
-						</div>
+						<a href="#" id="zoomTextarea" class="pull-right" title="Click to Zoom" data-toggle="modal" data-target="#textBoxBig">Expand <i class="olympia-expand2"></i></a>
+						<textarea id="text-content" maxlength="5000" class="form-control" rows="5"></textarea>
+						<p>Number of characters <span id="text-content-count">0</span> (max 5000 characters)</p>
 					</div>
+				</div>
 			</div>
 			<div class='row'>
 				<div class='margin-top-10'>
@@ -199,33 +145,6 @@
 					<span id='optional-text'> Less than 5mb</span>
 				</div>
 			</div>
-
-			<!-- <div class='row'>
-				<div class='margin-top-10'>
-				</div>
-			</div>
-			<div class='row margin-left-57'>
-				<div class='col-sm-4'>
-		            <div class="form-group" >
-		                <label>Start date</label>
-		                <div class='input-group date' id='datetimepicker8' style="max-width:300px;">
-		                    <input type='text' class="form-control" />
-		                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-		                    </span>
-		                </div>
-		            </div>
-		        </div>
-				<div class='col-sm-4'>
-		            <div class="form-group">
-		            	<label>End date</label>
-		                <div class='input-group date' id='datetimepicker9'  style="max-width:300px;">
-		                    <input type='text' class="form-control" />
-		                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-		                    </span>
-		                </div>
-		            </div>
-		        </div>
-			</div> -->
 			<div class='row'>
 				<div class='margin-top-10'>
 				</div>
@@ -252,7 +171,7 @@
 				    </div>
 				    <div class='col-sm-11' >
 				    	<span>
-							Specify the skills and diplomas you're looking for in a successful application. Volunteers may still apply if they do not meet your preferences, but they will be clearly notified that they are at a disadvantage.
+							Specify the skills and diplomas/certificates you are looking for in a successful application. Volunteers may still apply if they do not meet your preferences, but they will be clearly notified that they are at a disadvantage.
 						</span>
 
 						<div class='row'>
@@ -261,14 +180,16 @@
 						</div>
 						<button class="btn btn-primary" id="skills" value="Add Skills / Certificates" name="Add Skills / Certificates">Add Skills / Certificates</button>
 						<ul class="ishidden" id="group-skills">
-							<li style="list-style-type:none">
+							<li style="list-style-type:none" id="skills-popover">
 								<label >What Skills are needed?</label>
-								<div id='form-component-arrangement-input'>
-									<input type="text" class='form-control' id='form-text' data-role="tagsinput" placeholder="Add Skills" />
+								<span id="optional-text">(optional) </span>
+								<div class='form-group'>
+									<input type="text" class='form-control' data-toggle="tooltip" data-role="tagsinput" placeholder="Add Skills" />
 								</div>
 							</li>
-							<li style="list-style-type:none">
+							<li style="list-style-type:none" id="diploma-popover">
 								<label id='form-component-arrangement-label'>What Diploma/Certificates are needed?</label>
+								<span id="optional-text">(optional) </span>
 								<div  id='form-component-arrangement-input'>
 									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add Diplomas" />
 								</div>
@@ -277,14 +198,11 @@
 				    </div>
 				</div>
 			</div>
-
 			<div class="row margin-left-57">
 				<div class="col-sm-11">
 					<hr style="height:1px; background-color:#DDDDDD;">
 				</div>	
 			</div>
-
-
 			<div class="row margin-left-57">
 				<div class="col-sm-11">
 					<div class='col-sm-1  font-size-4 '>
@@ -295,7 +213,7 @@
 				    </div>
 				    <div class='col-sm-11' >
 				    	<span>
-							Specify the time commitments you're looking for in a successful application. Volunteers may still apply if they do not meet your preferences, but they will be clearly notified that they are at a disadvantage.
+							Specify the time commitments, schedule and days of week you're looking for in a successful application. Volunteers may still apply if they do not meet your requirement preferences, but they will be clearly notified that they are at a disadvantage.
 						</span>
 
 						<div class='row'>
@@ -304,22 +222,23 @@
 						</div>
 						<button class="btn btn-primary" id="time">Add Time Comittments</button>
 						<ul class="ishidden" id="group-skills">
-							<li style="list-style-type:none; margin-le">
-								<div class='col-sm-4'>
+						
+							<li style="list-style-type:none; margin-left:-16px;" id="datepicker">
+								<div class='col-sm-6'>
 		            				<div class="form-group" >
 						                <label>Start date</label>
-						                <div class='input-group date' id='datetimepicker8' style="max-width:300px;">
-						                    <input type='text' class="form-control" />
+						                <div class='input-group date' id='datetimepicker8' style="max-width:330px;">
+						                    <input type='text' class="form-control" id='datepicker1'/>
 						                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
 						                    </span>
 						                </div>
 						            </div>
 						        </div>
-								<div class='col-sm-4'>
+								<div class='col-sm-6'>
 						            <div class="form-group">
 						            	<label>End date</label>
-						                <div class='input-group date' id='datetimepicker9'  style="max-width:300px;">
-						                    <input type='text' class="form-control" />
+						                <div class='input-group date' id='datetimepicker9'  style="max-width:330px;">
+						                    <input type='text' class="form-control" id='datepicker2'/>
 						                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
 						                    </span>
 						                </div>
@@ -327,10 +246,49 @@
 						        </div>
 							</li>
 
-							<li style="list-style-type:none">
-								<label >Time Comittment</label>
-								<div id='form-component-arrangement-input'>
-									<input type="text" class='form-control' id='form-text' data-role="tagsinput" placeholder="Add Time comittment" />
+							<li style="list-style-type:none" class="check-label">
+								<div class="row">
+									<label class="margin-left-28">Time Comittment</label>
+									<a>
+										<i class="glyphicon glyphicon-question-sign blue" id="time-checkbox"></i>
+									</a>
+									<span id="optional-text">(optional) </span>
+									
+								</div>
+								<!-- <label class="margin">Time Comittment</label> -->
+								<div class="col-sm-6 ">
+									<div class="checkbox">
+										<label>
+											<input type="checkbox"> <a>Occasional(weekly or monthly)</a>
+										</label>
+									</div>
+									<div class="checkbox">
+										<label>
+											<input type="checkbox"> <a>A lot(10+ hours/week)</a>
+										</label>
+									</div>
+									<div class="checkbox">
+										<label>
+											<input type="checkbox"> <a>Full time(30-40 hours/week)</a>
+										</label>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="checkbox">
+										<label>
+											<input type="checkbox"> <a>One time</a>
+										</label>
+									</div>
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" > <a>For few hours</a>
+										</label>
+									</div>
+									<div class="checkbox">
+										<label>
+											<input type="checkbox"> <a>Less than 1 hour </a>
+										</label>
+									</div>
 								</div>
 							</li>
 							<!-- <li style="list-style-type:none">
@@ -339,30 +297,48 @@
 									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add Estimated duration" />
 								</div>
 							</li> -->
-							<li style="list-style-type:none">
-								<label id='form-component-arrangement-label'>Days of Week</label>
-								<div  id='form-component-arrangement-input'>
-									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add Work Time Preference" />
+							<li style="list-style-type:none" class="check-label">
+								<div class="row">
+									<label class="margin-left-28">Schedule</label>
+									<a>
+										<i class="glyphicon glyphicon-question-sign blue"  id="schedule-checkbox"></i>
+									</a>
+
+									<span id="optional-text">(optional) </span>
+									
+								</div>
+								<div class="col-sm-12 ">
+									<div class="checkbox">
+										<label>
+											<input type="checkbox"> <a>Flexible schedule</a>
+										</label>
+									</div>
+									<div class="checkbox">
+										<label>
+											<input type="checkbox"> <a>Fixed schedule</a>
+										</label>
+									</div>
 								</div>
 							</li>
-							<li style="list-style-type:none">
-								<label id='form-component-arrangement-label'>Schedule</label>
-								<div  id='form-component-arrangement-input'>
-									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add Schedule" />
+							<li style="list-style-type:none" id="dow-popover">
+								<label id='form-component-arrangement-label'>Days of Week</label>
+								<span id="optional-text">(optional) </span>
+								<div  id='form-component-arrangement-input' style="margin-bottom:0px;">
+									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add days of week" />
+								</div>
+								<div class="col-sm-12">
+									<span style="margin-left:-13px;"><a href="#" id="modal-dow">Add days of week requirements to your job posting</a></span>
 								</div>
 							</li>
 						</ul>
 				    </div>
 				</div>
 			</div>
-
 			<div class="row margin-left-57">
 				<div class="col-sm-11">
 					<hr style="height:1px; background-color:#DDDDDD;">
 				</div>	
 			</div>
-
-
 			<div class="row margin-left-57">
 				<div class="col-sm-11">
 					<div class='col-sm-1  font-size-4 '>
@@ -373,52 +349,120 @@
 				    </div>
 				    <div class='col-sm-11' >
 				    	<span>
-							Specify the language, International vlounterr option and other miscellaneous you're looking for in a successful application. Volunteers may still apply if they do not meet your preferences, but they will be clearly notified that they are at a disadvantage.
+							Specify the International volunter option, language and other extra details you're looking for in a successful application. Volunteers may still apply if they do not meet your preferences, but they will be clearly notified that they are at a disadvantage.
 						</span>
-
 						<div class='row'>
 							<div class='margin-top-10'>
 							</div>
 						</div>
 						<button class="btn btn-primary" id="miscleaneous">Add Extra Preferences</button>
 						<ul class="ishidden" id="group-skills">
-							<li style="list-style-type:none">
-								<label id='form-component-arrangement-label'>Appropriate For</label>
-								<div  id='form-component-arrangement-input'>
-									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add miscellaneous" />
+							<li style="list-style-type:none" class="check-label">
+								<div class="row">
+									<label class="margin-left-28">Appropriate for</label>
+									<a>
+										<i class="glyphicon glyphicon-question-sign blue"  id="appropriate-checkbox"></i>
+									</a>
+									<span id="optional-text">(optional) </span>
+									
+								</div>
+								<!-- <label class="margin">Time Comittment</label> -->
+								<div class="col-sm-12">
+									<div class="checkbox">
+										<label>
+											<input type="checkbox"> <a>Families</a>
+										</label>
+									</div>
+									<div class="checkbox">
+										<label>
+											<input type="checkbox"> <a>Groups</a>
+										</label>
+									</div>
 								</div>
 							</li>
-							<li style="list-style-type:none">
-								<label id='form-component-arrangement-label'>Language</label>
+							<li style="list-style-type:none" class="check-label">
+								<div class="row">
+									<label class="margin-left-28">International volunteer option</label>
+									<a>
+										<i class="glyphicon glyphicon-question-sign blue"  id="IVO-checkbox"></i>
+									</a>
+									<span id="optional-text">(optional) </span>
+									
+								</div>
+								<!-- <label class="margin">Time Comittment</label> -->
+								<div class="col-sm-6">
+									<div class="checkbox">
+										<label>
+											<input type="checkbox"> <a>Housing available</a>
+										</label>
+									</div>
+									<div class="checkbox">
+										<label>
+											<input type="checkbox"> <a>International volunteers welcome</a>
+										</label>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="checkbox">
+										<label>
+											<input type="checkbox"> <a>Language/cultural support available</a>
+										</label>
+									</div>
+									<div class="checkbox">
+									</div>
+								</div>
+							</li>
+							<li style="list-style-type:none" class="check-label">
+								<div class="row">
+									<label class="margin-left-28 ">Extra Details</label>
+									<a>
+										<i class="glyphicon glyphicon-question-sign blue"  id="extra-checkbox"></i>
+									</a>
+									<span id="optional-text">(optional) </span>
+								</div>
+								
+								<div class="col-sm-6">
+									<div class="checkbox">
+										<label>
+											<input type="checkbox"> <a>Training provided</a>
+										</label>
+									</div>
+									<div class="checkbox">
+										<label>
+											<input type="checkbox"> <a>Fee required</a>
+										</label>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="checkbox">
+										<label>
+											<input type="checkbox"> <a>Stipend provided</a>
+										</label>
+									</div>
+									<div class="checkbox">
+									</div>
+								</div>
+							</li>
+							<li style="list-style-type:none" id="language-popover">
+								<label>Language</label>
+								<span id="optional-text">(optional) </span>								
 								<div  id='form-component-arrangement-input'>
 									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add Languages" />
 								</div>
-							</li>
-							<li style="list-style-type:none">
-								<label id='form-component-arrangement-label'>International volunteer option</label>
-								<div  id='form-component-arrangement-input'>
-									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add International volunteer option" />
+
+								<div class="col-sm-12">
+									<span style="margin-left:-13px;"><a href="#" id="modal-dow">Add language requirements to your job posting</a></span>
 								</div>
 							</li>
-							<li style="list-style-type:none">
-								<label id='form-component-arrangement-label'>Extra Details</label>
-								<div  id='form-component-arrangement-input'>
-									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add miscellaneous" />
-								</div>
-							</li>
-							
 						</ul>
 				    </div>
 				</div>
 			</div>
-
 			<div class="row margin-left-57">
 				<div class="col-sm-11">
 					<hr style="height:1px; background-color:#DDDDDD;">
 				</div>	
 			</div>
-
-
 			<div class='row'>
 				<div class='margin-top-15'>
 				</div>
@@ -445,13 +489,12 @@
 					</div>
 				</div>
 			</div>
-
 			<div class="row margin-left-57">
 				<div class="col-sm-11">
 					<hr style="height:1px; background-color:#DDDDDD;">
 				</div>	
 			</div>
-
+			<!--screening questions -->
 			<div class='row'>
 				<div class='margin-top-15'>
 				</div>
@@ -465,18 +508,16 @@
 				    	<label class="font-size-15">Screening Questions</label>
 				    </div>
 
-				    <div class='col-sm-9' >
+				    <div class='col-sm-11' id="screening-popover">
 				    	<span>Add a few question that youd like to ask your candidates to answer when applying to your job</span>
 				    	<div class="margin-top-10"></div>
 				    	<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add Questions" style='font-size:20px;'/>
 				    </div>
 				</div>
 			</div>
-
-
 			<div style="margin-bottom:50px;">
 			</div>
-		
+			<!-- buttons at the bottom -->
 			<div class='row'>
 				<div class='col-sm-4'>
 				</div>
@@ -486,8 +527,6 @@
 					<button class='btn btn-danger' type="button" style='padding:5px 15px 5px 15px; font-size:15px;'>Cancel</button>
 				</div>
 			</div>
-
-			
 			<div style="margin-bottom:50px;">
 			</div>
 
@@ -597,18 +636,73 @@
 			</div>
 		</div>
 	</footer>
-	
-		
-
-
-		</div>
+	</div>
 		<div class="col-sm-1">
 		</div>
 	</div>
 
-	<footer>
-	</footer>
-	
+
+	<!-- Some modals -->
+	<!-- Describe the work to be done data modal-->
+	<div class="modal fade" id="textBoxBig" tabindex="-1" role="dialog" aria-labelledby="textBoxBig" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h2 class="modal-title" id="myModalLabel">Describe the work to be done</h2>
+				</div>
+				<form role="form">
+					<div class="modal-body">
+						<div class="form-group">
+							<textarea id="text-content-pop" maxlength="4000" class="form-control" rows="15"></textarea>
+						</div>
+						<div class="form-group text-left">
+							<p>Number of characters: <span id="text-content-count-pop">0</span> (max 4000 characters)</p>
+						</div>
+						<div class="row">
+							<div class="col-sm-6 text-left">
+							</div>
+							<div class="col-sm-6">
+								<button type="button" class="btn btn-primary pull-right" data-dismiss="modal">OK <i class="glyphicon glyphicon-arrow-right"></i></button>
+								<button style="margin: 0 10px 0 0;" type="button" class="btn btn-default btn-danger pull-right" data-dismiss="modal" aria-hidden="true">Cancel</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="textBoxBig" tabindex="-1" role="dialog" aria-labelledby="textBoxBig" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h2 class="modal-title" id="myModalLabel">Days of week</h2>
+				</div>
+				<form role="form">
+					<div class="modal-body">
+						<div class="form-group">
+							<textarea id="text-content-pop" maxlength="4000" class="form-control" rows="15"></textarea>
+						</div>
+						<div class="form-group text-left">
+							<p>Number of characters: <span id="text-content-count-pop">0</span> (max 4000 characters)</p>
+						</div>
+						<div class="row">
+							<div class="col-sm-6 text-left">
+							</div>
+							<div class="col-sm-6">
+								<button type="button" class="btn btn-primary pull-right" data-dismiss="modal">OK <i class="glyphicon glyphicon-arrow-right"></i></button>
+								<button style="margin: 0 10px 0 0;" type="button" class="btn btn-default btn-danger pull-right" data-dismiss="modal" aria-hidden="true">Cancel</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
 	<!-- Scripts -->
 	<script src="../lib/jquery/dist/jquery.min.js"></script>
 	<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
