@@ -65,12 +65,7 @@
 						<li role="presentation" ><a role="menuitem" ng-model="Client" href="#" ><img src="../img/user-icon.svg" height="25" width="25">&nbsp;&nbsp;&nbsp;Sandy Sharma</a></li>
 						<li role="presentation" class="divider"></li>
 						<li role="presentation" id="separate-highlight" disabled> 
-							<div class="elem1">
-								<label role="menuitem" style="text-align:left;">Logout</label>
-							</div>
-							<div class="elem1">
-								<a role="menuitem" href="#">Logout</a>
-							</div>
+								<a role="menuitem" style="text-align:right;">Logout</a>
 						</li>
 					</ul>
 				</li>
@@ -184,14 +179,14 @@
 								<label >What Skills are needed?</label>
 								<span id="optional-text">(optional) </span>
 								<div class='form-group'>
-									<input type="text" class='form-control' data-toggle="tooltip" placeholder="Add Skills" />
+									<input type="text" class='form-control' data-toggle="tooltip" data-role="tagsinput" placeholder="Add Skills" />
 								</div>
 							</li>
 							<li style="list-style-type:none" id="diploma-popover">
 								<label id='form-component-arrangement-label'>What Diploma/Certificates are needed?</label>
 								<span id="optional-text">(optional) </span>
 								<div  id='form-component-arrangement-input'>
-									<input type="text" class='form-control' id='form-text-control' placeholder="Add Diplomas" />
+									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add Diplomas" />
 								</div>
 							</li>
 						</ul>

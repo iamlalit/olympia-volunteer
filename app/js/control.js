@@ -151,7 +151,6 @@ $( document ).ready(function() {
   $( "#skill-text" ).focusout(function(event) {
       event.preventDefault();
       event.stopPropagation();
-      pointer.attr( "size", "120" );
       $("#skill-text").popover('hide');
   });
 });
@@ -178,7 +177,6 @@ $( document ).ready(function() {
   $( "#diploma-text" ).focusout(function(event) {
       event.preventDefault();
       event.stopPropagation();
-      pointer.attr( "size", "120" );
       $("#diploma-text").popover('hide');
   });
 });
