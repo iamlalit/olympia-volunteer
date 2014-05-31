@@ -430,12 +430,12 @@
         // Init tags from $(this).val()
         $(this).val($(this).val());
       } 
-      // else {
-      //   // Invoke function on existing tags input
-      //   var retVal = tagsinput[arg1](arg2);
-      //   if (retVal !== undefined)
-      //     results.push(retVal);
-      // }
+      else {
+        // Invoke function on existing tags input
+          var retVal = tagsinput[arg1](arg2);
+          if (retVal !== undefined)
+            results.push(retVal);
+      }
     });
 
     if ( typeof arg1 == 'string') {

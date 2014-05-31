@@ -184,14 +184,14 @@
 								<label >What Skills are needed?</label>
 								<span id="optional-text">(optional) </span>
 								<div class='form-group'>
-									<input type="text" class='form-control' data-toggle="tooltip" data-role="tagsinput" placeholder="Add Skills" />
+									<input type="text" class='form-control' data-toggle="tooltip" placeholder="Add Skills" />
 								</div>
 							</li>
 							<li style="list-style-type:none" id="diploma-popover">
 								<label id='form-component-arrangement-label'>What Diploma/Certificates are needed?</label>
 								<span id="optional-text">(optional) </span>
 								<div  id='form-component-arrangement-input'>
-									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add Diplomas" />
+									<input type="text" class='form-control' id='form-text-control' placeholder="Add Diplomas" />
 								</div>
 							</li>
 						</ul>
@@ -294,7 +294,7 @@
 							<!-- <li style="list-style-type:none">
 								<label id='form-component-arrangement-label'>Estimated Duration</label>
 								<div  id='form-component-arrangement-input'>
-									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add Estimated duration" />
+									<input type="text" class='form-control' id='form-text-control' placeholder="Add Estimated duration" />
 								</div>
 							</li> -->
 							<li style="list-style-type:none" class="check-label">
@@ -324,7 +324,7 @@
 								<label id='form-component-arrangement-label'>Days of Week</label>
 								<span id="optional-text">(optional) </span>
 								<div  id='form-component-arrangement-input' style="margin-bottom:0px;">
-									<input type="text" class='form-control' id='dow-tag' data-role="tagsinput" placeholder="Add days of week" />
+									<input type="text" class='form-control' id='dow-tag' placeholder="Add days of week" />
 								</div>
 								<div class="col-sm-12">
 									<span style="margin-left:-13px;"><a href="#" id="modal-dow">Add days of week requirements to your job posting</a></span>
@@ -447,11 +447,12 @@
 								<label>Language</label>
 								<span id="optional-text">(optional) </span>								
 								<div  id='form-component-arrangement-input'>
-									<input type="text" class='form-control' id="language-tag" data-role="tagsinput" placeholder="Add Languages" />
+									<input type="text" class='form-control' id="language-tag" placeholder="Add Languages" />
 								</div>
 
 								<div class="col-sm-12">
-									<span style="margin-left:-13px;"><a href="#" id="modal-dow">Add language requirements to your job posting</a></span>
+									<span style="margin-left:-13px;"><a href="#" id="zoomTextarea" title="Click to Zoom" data-toggle="modal" data-target="#languageBox">Add language requirements to your job posting</a>
+									</span>
 								</div>
 							</li>
 						</ul>
@@ -511,7 +512,7 @@
 				    <div class='col-sm-11' id="screening-popover">
 				    	<span>Add a few question that youd like to ask your candidates to answer when applying to your job</span>
 				    	<div class="margin-top-10"></div>
-				    	<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add Questions" style='font-size:20px;'/>
+				    	<input type="text" class='form-control' id='form-text-control' placeholder="Add Questions" style='font-size:20px;'/>
 				    </div>
 				</div>
 			</div>
@@ -672,28 +673,294 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="modal fade" id="textBoxBig" tabindex="-1" role="dialog" aria-labelledby="textBoxBig" aria-hidden="true">
+	<!-- language modal box -->
+	<div class="modal fade" id="languageBox" tabindex="-1" role="dialog" aria-labelledby="languageBox" aria-hidden="true">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h2 class="modal-title" id="myModalLabel">Days of week</h2>
+					<h2 class="modal-title" id="myModalLabel">Choose languages</h2>
 				</div>
 				<form role="form">
 					<div class="modal-body">
 						<div class="form-group">
-							<textarea id="text-content-pop" maxlength="4000" class="form-control" rows="15"></textarea>
-						</div>
-						<div class="form-group text-left">
-							<p>Number of characters: <span id="text-content-count-pop">0</span> (max 4000 characters)</p>
+							<div class="col-sm-3">
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan1" value="Afrikaans"> Afrikaans
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan2" value="Albanian"> Albanian
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan3" value="Arabic"> Arabic
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan4" value="Armenian"> Armenian
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan5" value="Azerbaijani"> Azerbaijani
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan6" value="Basque"> Basque
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan7" value="Belarusian"> Belarusian
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan8" value="Bengali"> Bengali
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan9" value="Bosnian"> Bosnian
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan10" value="Bulgarian"> Bulgarian
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan11" value="Catalan"> Catalan
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan12" value="Cebuano"> Cebuano
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan13" value="Chinese"> Chinese
+								    </label>
+								</div>
+							    
+							</div>
+							<div class="col-sm-3">
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan14" value="Danish"> Danish
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan15" value="Dutch"> Dutch
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan16" value="English"> English
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan17" value="Esperanto"> Esperanto
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan18" value="Estonian"> Estonian
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan19" value="Filipino"> Filipino
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan20" value="French"> French
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan21" value="Georgian"> Georgian
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan22" value="German"> German
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan23" value="Greek"> Greek
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan24" value="Hausa"> Hausa
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan25" value="Hebrew"> Hebrew
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan26" value="Hindi"> Hindi
+								    </label>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan27" value="Hungarian"> Hungarian
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan28" value="Indonesian"> Indonesian
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan29" value="Irish"> Irish
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan30" value="Italian"> Italian
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan31" value="Japanese"> Japanese
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan32" value="Korean"> Korean
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan33" value="Lao"> Lao
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan34" value="Latin"> Latin
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan35" value="Mongolian"> Mongolian
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan36" value="Norwegian"> Norwegian
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan37" value="Persian"> Persian
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan38" value="Portuguese"> Portuguese
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan39" value="Punjabi"> Punjabi
+								    </label>
+								</div>
+							</div>
+							
+							<div class="col-sm-3">
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan40" value="Romanian"> Romanian
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan41" value="Russian"> Russian
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan42" value="Serbian"> Serbian
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan43" value="Spanish"> Spanish
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan44" value="Swedish"> Swedish
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan45" value="Thai"> Thai
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan46" value="Turkish"> Turkish
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan47" value="Ukrainian"> Ukrainian
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan48" value="Urdu"> Urdu
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan49" value="Vietnamese"> Vietnamese
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan50" value="Welsh"> Welsh
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan51" value="Yoruba"> Yoruba
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="lan52" value="Zulu"> Zulu
+								    </label>
+								</div>
+							</div>
 						</div>
 						<div class="row">
 							<div class="col-sm-6 text-left">
 							</div>
 							<div class="col-sm-6">
-								<button type="button" class="btn btn-primary pull-right" data-dismiss="modal">OK <i class="glyphicon glyphicon-arrow-right"></i></button>
-								<button style="margin: 0 10px 0 0;" type="button" class="btn btn-default btn-danger pull-right" data-dismiss="modal" aria-hidden="true">Cancel</button>
+								<button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-primary pull-right" data-dismiss="modal" onclick="updateValueLan()">OK <i class="glyphicon glyphicon-arrow-right"></i></button>
+								<button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-default btn-danger pull-right" data-dismiss="modal" aria-hidden="true" >Cancel</button>
 							</div>
 						</div>
 					</div>

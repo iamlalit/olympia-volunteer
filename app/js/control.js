@@ -206,7 +206,6 @@ $( document ).ready(function() {
   $( "#dow-text" ).focusout(function(event) {
       event.preventDefault();
       event.stopPropagation();
-      pointer.attr( "size", "120" );
       $("#dow-text").popover('hide');
   });
 });
@@ -232,7 +231,6 @@ $( document ).ready(function() {
   $( "#language-text" ).focusout(function(event) {
       event.preventDefault();
       event.stopPropagation();
-      pointer.attr( "size", "120" );
       $("#language-text").popover('hide');
   });
 });
@@ -258,7 +256,6 @@ $( document ).ready(function() {
   $( "#screening-text" ).focusout(function(event) {
       event.preventDefault();
       event.stopPropagation();
-      pointer.attr( "size", "120" );
       $("#screening-text").popover('hide');
   });
 });
@@ -464,16 +461,16 @@ $(".dropdown-menu li a").click(function(){
   $(this).parents('.btn-group').find('.dropdown-toggle').html(selText+' <b class="caret blue"></b>');
 });
 
+
+
 $('#language-tag').tagsinput({
   typeahead: {
     source: ['Afrikaans','Albanian', 'Arabic', 'Armenian', 'Azerbaijani', 'Basque', 'Belarusian', 'Bengali', 'Bosnian', 'Bulgarian', 
-            'Catalan', 'Cebuano', 'Chinese', 'Croatian', 'Czech', 'Danish', 'Dutch', 'English', 'Esperanto', 'Estonian', 'Filipino', 
-            'Finnish', 'French', 'Galician', 'Georgian', 'German', 'Greek', 'Gujarati', 'Haitian Creole', 'Hausa', 'Hebrew', 'Hindi',
-            'Hmong', 'Hungarian', 'Icelandic', 'Igbo', 'Indonesian', 'Irish', 'Italian', 'Japanese', 'Javanese', 'Kannada', 'Khmer', 
-            'Korean', 'Lao', 'Latin', 'Latvian', 'Lithuanian', 'Macedonian', 'Malay', 'Maltese', 'Maori', 'Marathi', 'Mongolian', 'Nepali', 
-            'Norwegian', 'Persian', 'Polish', 'Portuguese', 'Punjabi', 'Romanian', 'Russian', 'Serbian', 'Slovak', 'Slovenian', 'Somali', 
-            'Spanish', 'Swahili', 'Swedish', 'Tamil', 'Telugu', 'Thai', 'Turkish', 'Ukrainian', 'Urdu', 'Vietnamese', 'Welsh', 'Yiddish', 
-            'Yoruba', 'Zulu'],
+            'Catalan', 'Cebuano', 'Chinese', 'Danish', 'Dutch', 'English', 'Esperanto', 'Estonian', 'Filipino', 'French', 'Georgian', 
+            'German', 'Greek', 'Hausa', 'Hebrew', 'Hindi', 'Hungarian', 'Indonesian', 'Irish', 'Italian', 'Japanese', 
+            'Korean', 'Lao', 'Latin', 'Mongolian', 'Norwegian', 'Persian', 'Portuguese', 'Punjabi', 'Romanian', 'Russian', 'Serbian', 
+            'Spanish',  'Swedish', 'Thai', 'Turkish', 'Ukrainian', 'Urdu', 'Vietnamese', 'Welsh', 'Yoruba',
+             'Zulu'],
     sorter: function (items) {
         return items.sort();
     }
@@ -493,3 +490,16 @@ $('#dow-tag').tagsinput({
   }
 });
 
+function updateValueLan(){
+  var listOfLan = [];
+  for( i=0 ; i < 52 ; i++){
+    if($("#lan" + i +"").is(":checked")){
+     listOfLan.push($("#lan" + i +"").val());
+    }
+  }
+  var tagsValue = $("#language-tag").val();
+  $("#language-tag").tagsinput("refresh");
+  for(i = 0 ; i < listOfLan.length ; i++){
+    $("#language-tag").tagsinput('add', listOfLan[i]);
+  }
+}
