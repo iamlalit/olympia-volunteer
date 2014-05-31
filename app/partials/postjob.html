@@ -79,6 +79,7 @@
 		<div class="row margin-top-15" ></div>
 		<div class="col-sm-1">
 		</div>
+		<form method="post" id="postJob" onsubmit="" ></form>
 		<div class="col-sm-10">
 			<div class='row  margin-left-71'>
 				<span id='heading-form'>Post a Job</span>
@@ -90,7 +91,7 @@
 			<div class="row margin-left-57" id="jobs">
 				<div class="col-sm-8">
 					<label >Job Types</label>
-					<select class='form-control' id="job-type" style="width:400px;">
+					<select class='form-control' id="job-type" style="width:400px;" required>
 						<option value='job' select='selected'>Job</option>
 						<option value='Internship'>Internship</option>
 						<option value='Event'>Event</option>
@@ -527,13 +528,13 @@
 				</div>
 				<div class='col-sm-4'>
 					<button class='btn btn-primary' type="button" style='padding:5px 15px 5px 15px; font-size:15px;'>Preview</button>
-					<button class='btn btn-success' type="button" style='padding:5px 15px 5px 15px; font-size:15px;'>Post a Job</button>
+					<button class='btn btn-success' type="submit" style='padding:5px 15px 5px 15px; font-size:15px;'>Post a Job</button>
 					<button class='btn btn-danger' type="button" style='padding:5px 15px 5px 15px; font-size:15px;'>Cancel</button>
 				</div>
 			</div>
 			<div style="margin-bottom:50px;">
 			</div>
-
+		</form>
 	<footer class="main-container-footer">
 		<div class='footer-size'>
 			<div class='row'>
@@ -1255,7 +1256,7 @@
 							</div>
 							<div class="col-sm-6">
 								<button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-primary pull-right" data-dismiss="modal" onclick="updateValueScreeningCheck()">OK <i class="glyphicon glyphicon-arrow-right"></i></button>
-								<button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-default btn-danger pull-right" data-dismiss="modal" aria-hidden="true" >Cancel</button>
+								<button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-default btn-danger pull right" data-dismiss="modal" aria-hidden="true" >Cancel</button>
 							</div>
 						</div>
 					</div>

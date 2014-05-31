@@ -478,7 +478,7 @@ $('#language-tag').tagsinput({
 
 function updateValueLanCheck(){
   var listOfLan = [];
-  for( i=0 ; i < 52 ; i++){
+  for( i=1 ; i <= 52 ; i++){
     if($("#lan" + i +"").is(":checked")){
      listOfLan.push($("#lan" + i +"").val());
     }
@@ -489,17 +489,19 @@ function updateValueLanCheck(){
     $("#language-tag").tagsinput('add', listOfLan[i]);
   }
 }
-
 function updateValueLanText(){
   
   $("#language-tag").tagsinput("refresh");
   var tagsValue = $("#language-tag").val();
   var tagsList = tagsValue.split(",");
   console.log(tagsList);
-  for( i=0 ; i < 52 ; i++){
+  for( i=1 ; i <= 52 ; i++){
+        $("#lan" + i + "").prop("checked", false);
+  }
+  for( i=1 ; i <= 52 ; i++){
     for( j = 0 ; j < tagsList.length ; j++ ){
       if($("#lan" + i + "").val() === tagsList[j]){
-        $("#lan" + i + "").attr("checked", "checked")
+        $("#lan" + i + "").prop("checked", true);
       }
     }
   }
@@ -507,11 +509,11 @@ function updateValueLanText(){
 
 $('#dow-tag').tagsinput({
   typeahead: {
-    source: ['weekdays morning','weekdays evening', 'weekdays late night', 'weekdays after noon','weekend morning', 'weekend evening', 'weekend night', 'weekend after noon',
-            'monday morning','monday evening', 'monday late night', 'monday after noon','tuesday morning', 'tuesday evening', 'tuesday late night', 'tuesday after noon',
-            'wednesday morning','wednesday evening', 'wednesday late night', 'wednesday after noon','thursday morning', 'thursday evening', 'thursday late night', 'thursday after noon',
-            'friday morning','friday evening', 'friday late night', 'friday after noon','saturday morning', 'saturday evening', 'saturday late night', 'saturday after noon',
-            'sunday morning','sunday evening', 'sunday late night', 'sunday after noon'],
+    source: ['weekdays morning','weekdays evening', 'weekdays late night', 'weekdays afternoon','weekend morning', 'weekend evening', 'weekend night', 'weekend afternoon',
+            'monday morning','monday evening', 'monday late night', 'monday afternoon','tuesday morning', 'tuesday evening', 'tuesday late night', 'tuesday afternoon',
+            'wednesday morning','wednesday evening', 'wednesday late night', 'wednesday afternoon','thursday morning', 'thursday evening', 'thursday late night', 'thursday afternoon',
+            'friday morning','friday evening', 'friday late night', 'friday afternoon','saturday morning', 'saturday evening', 'saturday late night', 'saturday afternoon',
+            'sunday morning','sunday evening', 'sunday late night', 'sunday afternoon'],
     sorter: function (items) {
         return items.sort();
     }
@@ -520,7 +522,7 @@ $('#dow-tag').tagsinput({
 
 function updateValueDowCheck(){
   var listOfDow = [];
-  for( i=0 ; i < 52 ; i++){
+  for( i=1 ; i <= 36 ; i++){
     if($("#dow" + i +"").is(":checked")){
      listOfDow.push($("#dow" + i +"").val());
     }
@@ -539,10 +541,13 @@ function updateValueDowText(){
   var tagsValue = $("#dow-tag").val();
   var tagsList = tagsValue.split(",");
   console.log(tagsList);
-  for( i=0 ; i < 52 ; i++){
+  for( i=1 ; i <= 36 ; i++){
+        $("#dow" + i + "").prop("checked", false);
+  }
+  for( i=1 ; i <= 36 ; i++){
     for( j = 0 ; j < tagsList.length ; j++ ){
       if($("#dow" + i + "").val() === tagsList[j]){
-        $("#dow" + i + "").attr("checked", "checked")
+        $("#dow" + i + "").prop("checked", true);
       }
     }
   }
@@ -570,7 +575,7 @@ $('#screening-tag').tagsinput({
 
 function updateValueScreeningCheck(){
   var listOfScreening = [];
-  for( i=0 ; i < 52 ; i++){
+  for( i=1 ; i <= 10 ; i++){
     if($("#screening" + i +"").is(":checked")){
      listOfScreening.push($("#screening" + i +"").val());
     }
@@ -588,8 +593,11 @@ function updateValueScreeningText(){
   $("#screening-tag").tagsinput("refresh");
   var tagsValue = $("#screening-tag").val();
   var tagsList = tagsValue.split(",");
+  for( i=1 ; i <= 10 ; i++){
+        $("#screening" + i + "").prop("checked", false);
+  }
   console.log(tagsList);
-  for( i=0 ; i < 52 ; i++){
+  for( i=1 ; i < 10 ; i++){
     for( j = 0 ; j < tagsList.length ; j++ ){
       if($("#screening" + i + "").val() === tagsList[j]){
         $("#screening" + i + "").attr("checked", "checked")
