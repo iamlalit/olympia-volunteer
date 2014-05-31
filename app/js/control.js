@@ -2,29 +2,29 @@
 tab changing
 */
 // $(document).ready(function() {
-// 		$('#second-tab a:first').tab('show');
-// 		var current = "#second-content-tab";
-		
-// 		$('#first-content-tab a').click(function (e) {
-// 		  e.preventDefault()
-// 		  $(this).tab('show');
-// 		});
-// 		$('#second-content-tab a').click(function (e) {
-// 			e.preventDefault();
-// 			$(this).tab('show');
-// 			console.log(2);
-// 		});
-// 		$('#third-content-tab a').click(function (e) {
-// 			e.preventDefault();
-// 			$(this).tab('show');
-// 			console.log(3);
-// 		});
-// 		$('#fourth-content-tab a').click(function (e) {
-// 			e.preventDefault();
-// 			$(this).tab('show');
-// 			console.log(4);
-// 		});
-// 	});
+//    $('#second-tab a:first').tab('show');
+//    var current = "#second-content-tab";
+    
+//    $('#first-content-tab a').click(function (e) {
+//      e.preventDefault()
+//      $(this).tab('show');
+//    });
+//    $('#second-content-tab a').click(function (e) {
+//      e.preventDefault();
+//      $(this).tab('show');
+//      console.log(2);
+//    });
+//    $('#third-content-tab a').click(function (e) {
+//      e.preventDefault();
+//      $(this).tab('show');
+//      console.log(3);
+//    });
+//    $('#fourth-content-tab a').click(function (e) {
+//      e.preventDefault();
+//      $(this).tab('show');
+//      console.log(4);
+//    });
+//  });
 
 
  $(document).ready(function() {
@@ -54,10 +54,10 @@ date time picker
 */
 $(document).ready(function() {
     $('#datetimepicker8').datetimepicker({
-    	pickTime: false
+      pickTime: false
     });
     $('#datetimepicker9').datetimepicker({
-    	pickTime: false
+      pickTime: false
     });
 
     $("#datetimepicker8").on("dp.change",function (e) {
@@ -463,3 +463,33 @@ $(".dropdown-menu li a").click(function(){
   var selText = $(this).text();
   $(this).parents('.btn-group').find('.dropdown-toggle').html(selText+' <b class="caret blue"></b>');
 });
+
+$('#language-tag').tagsinput({
+  typeahead: {
+    source: ['Afrikaans','Albanian', 'Arabic', 'Armenian', 'Azerbaijani', 'Basque', 'Belarusian', 'Bengali', 'Bosnian', 'Bulgarian', 
+            'Catalan', 'Cebuano', 'Chinese', 'Croatian', 'Czech', 'Danish', 'Dutch', 'English', 'Esperanto', 'Estonian', 'Filipino', 
+            'Finnish', 'French', 'Galician', 'Georgian', 'German', 'Greek', 'Gujarati', 'Haitian Creole', 'Hausa', 'Hebrew', 'Hindi',
+            'Hmong', 'Hungarian', 'Icelandic', 'Igbo', 'Indonesian', 'Irish', 'Italian', 'Japanese', 'Javanese', 'Kannada', 'Khmer', 
+            'Korean', 'Lao', 'Latin', 'Latvian', 'Lithuanian', 'Macedonian', 'Malay', 'Maltese', 'Maori', 'Marathi', 'Mongolian', 'Nepali', 
+            'Norwegian', 'Persian', 'Polish', 'Portuguese', 'Punjabi', 'Romanian', 'Russian', 'Serbian', 'Slovak', 'Slovenian', 'Somali', 
+            'Spanish', 'Swahili', 'Swedish', 'Tamil', 'Telugu', 'Thai', 'Turkish', 'Ukrainian', 'Urdu', 'Vietnamese', 'Welsh', 'Yiddish', 
+            'Yoruba', 'Zulu'],
+    sorter: function (items) {
+        return items.sort();
+    }
+  }
+});
+
+$('#dow-tag').tagsinput({
+  typeahead: {
+    source: ['weekdays morning','weekdays evening', 'weekdays late night', 'weekdays after noon','weekend morning', 'weekend evening', 'weekend night', 'weekend after noon',
+            'monday morning','monday evening', 'monday late night', 'monday after noon','tuesday morning', 'tuesday evening', 'tuesday night', 'tuesday after noon',
+            'wednesday morning','wednesday evening', 'wednesday late night', 'wednesday after noon','thursday morning', 'thursday evening', 'thursday night', 'thursday after noon',
+            'friday morning','friday evening', 'friday late night', 'friday after noon','saturday morning', 'saturday evening', 'saturday night', 'saturday after noon',
+            'sunday morning','sunday evening', 'sunday late night', 'sunday after noon'],
+    sorter: function (items) {
+        return items.sort();
+    }
+  }
+});
+

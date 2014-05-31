@@ -324,7 +324,7 @@
 								<label id='form-component-arrangement-label'>Days of Week</label>
 								<span id="optional-text">(optional) </span>
 								<div  id='form-component-arrangement-input' style="margin-bottom:0px;">
-									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add days of week" />
+									<input type="text" class='form-control' id='dow-tag' data-role="tagsinput" placeholder="Add days of week" />
 								</div>
 								<div class="col-sm-12">
 									<span style="margin-left:-13px;"><a href="#" id="modal-dow">Add days of week requirements to your job posting</a></span>
@@ -447,7 +447,7 @@
 								<label>Language</label>
 								<span id="optional-text">(optional) </span>								
 								<div  id='form-component-arrangement-input'>
-									<input type="text" class='form-control' value="Amsterdam,Washington" data-role="tagsinput" placeholder="Add Languages"  />
+									<input type="text" class='form-control' id="language-tag" data-role="tagsinput" placeholder="Add Languages" />
 								</div>
 
 								<div class="col-sm-12">
@@ -701,8 +701,6 @@
 			</div>
 		</div>
 	</div>
-
-
 	<!-- Scripts -->
 	<script src="../lib/jquery/dist/jquery.min.js"></script>
 	<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -711,13 +709,13 @@
 	<script src="../lib/moment/min/moment.min.js"></script>
 	<script src="../lib/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
 	<!--tag inputs -->
-	<script src="../lib/bootstrap-tagsinput.min.js"></script>
+	<script src="../lib/bootstrap.taginput.js"></script>
 	<!-- rich text editor -->
 	<script src="../external/jquery.hotkeys.js"></script>
 	<script src="../external/google-code-prettify/prettify.js"></script>
 	<script src="../js/bootstrap-wysiwyg.js"></script>
 
-	<script src="../lib/typeahead.js/dist/typeahead.bundle.min.js"></script>
+	<script src="../lib/bootstrap3-typeahead.js"></script>
 	<script src="../js/control.js"></script>
 
 	<script src="../js/input-file.js"></script>
