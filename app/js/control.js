@@ -477,12 +477,42 @@ $('#language-tag').tagsinput({
   }
 });
 
+
+function updateValueLanCheck(){
+  var listOfLan = [];
+  for( i=0 ; i < 52 ; i++){
+    if($("#lan" + i +"").is(":checked")){
+     listOfLan.push($("#lan" + i +"").val());
+    }
+  }
+  $('#language-tag').tagsinput('removeAll');
+  $("#language-tag").tagsinput("refresh");
+  for(i = 0 ; i < listOfLan.length ; i++){
+    $("#language-tag").tagsinput('add', listOfLan[i]);
+  }
+}
+
+function updateValueLanText(){
+  
+  $("#language-tag").tagsinput("refresh");
+  var tagsValue = $("#language-tag").val();
+  var tagsList = tagsValue.split(",");
+  console.log(tagsList);
+  for( i=0 ; i < 52 ; i++){
+    for( j = 0 ; j < tagsList.length ; j++ ){
+      if($("#lan" + i + "").val() === tagsList[j]){
+        $("#lan" + i + "").attr("checked", "checked")
+      }
+    }
+  }
+}
+
 $('#dow-tag').tagsinput({
   typeahead: {
     source: ['weekdays morning','weekdays evening', 'weekdays late night', 'weekdays after noon','weekend morning', 'weekend evening', 'weekend night', 'weekend after noon',
-            'monday morning','monday evening', 'monday late night', 'monday after noon','tuesday morning', 'tuesday evening', 'tuesday night', 'tuesday after noon',
-            'wednesday morning','wednesday evening', 'wednesday late night', 'wednesday after noon','thursday morning', 'thursday evening', 'thursday night', 'thursday after noon',
-            'friday morning','friday evening', 'friday late night', 'friday after noon','saturday morning', 'saturday evening', 'saturday night', 'saturday after noon',
+            'monday morning','monday evening', 'monday late night', 'monday after noon','tuesday morning', 'tuesday evening', 'tuesday late night', 'tuesday after noon',
+            'wednesday morning','wednesday evening', 'wednesday late night', 'wednesday after noon','thursday morning', 'thursday evening', 'thursday late night', 'thursday after noon',
+            'friday morning','friday evening', 'friday late night', 'friday after noon','saturday morning', 'saturday evening', 'saturday late night', 'saturday after noon',
             'sunday morning','sunday evening', 'sunday late night', 'sunday after noon'],
     sorter: function (items) {
         return items.sort();
@@ -490,16 +520,82 @@ $('#dow-tag').tagsinput({
   }
 });
 
-function updateValueLan(){
-  var listOfLan = [];
+function updateValueDowCheck(){
+  var listOfDow = [];
   for( i=0 ; i < 52 ; i++){
-    if($("#lan" + i +"").is(":checked")){
-     listOfLan.push($("#lan" + i +"").val());
+    if($("#dow" + i +"").is(":checked")){
+     listOfDow.push($("#dow" + i +"").val());
     }
   }
-  var tagsValue = $("#language-tag").val();
-  $("#language-tag").tagsinput("refresh");
-  for(i = 0 ; i < listOfLan.length ; i++){
-    $("#language-tag").tagsinput('add', listOfLan[i]);
+  console.log(listOfDow);
+  $('#dow-tag').tagsinput('removeAll');
+  $("#dow-tag").tagsinput("refresh");
+  for(i = 0 ; i < listOfDow.length ; i++){
+    $("#dow-tag").tagsinput('add', listOfDow[i]);
+  }
+}
+
+function updateValueDowText(){
+  
+  $("#dow-tag").tagsinput("refresh");
+  var tagsValue = $("#dow-tag").val();
+  var tagsList = tagsValue.split(",");
+  console.log(tagsList);
+  for( i=0 ; i < 52 ; i++){
+    for( j = 0 ; j < tagsList.length ; j++ ){
+      if($("#dow" + i + "").val() === tagsList[j]){
+        $("#dow" + i + "").attr("checked", "checked")
+      }
+    }
+  }
+}
+
+
+$('#screening-tag').tagsinput({
+  typeahead: {
+    source: ['Have you taken any Volunteer tests and done well on them that you think are relevant to this job?',
+    'Why did you apply to this particular job?',
+    'Which part of the project do you think will take the most time?',
+    'Do you have any questions about the job description?',
+    'Do you have any suggestions to make this project run successfully?',
+    'Why do you think you are a good fit for this particular project?',
+    'What challenging part of this job are you most experienced in?',
+    'Which of the required job skills do you feel you you are strongest at?',
+    'What questions do you have about the project?',
+    'What past project or job have you had that is most like this one and why?'
+    ],
+    sorter: function (items) {
+        return items.sort();
+    }
+  }
+});
+
+function updateValueScreeningCheck(){
+  var listOfScreening = [];
+  for( i=0 ; i < 52 ; i++){
+    if($("#screening" + i +"").is(":checked")){
+     listOfScreening.push($("#screening" + i +"").val());
+    }
+  }
+  console.log(listOfScreening);
+  $('#screening-tag').tagsinput('removeAll');
+  $("#screening-tag").tagsinput("refresh");
+  for(i = 0 ; i < listOfScreening.length ; i++){
+    $("#screening-tag").tagsinput('add', listOfScreening[i]);
+  }
+}
+
+function updateValueScreeningText(){
+  
+  $("#screening-tag").tagsinput("refresh");
+  var tagsValue = $("#screening-tag").val();
+  var tagsList = tagsValue.split(",");
+  console.log(tagsList);
+  for( i=0 ; i < 52 ; i++){
+    for( j = 0 ; j < tagsList.length ; j++ ){
+      if($("#screening" + i + "").val() === tagsList[j]){
+        $("#screening" + i + "").attr("checked", "checked")
+      }
+    }
   }
 }
