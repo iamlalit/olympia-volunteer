@@ -129,11 +129,11 @@ $( "#text-content" ).focusout(function() {
     $("#text-content").popover('hide');
 });
 /* skills popover */
-
 $( document ).ready(function() {
+  var size = 120;
   var pointer = $("#skills-popover").find("input:last");
   pointer.attr( "id", "skill-text" );
-  pointer.attr( "size", "120" );
+  pointer.attr( "size", size );
   pointer.parent().attr("id", "skills");
 
   var element_skills = "<p style='text-align:left; width:250px;color: #7c7c7a;font-family: Helvetica,Arial,sans-serif;font-size: 13px;'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>";
@@ -144,7 +144,7 @@ $( document ).ready(function() {
   $( "#skill-text" ).focus(function(event) {
       event.preventDefault();
       event.stopPropagation();
-      pointer.attr( "size", "120" );
+      pointer.attr( "size", size);
       $("#skills div.popover-content").replaceWith(element_skills);
       $("#skill-text").popover('show');
   });
@@ -342,7 +342,7 @@ $( "#extra-checkbox" ).hover(function(event) {
     $("#extra-checkbox").popover('show');
 });
 
-/* Days of week popover */
+/* title popover */
 var element_title = "<p style='text-align:left; width:250px;color: #7c7c7a;font-family: Helvetica,Arial,sans-serif;font-size: 13px;'>Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>" + 
                     "<ul style='text-align:left; width:250px;color: #7c7c7a;font-family: Helvetica,Arial,sans-serif;font-size: 13px;'>" + 
                     "<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy</li>" + 
@@ -400,6 +400,158 @@ $( "#miscleaneous" ).click(function() {
       //Do Stop
     }
 });
+
+$( "#location" ).click(function() {
+  $( this ).next( "ul" ).toggle();
+  if($(this).is('.btn-primary')){
+      $(this).removeClass('btn-primary').addClass('btn-danger');
+      $( this ).text("Hide Job Location");
+    }else{
+      $(this).removeClass('btn-danger').addClass('btn-primary');
+      $( this ).text("Add Job Location");
+      //Do Stop
+    }
+});
+
+var address_element = "<div class='border-address col-sm-7'>" +   
+                            "<button type='button' class='close pull-right' aria-hidden='true' onclick='closeAddress()'>&times;</button>" +
+                            "<label >City</label>" +
+                            "<input type='text' class='form-control' id='form-control-weight' for='city' id='form-text-control'>" +
+                            "<div class='row'>" +
+                              "<div id='extra-space-label'>" +
+                              "</div>" +
+                            "</div>" +
+                              "<label >Country</label>" +
+                              "<select class='form-control'>" +
+                                "<option value='Ipsum'>Afghanistan</option>" +
+                                "<option value='Consectetur'>Akrotiri</option>" +
+                                "<option value='Ipsum'>Albania</option>" +
+                                "<option value='Consectetur'>Algeria</option>" +
+                                "<option value='Ipsum'>Angola</option>" +
+                                "<option value='Consectetur'>Antarctica</option>" +
+                                "<option value='Ipsum'>Antigua and Barbuda</option>" +
+                                "<option value='Consectetur'>Argentina</option>" +
+                                "<option value='Ipsum'>Australia</option>" +
+                                "<option value='Consectetur'>Austria</option>" +
+                                "<option value='Ipsum'>Bahamas, The</option>" +
+                                "<option value='Consectetur'>Bangladesh</option>" +
+                                "<option value='Ipsum'>Bassas da India</option>" +
+                                "<option value='Consectetur'>Belarus</option>" +
+                                "<option value='Ipsum'>Belgium</option>" +
+                                "<option value='Consectetur'>Bermuda</option>" +
+                                "<option value='Ipsum'>Bhutan</option>" +
+                                "<option value='Consectetur'>Brazil</option>" +
+                                "<option value='Ipsum'>British Indian Ocean Territory</option>" +
+                                "<option value='Consectetur'>British Virgin Islands</option>" +
+                                "<option value='Ipsum'>Bulgaria</option>" +
+                                "<option value='Consectetur'>Burma</option>" +
+                                "<option value='Ipsum'>Burundi</option>" +
+                                "<option value='Consectetur'>Cambodia</option>" +
+                                "<option value='Ipsum'>Cameroon</option>" +
+                                "<option value='Consectetur'>Canada</option>" +
+                                "<option value='Ipsum'>China</option>" +
+                                "<option value='Consectetur'>Cocos (Keeling) Islands</option>" +
+                                "<option value='Ipsum'>Colombia</option>" +
+                                "<option value='Consectetur'>Comoros</option>" +
+                                "<option value='Ipsum'>Congo, Democratic Republic of the</option>" +
+                                "<option value='Consectetur'>Congo, Republic of the</option>" +
+                                "<option value='Ipsum'>Cook Islands</option>" +
+                                "<option value='Consectetur'>Cuba</option>" +
+                                "<option value='Ipsum'>Cyprus</option>" +
+                                "<option value='Consectetur'>Denmark</option>" +
+                                "<option value='Ipsum'>Dominican Republic</option>" +
+                                "<option value='Consectetur'>Ecuador</option>" +
+                                "<option value='Ipsum'>Egypt</option>" +
+                                "<option value='Consectetur'>Ethiopia</option>" +
+                                "<option value='Ipsum'>Finland</option>" +
+                                "<option value='Consectetur'>France</option>" +
+                                "<option value='Ipsum'>Georgia</option>" +
+                                "<option value='Consectetur'>Germany</option>" +
+                                "<option value='Ipsum'>Greece</option>" +
+                                "<option value='Consectetur'>Greenland</option>" +
+                                "<option value='Ipsum'>Guinea</option>" +
+                                "<option value='Consectetur'>Holy See (Vatican City)</option>" +
+                                "<option value='Ipsum'>Hong Kong</option>" +
+                                "<option value='Consectetur'>Iceland</option>" +
+                                "<option value='Ipsum'>India</option>" +
+                                "<option value='Consectetur'>Indonesia</option>" +
+                                "<option value='Ipsum'>Iran</option>" +
+                                "<option value='Consectetur'>Iraq</option>" +
+                                "<option value='Ipsum'>Ireland</option>" +
+                                "<option value='Consectetur'>Israel</option>" +
+                                "<option value='Ipsum'>Italy</option>" +
+                                "<option value='Consectetur'>Jamaica</option>" +
+                                "<option value='Ipsum'>Japan</option>" +
+                                "<option value='Consectetur'>Jersey</option>" +
+                                "<option value='Ipsum'>Kazakhstan</option>" +
+                                "<option value='Consectetur'>Kenya</option>" +
+                                "<option value='Ipsum'>Korea</option>" +
+                                "<option value='Consectetur'>Kuwait</option>" +
+                                "<option value='Ipsum'>Laos</option>" +
+                                "<option value='Consectetur'>Lebanon</option>" +
+                                "<option value='Ipsum'>Liberia</option>" +
+                                "<option value='Consectetur'>Macau</option>" +
+                                "<option value='Ipsum'>Malaysia</option>" +
+                                "<option value='Consectetur'>Maldives</option>" +
+                                "<option value='Ipsum'>Mauritius</option>" +
+                                "<option value='Consectetur'>Mexico</option>" +
+                                "<option value='Ipsum'>Mozambique</option>" +
+                                "<option value='Consectetur'>Namibia</option>" +
+                                "<option value='Ipsum'>Nepal</option>" +
+                                "<option value='Consectetur' selected='selected'>Netherlands</option>" +
+                                "<option value='Ipsum'>New Zealand</option>" +
+                                "<option value='Consectetur'>Norway</option>" +
+                                "<option value='Ipsum'>Oman</option>" +
+                                "<option value='Consectetur'>Pakistan</option>" +
+                                "<option value='Ipsum'>Peru</option>" +
+                                "<option value='Consectetur'>Philippines</option>" +
+                                "<option value='Ipsum'>Poland</option>" +
+                                "<option value='Consectetur'>Portugal</option>" +
+                                "<option value='Ipsum'>Qatar</option>" +
+                                "<option value='Consectetur'>Romania</option>" +
+                                "<option value='Ipsum'>Russia</option>" +
+                                "<option value='Consectetur'>Saudi Arabia</option>" +
+                                "<option value='Ipsum'>Sierra Leone</option>" +
+                                "<option value='Consectetur'>Singapore</option>" +
+                                "<option value='Ipsum'>Solomon Islands</option>" +
+                                "<option value='Consectetur'>Somalia</option>" +
+                                "<option value='Ipsum'>South Africa</option>" +
+                                "<option value='Consectetur'>Spain</option>" +
+                                "<option value='Ipsum'>Sri Lanka</option>" +
+                                "<option value='Consectetur'>Sweden</option>" +
+                                "<option value='Ipsum'>Switzerland</option>" +
+                                "<option value='Consectetur'>Syria</option>" +
+                                "<option value='Ipsum'>Taiwan</option>" +
+                                "<option value='Consectetur'>Thailand</option>" +
+                                "<option value='Ipsum'>Turkey</option>" +
+                                "<option value='Consectetur'>Uganda</option>" +
+                                "<option value='Ipsum'>Ukraine</option>" +
+                                "<option value='Consectetur'>United Arab Emirates</option>" +
+                                "<option value='Ipsum'>United Kingdom</option>" +
+                                "<option value='Consectetur'>United States</option>" +
+                                "<option value='Ipsum'>Venezuela</option>" +
+                                "<option value='Consectetur'>Vietnam</option>" +
+                                "<option value='Ipsum'>Yemen</option>" +
+                                "<option value='Consectetur'>Zambia</option>" +
+                                "<option value='Ipsum'>Zimbabwe</option>" +
+                              "</select>" +
+                              "<div class='row'>" +
+                                "<div id='extra-space-label'>" +
+                                "</div>" +
+                              "</div>" +
+                              "<label >Zipcode</label>" +
+                              "<input type='text' class='form-control' id='form-control-weight' for='inserting address' id='form-text-control' placeholder='Zipcode'>" +
+                              "<div class='row'>" +
+                                "<div id='extra-space-label'>" +
+                                "</div>" +
+                              "</div>" +
+                            "</div>";
+function addNewAddress(){
+  $("ul#address li").append( address_element );
+}
+function closeAddress(){
+ $("ul#address li div:last-child").remove(); 
+}
 
 /*header dropdown selection */
 $("#username .dropdown-menu li a").click(function(){
@@ -509,11 +661,11 @@ function updateValueLanText(){
 
 $('#dow-tag').tagsinput({
   typeahead: {
-    source: ['weekdays morning','weekdays evening', 'weekdays late night', 'weekdays afternoon','weekend morning', 'weekend evening', 'weekend night', 'weekend afternoon',
-            'monday morning','monday evening', 'monday late night', 'monday afternoon','tuesday morning', 'tuesday evening', 'tuesday late night', 'tuesday afternoon',
-            'wednesday morning','wednesday evening', 'wednesday late night', 'wednesday afternoon','thursday morning', 'thursday evening', 'thursday late night', 'thursday afternoon',
-            'friday morning','friday evening', 'friday late night', 'friday afternoon','saturday morning', 'saturday evening', 'saturday late night', 'saturday afternoon',
-            'sunday morning','sunday evening', 'sunday late night', 'sunday afternoon'],
+    source: ['All Weekdays - Full day','Weekends - Full day', 'Monday - Full day', 'Tuesday - Full day','Wednesday - Full day', 'Thursday - Full day', 'Friday - Full day', 'Saturday - Full day', 'Sunday - Full day',
+             'All Weekdays - Morning','Weekends - Morning', 'Monday - Morning', 'Tuesday - Morning','Wednesday - Morning', 'Thursday - Morning', 'Friday - Morning', 'Saturday - Morning', 'Sunday - Morning',
+             'All Weekdays - Afternoon','Weekends - Afternoon', 'Monday - Afternoon', 'Tuesday - Afternoon','Wednesday - Afternoon', 'Thursday - Afternoon', 'Friday - Afternoon', 'Saturday - Afternoon', 'Sunday - Afternoon',
+             'All Weekdays - Evening','Weekends - Evening', 'Monday - Evening', 'Tuesday - Evening','Wednesday - Evening', 'Thursday - Evening', 'Friday - Evening', 'Saturday - Evening', 'Sunday - Evening',
+             'All Weekdays - Late Night','Weekends - Late Night', 'Monday - Late Night', 'Tuesday - Late Night','Wednesday - Late Night', 'Thursday - Late Night', 'Friday - Late Night', 'Saturday - Late Night', 'Sunday - Evening'],
     sorter: function (items) {
         return items.sort();
     }
@@ -522,7 +674,22 @@ $('#dow-tag').tagsinput({
 
 function updateValueDowCheck(){
   var listOfDow = [];
-  for( i=1 ; i <= 36 ; i++){
+  for( i=1 ; i <= 9 ; i++){
+    if($("#dow" + i +"").is(":checked")){
+     listOfDow.push($("#dow" + i +"").val());
+    }
+  }
+  for( i=11 ; i <= 19 ; i++){
+    if($("#dow" + i +"").is(":checked")){
+     listOfDow.push($("#dow" + i +"").val());
+    }
+  }
+  for( i=21 ; i <= 29 ; i++){
+    if($("#dow" + i +"").is(":checked")){
+     listOfDow.push($("#dow" + i +"").val());
+    }
+  }
+  for( i=31 ; i <= 39 ; i++){
     if($("#dow" + i +"").is(":checked")){
      listOfDow.push($("#dow" + i +"").val());
     }
@@ -554,24 +721,24 @@ function updateValueDowText(){
 }
 
 
-$('#screening-tag').tagsinput({
-  typeahead: {
-    source: ['Have you taken any Volunteer tests and done well on them that you think are relevant to this job?',
-    'Why did you apply to this particular job?',
-    'Which part of the project do you think will take the most time?',
-    'Do you have any questions about the job description?',
-    'Do you have any suggestions to make this project run successfully?',
-    'Why do you think you are a good fit for this particular project?',
-    'What challenging part of this job are you most experienced in?',
-    'Which of the required job skills do you feel you you are strongest at?',
-    'What questions do you have about the project?',
-    'What past project or job have you had that is most like this one and why?'
-    ],
-    sorter: function (items) {
-        return items.sort();
-    }
-  }
-});
+// $('#screening-tag').tagsinput({
+//   typeahead: {
+//     source: ['Have you taken any Volunteer tests and done well on them that you think are relevant to this job?',
+//     'Why did you apply to this particular job?',
+//     'Which part of the project do you think will take the most time?',
+//     'Do you have any questions about the job description?',
+//     'Do you have any suggestions to make this project run successfully?',
+//     'Why do you think you are a good fit for this particular project?',
+//     'What challenging part of this job are you most experienced in?',
+//     'Which of the required job skills do you feel you you are strongest at?',
+//     'What questions do you have about the project?',
+//     'What past project or job have you had that is most like this one and why?'
+//     ],
+//     sorter: function (items) {
+//         return items.sort();
+//     }
+//   }
+// });
 
 function updateValueScreeningCheck(){
   var listOfScreening = [];
@@ -581,10 +748,20 @@ function updateValueScreeningCheck(){
     }
   }
   console.log(listOfScreening);
-  $('#screening-tag').tagsinput('removeAll');
   $("#screening-tag").tagsinput("refresh");
   for(i = 0 ; i < listOfScreening.length ; i++){
-    $("#screening-tag").tagsinput('add', listOfScreening[i]);
+    // $("#screening-tag").tagsinput('add', listOfScreening[i]);
+    var element_text_screeining = "<div class='col-sm-12' style='padding:0px' id='divTextTag" + tag +"'>" +
+                    "<div class='col-sm-11' style='padding:10px 20px 10px 0px'>" +
+                      "<input type='text' class='form-control' id='screening-tag" + tag + "' placeholder='Add Questions'/>" +
+                    "</div>" + 
+                    "<div class='col-sm-1' style='padding-top:18px;'>" +
+                      "<button type='button' class='close' aria-hidden='true' onclick='closeTextScreening()'>&times;</button>" +
+                    "</div>" + 
+                  "</div>";
+    tag++;
+    $("div#screening-popover").append(element_text_screeining);
+    $("#screening-tag" + tag + "").val(listOfScreening[i] + "");
   }
 }
 
@@ -597,11 +774,125 @@ function updateValueScreeningText(){
         $("#screening" + i + "").prop("checked", false);
   }
   console.log(tagsList);
-  for( i=1 ; i < 10 ; i++){
+  for( i=1 ; i <= 10 ; i++){
     for( j = 0 ; j < tagsList.length ; j++ ){
       if($("#screening" + i + "").val() === tagsList[j]){
         $("#screening" + i + "").attr("checked", "checked")
       }
     }
   }
+}
+  
+var skills_set = ['Answering Telephones', 'Accounting', 'Administration', 'Business Correspondence', 'Client Relations', 'Communication',
+                  'Crowd Control', 'Crime & Safety', 'Customer Service', 'Clerical', 'Document Management', 'Disaster Relief', 
+                  'Document Management', 'Event Coordination', 'Employee Relations', 'Legal Familiarity', 'Meeting Planning', 'Office Administration',
+                  'Organizational Skills', 'Public Relations', 'Public Speaking', 'People Management', 'Receptionist', 'Stenography', 
+                  'Travel Arrangements', 'Word Processing', 'Written Communication'];
+$('#skill-tag').tagsinput({
+  typeahead: {
+    source: skills_set,
+    sorter: function (items) {
+        return items.sort();
+    }
+  }
+});
+
+function updateValueSkillCheck(){
+  var listOfSkill = [];
+  for( i=1 ; i <= 27 ; i++){
+    if($("#skill" + i +"").is(":checked")){
+     listOfSkill.push($("#skill" + i +"").val());
+    }
+  }
+  console.log(listOfSkill);
+  $('#skill-tag').tagsinput('removeAll');
+  $("#skill-tag").tagsinput("refresh");
+  for(i = 0 ; i < listOfSkill.length ; i++){
+    $("#skill-tag").tagsinput('add', listOfSkill[i]);
+  }
+}
+
+function updateValueSkillText(){
+  
+  $("#skill-tag").tagsinput("refresh");
+  var tagsValue = $("#skill-tag").val();
+  var tagsList = tagsValue.split(",");
+  console.log(tagsList);
+  for( i=1 ; i <= 27 ; i++){
+        $("#skill" + i + "").prop("checked", false);
+  }
+  for( i=1 ; i <= 27 ; i++){
+    for( j = 0 ; j < tagsList.length ; j++ ){
+      if($("#skill" + i + "").val() === tagsList[j]){
+        $("#skill" + i + "").prop("checked", true);
+      }
+    }
+  }
+}
+
+var diploma_set = ['First Aid Diploma', 'Football Referee License', 'Active Volunteering', 'Training and Assessmement', 
+                  'Program Coordination', 'Community Service Coordination', 'Effective Communication', 'Negotiation', 
+                  'Customer Service', 'Risk Management']
+
+$('#diploma-tag').tagsinput({
+  typeahead: {
+    source: diploma_set,
+    sorter: function (items) {
+        return items.sort();
+    }
+  }
+});
+
+function updateValueDiplomaCheck(){
+  var listOfDiploma = [];
+  for( i=1 ; i <= 10 ; i++){
+    if($("#diploma" + i +"").is(":checked")){
+     listOfDiploma.push($("#diploma" + i +"").val());
+    }
+  }
+  console.log(listOfDiploma);
+  $('#diploma-tag').tagsinput('removeAll');
+  $("#diploma-tag").tagsinput("refresh");
+  for(i = 0 ; i < listOfDiploma.length ; i++){
+    $("#diploma-tag").tagsinput('add', listOfDiploma[i]);
+  }
+}
+
+function updateValueDiplomaText(){
+  $("#diploma-tag").tagsinput("refresh");
+  var tagsValue = $("#diploma-tag").val();
+  var tagsList = tagsValue.split(",");
+  console.log(tagsList);
+  for( i=1 ; i <= 10 ; i++){
+        $("#diploma" + i + "").prop("checked", false);
+  }
+  for( i=1 ; i <= 10 ; i++){
+    for( j = 0 ; j < tagsList.length ; j++ ){
+      if($("#diploma" + i + "").val() === tagsList[j]){
+        $("#diploma" + i + "").prop("checked", true);
+      }
+    }
+  }
+}
+
+var tag = 0;
+function addNewTextScreening(){
+  var element_text_screeining = "<div class='col-sm-12' style='padding:0px' id='divTextTag" + tag +"'>" +
+                                  "<div class='col-sm-11' style='padding:10px 20px 10px 0px'>" +
+                                    "<input type='text' class='form-control' id='screening-tag" + tag + "' placeholder='Add Questions'/>" +
+                                  "</div>" + 
+                                  "<div class='col-sm-1' style='padding-top:18px;'>" +
+                                    "<button type='button' class='close' aria-hidden='true' onclick='closeTextScreening()'>&times;</button>" +
+                                  "</div>" + 
+                                "</div>";
+  tag++;
+  console.log(tag);
+  $("div#screening-popover").append(element_text_screeining);
+}
+
+function closeTextScreening(){
+  tag--;
+  console.log(tag);
+  $("div#screening-popover #divTextTag"+tag+"").remove();
+
 }

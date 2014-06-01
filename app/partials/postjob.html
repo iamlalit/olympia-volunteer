@@ -176,18 +176,28 @@
 						</div>
 						<button class="btn btn-primary" id="skills" value="Add Skills / Certificates" name="Add Skills / Certificates">Add Skills / Certificates</button>
 						<ul class="ishidden" id="group-skills">
-							<li style="list-style-type:none" id="skills-popover">
+							<!-- <li style="list-style-type:none; padding-bottom:30px;" id="skills-popover"> -->
+							<li style="list-style-type:none; padding-bottom:30px;">								
 								<label >What Skills are needed?</label>
 								<span id="optional-text">(optional) </span>
-								<div class='form-group'>
-									<input type="text" class='form-control' data-toggle="tooltip" data-role="tagsinput" placeholder="Add Skills" />
+								<div  id='form-component-arrangement-input' style="margin-bottom:-10px;">
+									<input type="text" class='form-control' id='skill-tag' placeholder="Add skills" />
+								</div>
+								<div class="col-sm-12">
+									<span style="margin-left:-13px;"><a href="#" id="zoomTextarea" id="modal-skill" onclick="updateValueSkillText()" title="Click to Zoom" data-toggle="modal" data-target="#skillBox">Add skills requirements to your job posting</a>
+									</span>
 								</div>
 							</li>
-							<li style="list-style-type:none" id="diploma-popover">
-								<label id='form-component-arrangement-label'>What Diploma/Certificates are needed?</label>
+							<!-- <li style="list-style-type:none" id="diploma-popover"> -->
+							<li style="list-style-type:none">
+								<label >What Diploma/Certificates are needed?</label>
 								<span id="optional-text">(optional) </span>
-								<div  id='form-component-arrangement-input'>
-									<input type="text" class='form-control' id='form-text-control' data-role="tagsinput" placeholder="Add Diplomas" />
+								<div  id='form-component-arrangement-input' style="margin-bottom:-10px;">
+									<input type="text" class='form-control' id='diploma-tag' placeholder="Add Diploma/Certificates" />
+								</div>
+								<div class="col-sm-12">
+									<span style="margin-left:-13px;"><a href="#" id="zoomTextarea" id="modal-diploma" onclick="updateValueDiplomaText()" title="Click to Zoom" data-toggle="modal" data-target="#diplomaBox">Add Diploma/Certificates requirements to your job posting</a>
+									</span>
 								</div>
 							</li>
 						</ul>
@@ -316,10 +326,11 @@
 									</div>
 								</div>
 							</li>
-							<li style="list-style-type:none" id="dow-popover">
+							<!-- <li style="list-style-type:none" id="dow-popover"> -->
+							<li style="list-style-type:none">
 								<label id='form-component-arrangement-label'>Days of Week</label>
 								<span id="optional-text">(optional) </span>
-								<div  id='form-component-arrangement-input' style="margin-bottom:0px;">
+								<div  id='form-component-arrangement-input' style="margin-bottom:-10px;">
 									<input type="text" class='form-control' id='dow-tag' placeholder="Add days of week" />
 								</div>
 								<div class="col-sm-12">
@@ -440,14 +451,15 @@
 									</div>
 								</div>
 							</li>
-							<li style="list-style-type:none" id="language-popover">
+							<!-- <li style="list-style-type:none" id="language-popover"> -->
+							<li style="list-style-type:none" >								
 								<label>Language</label>
 								<span id="optional-text">(optional) </span>								
-								<div  id='form-component-arrangement-input'>
+								<div  id='form-component-arrangement-input' style="margin-bottom:-10px;">
 									<input type="text" class='form-control' id="language-tag" placeholder="Add Languages" />
 								</div>
 
-								<div class="col-sm-12">
+								<div class="col-sm-12" >
 									<span style="margin-left:-13px;"><a href="#" id="zoomTextarea" onclick="updateValueLanText()" title="Click to Zoom" data-toggle="modal" data-target="#languageBox">Add language requirements to your job posting</a>
 									</span>
 								</div>
@@ -461,9 +473,175 @@
 					<hr style="height:1px; background-color:#DDDDDD;">
 				</div>	
 			</div>
-			<div class='row'>
-				<div class='margin-top-15'>
+
+			<div class="row margin-left-57">
+				<div class="col-sm-11">
+					<div class='col-sm-1  font-size-4 '>
+						<span class="glyphicon glyphicon-globe"></span>			    	
+				    </div>
+				    <div class="col-sm-6">
+				    	<label class="font-size-15">Volunteer Job Location</label>
+				    </div>
+				    <div class='col-sm-11' >
+				    	<span>
+							Specify the Volunteer Job Location, where job is located.
+						</span>
+
+					    <div class='row'>
+							<div class='margin-top-10'>
+							</div>
+						</div>
+						<button class="btn btn-primary" id="location">Add job Location</button>
+						<ul class="ishidden" id="address" style="padding-left: 0px;">
+							<li style="list-style-type:none" style="margin-left:-50px;" >	
+								<div class="margin-top-15"></div>		
+								<label>Address</label>
+								<span id="optional-text">(optional) </span>
+								<div class="row"></div>					
+								<div class='border-address col-sm-7' id="address-block">
+									<label >City</label>
+									<input type='text' class='form-control' id='form-control-weight' for='city' id='form-text-control'>
+									<div class='row'>
+										<div id='extra-space-label'>
+										</div>
+									</div>
+
+									<label >Country</label>
+									<select class='form-control'>
+										<option value='Ipsum'>Afghanistan</option>
+										<option value='Consectetur'>Akrotiri</option>
+										<option value='Ipsum'>Albania</option>
+										<option value='Consectetur'>Algeria</option>
+										<option value='Ipsum'>Angola</option>
+										<option value='Consectetur'>Antarctica</option>
+										<option value='Ipsum'>Antigua and Barbuda</option>
+										<option value='Consectetur'>Argentina</option>
+										<option value='Ipsum'>Australia</option>
+										<option value='Consectetur'>Austria</option>
+										<option value='Ipsum'>Bahamas, The</option>
+										<option value='Consectetur'>Bangladesh</option>
+										<option value='Ipsum'>Bassas da India</option>
+										<option value='Consectetur'>Belarus</option>
+										<option value='Ipsum'>Belgium</option>
+										<option value='Consectetur'>Bermuda</option>
+										<option value='Ipsum'>Bhutan</option>
+										<option value='Consectetur'>Brazil</option>
+										<option value='Ipsum'>British Indian Ocean Territory</option>
+										<option value='Consectetur'>British Virgin Islands</option>
+										<option value='Ipsum'>Bulgaria</option>
+										<option value='Consectetur'>Burma</option>
+										<option value='Ipsum'>Burundi</option>
+										<option value='Consectetur'>Cambodia</option>
+										<option value='Ipsum'>Cameroon</option>
+										<option value='Consectetur'>Canada</option>
+										<option value='Ipsum'>China</option>
+										<option value='Consectetur'>Cocos (Keeling) Islands</option>
+										<option value='Ipsum'>Colombia</option>
+										<option value='Consectetur'>Comoros</option>
+										<option value='Ipsum'>Congo, Democratic Republic of the</option>
+										<option value='Consectetur'>Congo, Republic of the</option>
+										<option value='Ipsum'>Cook Islands</option>
+										<option value='Consectetur'>Cuba</option>
+										<option value='Ipsum'>Cyprus</option>
+										<option value='Consectetur'>Denmark</option>
+										<option value='Ipsum'>Dominican Republic</option>
+										<option value='Consectetur'>Ecuador</option>
+										<option value='Ipsum'>Egypt</option>
+										<option value='Consectetur'>Ethiopia</option>
+										<option value='Ipsum'>Finland</option>
+										<option value='Consectetur'>France</option>
+										<option value='Ipsum'>Georgia</option>
+										<option value='Consectetur'>Germany</option>
+										<option value='Ipsum'>Greece</option>
+										<option value='Consectetur'>Greenland</option>
+										<option value='Ipsum'>Guinea</option>
+										<option value='Consectetur'>Holy See (Vatican City)</option>
+										<option value='Ipsum'>Hong Kong</option>
+										<option value='Consectetur'>Iceland</option>
+										<option value='Ipsum'>India</option>
+										<option value='Consectetur'>Indonesia</option>
+										<option value='Ipsum'>Iran</option>
+										<option value='Consectetur'>Iraq</option>
+										<option value='Ipsum'>Ireland</option>
+										<option value='Consectetur'>Israel</option>
+										<option value='Ipsum'>Italy</option>
+										<option value='Consectetur'>Jamaica</option>
+										<option value='Ipsum'>Japan</option>
+										<option value='Consectetur'>Jersey</option>
+										<option value='Ipsum'>Kazakhstan</option>
+										<option value='Consectetur'>Kenya</option>
+										<option value='Ipsum'>Korea</option>
+										<option value='Consectetur'>Kuwait</option>
+										<option value='Ipsum'>Laos</option>
+										<option value='Consectetur'>Lebanon</option>
+										<option value='Ipsum'>Liberia</option>
+										<option value='Consectetur'>Macau</option>
+										<option value='Ipsum'>Malaysia</option>
+										<option value='Consectetur'>Maldives</option>
+										<option value='Ipsum'>Mauritius</option>
+										<option value='Consectetur'>Mexico</option>
+										<option value='Ipsum'>Mozambique</option>
+										<option value='Consectetur'>Namibia</option>
+										<option value='Ipsum'>Nepal</option>
+										<option value='Consectetur' selected="selected">Netherlands</option>
+										<option value='Ipsum'>New Zealand</option>
+										<option value='Consectetur'>Norway</option>
+										<option value='Ipsum'>Oman</option>
+										<option value='Consectetur'>Pakistan</option>
+										<option value='Ipsum'>Peru</option>
+										<option value='Consectetur'>Philippines</option>
+										<option value='Ipsum'>Poland</option>
+										<option value='Consectetur'>Portugal</option>
+										<option value='Ipsum'>Qatar</option>
+										<option value='Consectetur'>Romania</option>
+										<option value='Ipsum'>Russia</option>
+										<option value='Consectetur'>Saudi Arabia</option>
+										<option value='Ipsum'>Sierra Leone</option>
+										<option value='Consectetur'>Singapore</option>
+										<option value='Ipsum'>Solomon Islands</option>
+										<option value='Consectetur'>Somalia</option>
+
+										<option value='Ipsum'>South Africa</option>
+										<option value='Consectetur'>Spain</option>
+										<option value='Ipsum'>Sri Lanka</option>
+										<option value='Consectetur'>Sweden</option>
+										<option value='Ipsum'>Switzerland</option>
+										<option value='Consectetur'>Syria</option>
+										<option value='Ipsum'>Taiwan</option>
+										<option value='Consectetur'>Thailand</option>
+										<option value='Ipsum'>Turkey</option>
+										<option value='Consectetur'>Uganda</option>
+										<option value='Ipsum'>Ukraine</option>
+										<option value='Consectetur'>United Arab Emirates</option>
+										<option value='Ipsum'>United Kingdom</option>
+										<option value='Consectetur'>United States</option>
+										<option value='Ipsum'>Venezuela</option>
+										<option value='Consectetur'>Vietnam</option>
+										<option value='Ipsum'>Yemen</option>
+										<option value='Consectetur'>Zambia</option>
+										<option value='Ipsum'>Zimbabwe</option>
+									</select>
+									<div class='row'>
+										<div id='extra-space-label'>
+										</div>
+									</div>
+
+									<label >Zipcode</label>
+									<input type='text' class='form-control' id='form-control-weight' for='inserting address' id='form-text-control' placeholder='Zipcode'>
+									<div class='row'>
+										<div id='extra-space-label'>
+										</div>
+									</div>
+									<span ><a style='text-align:right; cursor: pointer;' onclick="addNewAddress()">+Add another address</a></span>
+								</div>
+						</ul>
+				    </div>
 				</div>
+			</div>
+			<div class="row margin-left-57">
+				<div class="col-sm-11">
+					<hr style="height:1px; background-color:#DDDDDD;">
+				</div>	
 			</div>
 			<div class="row margin-left-57">
 				<div class="col-sm-11">
@@ -493,10 +671,7 @@
 				</div>	
 			</div>
 			<!--screening questions -->
-			<div class='row'>
-				<div class='margin-top-15'>
-				</div>
-			</div>
+
 			<div class="row margin-left-57">
 				<div class="col-sm-11">
 					<div class='col-sm-1  font-size-4 '>
@@ -511,10 +686,12 @@
 				    	<div class="margin-top-10"></div>
 				    	<input type="text" class='form-control' id='screening-tag' placeholder="Add Questions"/>
 				    </div>
-			    	<div class="col-sm-12">
+			    	<div class="col-sm-11">
 			    		<div class="col-sm-1">
 			    		</div>
-						<span style="margin-left:5px;"><a href="#" id="zoomTextarea" onclick="updateValueScreeningText()" title="Click to Zoom" data-toggle="modal" data-target="#screeningBox">Add screening questions to your job posting</a>
+						<span style="margin-left:5px;"><a href="#" id="zoomTextarea" onclick="updateValueScreeningText()" title="Click to Zoom" data-toggle="modal" data-target="#screeningBox">Add from suggested or recent questions to your job posting</a>
+						</span>
+						<span class="pull-right" style="margin-right:20px;" ><a style="cursor: pointer;" onclick="addNewTextScreening()">Create my own question</a>
 						</span>
 					</div>
 							
@@ -983,201 +1160,296 @@
 				<form role="form">
 					<div class="modal-body">
 						<div class="form-group">
-							<div class="col-sm-3">
-								<div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow1" value="monday morning"> monday morning
-								    </label>
+							<div class="row">
+								<div class="col-sm-1">
 								</div>
-							    <div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow2" value="tuesday morning"> tuesday morning
-								    </label>
+								<div class="col-sm-2">
+									<label>Full day</label>
 								</div>
-								<div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow3" value="wednesday morning"> wednesday morning
-								    </label>
+								<div class="col-sm-2">
+									<label>Morning</label>
 								</div>
-							    <div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow4" value="thursday morning"> thursday morning
-								    </label>
+								<div class="col-sm-2">
+									<label>Afternoon</label>
 								</div>
-								<div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow5" value="friday morning"> friday morning
-								    </label>
+								<div class="col-sm-2">
+									<label>Evening</label>
 								</div>
-							    <div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow6" value="saturday morning"> saturday morning
-								    </label>
-								</div>
-								<div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow7" value="sunday morning"> sunday morning
-								    </label>
-								</div>
-							    <div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow8" value="weekdays morning"> weekdays morning
-								    </label>
-								</div>
-								<div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow9" value="weekend morning"> weekend morning
-								    </label>
-								</div>
-							    
-							</div>
-							<div class="col-sm-3">
-							    <div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow10" value="monday afternoon"> monday afternoon
-								    </label>
-								</div>
-								<div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow11" value="tuesday afternoon"> tuesday afternoon
-								    </label>
-								</div>
-							    <div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow12" value="wednesday afternoon"> wednesday afternoon
-								    </label>
-								</div>
-								<div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow13" value="thursday afternoon"> thursday afternoon
-								    </label>
-								</div>
-							    <div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow14" value="friday afternoon"> friday afternoon
-								    </label>
-								</div>
-								<div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow15" value="saturday afternoon"> saturday afternoon
-								    </label>
-								</div>
-							    <div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow16" value="sunday afternoon"> sunday afternoon
-								    </label>
-								</div>
-								<div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow17" value="weekdays afternoon"> weekdays afternoon
-								    </label>
-								</div>
-							    <div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow18" value="weekend afternoon"> weekend afternoon
-								    </label>
+								<div class="col-sm-2">
+									<label>Late Night</label>
 								</div>
 							</div>
-							<div class="col-sm-3">
-								<div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow19" value="monday evening"> monday evening
-								    </label>
+							<div class="row" style="margin-top:5px;margin-bottom:5px;">
+								<div class="col-sm-12 margin-left-5">
+									<hr style="height:1px; background-color:#DDDDDD;margin-top:5px;margin-bottom:5px;">
+								</div>	
+							</div>
+							<div class="row">
+								<div class="col-sm-1">
 								</div>
-							    <div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow20" value="tuesday evening"> tuesday evening
-								    </label>
+								<div class="col-sm-2">
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow1" value="All Weekdays - Full day"> All Weekdays
+									    </label>
+									</div>
+								    <div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow2" value="Weekends - Full day"> Weekends
+									    </label>
+									</div>
 								</div>
-								<div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow21" value="wednesday evening"> wednesday evening
-								    </label>
+								<div class="col-sm-2">
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow10" value="All Weekdays - Morning"> All Weekdays
+									    </label>
+									</div>
+								    <div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow11" value="Weekends - Morning"> Weekends
+									    </label>
+									</div>
 								</div>
-							    <div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow22" value="thursday evening"> thursday evening
-								    </label>
+								<div class="col-sm-2">
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow21" value="All Weekdays - Afternoon"> All Weekdays
+									    </label>
+									</div>
+								    <div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow22" value="Weekends - Afternoon"> Weekends
+									    </label>
+									</div>
 								</div>
-								<div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow23" value="friday evening"> friday evening
-								    </label>
+								<div class="col-sm-2">
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow31" value="All Weekdays - Evening"> All Weekdays
+									    </label>
+									</div>
+								    <div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow32" value="Weekends - Evening"> Weekends
+									    </label>
+									</div>
 								</div>
-							    <div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow24" value="saturday evening"> saturday evening
-								    </label>
-								</div>
-								<div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow25" value="sunday evening"> sunday evening
-								    </label>
-								</div>
-							    <div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow26" value="weekdays evening"> weekdays evening
-								    </label>
-								</div>
-								<div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow27" value="weekend evening"> weekend evening
-								    </label>
+								<div class="col-sm-2">
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow41" value="All Weekdays - Late Night"> All Weekdays
+									    </label>
+									</div>
+								    <div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow42" value="Weekends - Late Night"> Weekends
+									    </label>
+									</div>
 								</div>
 							</div>
-							
-							<div class="col-sm-3">
-							    <div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow28" value="monday late night"> monday late night
-								    </label>
+							<div class="row" style="margin-top:5px;margin-bottom:5px;">
+								<div class="col-sm-12 margin-left-5">
+									<hr style="height:1px; background-color:#DDDDDD;margin-top:5px;margin-bottom:5px;">
+								</div>	
+							</div>
+							<div class="row">
+								<div class="col-sm-1">
 								</div>
-								<div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow29" value="tuesday late night"> tuesday late night								    </label>
+								<div class="col-sm-2">
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow3" value="Monday - Full day"> Monday
+									    </label>
+									</div>
+								    <div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow4" value="Tuesday - Full day"> Tuesday
+									    </label>
+									</div>
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow5" value="Wednesday - Full day"> Wednesday
+									    </label>
+									</div>
+								    <div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow6" value="Thursday - Full day"> Thursday
+									    </label>
+									</div>
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow7" value="Friday - Full day"> Friday
+									    </label>
+									</div>
+								    <div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow8" value="Saturday - Full day"> Saturday
+									    </label>
+									</div>
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow9" value="Sunday - Full day"> Sunday
+									    </label>
+									</div>
 								</div>
-							    <div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow30" value="wednesday late night"> wednesday late night
-								    </label>
+								<div class="col-sm-2">
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow13" value="Monday - Morning"> Monday
+									    </label>
+									</div>
+								    <div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow14" value="Tuesday - Morning"> Tuesday
+									    </label>
+									</div>
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow15" value="Wednesday - Morning"> Wednesday
+									    </label>
+									</div>
+								    <div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow16" value="Thursday - Morning"> Thursday
+									    </label>
+									</div>
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow17" value="Friday - Morning"> Friday
+									    </label>
+									</div>
+								    <div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow18" value="Saturday - Morning"> Saturday
+									    </label>
+									</div>
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow19" value="Sunday - Morning"> Sunday
+									    </label>
+									</div>
 								</div>
-								<div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow31" value="thursday late night"> thursday late night
-								    </label>
+								<div class="col-sm-2">
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow23" value="Monday - Afternoon"> Monday
+									    </label>
+									</div>
+								    <div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow24" value="Tuesday - Afternoon"> Tuesday
+									    </label>
+									</div>
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow25" value="Wednesday - Afternoon"> Wednesday
+									    </label>
+									</div>
+								    <div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow26" value="Thursday - Afternoon"> Thursday
+									    </label>
+									</div>
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow27" value="Friday - Afternoon"> Friday
+									    </label>
+									</div>
+								    <div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow28" value="Saturday - Afternoon"> Saturday
+									    </label>
+									</div>
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow29" value="Sunday - Afternoon"> Sunday
+									    </label>
+									</div>
 								</div>
-							    <div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow32" value="friday late night"> friday late night
-								    </label>
+								<div class="col-sm-2">
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow33" value="Monday - Evening"> Monday
+									    </label>
+									</div>
+								    <div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow34" value="Tuesday - Evening"> Tuesday
+									    </label>
+									</div>
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow35" value="Wednesday - Evening"> Wednesday
+									    </label>
+									</div>
+								    <div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow36" value="Thursday - Evening"> Thursday
+									    </label>
+									</div>
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow37" value="Friday - Evening"> Friday
+									    </label>
+									</div>
+								    <div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow38" value="Saturday - Evening"> Saturday
+									    </label>
+									</div>
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow39" value="Sunday - Evening"> Sunday
+									    </label>
+									</div>
 								</div>
-								<div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow33" value="saturday late night"> saturday late night
-								    </label>
+								
+								<div class="col-sm-2">
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow43" value="Monday - Late Night"> Monday
+									    </label>
+									</div>
+								    <div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow44" value="Tuesday - Late Night"> Tuesday
+									    </label>
+									</div>
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow45" value="Wednesday - Late Night"> Wednesday
+									    </label>
+									</div>
+								    <div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow46" value="Thursday - Late Night"> Thursday
+									    </label>
+									</div>
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow47" value="Friday - Late Night"> Friday
+									    </label>
+									</div>
+								    <div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow48" value="Saturday - Late Night"> Saturday
+									    </label>
+									</div>
+									<div class="checkbox">
+									    <label>
+									      <input type="checkbox" id="dow49" value="Sunday - Late Night"> Sunday
+									    </label>
+									</div>
 								</div>
-							    <div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow34" value="sunday late night"> sunday late night
-								    </label>
-								</div>
-								<div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow35" value="weekdays late night"> weekdays late night
-								    </label>
-								</div>
-							    <div class="checkbox">
-								    <label>
-								      <input type="checkbox" id="dow36" value="weekend late night"> weekend late night
-								    </label>
-								</div>
+								
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-sm-6 text-left">
 							</div>
 							<div class="col-sm-6">
-								<button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-primary pull-right" data-dismiss="modal" onclick="updateValueDowCheck()">OK <i class="glyphicon glyphicon-arrow-right"></i></button>
+								<button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-success pull-right" data-dismiss="modal" onclick="updateValueDowCheck()">OK <i class="glyphicon glyphicon-arrow-right"></i></button>
 								<button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-default btn-danger pull-right" data-dismiss="modal" aria-hidden="true" >Cancel</button>
 							</div>
 						</div>
@@ -1255,8 +1527,254 @@
 							<div class="col-sm-6 text-left">
 							</div>
 							<div class="col-sm-6">
-								<button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-primary pull-right" data-dismiss="modal" onclick="updateValueScreeningCheck()">OK <i class="glyphicon glyphicon-arrow-right"></i></button>
-								<button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-default btn-danger pull right" data-dismiss="modal" aria-hidden="true" >Cancel</button>
+								<button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-success pull-right" data-dismiss="modal" onclick="updateValueScreeningCheck()">OK <i class="glyphicon glyphicon-arrow-right"></i></button>
+								<button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-default btn-danger pull-right" data-dismiss="modal" aria-hidden="true" >Cancel</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- Skills Modal-->
+	<div class="modal fade" id="skillBox" tabindex="-1" role="dialog" aria-labelledby="skillBox" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h2 class="modal-title" id="myModalLabel">Choose skills</h2>
+				</div>
+				<form role="form">
+					<div class="modal-body">
+						<div class="form-group">
+							<div class="col-sm-4">
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill1" value="Answering Telephones"> Answering Telephones
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill2" value="Accounting"> Accounting
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill3" value="Administration"> Administration
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill4" value="Business Correspondence"> Business Correspondence
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill5" value="Client Relations"> Client Relations
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill6" value="Communication"> Communication
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill7" value="Crowd Control"> Crowd Control
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill8" value="Crime & Safety"> Crime & Safety
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill9" value="Customer Service"> Customer Service
+								    </label>
+								</div>
+							    
+							</div>
+							<div class="col-sm-4">
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill10" value="Clerical"> Clerical
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill11" value="Document Management"> Document Management
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill12" value="Disaster Relief"> Disaster Relief
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill13" value="Document Management"> Document Management
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill14" value="Event Coordination"> Event Coordination
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill15" value="Employee Relations"> Employee Relations
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill16" value="Legal Familiarity"> Legal Familiarity
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill17" value="Meeting Planning"> Meeting Planning
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill18" value="Office Administration"> Office Administration
+								    </label>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill19" value="Organizational Skills"> Organizational Skills
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill20" value="Public Relations"> Public Relations
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill21" value="Public Speaking"> Public Speaking
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill22" value="People Management"> People Management
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill23" value="Receptionist"> Receptionist
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill24" value="Stenography"> Stenography
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill25" value="Travel Arrangements"> Travel Arrangements
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill26" value="Word Processing"> Word Processing
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="skill27" value="Written Communication"> Written Communication
+								    </label>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6 text-left">
+							</div>
+							<div class="col-sm-6">
+								<button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-success pull-right" data-dismiss="modal" onclick="updateValueSkillCheck()">OK <i class="glyphicon glyphicon-arrow-right"></i></button>
+								<button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-default btn-danger pull-right" data-dismiss="modal" aria-hidden="true" >Cancel</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- Diploma Modal -->
+	<div class="modal fade" id="diplomaBox" tabindex="-1" role="dialog" aria-labelledby="diplomaBox" aria-hidden="true">
+		<div class="modal-dialog modal-md">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h2 class="modal-title" id="myModalLabel">Choose Diplomas/Certificates </h2>
+				</div>
+				<form role="form">
+					<div class="modal-body">
+						<div class="form-group">
+							<div class="col-sm-6">
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="diploma1" value="First Aid Diploma"> First Aid Diploma
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="diploma2" value="Football Referee License"> Football Referee License
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="diploma3" value="Active Volunteering"> Active Volunteering
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="diploma4" value="Training and Assessmement"> Training and Assessmement
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="diploma5" value="Program Coordination"> Program Coordination
+								    </label>
+								</div>
+							</div>
+							<div class="col-sm-6">
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="diploma6" value="Community Service Coordination"> Community Service Coordination
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="diploma7" value="Effective Communication"> Effective Communication
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="diploma8" value="Negotiation"> Negotiation
+								    </label>
+								</div>
+								<div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="diploma9" value="Customer Service"> Customer Service
+								    </label>
+								</div>
+							    <div class="checkbox">
+								    <label>
+								      <input type="checkbox" id="diploma10" value="Risk Management"> Risk Management
+								    </label>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6 text-left">
+							</div>
+							<div class="col-sm-6">
+								<button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-success pull-right" data-dismiss="modal" onclick="updateValueDiplomaCheck()">OK <i class="glyphicon glyphicon-arrow-right"></i></button>
+								<button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-default btn-danger pull-right" data-dismiss="modal" aria-hidden="true" >Cancel</button>
 							</div>
 						</div>
 					</div>
