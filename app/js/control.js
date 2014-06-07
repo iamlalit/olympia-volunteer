@@ -1,31 +1,3 @@
-/*
-tab changing
-*/
-// $(document).ready(function() {
-//    $('#second-tab a:first').tab('show');
-//    var current = "#second-content-tab";
-    
-//    $('#first-content-tab a').click(function (e) {
-//      e.preventDefault()
-//      $(this).tab('show');
-//    });
-//    $('#second-content-tab a').click(function (e) {
-//      e.preventDefault();
-//      $(this).tab('show');
-//      console.log(2);
-//    });
-//    $('#third-content-tab a').click(function (e) {
-//      e.preventDefault();
-//      $(this).tab('show');
-//      console.log(3);
-//    });
-//    $('#fourth-content-tab a').click(function (e) {
-//      e.preventDefault();
-//      $(this).tab('show');
-//      console.log(4);
-//    });
-//  });
-
 
  $(document).ready(function() {
   $('#tabs > div').hide(); // hide all child divs
@@ -719,69 +691,6 @@ function updateValueDowText(){
     }
   }
 }
-
-
-// $('#screening-tag').tagsinput({
-//   typeahead: {
-//     source: ['Have you taken any Volunteer tests and done well on them that you think are relevant to this job?',
-//     'Why did you apply to this particular job?',
-//     'Which part of the project do you think will take the most time?',
-//     'Do you have any questions about the job description?',
-//     'Do you have any suggestions to make this project run successfully?',
-//     'Why do you think you are a good fit for this particular project?',
-//     'What challenging part of this job are you most experienced in?',
-//     'Which of the required job skills do you feel you you are strongest at?',
-//     'What questions do you have about the project?',
-//     'What past project or job have you had that is most like this one and why?'
-//     ],
-//     sorter: function (items) {
-//         return items.sort();
-//     }
-//   }
-// });
-
-function updateValueScreeningCheck(){
-  var listOfScreening = [];
-  for( i=1 ; i <= 10 ; i++){
-    if($("#screening" + i +"").is(":checked")){
-     listOfScreening.push($("#screening" + i +"").val());
-    }
-  }
-  console.log(listOfScreening);
-  $("#screening-tag").tagsinput("refresh");
-  for(i = 0 ; i < listOfScreening.length ; i++){
-    // $("#screening-tag").tagsinput('add', listOfScreening[i]);
-    var element_text_screeining = "<div class='col-sm-12' style='padding:0px' id='divTextTag" + tag +"'>" +
-                    "<div class='col-sm-11' style='padding:10px 20px 10px 0px'>" +
-                      "<input type='text' class='form-control' id='screening-tag" + tag + "' placeholder='Add Questions'/>" +
-                    "</div>" + 
-                    "<div class='col-sm-1' style='padding-top:18px;'>" +
-                      "<button type='button' class='close' aria-hidden='true' onclick='closeTextScreening()'>&times;</button>" +
-                    "</div>" + 
-                  "</div>";
-    tag++;
-    $("div#screening-popover").append(element_text_screeining);
-    $("#screening-tag" + tag + "").val(listOfScreening[i] + "");
-  }
-}
-
-function updateValueScreeningText(){
-  
-  $("#screening-tag").tagsinput("refresh");
-  var tagsValue = $("#screening-tag").val();
-  var tagsList = tagsValue.split(",");
-  for( i=1 ; i <= 10 ; i++){
-        $("#screening" + i + "").prop("checked", false);
-  }
-  console.log(tagsList);
-  for( i=1 ; i <= 10 ; i++){
-    for( j = 0 ; j < tagsList.length ; j++ ){
-      if($("#screening" + i + "").val() === tagsList[j]){
-        $("#screening" + i + "").attr("checked", "checked")
-      }
-    }
-  }
-}
   
 var skills_set = ['Answering Telephones', 'Accounting', 'Administration', 'Business Correspondence', 'Client Relations', 'Communication',
                   'Crowd Control', 'Crime & Safety', 'Customer Service', 'Clerical', 'Document Management', 'Disaster Relief', 
@@ -874,25 +783,87 @@ function updateValueDiplomaText(){
     }
   }
 }
-
-var tag = 0;
+var uid=0;
 function addNewTextScreening(){
-  var element_text_screeining = "<div class='col-sm-12' style='padding:0px' id='divTextTag" + tag +"'>" +
-                                  "<div class='col-sm-11' style='padding:10px 20px 10px 0px'>" +
-                                    "<input type='text' class='form-control' id='screening-tag" + tag + "' placeholder='Add Questions'/>" +
+  var element_text_screeining = "<div class='col-sm-12' style='padding:0px' id='divTextTag" + uid + "'>" +
+                                  "<div class='col-sm-9' style='padding:10px 20px 10px 0px; margin-left:93px;'>" +
+                                    "<input type='text' class='form-control' id='screening-tag' placeholder='Add Questions'/>" +
                                   "</div>" + 
                                   "<div class='col-sm-1' style='padding-top:18px;'>" +
-                                    "<button type='button' class='close' aria-hidden='true' onclick='closeTextScreening()'>&times;</button>" +
+                                    "<button type='button' class='close pull-left screening-Q' aria-hidden='true' onclick='closeTextScreening()' id='" + uid + "'>&times;</button>" +
                                   "</div>" + 
                                 "</div>";
-  tag++;
-  console.log(tag);
-  $("div#screening-popover").append(element_text_screeining);
+  $("div#screening-questions").append(element_text_screeining);
+  uid++;
+}
+var remove = '';
+function closeTextScreening(){
+$(".screening-Q").click(function(){
+ //Get the id of this clicked item
+  remove = $(this).attr("id");
+  $("div#screening-questions #divTextTag" + remove).remove();
+  uid--;
+  });
 }
 
-function closeTextScreening(){
-  tag--;
-  console.log(tag);
-  $("div#screening-popover #divTextTag"+tag+"").remove();
+// $('#screening-tag').tagsinput({
+//   typeahead: {
+//     source: ['Have you taken any Volunteer tests and done well on them that you think are relevant to this job?',
+//     'Why did you apply to this particular job?',
+//     'Which part of the project do you think will take the most time?',
+//     'Do you have any questions about the job description?',
+//     'Do you have any suggestions to make this project run successfully?',
+//     'Why do you think you are a good fit for this particular project?',
+//     'What challenging part of this job are you most experienced in?',
+//     'Which of the required job skills do you feel you you are strongest at?',
+//     'What questions do you have about the project?',
+//     'What past project or job have you had that is most like this one and why?'
+//     ],
+//     sorter: function (items) {
+//         return items.sort();
+//     }
+//   }
+// });
 
+function updateValueScreeningCheck(){
+  var listOfScreening = [];
+  for( i=1 ; i <= 10 ; i++){
+    if($("#screening" + i +"").is(":checked")){
+     listOfScreening.push($("#screening" + i +"").val());
+    }
+  }
+  console.log(listOfScreening);
+  $("#screening-tag").tagsinput("refresh");
+  for(i = 0 ; i < listOfScreening.length ; i++){
+    // $("#screening-tag").tagsinput('add', listOfScreening[i]);
+    var element_text_screeining = "<div class='col-sm-12' style='padding:0px' id='divTextTag" + tag +"'>" +
+                    "<div class='col-sm-11' style='padding:10px 20px 10px 0px'>" +
+                      "<input type='text' class='form-control' id='screening-tag" + tag + "' placeholder='Add Questions'/>" +
+                    "</div>" + 
+                    "<div class='col-sm-1' style='padding-top:18px;'>" +
+                      "<button type='button' class='close' aria-hidden='true' onclick='closeTextScreening()'>&times;</button>" +
+                    "</div>" + 
+                  "</div>";
+    tag++;
+    $("div#screening-popover").append(element_text_screeining);
+    $("#screening-tag" + tag + "").val(listOfScreening[i] + "");
+  }
+}
+
+function updateValueScreeningText(){
+  
+  $("#screening-tag").tagsinput("refresh");
+  var tagsValue = $("#screening-tag").val();
+  var tagsList = tagsValue.split(",");
+  for( i=1 ; i <= 10 ; i++){
+        $("#screening" + i + "").prop("checked", false);
+  }
+  console.log(tagsList);
+  for( i=1 ; i <= 10 ; i++){
+    for( j = 0 ; j < tagsList.length ; j++ ){
+      if($("#screening" + i + "").val() === tagsList[j]){
+        $("#screening" + i + "").attr("checked", "checked")
+      }
+    }
+  }
 }
