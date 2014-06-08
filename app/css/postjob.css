@@ -487,3 +487,9 @@ font-size: 45px;
 .margin-left-4{
 	margin-left: 4px;
 }
+.displan-none{
+	display: none;
+}
+.red{
+	color:red;
+}

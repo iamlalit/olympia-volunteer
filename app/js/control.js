@@ -806,6 +806,18 @@ $(".screening-Q").click(function(){
 });
 
 }
+var source_question = ['Have you taken any Volunteer tests and done well on them that you think are relevant to this job?',
+    'Why did you apply to this particular job?',
+    'Which part of the project do you think will take the most time?',
+    'Do you have any questions about the job description?',
+    'Do you have any suggestions to make this project run successfully?',
+    'Why do you think you are a good fit for this particular project?',
+    'What challenging part of this job are you most experienced in?',
+    'Which of the required job skills do you feel you you are strongest at?',
+    'What questions do you have about the project?',
+    'What past project or job have you had that is most like this one and why?'
+    ];
+
 
 function updateValueScreeningCheck(){
   var listOfScreening = [];
@@ -814,18 +826,55 @@ function updateValueScreeningCheck(){
      listOfScreening.push($("#screening" + i +"").val());
     }
   }
-  console.log(listOfScreening)
   for (var i = 0; i < listOfScreening.length; i++) {
     addNewTextScreening();
     $("#divTextTag"+ i +"").find("input").val(listOfScreening[i]);
   };
-  
 }
-
+// $("#screening" + i + "").prop("checked", false);
 function updateValueScreeningText(){
-  $("#screening-tag").tagsinput("refresh");
-  var tagsValue = $("#screening-tag").val();
-  for( i=1 ; i <= 10 ; i++){
-        $("#screening" + i + "").prop("checked", false);
+  for( i=0 ; i <= 10 ; i++){
+    $("#screening" + i + "").prop("checked", false);
   }
+  var tagsValues = [];
+  var tagsValueScreening = $("#divTextTag"+ 0 +"").find("input").val();
+  for (var i = 0; tagsValueScreening != undefined || tagsValueScreening == "" ; i++) {
+    var tagsValueScreening = $("#divTextTag"+ i +"").find("input").val();
+    tagsValues.push(tagsValueScreening);
+  }
+  for (var i = 0; i < source_question.length; i++) {
+    for (var j = 0; j < tagsValues.length; j++) {
+      if(tagsValues[j] === source_question[i]){
+        $("#screening" + (i+1) + "").prop("checked", true);    
+      }
+    };
+  };
+  for (var i = 0; i<20 ; i++) {
+    var tagsValueScreening = $("#divTextTag"+ i +"").find("input").val();
+    if(tagsValueScreening === ""){
+        $("div#screening-questions #divTextTag" + i).remove();
+        console.log("remobe");
+    }
+  }
+};
+
+//validating form
+$(document).ready(function(){
+  $("#message1span").hide();
+  $("#message2span").hide();
+  $("#message3span").hide();
+})
+function getValidateTitle(){
+  var title = $("#form-control-weight").val();
+  console.log(title)
+  $("#message1span").hide();
+  $("#message2span").hide();
+  $("#message3span").hide();
+  if(title == "" && title.length != 0){
+    $("#message3span").show();
+  }else if(title.length <= 5){
+    $("#message1span").show();
+  }else if(title.length >= 50){
+    $("#message2span").show();
+  } 
 }

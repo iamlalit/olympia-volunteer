@@ -105,7 +105,10 @@
 			<div class="row margin-left-57" id="title">
 				<div class="col-sm-10" >
 					<label>Give your job a title</label>
-					<input type='text' style="width:690px;" class='form-control' id='form-control-weight' for='inserting job title' id='form-text-control' placeholder='Title' id="job-title">
+					<input type='text' style="width:690px;" class='form-control' id='form-control-weight' for='inserting job title' id='form-text-control' placeholder='Title' id="job-title" onchange="getValidateTitle()">
+					<small class="red" id="message1span">Entered value cannot be less than 5 characters</small>
+					<small class="red" id="message2span">Entered value cannot be more than 50 characters</small>
+					<small class="red" id="message3span">Title is required</small>
 				</div>
 			</div>
 			<div class='row'>
@@ -1787,7 +1790,8 @@
 
 	<!-- Scripts -->
 	<script src="../lib/jquery/dist/jquery.min.js"></script>
-	<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>	
 	<!-- date picker Scripts -->
 	<script src="../lib/moment/moment.js"></script>
 	<script src="../lib/moment/min/moment.min.js"></script>
