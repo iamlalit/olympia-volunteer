@@ -831,17 +831,17 @@ function updateValueScreeningCheck(){
     $("#divTextTag"+ i +"").find("input").val(listOfScreening[i]);
   };
 }
-// $("#screening" + i + "").prop("checked", false);
 function updateValueScreeningText(){
   for( i=0 ; i <= 10 ; i++){
     $("#screening" + i + "").prop("checked", false);
   }
   var tagsValues = [];
   var tagsValueScreening = $("#divTextTag"+ 0 +"").find("input").val();
-  for (var i = 0; tagsValueScreening != undefined || tagsValueScreening == "" ; i++) {
+  for (var i = 0; tagsValueScreening != undefined ; i++) {
     var tagsValueScreening = $("#divTextTag"+ i +"").find("input").val();
     tagsValues.push(tagsValueScreening);
   }
+  console.log(tagsValues);
   for (var i = 0; i < source_question.length; i++) {
     for (var j = 0; j < tagsValues.length; j++) {
       if(tagsValues[j] === source_question[i]){
@@ -878,3 +878,4 @@ function getValidateTitle(){
     $("#message2span").show();
   } 
 }
+
