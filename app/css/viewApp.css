@@ -6,5 +6,53 @@ Date: 6/12/2014
 
 .body{
 	overflow-x:hidden;
+	margin: 0px;
+	padding: 0px;
 }
-bo
+.header-space{
+	height:120px;
+}
+.black-arrow{
+	color: #000000;
+	font-size: 20px;
+	padding-left: 0px;
+	padding-right: 5px;
+}
+.blue-heading{
+	font-family: Arial,sans-serif;
+	color: #00AEEC;
+	font-size: 16px;
+	background-color: #fff;
+	font-weight: 500;
+}
+.navigation:hover,
+.navigation:active{
+	text-decoration: none;
+}
+.panel-title{
+	font-size: 30px;
+	font-family: Roboto Slab;
+	font-weight: 600;
+	color: #252523;
+	background-color: #fff;
+}
+.panel-heading{
+	font-size: 16px;
+	font-family: Arial,sans-serif;
+	font-weight: 500;
+	color: #252523;
+	background-color: #fff;
+}
+.select-option{
+	width:auto; 
+	text-align:center;
+}
+
+.main-border1{
+	border: 3px solid #DEDCDC;
+	border-radius: 10px;
+}
+.main-border2{
+	border: 3px solid #CFCCCC;
+	border-radius: 7px;
+}
