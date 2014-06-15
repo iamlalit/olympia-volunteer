@@ -100,3 +100,11 @@
 .red{
 	color:red;
 }
+span a{
+	color:#00AEEC;
+	cursor: pointer;
+}
+span a:hover{
+	text-decoration: none;
+	color:#00AEEC;
+}

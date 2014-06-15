@@ -68,11 +68,11 @@ Date: 6/12/2014
 		<!--table starts to show the data-->
 		<div class="margin-top-5"></div>
 		<div class="row">
-			<div class="col-md-8 col-lg-8 col-sm-8">
+			<div class="col-md-9 col-lg-9 col-sm-9">
 				<div class="main-border1">
 					<div class="applicants" ng-repeat="applicant in Applicants">
 						<div style="padding-top:10px;"></div>
-						<i class="glyphicon glyphicon-user font-size-6 "></i>
+							<i class="glyphicon glyphicon-user font-size-6 "></i>
 						<div class="wrapper">
 							<div style="padding-top:5px;marging-top:5px;"></div>
 							<label ng-bind="applicant.Name"></label><br/>
@@ -80,25 +80,70 @@ Date: 6/12/2014
 							<div style="padding-top:5px;marging-top:5px;"></div>
 							<label ng-bind="applicant.city" class="city-detail"></label>	
 						</div>
+						<div class="col-sm-3 pull-right">
+							<div class="circle circle-grey pull-right" style=" margin-top:-10px">
+								<i class="icon-remove font-size-2 icon-attr" style="padding-left:3px;"> </i>
+							</div>
+							<button type="button" class="btn btn-success" ng-model="shortlisted"><i class="icon-ok"> </i>Shortlisted</button>
+						</div>
 						<div style="padding-top:5px;marging-top:5px;"></div>												
 						<span ng-bind="applicant.bodyText"></span>
 						<div style="padding-top:6px;marging-top:5px;"></div>	
 						<div class="row">
 							<div class="col-sm-3 col-lg-3 col-md-3"></div>
 							<div class="col-sm-7 col-lg-7 col-md-7">
-								<span ng-show="value" ng-init="value=true" ng-model="value"><a >View Full Application</a> | <a>Send Message</a> | <a href="">Hire</a></span>
+								<span ng-show="applicant.value" ng-model="applicant.value"><a >View Full Application</a> | <a>Send Message</a> | <a href="">Hire</a></span>
 							</div>
-							<div class="col-sm-2 col-lg-2 col-md-2" ng-show="value"><span><a ng-model="more" ng-click="value=false" >Less</a></span></div>
-
-							<div class="col-sm-2 col-lg-2 col-md-2" ng-show="!value"><span><a ng-model="more" ng-click="value=true">More</a></span></div>
+							<div class="col-sm-2 col-lg-2 col-md-2" ng-show="applicant.value"><span><a ng-model="more" ng-click="applicant.value=false" >Less</a></span></div>
+							<div class="col-sm-2 col-lg-2 col-md-2" ng-show="!applicant.value"><span><a ng-model="more" ng-click="applicant.value=true">More</a></span></div>
 						</div>
 						<hr class="user-hr" ng-if="$index !== lengthOfApplicants-1" />
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4 col-lg-4 col-sm-4">
+			<div class="col-md-3 col-lg-3 col-sm-3">
 				<div class="main-border1">
-				.col-md-4
+					<div class="wrap1">
+						<div class="circle circle-blue">
+							<i class="icon-user font-size-2 icon-attr-white"> </i>
+						</div>
+						<label style="padding-left:20px;">Applicants</label>
+						<label style="padding-left:70px; margin-top:12px">{{lengthOfApplicants}}</label>
+					</div>
+					<div class="wrap1">
+						<div class="circle circle-grey">
+							<i class="icon-ok font-size-2 icon-attr"> </i>
+						</div>
+						<label style="padding-left:20px;">Shortlisted</label>
+						<label style="padding-left:70px; margin-top:12px">0</label>
+					</div>
+					<div class="wrap1">
+						<div class="circle circle-grey">
+							<i class="icon-envelope font-size-2 icon-attr"> </i>
+						</div>
+						<label style="padding-left:20px;">Messaged</label>
+						<label style="padding-left:73px; margin-top:12px">1</label>
+					</div>
+					<div class="wrap1">
+						<div class="circle circle-grey">
+							<i class="icon-remove font-size-2 icon-attr"> </i>
+						</div>
+						<label style="padding-left:20px;">Hidden</label>
+						<label style="padding-left:93px; margin-top:12px">0</label>
+					</div>
+					<div class="wrap1">
+						<div class="circle circle-grey">
+							<i class="icon-envelope font-size-2 icon-attr"> </i>
+						</div>
+						<label style="padding-left:20px;">Hired</label>
+						<label style="padding-left:103px; margin-top:12px">0</label>
+					</div>
+					<div class="wrap1" style="padding-left:20px;">
+						<span >
+							<a> 1 Pending invitation</a><br/>
+							<a> 0 Withdrawn or Declined</a>
+						</span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -110,8 +155,32 @@ Date: 6/12/2014
 	</div>
 	<footer>
 		<div class="row">
-			<div class="header-space"></div>
+			<div class="col-sm-12">
+				<div class="header-space">;sd;askdla;sd;klsadjkadskhadskashdk</div>
+			</div>
 		</div>
+		<div class="row">
+						<a href="#" class="footer-select">
+							<div class="footer-circle footer-circle-linkedin pull-right">
+								<i class="icon-linkedin font-size-20 icon-attr"> </i>
+							</div>
+						</a>
+						<a href="#">
+							<div class="footer-circle footer-circle-facebook pull-right">
+								<i class="icon-facebook font-size-20 icon-attr"> </i>
+							</div>
+						</a>
+						<a href="#">
+							<div class="footer-circle footer-circle-twitter pull-right">
+								<i class="icon-twitter font-size-20 icon-attr"> </i>
+							</div>
+						</a>
+						<a href="#">
+							<div class="footer-circle footer-circle-google pull-right">
+								<i class="icon-google-plus font-size-20 icon-attr"> </i>
+							</div>
+						</a>
+					</div>
 	</footer>
 	<script src="../lib/jquery/dist/jquery.min.js"></script>
 	<script src="../lib/angular/angular.min.js"></script>

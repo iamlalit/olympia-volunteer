@@ -76,10 +76,36 @@ Date: 6/12/2014
 	margin-top:0px;
 	border:1.5px solid #eee
 }
-span a{
-	color:#00AEEC;
+
+.circle {
+	padding-right: 10px;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-left:5px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;    
 }
-span a:hover{
-	text-decoration: none;
-	color:#00AEEC;
+.circle-blue{
+	background-color: #00AEEC;
+}
+.circle-grey{
+	background-color: #CFCCCC;
+}
+.icon-attr{
+	display: inline-block;
+	color: #858383;
+	margin-left: 13px;
+	margin-top:15px;
+}
+.icon-attr-white{
+	display: inline-block;
+	color: #ffffff;	
+	margin-left: 13px;
+	margin-top:15px;
+}
+.wrap1{
+	display: -webkit-inline-box;
+	display: -moz-inline-box;
 }
