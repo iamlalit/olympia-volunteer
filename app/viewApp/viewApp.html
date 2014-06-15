@@ -71,25 +71,29 @@ Date: 6/12/2014
 			<div class="col-md-8 col-lg-8 col-sm-8">
 				<div class="main-border1">
 					<div class="applicants" ng-repeat="applicant in Applicants">
-						<div style="padding-top:50px;marging-top:5px;"></div>
+						<div style="padding-top:10px;"></div>
 						<i class="glyphicon glyphicon-user font-size-6 "></i>
 						<div class="wrapper">
 							<div style="padding-top:5px;marging-top:5px;"></div>
 							<label ng-bind="applicant.Name"></label><br/>
 							<label ng-bind="applicant.job" class="job-detail"></label>
 							<div style="padding-top:5px;marging-top:5px;"></div>
-
 							<label ng-bind="applicant.city" class="city-detail"></label>	
 						</div>
-												
 						<div style="padding-top:5px;marging-top:5px;"></div>												
-						<span ng-bind="applicant.bodyText">
-						<hr>
+						<span ng-bind="applicant.bodyText"></span>
+						<div style="padding-top:6px;marging-top:5px;"></div>	
+						<div class="row">
+							<div class="col-sm-3 col-lg-3 col-md-3"></div>
+							<div class="col-sm-7 col-lg-7 col-md-7">
+								<span ng-show="value" ng-init="value=true" ng-model="value"><a >View Full Application</a> | <a>Send Message</a> | <a href="">Hire</a></span>
+							</div>
+							<div class="col-sm-2 col-lg-2 col-md-2" ng-show="value"><span><a ng-model="more" ng-click="value=false" >Less</a></span></div>
 
+							<div class="col-sm-2 col-lg-2 col-md-2" ng-show="!value"><span><a ng-model="more" ng-click="value=true">More</a></span></div>
+						</div>
+						<hr class="user-hr" ng-if="$index !== lengthOfApplicants-1" />
 					</div>
-
-
-
 				</div>
 			</div>
 			<div class="col-md-4 col-lg-4 col-sm-4">
