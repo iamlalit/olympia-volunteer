@@ -3,12 +3,13 @@
 var app = angular.module('app', []);
 
 app.controller('Ctrl', function($scope){
-	$scope.sortByList = ['Best Match', 'Perfect Match', 'No Match'];
+	$scope.sortByList = ['Best Match', 'Newest Applicants', 'Oldest Applicants', 'Feedback'];
 	//best match 80% matches
 	//Perfect match 100% match
 	//No match 0% match
 	//
 	$scope.Applicants = [];
+	$scope.hiddenApplicants = [];
 	$scope.Applicants.push({Name:"Sandy Sharma",
             job: 'QA Analyst',
             city: 'Amsterdam', 
@@ -49,8 +50,21 @@ app.controller('Ctrl', function($scope){
             selected: false,      
             value: false
     }); 
-
 	//find number of applicants
 	$scope.lengthOfApplicants = $scope.Applicants.length;
-	$scope
+	$scope.lengthOfHiddenApplicants = $scope.hiddenApplicants.length;
+	//hidden applicant functionality
+	$scope.moveApplicant = function(item, from, to) {
+        var idx=from.indexOf(item);
+        console.log(item);
+        if (idx != -1) {
+            from.splice(idx, 1);
+            to.push(item);      
+        }
+    	$scope.lengthOfApplicants = $scope.Applicants.length;
+        $scope.lengthOfHiddenApplicants = $scope.hiddenApplicants.length;
+        console.log($scope.Applicants.length, $scope.hiddenApplicants.length)
+    };
+    
+
 });

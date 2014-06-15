@@ -53,10 +53,10 @@ Date: 6/12/2014
 		</div>
 		<!-- Number of applicants and sort by functionality-->
 		<div class="row">
-			<div class="col-sm-6 padding-left-0 ">
+			<div class="col-sm-6 padding-left-0 margin-top-7">
 				<span><label ng-bind="lengthOfApplicants"></label> Applicants </span>
 			</div>
-			<div class="col-sm-6">
+			<div class="col-sm-6" style="padding-left:45px">
 				<span class="float-left margin-top-7">Sort By: &nbsp;</span>
 				<div >
 					<select class="form-control float-left select-option">
@@ -81,9 +81,13 @@ Date: 6/12/2014
 							<label ng-bind="applicant.city" class="city-detail"></label>	
 						</div>
 						<div class="col-sm-3 pull-right">
-							<div class="circle circle-grey pull-right" style=" margin-top:-10px">
-								<i class="icon-remove font-size-2 icon-attr" style="padding-left:3px;"> </i>
-							</div>
+							<span>
+								<a ng-click="moveApplicant(applicant, Applicants, hiddenApplicants)" id="removeIconHover" data-toggle="modal" data-target="#hiddenBig">
+									<div class="circle circle-grey pull-right" style=" margin-top:-10px">
+										<i class="icon-remove font-size-2 icon-attr" style="padding-left:2.5px;display:-webkit-inline-box!important;"> </i>
+									</div>
+								</a>
+							</span>
 							<button type="button" class="btn btn-success" ng-model="shortlisted"><i class="icon-ok"> </i>Shortlisted</button>
 						</div>
 						<div style="padding-top:5px;marging-top:5px;"></div>												
@@ -91,11 +95,11 @@ Date: 6/12/2014
 						<div style="padding-top:6px;marging-top:5px;"></div>	
 						<div class="row">
 							<div class="col-sm-3 col-lg-3 col-md-3"></div>
-							<div class="col-sm-7 col-lg-7 col-md-7">
+							<div class="col-sm-8 col-lg-8 col-md-8" style="margin-left:-38px">
 								<span ng-show="applicant.value" ng-model="applicant.value"><a >View Full Application</a> | <a>Send Message</a> | <a href="">Hire</a></span>
 							</div>
-							<div class="col-sm-2 col-lg-2 col-md-2" ng-show="applicant.value"><span><a ng-model="more" ng-click="applicant.value=false" >Less</a></span></div>
-							<div class="col-sm-2 col-lg-2 col-md-2" ng-show="!applicant.value"><span><a ng-model="more" ng-click="applicant.value=true">More</a></span></div>
+							<div class="col-sm-1 col-lg-1 col-md-1" ng-show="applicant.value" style="margin-left:30px"><span><a ng-model="more" ng-click="applicant.value=false" >Less</a></span></div>
+							<div class="col-sm-1 col-lg-1 col-md-1" ng-show="!applicant.value" style="margin-left:30px"><span><a ng-model="more" ng-click="applicant.value=true">More</a></span></div>
 						</div>
 						<hr class="user-hr" ng-if="$index !== lengthOfApplicants-1" />
 					</div>
@@ -129,7 +133,7 @@ Date: 6/12/2014
 							<i class="icon-remove font-size-2 icon-attr"> </i>
 						</div>
 						<label style="padding-left:20px;">Hidden</label>
-						<label style="padding-left:93px; margin-top:12px">0</label>
+						<label style="padding-left:93px; margin-top:12px" ng-bind="lengthOfHiddenApplicants">{{lengthOfHiddenApplicants}}</label>
 					</div>
 					<div class="wrap1">
 						<div class="circle circle-grey">
@@ -159,29 +163,66 @@ Date: 6/12/2014
 				<div class="header-space">;sd;askdla;sd;klsadjkadskhadskashdk</div>
 			</div>
 		</div>
-		<div class="row">
-						<a href="#" class="footer-select">
-							<div class="footer-circle footer-circle-linkedin pull-right">
-								<i class="icon-linkedin font-size-20 icon-attr"> </i>
-							</div>
-						</a>
-						<a href="#">
-							<div class="footer-circle footer-circle-facebook pull-right">
-								<i class="icon-facebook font-size-20 icon-attr"> </i>
-							</div>
-						</a>
-						<a href="#">
-							<div class="footer-circle footer-circle-twitter pull-right">
-								<i class="icon-twitter font-size-20 icon-attr"> </i>
-							</div>
-						</a>
-						<a href="#">
-							<div class="footer-circle footer-circle-google pull-right">
-								<i class="icon-google-plus font-size-20 icon-attr"> </i>
-							</div>
-						</a>
-					</div>
 	</footer>
+
+	<!-- Hidden modal box-->
+	<div class="modal fade" id="hiddenBig" tabindex="-1" role="dialog" aria-labelledby="hiddenBig" aria-hidden="true">
+		<div class="modal-dialog modal-md">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h2 class="modal-title" id="myModalLabel">Hidden</h2>
+				</div>
+				<form role="form">
+					<div class="modal-body">
+						<div class="row" style="padding-left:50px;">
+							<div class="wrap1 col-sm-12">
+								<div class="circle circle-grey">
+									<i class="icon-remove font-size-2 icon-attr"> </i>
+								</div>
+								<label style="padding-left:30px; padding-top:14px">Okay, but not quite right</label>
+							</div>
+							<div class="wrap1 col-sm-12">
+								<div class="circle circle-grey">
+									<i class="icon-remove font-size-2 icon-attr"> </i>
+								</div>
+								<label style="padding-left:30px; padding-top:14px">Poor comments in work history</label>
+							</div>
+							<div class="wrap1 col-sm-12">
+								<div class="circle circle-grey">
+									<i class="icon-remove font-size-2 icon-attr"> </i>
+								</div>
+								<label style="padding-left:30px; padding-top:14px">Poor quality of work letter</label>
+							</div>
+							<div class="wrap1 col-sm-12" >
+								<div class="circle circle-grey">
+									<i class="icon-remove font-size-2 icon-attr"> </i>
+								</div>
+								<label style="padding-left:30px; padding-top:14px">Other</label>
+							</div>
+							<div class="wrap1 col-sm-12">
+								<div class="circle circle-grey">
+									<i class="icon-remove font-size-2 icon-attr"> </i>
+								</div>
+								<label style="padding-left:30px; padding-top:14px">Report to volunteer</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-1"></div>
+							<div class="col-sm-10" style="color:#858383;text-align:center">
+								The volunteer will not be notified. Your feedback helps to improve our volunteer recommendation.
+							</div>
+							<div class="col-sm-1"></div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- Hidden modal box-->
+
+
+
 	<script src="../lib/jquery/dist/jquery.min.js"></script>
 	<script src="../lib/angular/angular.min.js"></script>
 	<script src="../lib/bootstrap/dist/js/bootstrap.js"></script>

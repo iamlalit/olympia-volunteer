@@ -109,3 +109,9 @@ Date: 6/12/2014
 	display: -webkit-inline-box;
 	display: -moz-inline-box;
 }
+.modal-header {
+  background: #00AEEC;
+  color:#ffffff;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
