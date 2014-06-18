@@ -10,6 +10,7 @@ app.controller('Ctrl', function($scope){
 	//
 	$scope.Applicants = [];
 	$scope.hiddenApplicants = [];
+    $scope.shortlistedApplicants = [];
 	$scope.Applicants.push({Name:"Sandy Sharma",
             job: 'QA Analyst',
             city: 'Amsterdam', 
@@ -53,6 +54,7 @@ app.controller('Ctrl', function($scope){
 	//find number of applicants
 	$scope.lengthOfApplicants = $scope.Applicants.length;
 	$scope.lengthOfHiddenApplicants = $scope.hiddenApplicants.length;
+    $scope.lengthOfshortlistedApplicants = $scope.shortlistedApplicants.length;
 	//hidden applicant functionality
 	$scope.moveApplicant = function(item, from, to) {
         var idx=from.indexOf(item);
@@ -63,7 +65,7 @@ app.controller('Ctrl', function($scope){
         }
     	$scope.lengthOfApplicants = $scope.Applicants.length;
         $scope.lengthOfHiddenApplicants = $scope.hiddenApplicants.length;
-        console.log($scope.Applicants.length, $scope.hiddenApplicants.length)
+        $scope.lengthOfshortlistedApplicants = $scope.shortlistedApplicants.length;
     };
     
 
