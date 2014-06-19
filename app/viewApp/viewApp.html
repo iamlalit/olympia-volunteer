@@ -11,6 +11,7 @@ Date: 6/12/2014
     <title>OLYMPIA</title>
     <link href="../img/olympia-fav.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="../lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="../css/font-awesome.css" rel="stylesheet">
     <link href="../css/viewApp.css" rel="stylesheet">
@@ -80,22 +81,34 @@ Date: 6/12/2014
                         <div style="padding-top:10px;"></div>
                         <i class="glyphicon glyphicon-user font-size-6 "></i>
                         <div class="wrapper">
-                            <div style="padding-top:5px;marging-top:5px;"></div>
+                            <div style="padding-top:5px; marging-top:5px;"></div>
                             <label ng-bind="applicant.Name"></label><br />
                             <label ng-bind="applicant.job" class="job-detail"></label>
                             <div style="padding-top:5px;marging-top:5px;"></div>
                             <label ng-bind="applicant.city" class="city-detail"></label>
                         </div>
-                        <div class="col-sm-3 pull-right">
-                            <span>
+                        
+                        <div class="col-sm-1 pull-right">
+                            <div class="dropdown">
+                                <a class="circle dropdown-toggle setting" data-toggle="dropdown"><i class="icon-cog"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#" ng-model="shortlisted" ng-click="moveApplicant(applicant, Applicants, shortlistedApplicants)"><i class="icon-ok fa-fw"></i> Shortlisted</a></li>
+                                    <li><a href="#"><i class="icon-remove fa-fw" ng-click="moveApplicant(applicant, Applicants, hiddenApplicants)" id="removeIconHover" data-toggle="modal" data-target="#hiddenBig"></i> Remove</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#"><i class="i"></i> Make admin</a></li>
+                                </ul>
+                            </div>
+                            
+                            <span class="hidden">
                                 <a ng-click="moveApplicant(applicant, Applicants, hiddenApplicants)" id="removeIconHover" data-toggle="modal" data-target="#hiddenBig">
                                     <div class="circle circle-grey pull-right" style=" margin-top:-10px">
                                         <i class="icon-remove font-size-2 icon-attr" style="padding-left:2.5px;display:-webkit-inline-box!important;"> </i>
                                     </div>
                                 </a>
                             </span>
-                            <button type="button" class="btn btn-success" ng-model="shortlisted" ng-click="moveApplicant(applicant, Applicants, shortlistedApplicants)"><i class="icon-ok"> </i>Shortlisted</button>
+                            <button type="button" class="btn btn-success hidden" ng-model="shortlisted" ng-click="moveApplicant(applicant, Applicants, shortlistedApplicants)"><i class="icon-ok"> </i>Add</button>
                         </div>
+                        <div class="col-sm-2 pull-right"></div>
                         <div style="padding-top:5px;marging-top:5px;"></div>
                         <span ng-bind="applicant.bodyText"></span>
                         <div style="padding-top:6px;marging-top:5px;"></div>
@@ -700,8 +713,9 @@ Date: 6/12/2014
     <!-- Hidden modal box-->
 
     <script src="../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../lib/angular/angular.min.js"></script>
-    <script src="../lib/bootstrap/dist/js/bootstrap.js"></script>
+    
     <script src="../js/router.js"></script>
 
 

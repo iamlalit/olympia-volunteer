@@ -274,3 +274,39 @@ footer .footer-text:hover{
     width:100%;
     text-align:right;
 }
+
+/* BODY*/
+
+/* Drop down*/
+.dropdown .setting{
+    color:#333;
+    border:1px solid #ccc;
+    padding:12px;
+    display:block;
+    width:45px;
+    height:45px;margin-bottom:20px;
+    padding-right:10px;
+    border-radius:25px;
+    text-shadow:0 1px 0 #fff;
+}
+.dropdown a.setting:hover, .dropdown a.setting:hover{
+    text-decoration:none;
+    color: #333;
+  background-color: #ebebeb;
+  border-color: #adadad;
+}
+.dropdown .setting i{
+    font-size:25px;
+}
+.dropdown-menu{
+    left:-30px;
+    min-width:125px;
+}
+.fa-fw{
+    text-align:center;
+    vertical-align:-1;
+    display:inline;
+    display:inline-block;
+    font-size:15px;
+    padding-right:5px;
+}
