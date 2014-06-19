@@ -292,8 +292,9 @@ footer .footer-text:hover{
 .dropdown a.setting:hover, .dropdown a.setting:hover{
     text-decoration:none;
     color: #333;
-  background-color: #ebebeb;
-  border-color: #adadad;
+    background-color: #ebebeb;
+    border-color: #adadad;
+    cursor:pointer;
 }
 .dropdown .setting i{
     font-size:25px;
