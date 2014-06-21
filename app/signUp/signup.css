@@ -99,11 +99,34 @@ a.orange{
 .sign-up-form .social-text{
     font-size:11px;
 }
+.sign-up-form .social-text a{
+    text-decoration:underline;
+}
+.sign-up-form .social-text .icon-facebook-sign{
+    color:#3b5998;
+    font-size:20px;
+    vertical-align:-2px;
+    padding-right:4px;
+}
+.sign-up-form .social-text .icon-linkedin-sign{
+    color:#1777b1;
+    font-size:20px;
+    vertical-align:-2px;
+}
 .sign-up-form .center-block{
     text-align:left;
 }
 .form-group{
 
+}
+.form-group select{
+    width:100%;
+    padding:7px 0 7px 5px;
+    border:3px solid #d2d2cd ;
+    color:#999;
+}
+.form-group select:focus{
+    border-color:#33ccff;
 }
 .form-group label{
     font-size:13px;
@@ -132,6 +155,24 @@ a.orange{
     padding-top:10px;
     color:#999;
 }
+.agree-text a{
+    text-decoration:underline;
+}
+.form-group .captchaImg{
+    float:left;
+    width:30%;
+    border:3px solid #d2d2cd;
+    height:60px;
+    text-align:center;
+    padding-top:17px;
+    font-size:12px;
+}
+.form-group .captchTxt{
+    display:inline-block;
+    width:70%;
+    font-size:14px;
+    padding-left:29px;
+}
 
 
 
@@ -146,4 +187,35 @@ p.footer-copyrights{
 	font-weight: 700;
 	margin-top:-2px; 
     text-align:center;
+}
+
+/* Error */
+#errorMsg{
+    float:left;
+}
+#errorMsg h2{ 
+    margin-bottom:15px;
+}
+#errorList li{
+    text-align:left;
+}
+.has-error{
+
+}
+.has-error select{
+    border-color:#C70909;
+}
+.has-error select:focus{
+    border-color:#C70909;
+    box-shadow:none;
+}
+.has-error label{
+    color:#C70909;
+}
+.has-error .form-control, .has-error.well{
+    border-color:#C70909;
+}
+.has-error .form-control:focus{
+    border-color:#C70909;
+    box-shadow:none;
 }
