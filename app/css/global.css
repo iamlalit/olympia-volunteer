@@ -1,5 +1,5 @@
 
-/*global variabled*/
+/*global Classes*/
 
 .padding-left-0{
 	padding-left: 0px;
@@ -15,8 +15,14 @@
 .font-size-16{
 	font-size:16px;	
 }
+.font-size-18{
+	font-size:18px;	
+}
 .font-size-20{
 	font-size:20px;	
+}
+.font-size-26{
+	font-size:26px;	
 }
 .font-size-2{
   font-size:2em;
@@ -107,4 +113,9 @@ span a{
 span a:hover{
 	text-decoration: none;
 	color:#00AEEC;
+}
+
+/* Fonts */
+.text-bold{
+    font-weight:bold;
 }

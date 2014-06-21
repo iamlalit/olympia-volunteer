@@ -1,0 +1,149 @@
+﻿.container{
+    width:960px;
+}
+
+/* Header */
+.navbar{
+    border-radius:0;
+}
+.navbar-default{
+    background:#00aeec;
+    border:0;
+}
+.navbar-brand{
+    height:80px;
+    padding-top:24px;
+}
+.wrap-login-text{
+    padding-top:26px;
+    color:#fff;
+}
+.wrap-login-text span{
+    display:block;
+    font-size:13px;
+}
+.wrap-login-text span.text-bold{
+    text-align:right;
+}
+
+/* Body */
+.wrapper-form{
+    padding:20px;
+    margin-top:10px;
+    border:3px solid #F0F0ED;
+    margin-bottom:30px;
+    border-radius:5px;
+}
+.wrapper-form h2{
+    margin-top:0;
+    margin-bottom:30px;
+}
+.wrapper-form .center-block{
+    float:none;
+}
+.need-wrapper{
+    float:left;
+    width:50%;
+    margin-top:18px;
+    padding-left:20px;
+}
+.need-wrapper h2{
+ margin-bottom:0;   
+ font-weight:bold;
+ margin-top:5px;
+}
+.need-wrapper .need{
+    float:right;
+    width:77%;
+    padding-left:5px;
+    padding-right:30px;
+}
+.need-wrapper .need p{
+    margin-bottom:20px;
+    font-size:13px;
+}
+a.user-wrapper{
+    display:block;
+    float:left;
+    background:#32becd;
+    border-radius:5px;
+    padding:10px 15px 7px 15px;
+    border:1px solid #61a8b1;
+    border-bottom:2px solid #ccc;
+}
+a.user-wrapper:hover {
+    text-decoration:none
+}
+a.user-wrapper span{
+    font-size:45px;
+    color:#fff;
+    padding-top:3px;
+    display:block;
+}
+a.orange{
+    background:#ffbc1c;
+    border:1px solid #fea75c;
+    border-bottom:2px solid #ccc;
+}
+.need-staff{
+    text-align:center;
+    font-size:13px;
+    margin-top:165px;
+}
+
+
+/* Sing up Form*/
+.sign-up-form{
+    text-align:center;
+}
+.sign-up-form .social-text{
+    font-size:11px;
+}
+.sign-up-form .center-block{
+    text-align:left;
+}
+.form-group{
+
+}
+.form-group label{
+    font-size:13px;
+}
+.form-group .form-control{
+    border-radius:2px;
+    border:3px solid #d2d2cd;
+    box-shadow:none;
+    padding-top:15px;
+    padding-bottom:15px;
+}
+.form-group .form-control:focus{
+    border-color:#33ccff;
+}
+.checkbox label{
+    font-size:13px;
+}
+.btn-signup{
+    width:100%;
+    font-weight:bold;
+    padding:10px;
+}
+.agree-text{
+    text-align:center;
+    font-size:11px;
+    padding-top:10px;
+    color:#999;
+}
+
+
+
+/* Footer */
+footer{
+    padding-top:42px;
+    padding-bottom:22px;
+}
+p.footer-copyrights{
+    color:#a5a5a4;
+	font-size: 12px;
+	font-weight: 700;
+	margin-top:-2px; 
+    text-align:center;
+}
