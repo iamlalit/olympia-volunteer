@@ -37,10 +37,9 @@ Date: 6/12/2014
 	background-color: #fff;
 }
 .panel-heading{
-	font-size: 16px;
+	font-size: 12px;
 	font-family: Arial,sans-serif;
-	font-weight: 500;
-	color: #252523;
+	font-weight: 400;
 	background-color: #fff;
 }
 .select-option{
@@ -81,31 +80,47 @@ Date: 6/12/2014
 
 .circle {
 	padding-right: 10px;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     margin-bottom: 20px;
     margin-left:5px;
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    border-radius: 25px;    
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;    
+    background-color: #CFCCCC;
+    cursor:pointer;
 }
 .circle-blue{
-	background-color: #00AEEC;
+	background-color: #00AEEC!important;
 }
-.circle-grey{
-	background-color: #CFCCCC;
+
+.circle-blue1{
+    background-color: #00AEEC!important;
+}
+.circle-red{
+    background-color:#a90404!important;
+}
+.text-red{
+    color:#a90404;
+}
+.box-invited{
+    width: 60px;
+    height: 20px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;    
 }
 .icon-attr{
 	display: inline-block;
 	color: #858383;
-	margin-left: 13px;
-	margin-top:15px;
+	margin-left: 11px;
+	margin-top:11px;
 }
 .icon-attr-white{
-	display: inline-block;
-	color: #ffffff;	
-	margin-left: 14px;
-	margin-top:13px;
+	color: #ffffff!important;	
+}
+.icon-attr-white1{
+    color: #ffffff!important;   
 }
 .wrap1{
 	display: -webkit-inline-box;
@@ -310,4 +325,7 @@ footer .footer-text:hover{
     display:inline-block;
     font-size:15px;
     padding-right:5px;
+}
+#example {
+    position:relative;
 }

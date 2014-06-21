@@ -289,7 +289,7 @@ $(document).ready(function () {
         //Email
         if (email.val() == '' || email.val() == null) {
             if (errorList.find('.errormessage-form1mail').length == 0) {
-                var li = $('<li />', {html: 'Email required!', class: 'col-sm-6 errormessage-form1mail' });
+                var li = $('<li />', {html: 'Email required !', class: 'col-sm-6 errormessage-form1mail' });
                 li.appendTo(errorList);
                 email.parent().addClass('has-error');
             }
@@ -316,7 +316,7 @@ $(document).ready(function () {
         // Country
         if ($('#country option:selected').val() == '0') {
             if (errorList.find('.errormessage-country').length == 0) {
-                $('<li />', { html: 'Country required', class: 'col-sm-6 errormessage-country' })
+                $('<li />', { html: 'Country required !', class: 'col-sm-6 errormessage-country' })
 				.appendTo(errorList)
 				.click(function () {
 				    $('html, body').animate({
@@ -341,7 +341,7 @@ $(document).ready(function () {
         // City
         if (city.val() == '' || city.val() == null) {
             if (errorList.find('.errormessage-city').length == 0) {
-                $('<li />', { html: 'City required', class: 'col-sm-6 errormessage-city' })
+                $('<li />', { html: 'City required !', class: 'col-sm-6 errormessage-city' })
 				.appendTo(errorList)
 				.click(function () {
 				    $('html, body').animate({
@@ -365,7 +365,7 @@ $(document).ready(function () {
         // Username
         if (username.val() == '' || username.val() == null) {
             if (errorList.find('.errormessage-username').length == 0) {
-                $('<li />', { html: 'Username required', class: 'col-sm-6 errormessage-street' })
+                $('<li />', { html: 'Username required !', class: 'col-sm-6 errormessage-street' })
 				.appendTo(errorList)
 				.click(function () {
 				    $('html, body').animate({
@@ -389,7 +389,7 @@ $(document).ready(function () {
         //Password
         if (password.val() == '' || password.val() == null) {
             if (errorList.find('.errormessage-password').length == 0) {
-                $('<li />', { html: 'Password required', class: 'col-sm-6 errormessage-password' })
+                $('<li />', { html: 'Password required !', class: 'col-sm-6 errormessage-password' })
 				.appendTo(errorList)
 				.click(function () {
 				    $('html, body').animate({
