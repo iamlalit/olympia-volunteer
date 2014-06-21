@@ -37,10 +37,9 @@ Date: 6/12/2014
 	background-color: #fff;
 }
 .panel-heading{
-	font-size: 16px;
+	font-size: 12px;
 	font-family: Arial,sans-serif;
-	font-weight: 500;
-	color: #252523;
+	font-weight: 400;
 	background-color: #fff;
 }
 .select-option{
@@ -326,4 +325,7 @@ footer .footer-text:hover{
     display:inline-block;
     font-size:15px;
     padding-right:5px;
+}
+#example {
+    position:relative;
 }
