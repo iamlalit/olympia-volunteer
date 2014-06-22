@@ -330,3 +330,9 @@ footer .footer-text:hover{
 #example {
     position:relative;
 }
+
+div a label:hover{
+    color:#333;
+    cursor: pointer;
+    text-decoration: underline;
+}

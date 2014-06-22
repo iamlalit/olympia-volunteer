@@ -112,19 +112,19 @@ Date: 6/12/2014
                         <table ng-table="tableParams" class="table">
                         <tr ng-repeat="user in $data | filter:statusShow.status">
                             <td data-title="'Job Title'" sortable="'jobTitle'">
-                                {{user.jobTitle}}<br/>
-                                <span style="font-size:12px;">{{user.client}}<a style="padding-left:20px" href="../viewApp/viewApp.html">View Job Postings</a></span>
+                                <span><a href="../viewApp/viewApp.html">{{user.jobTitle}}</a></span><br/>
+                                <span style="font-size:12px;">{{user.client}}<a style="padding-left:20px" href="#">View Job Postings</a></span>
                             </td>
                             <td data-title="'Applicants'" sortable="'Applicants'" class="text-center">
-                                {{user.Applicants}}
+                                <span><a href="../viewApp/viewApp.html">{{user.Applicants}}</a></span>
                             </td>
 
                             <td data-title="'Messaged'" sortable="'messaged'" class="text-center">
-                                {{user.messaged}}
+                                <span><a href="../viewApp/viewApp.html">{{user.messaged}}</a></span>
                             </td>
 
                             <td data-title="'Hired'" sortable="'hired'" class="text-center">
-                                {{user.hired}}
+                                <span><a href="../viewApp/viewApp.html">{{user.hired}}</a></span>
                             </td>
 
                             <td data-title="'Status'"  sortable="'status'" class="text-center">
