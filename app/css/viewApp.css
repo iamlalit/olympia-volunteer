@@ -46,11 +46,9 @@ Date: 6/12/2014
 }
 
 .main-border1{
-	/*border: 3px solid #DEDCDC;*/
     border:3px solid #F0F0ED;
 	border-radius: 10px;
-	/*margin-left: -18px;*/
-	padding: 15px 0px 15px 15px;
+	padding: 15px 10px 15px 15px;
     margin-bottom:15px;
 }
 .wrapper{
@@ -113,6 +111,12 @@ Date: 6/12/2014
 	margin-left: 9px;
 	margin-top:9px;
 }
+.icon-attr1{
+    display: inline-block;
+    color: #858383;
+    margin-left: 5px;
+    margin-top:9px;
+}
 .icon-attr-white{
 	color: #ffffff!important;	
 }
@@ -142,14 +146,14 @@ Date: 6/12/2014
     background-color: #d9d9d7;
 }
 .footer-circle-facebook{
-	padding-left: 3px;
+	padding-left: -8px!important;
 	padding-top: 13px;
 }
 .footer-circle-google{
 	padding-top: 13px;
 }
 .footer-circle-twitter{
-	padding-left: -2px;
+	padding-left: -20px;
 	padding-top: 11px;
 }
 .footer-circle-linkedin{

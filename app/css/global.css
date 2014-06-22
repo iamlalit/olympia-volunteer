@@ -118,8 +118,8 @@ span a{
 	cursor: pointer;
 }
 span a:hover{
-	text-decoration: none;
-	color:#00AEEC;
+	color:#333333;
+	font-weight: 500;
 }
 
 /* Fonts */

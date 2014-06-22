@@ -88,10 +88,10 @@ app.controller('viewAppCtrl', function($scope){
     };
 });
 
-var element_title = "<span><i class='icon-exclamation-sign font-size-1-7' style='color:#009e0f;padding-right:7px;'></i>Football refree license</span><br/>" +
-					"<span><i class='icon-exclamation-sign font-size-1-7' style='color:#b25a01;padding-right:7px;'></i>First aid certification</span><br/>" +
-					"<span><i class='icon-exclamation-sign font-size-1-7' style='color:#009e0f;padding-right:7px;'></i>Cooking</span><br/>" +
-					"<span><i class='icon-exclamation-sign font-size-1-7' style='color:#b25a01;padding-right:7px;'></i>crowd control</span>" 
+var element_title = "<i class='icon-exclamation-sign font-size-1-7' style='color:#009e0f;padding-right:7px;'></i><span style='vertical-align:top;'>Football refree license</span><br/>" +
+                    "<i class='icon-exclamation-sign font-size-1-7' style='color:#b25a01;padding-right:7px;'></i><span style='vertical-align:top;'>First aid certification</span><br/>" +
+                    "<i class='icon-exclamation-sign font-size-1-7' style='color:#009e0f;padding-right:7px;'></i><span style='vertical-align:top;'>Cooking</span><br/>" +
+                    "<i class='icon-exclamation-sign font-size-1-7' style='color:#b25a01;padding-right:7px;'></i><span style='vertical-align:top;'>Crowd control</span>" 
 app.directive('hoverPopover', function ($compile, $templateCache, $timeout, $rootScope) {
 var getTemplate = function (contentType) {
     return $templateCache.get(element_title);
@@ -135,10 +135,10 @@ return {
 };
 });
 
-var element_title_green = "<span><i class='icon-exclamation-sign font-size-1-7' style='color:#009e0f;padding-right:7px;'></i>Football refree license</span><br/>" +
-					"<span><i class='icon-exclamation-sign font-size-1-7' style='color:#009e0f;padding-right:7px;'></i>First aid certification</span><br/>" +
-					"<span><i class='icon-exclamation-sign font-size-1-7' style='color:#009e0f;padding-right:7px;'></i>Cooking</span><br/>" +
-					"<span><i class='icon-exclamation-sign font-size-1-7' style='color:#009e0f;padding-right:7px;'></i>crowd control</span>" 
+var element_title_green = "<i class='icon-exclamation-sign font-size-1-7' style='color:#009e0f;padding-right:7px;'></i><span style='vertical-align:top;'>Football refree license</span><br/>" +
+					"<i class='icon-exclamation-sign font-size-1-7' style='color:#009e0f;padding-right:7px;'></i><span style='vertical-align:top;'>First aid certification</span><br/>" +
+					"<i class='icon-exclamation-sign font-size-1-7' style='color:#009e0f;padding-right:7px;'></i><span style='vertical-align:top;'>Cooking</span><br/>" +
+					"<i class='icon-exclamation-sign font-size-1-7' style='color:#009e0f;padding-right:7px;'></i><span style='vertical-align:top;'>Crowd control</span>" 
 app.directive('hoverPopover1', function ($compile, $templateCache, $timeout, $rootScope) {
 var getTemplate = function (contentType) {
     return $templateCache.get(element_title);
