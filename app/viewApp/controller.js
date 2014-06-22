@@ -1,6 +1,6 @@
 'use strict';
 /* main App */
-var app = angular.module('app.controller', []);
+var app = angular.module('viewAppcontroller', []);
 
 app.controller('viewAppCtrl', function($scope){
 	$scope.sortByList = ['Best Match', 'Newest Applicants', 'Oldest Applicants', 'Feedback'];
