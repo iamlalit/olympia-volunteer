@@ -16,6 +16,12 @@
 .ng-table th.sortable div {
   position: relative;
 }
+thead{
+  background-color: #eee;
+}
+tr:nth-child(even) {
+    background-color: #fdfbfb;
+}
 .ng-table th.sortable div:after,
 .ng-table th.sortable div:before {
   content: "";
@@ -215,7 +221,6 @@ th.table_content_head
 {
   border-radius: 3px;
 	float: right;
-	padding: 15px 20px 0px 20px;
 	position: relative;
 	width: 100%;
 	border:1px solid #e2e6e9;
