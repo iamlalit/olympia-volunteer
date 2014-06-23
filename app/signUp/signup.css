@@ -93,6 +93,18 @@ a.orange{
 
 
 /* Sing up Form*/
+.look-Hire{
+    position:absolute;
+    right:5%;
+    font-size:13px;
+}
+.look-Hire p{
+    text-align:right;
+    margin-bottom:0;
+}
+.look-Hire a{
+    
+}
 .sign-up-form{
     text-align:center;
 }
@@ -112,6 +124,12 @@ a.orange{
     color:#1777b1;
     font-size:20px;
     vertical-align:-2px;
+}
+.sign-up-form .social-text .icon-google-plus-sign{
+    color:#d93c39;
+    font-size:20px;
+    vertical-align:-2px;
+    margin-left:5px;
 }
 .sign-up-form .center-block{
     text-align:left;
@@ -141,6 +159,9 @@ a.orange{
 .form-group .form-control:focus{
     border-color:#33ccff;
 }
+.checkbox{
+    margin-top:20px;
+}
 .checkbox label{
     font-size:13px;
 }
@@ -160,18 +181,17 @@ a.orange{
 }
 .form-group .captchaImg{
     float:left;
-    width:30%;
+    width:65%;
     border:3px solid #d2d2cd;
-    height:60px;
+    height:68px;
     text-align:center;
-    padding-top:17px;
     font-size:12px;
 }
 .form-group .captchTxt{
     display:inline-block;
-    width:70%;
-    font-size:14px;
-    padding-left:29px;
+    width:35%;
+    font-size:11px;
+    padding-left:21px;
 }
 
 

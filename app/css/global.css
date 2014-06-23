@@ -126,3 +126,8 @@ span a:hover{
 .color-orange{
 	background-color:#ffd966;
 }
+
+/* Anchor */
+a {
+    color:#0093f0
+}
