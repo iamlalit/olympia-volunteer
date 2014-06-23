@@ -1,4 +1,4 @@
 'use strict';
 /* main App */
-var app = angular.module('app', ['app.controller']);
+var app = angular.module('app', ['viewAppcontroller', 'jobPostcontroller']);
 

@@ -1,4 +1,6 @@
-
+.container{
+    width:960px;
+}
 .body{
 	overflow-x:hidden;
 }
@@ -341,8 +343,7 @@ margin-bottom:8px;
 }
 .main-container-footer{
   background-color: #f5f5f2;
-  width:122%;
-  margin-left:-11%;
+
 }
 
 .row .extra-row{
@@ -492,4 +493,35 @@ font-size: 45px;
 }
 .red{
 	color:red;
+}
+
+/* Error */
+#errorMsg{
+    float:left;
+}
+#errorMsg h2{ 
+    margin-bottom:15px;
+}
+#errorList li{
+    text-align:left;
+}
+.has-error{
+
+}
+.has-error select{
+    border-color:#C70909;
+}
+.has-error select:focus{
+    border-color:#C70909;
+    box-shadow:none;
+}
+.has-error label{
+    color:#C70909;
+}
+.has-error .form-control, .has-error.well{
+    border-color:#C70909;
+}
+.has-error .form-control:focus{
+    border-color:#C70909;
+    box-shadow:none;
 }

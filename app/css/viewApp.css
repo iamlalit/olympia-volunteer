@@ -14,33 +14,31 @@ Date: 6/12/2014
 }
 .black-arrow{
 	color: #000000;
-	font-size: 20px;
+	font-size: 12px;
 	padding-left: 0px;
 	padding-right: 5px;
 }
 .blue-heading{
 	font-family: Arial,sans-serif;
 	color: #00AEEC;
-	font-size: 16px;
+	font-size: 14px;
 	background-color: #fff;
-	font-weight: 500;
+	font-weight: 300;
+    margin-top:-11px
 }
 .navigation:hover,
 .navigation:active{
 	text-decoration: none;
 }
 .panel-title{
-	font-size: 30px;
-	font-family: Roboto Slab;
-	font-weight: 600;
-	color: #252523;
-	background-color: #fff;
+    font-size: 26px;
+    font-family: Roboto Slab;
+    color: #111111;
+    font-weight: 500;
+    text-align: left;
 }
-.panel-heading{
+.date-heading{
 	font-size: 12px;
-	font-family: Arial,sans-serif;
-	font-weight: 400;
-	background-color: #fff;
 }
 .select-option{
 	width:auto; 
@@ -48,11 +46,9 @@ Date: 6/12/2014
 }
 
 .main-border1{
-	/*border: 3px solid #DEDCDC;*/
     border:3px solid #F0F0ED;
 	border-radius: 10px;
-	/*margin-left: -18px;*/
-	padding: 15px 15px;
+	padding: 15px 10px 15px 15px;
     margin-bottom:15px;
 }
 .wrapper{
@@ -79,14 +75,13 @@ Date: 6/12/2014
 }
 
 .circle {
-	padding-right: 10px;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     margin-bottom: 20px;
     margin-left:5px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;    
+    -webkit-border-radius: 17.5px;
+    -moz-border-radius: 17.5px;
+    border-radius: 17.5px;    
     background-color: #CFCCCC;
     cursor:pointer;
 }
@@ -113,8 +108,14 @@ Date: 6/12/2014
 .icon-attr{
 	display: inline-block;
 	color: #858383;
-	margin-left: 11px;
-	margin-top:11px;
+	margin-left: 9px;
+	margin-top:9px;
+}
+.icon-attr1{
+    display: inline-block;
+    color: #858383;
+    margin-left: 5px;
+    margin-top:9px;
 }
 .icon-attr-white{
 	color: #ffffff!important;	
@@ -145,14 +146,14 @@ Date: 6/12/2014
     background-color: #d9d9d7;
 }
 .footer-circle-facebook{
-	padding-left: 3px;
+	padding-left: -8px!important;
 	padding-top: 13px;
 }
 .footer-circle-google{
 	padding-top: 13px;
 }
 .footer-circle-twitter{
-	padding-left: -2px;
+	padding-left: -20px;
 	padding-top: 11px;
 }
 .footer-circle-linkedin{
@@ -328,4 +329,10 @@ footer .footer-text:hover{
 }
 #example {
     position:relative;
+}
+
+div a label:hover{
+    color:#333;
+    cursor: pointer;
+    text-decoration: underline;
 }
