@@ -22,6 +22,15 @@
     display:block;
     font-size:13px;
 }
+.wrap-login-text span a{
+    color:#fff;
+    font-size:13px;
+}
+.wrap-login-text span a:hover{
+    color:#fff;
+    font-size:13px;
+    font-weight:bold;
+}
 .wrap-login-text span.text-bold{
     text-align:right;
 }
@@ -200,6 +209,7 @@ a.orange{
 footer{
     padding-top:42px;
     padding-bottom:22px;
+    background:#666666;
 }
 p.footer-copyrights{
     color:#a5a5a4;
