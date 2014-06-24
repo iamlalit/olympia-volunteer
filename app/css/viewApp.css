@@ -9,6 +9,10 @@ Date: 6/12/2014
 	margin: 0px;
 	padding: 0px;
 }
+.container1{
+    width:1140px;
+    margin: 0 auto;
+}
 .header-space{
 	height:120px;
 }
