@@ -576,7 +576,7 @@ $(document).ready(function () {
             }, 500);
         } else {
             $('#errorMsg').hide();
-            window.location.href = 'posthob.html'
+            window.location.href = 'postjob.html?jobTitle='+jobTitle.val()
         }
 
     });
