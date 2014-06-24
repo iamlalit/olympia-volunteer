@@ -92,6 +92,7 @@ $(document).ready(function () {
 	lastname = $('input[name="lastname"]'),
     city = $('input[name="city"]'),
     username = $('input[name="username"]'),
+    captcha = $('input[name="captcha"]'),
 	//gender = $('input[name="Gaslachet"]'),
 	//phone = $('input[name="Telefoonnummer"]'),
 	//street = $('input[name="Straat"]'),
@@ -365,7 +366,7 @@ $(document).ready(function () {
         // Username
         if (username.val() == '' || username.val() == null) {
             if (errorList.find('.errormessage-username').length == 0) {
-                $('<li />', { html: 'Username required !', class: 'col-sm-6 errormessage-street' })
+                $('<li />', { html: 'Username required !', class: 'col-sm-6 errormessage-username' })
 				.appendTo(errorList)
 				.click(function () {
 				    $('html, body').animate({
@@ -380,8 +381,8 @@ $(document).ready(function () {
             if (username.parent().hasClass('has-error')) {
                 username.parent().removeClass('has-error')
             };
-            if (username.find('.errormessage-street').length > 0) {
-                username.find('.errormessage-street').remove();
+            if (username.find('.errormessage-username').length > 0) {
+                username.find('.errormessage-username').remove();
                 //$('#errorMsg').hide();
             }
         }
@@ -404,8 +405,33 @@ $(document).ready(function () {
             if (password.parent().hasClass('has-error')) {
                 password.parent().removeClass('has-error')
             };
-            if (password.find('.errormessage-street').length > 0) {
-                password.find('.errormessage-street').remove();
+            if (password.find('.errormessage-password').length > 0) {
+                password.find('.errormessage-password').remove();
+                //$('#errorMsg').hide();
+            }
+        }
+
+        //Captcha
+        if (captcha.val() == '' || captcha.val() == null) {
+            alert('in captcha');
+            if (errorList.find('.errormessage-captcha').length == 0) {
+                $('<li />', { html: 'Captcha required !', class: 'col-sm-6 errormessage-captcha' })
+				.appendTo(errorList)
+				.click(function () {
+				    $('html, body').animate({
+				        scrollTop: street.offset().top - 100
+				    }, 500);
+				    city.focus();
+				});
+                //$('#errorMsg').show();
+                captcha.parent().addClass('has-error');
+            }
+        } else {
+            if (captcha.parent().hasClass('has-error')) {
+                captcha.parent().removeClass('has-error')
+            };
+            if (captcha.find('.errormessage-captcha').length > 0) {
+                captcha.find('.errormessage-captcha').remove();
                 //$('#errorMsg').hide();
             }
         }
