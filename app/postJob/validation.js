@@ -263,7 +263,7 @@ $(document).ready(function () {
     describeWork.change(function() {
         if (describeWork.val() == '' || describeWork.val() == null) {
             if (errorList.find('.errormessage-describeWork').length == 0) {
-                $('<li />', { html: 'Describe the work done cannot be empty !', class: 'col-sm-6 errormessage-describeWork' })
+                $('<li />', { html: 'Describe the work done is required !', class: 'col-sm-6 errormessage-describeWork' })
                 .appendTo(errorList)
                 .click(function () {
                     $('html, body').animate({
@@ -342,7 +342,7 @@ $(document).ready(function () {
         //Describe the work to be done
         if (describeWork.val() == '' || describeWork.val() == null) {
             if (errorList.find('.errormessage-describeWork').length == 0) {
-                var li = $('<li />', {html: 'Describe the work to be done can"t be empty !', class: 'col-sm-6 errormessage-describeWork' });
+                var li = $('<li />', {html: 'Describe the work done is required !', class: 'col-sm-6 errormessage-describeWork' });
                 li.appendTo(errorList)
                 .click(function () {
                     $('html, body').animate({

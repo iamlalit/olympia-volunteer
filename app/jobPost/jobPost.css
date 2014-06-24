@@ -1,3 +1,8 @@
+.container1{
+    width:1140px;
+    margin: 0 auto;
+}
+
 #heading-form{
   font-size: 26px;
   font-family: Roboto Slab;
@@ -84,6 +89,30 @@ tr:nth-child(even) {
 
 .ng-table-info {
   float: left;
+}
+/*adjusting table header margin and arrow position*/
+table>thead:first-child>tr:first-child>th:first-child div{
+  width:73px;
+}
+
+table>thead:first-child>tr:first-child>th:last-child div{
+  width:61px;
+  margin-left:30px;
+}
+
+table>thead:first-child>tr:first-child>th:nth-child(2) div{
+  width:86px;
+  margin-left:55px;
+}
+
+table>thead:first-child>tr:first-child>th:nth-child(3) div{
+  width:83px;
+  margin-left:30px;
+}
+
+table>thead:first-child>tr:first-child>th:nth-child(4) div{
+  width:54px;
+  margin-left:30px;
 }
 
 table.dataTable tbody tr
