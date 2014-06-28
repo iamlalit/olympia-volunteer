@@ -1,7 +1,7 @@
 'use strict';
 /* main App */
-var app = angular.module('submitConformationcontroller', ['LocalStorageModule']);
-app.controller('confirmationCtrl', ['$scope', 'localStorageService', function($scope, localStorageService){
+var app = angular.module('submitConformationcontroller', []);
+app.controller('confirmationCtrl', ['$scope', function($scope){
 	$scope.volunteerList = ["Joop Bakker", "Dirk Dijkstra", "Sterre Hendriks",
 	 "Hendrik Jacobs", "Hans Heuvel", "Jaap Beek", "Jan-Jaap Dijk", 
 	 "Marleen Jansen", "Geert Hoek", "Beer Heuvel"];
