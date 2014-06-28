@@ -11,7 +11,7 @@ app.controller('viewAppCtrl', function($scope){
     $scope.messagedApplicants = [];
     $scope.hiredApplicants = [];
     $scope.hiddenModalData = ["Okay, but not quite right", "Poor comments in work history", "Poor quality of work letter", "Other", "Report to volunteer"];
-	$scope.Applicants.push({Name:"Sandy Sharma",
+	$scope.Applicants.push({Name:"Marleen Bosch",
             job: 'QA Analyst',
             city: 'Amsterdam', 
             bodyText: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper...',
@@ -22,7 +22,7 @@ app.controller('viewAppCtrl', function($scope){
             selected: true,
             value: false
     }); 
-	$scope.Applicants.push({Name:"Lalit Sachdeva",
+	$scope.Applicants.push({Name:"Geertruda Brouwer",
             job: 'QA Specialist',
             city: 'Delhi', 
             bodyText: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper...',
@@ -33,7 +33,7 @@ app.controller('viewAppCtrl', function($scope){
             selected: true,
             value: false
     }); 
-	$scope.Applicants.push({Name:"Rodger Georgin",
+	$scope.Applicants.push({Name:"Jan-Klaassen Groot",
             job: 'QA Engineer',
             city: 'Chicago', 
             bodyText: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper...',
@@ -44,7 +44,7 @@ app.controller('viewAppCtrl', function($scope){
             selected: false,
             value: false    
     }); 
-	$scope.Applicants.push({Name:"George Ducart",
+	$scope.Applicants.push({Name:"Geertruda Dekker",
             job: 'Automation Engineer',
             city: 'New York', 
             bodyText: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper...',
@@ -55,7 +55,7 @@ app.controller('viewAppCtrl', function($scope){
             selected: false,
             value: false      
     }); 
-	$scope.Applicants.push({Name:"Benjamin Schuffl",
+	$scope.Applicants.push({Name:"Hendrik Brouwer",
             job: 'QA Analyst',
             city: 'Netherlands', 
             bodyText: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper...',
