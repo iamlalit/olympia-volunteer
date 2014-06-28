@@ -534,3 +534,25 @@ font-size: 45px;
     width:1024px;
     margin: 0 auto;
 }
+.main-border{
+	border: 4px solid #eee;
+	border-radius: 10px;
+	background-color: #fff;
+	color: #444;
+	padding: 10px;
+	width: 196px;
+	margin: 4px;
+	display: inline-block;
+}
+
+.rectangle-blue{
+	border: 4px solid #00AEEC;
+	border-radius: 10px;
+	background-color: #fff;
+	color: #444;
+	padding: 10px;
+	width: 196px;
+	margin: 4px;
+	display: inline-block;
+	cursor: pointer;	
+}

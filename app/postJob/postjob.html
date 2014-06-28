@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="postJobcontroller">
 <head>
 	<meta charset="utf-8">
 	<title>OLYMPIA</title>
@@ -16,7 +16,7 @@
 	<link href="../css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet" href="../css/postjob.css"/>
 </head>
-<body>
+<body ng-controller="postJobCntrl">
 
 	<header>
 		<div class=''>
@@ -103,8 +103,8 @@
 				<div class="row margin-left-57" id="jobs">
 					<div class="col-sm-8">
 						<label >Job Types</label>
-						<select class='form-control' id="job-type" style="width:400px;" required>
-							<option value='job' select='selected'>Job</option>
+						<select class='form-control' id="job-type" style="width:400px;" required ng-model="jobType" ng-init="jobType='job'">
+							<option value='job'>Job</option>
 							<option value='Internship'>Internship</option>
 							<option value='Event'>Event</option>
 						</select>
@@ -117,7 +117,7 @@
 				<div class="row margin-left-57" id="title">
 					<div class="col-sm-10" >
 						<label>Give your job a title</label>
-						<input type='text' style="width:690px;" class='form-control' id='form-control-weight' for='inserting job title' id='form-text-control' placeholder='Title' id="job-title">
+						<input type='text' ng-model="jobTitle" style="width:690px;" class='form-control' id='form-control-weight' for='inserting job title' id='form-text-control' placeholder='Title' id="job-title" >
 					</div>
 				</div>
 				<div class='row'>
@@ -129,7 +129,7 @@
 						<div class='col-sm-8'>
 						<label >Describe the work to be done</label>
 							<a href="#" id="zoomTextarea" class="pull-right" title="Click to Zoom" data-toggle="modal" data-target="#textBoxBig">Expand <i class="olympia-expand2"></i></a>
-							<textarea id="text-content" maxlength="5000" class="form-control" rows="5"></textarea>
+							<textarea id="text-content" maxlength="5000" class="form-control" rows="5" ng-model="describeWork"></textarea>
 							<p>Number of characters <span id="text-content-count">0</span> (max 5000 characters)</p>
 						</div>
 					</div>
@@ -160,7 +160,7 @@
 				<div class='row margin-left-57' >
 					<div class='col-sm-11'>
 						<div class='border-heading'>
-							<label class="font-size-16"style='vertical-align:middle;'>Customize your application requirements</label>
+							<label class="font-size-16" style='vertical-align:middle;' >Customize your application requirements</label>
 						</div>
 					</div>
 				</div>
@@ -719,7 +719,7 @@
 					</div>
 					<div class='col-sm-4'>
 						<button class='btn btn-primary' type="button" style='padding:5px 15px 5px 15px; font-size:15px;'>Preview</button>
-						<button class='btn btn-success' type="submit" style='padding:5px 15px 5px 15px; font-size:15px;'>Post a Job</button>
+						<button class='btn btn-success' type="submit" style='padding:5px 15px 5px 15px; font-size:15px;' ng-click="saveData()">Post a Job</button>
 						<button class='btn btn-danger' type="button" style='padding:5px 15px 5px 15px; font-size:15px;'>Cancel</button>
 					</div>
 				</div>
@@ -1804,6 +1804,11 @@
 	<script src="../lib/jquery/dist/jquery.min.js"></script>
 
 	<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>	
+	<script src="../lib/angular/angular.min.js"></script>
+    <script src="../js/router.js"></script>
+    <script src="controller.js"></script>
+
+
 	<!-- date picker Scripts -->
 	<script src="../lib/moment/moment.js"></script>
 	<script src="../lib/moment/min/moment.min.js"></script>
@@ -1824,7 +1829,7 @@
 	<script src="../lib/hoverIntent.js"></script>
 	<script src="../lib/superfish.min.js"></script>
 	<script src="../lib/supersubs.js"></script>
-
-
+	<!--local storage -->
+	<script src="../lib/angular-local-storage/angular-local-storage.js"></script>
 </body>
 </html>

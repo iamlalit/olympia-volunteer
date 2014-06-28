@@ -576,7 +576,8 @@ $(document).ready(function () {
             }, 500);
         } else {
             $('#errorMsg').hide();
-            window.location.href = 'postjob.html?jobTitle='+jobTitle.val()
+            window.location.href = '../confirmation/submitConformation.html?'+ 'jobTitle='+jobTitle.val()+'&jobType=' + jobType.val() + '&describeWork='+describeWork.val();
+            
         }
 
     });
