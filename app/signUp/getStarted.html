@@ -44,20 +44,26 @@
                     <div class="col-lg-9 center-block">
                         <div class="need-wrapper">
                             <a href="#" class="user-wrapper"><span class="icon-user"></span></a>
-                            <div class="need">                                
-                                <h2 class="font-size-18"> I need a Volunteer</h2>
-                                <p>Find and hire Volunteers.</p>
-                                <a href="#" class="btn btn-success disabled">Sign up</a>
+                            <div class="need">
+                                <form action="signup.html" method="get">
+                                    <h2 class="font-size-18"> I need a Volunteer</h2>
+                                    <p>Find and hire Volunteers.</p>
+                                    <input type="submit" class="btn btn-success" value="Sign up" />
+                                    <input type="hidden" name="name" value="organisation"/>
+                                </form>
                             </div>
                         </div>
                         <div class="need-wrapper">
                             <a href="#" class="user-wrapper orange"><span class="icon-user"></span></a>
                             <div class="need">
-                                <h2 class="font-size-18"> I need a job</h2>
-                                <p>Find work and grow your career.</p>
-                                <a href="signup.html" class="btn btn-success">Sign up</a>
+                                <form action="signup.html" method="get">
+                                    <h2 class="font-size-18"> I need a job</h2>
+                                    <p>Find work and grow your career.</p>
+                                    <input type="submit" class="btn btn-success" value="Sign up"/>
+                                    <input type="hidden" name="name" value="volunteer" />
+                                </form>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -77,7 +83,7 @@
                     <p class="footer-copyrights">
                         <span>&#169;&nbsp;Olympia Volunteer Corporation</span>
                     </p>
-                </div>   
+                </div>
             </div>
         </div>
     </footer>

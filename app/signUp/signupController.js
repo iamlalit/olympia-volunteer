@@ -1,53 +1,19 @@
-﻿$(document).ready(function () {
+﻿var signUp = angular.module('signUp', []);
+signUp.controller("signupController", ['$scope', function ($scope) {
+    $scope.organisation = 'false';
+    $scope.volunteer = 'false';
+    var sPageURL = document.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    var sParameterName = sURLVariables[0].split('=');
+    var nameTarget = sParameterName[1];
+    if (nameTarget == 'organisation') {
+        $scope.organisation = 'true';
+    } else if (nameTarget == 'volunteer') {
+        $scope.volunteer = 'true';
+    }
+    
+}]);
 
-    //$('#phoneToggler').hide();
-    //$('#phoneToggle').click(function () {
-    //    $(this).hide();
-    //    $('#phoneToggler').show();
-    //});
-    //
-    //$('#cvUpload').click(function (event) {
-    //    event.stopPropagation();
-    //    $('#input-cvUpload').click();
-    //    if ($('input[name=cv]').val == "") {
-    //        $('#cvVal-div').hide();
-    //    }
-    //});
-    //
-    //$('#mailToggler').hide();
-    //$('#mailToggle').click(function () {
-    //    $(this).hide();
-    //    $('#mailToggler').show();
-    //});
-    //
-    //$('#cvWrite').hide();
-    //$('input[name=cvChoice]').click(function () {
-    //    var thisval = $(this).val();
-    //
-    //    if (thisval == 'cvUpload') {
-    //        $('#cvUpload').show();
-    //        $('#cvWrite').hide();
-    //    }
-    //    else if (thisval == 'cvWrite') {
-    //        $('#cvUpload').hide();
-    //        $('#cvWrite').show();
-    //    }
-    //});
-    //
-    //$('input[name=cv]').change(function () {
-    //    console.log($(this).val());
-    //    var FileName = $(this).val();
-    //    var cvFile = FileName.match(/\\([^\\]+)$/)[1];
-    //    $('#cvVal-div').show();
-    //    $('#cvVal').html('<a href="javascript:void(0)">' + cvFile + '</a>');
-    //});
-    //
-    //$('#removeCv').click(function () {
-    //    $('input[name=cv]').val() === '';
-    //    $('#cvVal').empty();
-    //    $('#cvVal-div').hide();
-    //});
-})
 
 $(document).ready(function () {
 
@@ -90,7 +56,8 @@ $(document).ready(function () {
 	password = $('#password'),
 	firstname = $('input[name="firstname"]'),
 	lastname = $('input[name="lastname"]'),
-    city = $('input[name="city"]'),
+    city = $('input[name="city"]'), 
+    Organisation = $('input[name="Organisation"]'),
     username = $('input[name="username"]'),
     captcha = $('input[name="captcha"]'),
 	//gender = $('input[name="Gaslachet"]'),
@@ -363,6 +330,30 @@ $(document).ready(function () {
             }
         }
 
+        // Organisation
+        if (Organisation.val() == '' || Organisation.val() == null) {
+            if (errorList.find('.errormessage-Organisation').length == 0) {
+                $('<li />', { html: 'Organisation Name required !', class: 'col-sm-6 errormessage-Organisation' })
+				.appendTo(errorList)
+				.click(function () {
+				    $('html, body').animate({
+				        scrollTop: Organisation.offset().top - 100
+				    }, 500);
+				    city.focus();
+				});
+                //$('#errorMsg').show();
+                Organisation.parent().addClass('has-error');
+            }
+        } else {
+            if (Organisation.parent().hasClass('has-error')) {
+                Organisation.parent().removeClass('has-error')
+            };
+            if (Organisation.find('.errormessage-street').length > 0) {
+                Organisation.find('.errormessage-street').remove();
+                //$('#errorMsg').hide();
+            }
+        }
+
         // Username
         if (username.val() == '' || username.val() == null) {
             if (errorList.find('.errormessage-username').length == 0) {
@@ -413,7 +404,6 @@ $(document).ready(function () {
 
         //Captcha
         if (captcha.val() == '' || captcha.val() == null) {
-            alert('in captcha');
             if (errorList.find('.errormessage-captcha').length == 0) {
                 $('<li />', { html: 'Captcha required !', class: 'col-sm-6 errormessage-captcha' })
 				.appendTo(errorList)
