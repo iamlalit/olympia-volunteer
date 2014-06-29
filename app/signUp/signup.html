@@ -22,7 +22,8 @@
             </div>
             <div class="collapse navbar-collapse">
                 <div class="wrap-login-text navbar-right">
-                    <span>Already have a Volunteer account?</span>
+                    <span ng-show="volunteer">Already have a Volunteer account?</span>
+                    <span ng-show="organisation">Already have a Organisation account?</span>
                     <span class="text-bold"><a href="../login/login.html">Log In</a></span>
                 </div>
             </div><!--/.nav-collapse -->
@@ -32,11 +33,16 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 wrapper-form sign-up-form">
-                <div class="look-Hire">
+                <div class="look-Hire" ng-show="volunteer">
                     <p>Looking to hire?</p>
-                    <a href="#">Sign up as a client</a>
+                    <a href="#">Sign up as a Organisation</a>
                 </div>
-                <h2 class="font-size-26">Create a Free Volunteer Account</h2>
+                <div class="look-Hire" ng-show="organisation">
+                    <p>Looking for job?</p>
+                    <a href="#">Sign up as a Volunteer</a>
+                </div>
+                <h2 class="font-size-26" ng-show="organisation">Create a Free Organisation Account</h2>
+                <h2 class="font-size-26" ng-show="volunteer">Create a Free Volunteer Account</h2>
                 <p class="social-text">You can also sign up with <span class="icon-facebook-sign"></span><a href="">Facebook</a>, <span class="icon-linkedin-sign"></span> <a href="#">LinkedIn</a> or<span class="icon-google-plus-sign"></span><a href="">Google</a></p>
                 <!-- Error Placeholder-->
                 <div class="row">
