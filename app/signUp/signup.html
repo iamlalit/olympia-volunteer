@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html ng-app="signUp">
 <head>
     <title>Create an Account</title>
     <link href="../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -13,7 +13,7 @@
     <link href="../css/signup/signup.css" rel="stylesheet" />
 
 </head>
-<body>
+<body ng-controller="signupController">
     <!-- Page Header Section Start-->
     <div class="navbar navbar-default" role="navigation">
         <div class="container">
@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse">
                 <div class="wrap-login-text navbar-right">
                     <span>Already have a Volunteer account?</span>
-                    <span class="text-bold"><a href="../login/login.html">Log In</a></span>                    
+                    <span class="text-bold"><a href="../login/login.html">Log In</a></span>
                 </div>
             </div><!--/.nav-collapse -->
         </div>
@@ -763,9 +763,13 @@
                                     </option>
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" ng-show="volunteer">
                                 <label>City</label>
                                 <input type="text" name="city" id="city" class="form-control" placeholder="City">
+                            </div>
+                            <div class="form-group" ng-show="organisation">
+                                <label>Organisation Name</label>
+                                <input type="text" name="Organisation" id="Organisation" class="form-control" placeholder="Organisation Name">
                             </div>
                             <div class="form-group">
                                 <label>Username</label>
@@ -798,13 +802,13 @@
                                     <img src="../img/captcha.png" />
                                 </span>
                                 <span class="captchTxt">This Proves that you are a human. We like humans, Spambots, not so much</span>
-                            </div>                            
+                            </div>
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox"> Yes, Send me genuinely useful emails every now and then to help me get the most out of Volunteer
                                 </label>
                             </div>
-                            <input type="submit" class="btn btn-success btn-signup" value="Get Started"/>
+                            <input type="submit" class="btn btn-success btn-signup" value="Get Started" />
                             <p class="agree-text">
                                 By Creating an account, you agree to our Volunteer
                                 <a href="#">Agreement & Privacy Policy</a>
@@ -812,7 +816,7 @@
                         </form>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -828,6 +832,7 @@
         </div>
     </footer>
     <script src="../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../lib/angular/angular.min.js"></script>
     <script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="signupController.js"></script>
 </body>
