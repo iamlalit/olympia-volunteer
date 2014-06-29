@@ -1,4 +1,22 @@
 ﻿$(document).ready(function () {
+    //var queries = {};
+    //$.each(document.location.search.substr(1).split('&'), function (c, q) {
+    //    var i = q.split('=');
+    //    queries[i[0].toString()] = i[1].toString();
+    //});
+    console.log(document.location.search.substring(1));
+    var sPageURL = document.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    console.log(sURLVariables);
+    for (var i = 0; i < sURLVariables.length; i++)
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        console.log(sParameterName);
+        if (sParameterName[0] == sParam)
+        {
+            return sParameterName[1];
+        }
+    }
 
     //$('#phoneToggler').hide();
     //$('#phoneToggle').click(function () {
