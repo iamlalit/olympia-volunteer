@@ -136,3 +136,35 @@ span a:hover{
 a {
     color:#0093f0
 }
+
+
+/* Header*/
+.navbar{
+    border-radius:0;
+}
+
+/* Form */
+
+
+.form-group select{
+    width:100%;
+    padding:7px 0 7px 5px;
+    border:3px solid #d2d2cd ;
+    color:#999;
+}
+.form-group select:focus{
+    border-color:#33ccff;
+}
+.form-group label{
+    font-size:13px;
+}
+.form-group .form-control{
+    border-radius:2px;
+    border:3px solid #d2d2cd;
+    box-shadow:none;
+    padding-top:15px;
+    padding-bottom:15px;
+}
+.form-group .form-control:focus{
+    border-color:#33ccff;
+}
