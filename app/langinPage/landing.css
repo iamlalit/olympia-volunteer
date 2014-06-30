@@ -1,4 +1,8 @@
-﻿/*####Header####*/
+﻿/*Common*/
+.container {
+    width:1024px;
+}
+/*####Header####*/
 .navbar{
     margin-bottom:0;
     border:0;
@@ -28,4 +32,19 @@ nav{
 }
 .btn-search{
     padding:5px 12px;
+}
+/* Body */
+.col-lg-3.center-block{
+    float:none;
+}
+.complete-profile{
+    padding:30px 0 35px 0;
+}
+.add-text{
+    font-size:16px;
+    color:#999;
+    margin-top:10px;
+}
+hr{
+    margin:0;
 }
