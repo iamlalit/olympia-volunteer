@@ -144,8 +144,6 @@ a {
 }
 
 /* Form */
-
-
 .form-group select{
     width:100%;
     padding:7px 0 7px 5px;
@@ -167,4 +165,16 @@ a {
 }
 .form-group .form-control:focus{
     border-color:#33ccff;
+}
+
+/* Buttons */
+.btn-site{
+    width:100%;
+    font-weight:bold;
+    padding:10px;
+}
+
+/* Heading */
+hr {
+    border-top:1px solid #d2d2d2;
 }
