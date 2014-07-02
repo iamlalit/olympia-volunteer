@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html ng-app="loginController">
 <head>
     <title>Create an Account</title>
     <link href="../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -13,7 +13,7 @@
     <link href="../css/signup/signup.css" rel="stylesheet" />
     <link href="../css/login/login.css" rel="stylesheet" />
 </head>
-<body>
+<body ng-controller="loginCredentialCheck">
     <div class="container-fluid">
         <!-- Page Header Section Start-->
         <div class="navbar navbar-default" role="navigation">
@@ -29,35 +29,39 @@
             </div>
         </div>
         <!-- Page Header Section End-->
-        
-            <div class="container loginWrap">
-                <div class="row">
-                    <div class="sign-wrapper">
-                        <div class="col-lg-5 center-block">
-                            <h2>Log in and get to work</h2>
-                            <form role="form">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                </div>
-                                <div class="checkbox">
-                                    <button type="submit" class="btn btn-success">Submit</button>
-                                    <label>
-                                        <input type="checkbox"> Remember me
-                                    </label>
-                                </div>
-                                <p class="forgt-pass"><a href="#">Forgot password?</a></p>
-                            </form>
 
-                        </div>
+        <div class="container loginWrap">
+            <div class="row">
+                <div class="sign-wrapper">
+                    <div class="col-lg-5 center-block">
+                        <h2>Log in and get to work</h2>
+                        <form role="form" method="get">
+                            <div class="alert alert-danger alert-dismissible" role="alert" ng-if="alertError">
+                                <strong>Warning!</strong> Better check Email and Password.
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="email" name="email" value="" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="pass" name="pass" value="" placeholder="Password">
+                            </div>
+                            <div class="checkbox">
+                                <!--<input type="submit" class="btn btn-success" value="Submit" />-->
+                                 <a class="btn btn-success" ng-click="loginCheck()">Submit</a>
+                                <label>
+                                    <input type="checkbox"> Remember me
+                                </label>
+                            </div>
+                            <p class="forgt-pass"><a href="#">Forgot password?</a></p>
+                        </form>
+
                     </div>
                 </div>
-            </div>            
-        
+            </div>
+        </div>
+
     </div>
     <footer>
         <div class="container">
@@ -66,9 +70,13 @@
                     <p class="footer-copyrights">
                         <span>&#169;&nbsp;Olympia Volunteer Corporation</span>
                     </p>
-                </div>   
+                </div>
             </div>
         </div>
     </footer>
+    <script src="../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../lib/angular/angular.min.js"></script>
+    <script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="loginController.js"></script>
 </body>
 </html>

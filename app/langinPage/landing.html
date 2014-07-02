@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="signUp">
+<html ng-app="landingController">
 <head>
     <title>Create an Account</title>
     <link href="../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -14,7 +14,7 @@
     <link href="../css/global.css" rel="stylesheet" />
     <link href="landing.css" rel="stylesheet" />
 </head>
-<body ng-controller="signupController">
+<body ng-controller="landingPage">
     <!-- Page Header Section Start-->
     <header>
         <div class="navbar navbar-default" role="navigation">
@@ -33,18 +33,18 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <!-- Organisation Menu Start-->
-                    <ul class="nav navbar-nav hidden">
+                    <ul class="nav navbar-nav" ng-if="organisationMenu">
                         <li class="active"><a href="#" class='menu-interval'>Search Volunteer</a></li>
                         <li><a href="../postJob/postjob.html" class='menu-interval'>Post a Job</a></li>
                         <li><a href="../jobPost/jobPost.html" class='menu-interval'>Job Postings</a></li>
                         <li><a href="#" class='menu-interval'>Messages</a></li>
                     </ul>
                     <!-- Organisation Menu End here -->
-                <!-- Volunteer Menu Start-->
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#" class='menu-interval'>Search Job</a></li>
-                        <li><a href="../postJob/postjob.html" class='menu-interval'>View Job Applications</a></li>
-                        <li><a href="../jobPost/jobPost.html" class='menu-interval'>Recommendations</a></li>
+                    <!-- Volunteer Menu Start-->
+                    <ul class="nav navbar-nav" ng-if="volunteerMenu">
+                        <li><a href="#" class='menu-interval'>Search Job</a></li>
+                        <li><a href="#" class='menu-interval'>Job Applications</a></li>
+                        <li><a href="#" class='menu-interval'>Recommendations</a></li>
                         <li><a href="#" class='menu-interval'>Messages</a></li>
                     </ul>
                     <!-- Volunteer Menu end here-->
@@ -62,13 +62,12 @@
                         </li>
                         <li class='pull-right'><a href="#" id="icons-header-right"><span class="glyphicon glyphicon-exclamation-sign"></a></li>
                         <li class="dropdown pull-right" style="margin-top:5px;" id="username">
-                            <a href="#" class="dropdown-toggle" id="hover-header-right" data-toggle="dropdown">Course_Agency &nbsp;<b class="caret blue"></b></a>
+                            <a href="#" class="dropdown-toggle" id="hover-header-right" data-toggle="dropdown" ng-if="organisationMenu">Organisation &nbsp;<b class="caret blue"></b></a>
+                            <a href="#" class="dropdown-toggle" id="hover-header-right" data-toggle="dropdown" ng-if="volunteerMenu">Volunteer &nbsp;<b class="caret blue"></b></a>
                             <ul class="dropdown-menu header-right-dropdown">
-                                <li role="presentation"><a role="menuitem" ng-model="Client" href="#" id="tab-header-1"><img src="../img/client-icon.png">&nbsp;&nbsp;&nbsp;Course_Agency</a></li>
+                                <li role="presentation"><a role="menuitem" ng-model="Client" href="#"><img src="../img/client-icon.png">&nbsp;&nbsp;&nbsp;Organisation</a></li>
                                 <li role="presentation" class="divider"></li>
-                                <li role="presentation"><a role="menuitem" ng-model="Client" href="#"><img src="../img/client-icon.png">&nbsp;&nbsp;&nbsp;course_client</a></li>
-                                <li role="presentation" class="divider"></li>
-                                <li role="presentation"><a role="menuitem" ng-model="Client" href="#"><img src="../img/user-icon.svg" height="25" width="25">&nbsp;&nbsp;&nbsp;Sandy Sharma</a></li>
+                                <li role="presentation"><a role="menuitem" ng-model="Client" href="#"><img src="../img/user-icon.svg" height="25" width="25">&nbsp;&nbsp;&nbsp;Volunteer</a></li>
                                 <li role="presentation" class="divider"></li>
                                 <li role="presentation" id="separate-highlight" disabled>
                                     <a role="menuitem" style="text-align:right;">Logout</a>
@@ -79,9 +78,9 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </div>
-        <nav>
+        <nav class="hidden">
             <div class="container">
-                <div class="row">
+                <div class="row hidden">
                     <div class="col-lg-2">
                         <div class="form-group">
                             <select class="search">
@@ -109,7 +108,7 @@
                                 <option>40Km</option>
                                 <option>50KM</option>
                                 <option>60KM</option>
-                            </select>                            
+                            </select>
                         </div>
                     </div>
                     <div class="col-lg-1">
@@ -122,12 +121,13 @@
         </nav>
     </header>
     <!-- Page Header Section End-->
-    <div class="container">
+    <div class="container" ng-if="volunteerMenu">
         <div class="row">
             <div class="col-lg-12">
                 <h2 class="profile-heading">Create your Profile</h2>
-                <p>A great profile is your key to getting hired. Highlights your strengths with an accurate description of your skills, work history, and education.
-                    Our staff will review for quality, so take time to fill your profile out completely and professional. 
+                <p>
+                    A great profile is your key to getting hired. Highlights your strengths with an accurate description of your skills, work history, and education.
+                    Our staff will review for quality, so take time to fill your profile out completely and professional.
                     <a href="#">Learn more about profiles</a>
                 </p>
             </div>
@@ -142,7 +142,7 @@
         <hr />
         <div class="row">
             <div class="col-lg-12">
-                <p class="add-text">Looking for inspiration? Check out these successful freelancers profiles:</p>
+                <p class="add-text">Looking for inspiration? Check out these successful volunteer profiles:</p>
             </div>
         </div>
         <div class="row">
@@ -166,6 +166,13 @@
                     <label>Darius Kasperitis</label>
                     <p>Senior Ruby on Rails Developer</p>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" ng-if="organisationMenu">
+        <div class="row">
+            <div class="col-lg-6 center-block">
+                <h1 class="coming-soon">Coming Soon</h1>
             </div>
         </div>
     </div>
@@ -241,5 +248,6 @@
     <script src="../lib/jquery/dist/jquery.min.js"></script>
     <script src="../lib/angular/angular.min.js"></script>
     <script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="landingController.js"></script>
 </body>
 </html>

@@ -11,6 +11,14 @@ signUp.controller("signupController", ['$scope', function ($scope) {
     } else if (nameTarget == 'volunteer') {
         $scope.volunteer = 'true';
     }
+    $scope.organisationToggle = function () {
+        $scope.organisation = 'true';
+        $scope.volunteer = 'false';
+    }
+    $scope.volunteerToggle = function () {
+        $scope.volunteer = 'true';
+        $scope.organisation = 'false';
+    }
     
 }]);
 
@@ -204,7 +212,7 @@ $(document).ready(function () {
 
     $('#jobForm-section2').submit(function (e) {
         e.preventDefault();
-
+        console.log(errorList);
         //First Name
         if (firstname.val() == '' || firstname.val() == null) {
             if (errorList.find('.errormessage-firstname').length == 0) {
@@ -324,8 +332,8 @@ $(document).ready(function () {
             if (city.parent().hasClass('has-error')) {
                 city.parent().removeClass('has-error')
             };
-            if (city.find('.errormessage-street').length > 0) {
-                city.find('.errormessage-street').remove();
+            if (errorList.find('.errormessage-city').length > 0) {
+                errorList.find('.errormessage-city').remove();
                 //$('#errorMsg').hide();
             }
         }
@@ -348,8 +356,8 @@ $(document).ready(function () {
             if (Organisation.parent().hasClass('has-error')) {
                 Organisation.parent().removeClass('has-error')
             };
-            if (Organisation.find('.errormessage-street').length > 0) {
-                Organisation.find('.errormessage-street').remove();
+            if (errorList.find('.errormessage-Organisation').length > 0) {
+                errorList.find('.errormessage-Organisation').remove();
                 //$('#errorMsg').hide();
             }
         }
@@ -372,8 +380,8 @@ $(document).ready(function () {
             if (username.parent().hasClass('has-error')) {
                 username.parent().removeClass('has-error')
             };
-            if (username.find('.errormessage-username').length > 0) {
-                username.find('.errormessage-username').remove();
+            if (errorList.find('.errormessage-username').length > 0) {
+                errorList.find('.errormessage-username').remove();
                 //$('#errorMsg').hide();
             }
         }
@@ -396,8 +404,8 @@ $(document).ready(function () {
             if (password.parent().hasClass('has-error')) {
                 password.parent().removeClass('has-error')
             };
-            if (password.find('.errormessage-password').length > 0) {
-                password.find('.errormessage-password').remove();
+            if (errorList.find('.errormessage-password').length > 0) {
+                errorList.find('.errormessage-password').remove();
                 //$('#errorMsg').hide();
             }
         }
@@ -420,8 +428,8 @@ $(document).ready(function () {
             if (captcha.parent().hasClass('has-error')) {
                 captcha.parent().removeClass('has-error')
             };
-            if (captcha.find('.errormessage-captcha').length > 0) {
-                captcha.find('.errormessage-captcha').remove();
+            if (errorList.find('.errormessage-captcha').length > 0) {
+                errorList.find('.errormessage-captcha').remove();
                 //$('#errorMsg').hide();
             }
         }
