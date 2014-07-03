@@ -87,6 +87,7 @@ nav{
    background-color: #33bef0;
 
 }
+
 .navbar-right  li  a#icons-header-right{
     margin-top: 0px;
     padding-left: 9px;
@@ -104,16 +105,6 @@ nav{
 }
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus{
     background-color: inherit;
-}
-.navbar-right .dropdown-menu li a{
-    font-family: inherit;
-    font-size: 17px;
-    font-weight: 600;
-    padding: 8px 15px;
-    color: #9F9F99;
-    padding: 10px 70px 10px 13px;
-    background-color:#f7f7f5;
-    border-radius: 4px;
 }
 .navbar-right .dropdown-menu li a:hover,
 .navbar-right .dropdown-menu li a:focus{

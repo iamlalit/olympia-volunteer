@@ -24,7 +24,7 @@ app.controller('viewAppCtrl', function($scope){
     }); 
 	$scope.Applicants.push({Name:"Geertruda Brouwer",
             job: 'QA Specialist',
-            city: 'Delhi', 
+            city: 'Rotterdam', 
             bodyText: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper...',
             bodyTextFull: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.',
             status: '4/4 diploma/certificate/skills', 
@@ -35,7 +35,7 @@ app.controller('viewAppCtrl', function($scope){
     }); 
 	$scope.Applicants.push({Name:"Jan-Klaassen Groot",
             job: 'QA Engineer',
-            city: 'Chicago', 
+            city: 'Utrecht', 
             bodyText: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper...',
             bodyTextFull: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.',
             status: '2/4 diploma/certificate/skills',     
@@ -46,7 +46,7 @@ app.controller('viewAppCtrl', function($scope){
     }); 
 	$scope.Applicants.push({Name:"Geertruda Dekker",
             job: 'Automation Engineer',
-            city: 'New York', 
+            city: 'Tilburg', 
             bodyText: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper...',
             bodyTextFull: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.',
             status: '2/4 diploma/certificate/skills',     
@@ -57,7 +57,7 @@ app.controller('viewAppCtrl', function($scope){
     }); 
 	$scope.Applicants.push({Name:"Hendrik Brouwer",
             job: 'QA Analyst',
-            city: 'Netherlands', 
+            city: 'Breda', 
             bodyText: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper...',
             bodyTextFull: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.',
             status: '2/4 diploma/certificate/skills',     
