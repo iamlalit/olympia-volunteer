@@ -15,6 +15,7 @@ Date: 6/12/2014
     <link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="../css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/postJob/postJob.css"/>
+    <link rel="stylesheet" href="../css/searchVol/searchVol.css"/>
     <link href="../css/global.css" rel="stylesheet">
     <link href="../css/viewApp/viewApp.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700&subset=latin,cyrillic-ext,greek-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
@@ -39,9 +40,9 @@ Date: 6/12/2014
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                <li ><a href="#"  class='menu-interval'>Search Volunteer</a></li>
-                <li ><a href="../postJob/postjob.html"  class='menu-interval'>Post a Job</a></li>
-                <li class="active"><a href="../jobPost/jobPost.html" class='menu-interval'>Job Postings</a></li>
+                <li class="active"><a href="#"  class='menu-interval'>Search Volunteer</a></li>
+                <li><a href="../postJob/postjob.html"  class='menu-interval'>Post a Job</a></li>
+                <li><a href="../jobPost/jobPost.html" class='menu-interval'>Job Postings</a></li>
                 <li><a href="#" class='menu-interval'>Messages</a></li>
               </ul>
               
@@ -85,17 +86,105 @@ Date: 6/12/2014
                 <span><a href="">Your saved search</a></span><br>
                 <span><a href="">Your recent search</a></span>
             </div>
-            <div class="col-sm-9 padding-left-0">
-                <div class="col-sm-6 padding-left-0">
+            <div class="col-sm-9 padding-left-0 padding-right-0">
+                <div class="col-sm-5 padding-left-0">
                     <span class="text-center" id='heading-form' >Search Results</span>
                 </div>
-                <div class="col-sm-6 padding-left-0">
-                    <label style="display: inline">If you like this search, you can
-                        <button type="button" class="btn btn-primary">Save your search</button>
-                    </label>
+                <div class="col-sm-7 padding-left-0 padding-right-0" style="text-align:right">
+                    <span>If you like this search, you can</span>
+                    <button type="button" class="btn btn-default"><i class="icon-plus-sign plus-sign"></i>&nbsp;Save your search</button>
                 </div>
             </div>
-            
+        </div>
+        <div class="row">
+            <div class="col-sm-3 padding-left-0">
+                <div class="box-heading">
+                    <b>Filter your results</b>
+                </div>
+                <div class="box">
+                    <div class="data-box">
+                        <b>Categories</b>
+                        <div class="checkbox" ng-repeat="category in categories" ng-if="$index <= numListCategory">
+                            <label>
+                              <input type="checkbox" value="{{category}}"> {{category }}
+                            </label>
+                        </div>
+                        <span><a href="" ng-click="numListCategory = 100" ng-hide="numListCategory !== 4">More &gt;&gt;</a></span>
+                        <span><a href="" ng-click="numListCategory = 4" ng-hide="numListCategory == 4">Less &gt;&gt;</a></span>
+                    </div>
+                    <div class="data-box">
+                        <b>Skills</b>
+                        <div class="checkbox" ng-repeat="skill in skills" ng-if="$index <= numListSkill">
+                            <label>
+                              <input type="checkbox" value="{{skill | limitTo: 2}}"> {{skill}}
+                            </label>
+                        </div>
+                        <span><a href="" ng-click="numListSkill = 100" ng-hide="numListSkill !== 4">More &gt;&gt;</a></span>
+                        <span><a href="" ng-click="numListSkill = 4" ng-hide="numListSkill == 4">Less &gt;&gt;</a></span>
+                    </div>
+                    <div class="data-box">
+                        <b>Working time preference</b>
+                        <div class="checkbox" ng-repeat="time in timePreference" ng-if="$index <= numListTime">
+                            <label>
+                              <input type="checkbox" id="dow3" value="{{ time}}"> {{ time }}
+                            </label>
+                        </div>
+                        <span><a href="" ng-click="numListTime = 100" ng-hide="numListTime !== 8">More &gt;&gt;</a></span>
+                        <span><a href="" ng-click="numListTime = 8" ng-hide="numListTime == 8">Less &gt;&gt;</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9 padding-left-0 padding-right-0">
+                <div class="col-sm-5 padding-left-0">
+                    <span><b>2320</b> Volunteers found &nbsp;&nbsp;&nbsp;<a href="" title="Clear Search">Clear Search</a></span>
+                    <span>
+                        <label>Sort By: &nbsp;</label>
+                        <select class="form-control select-option">
+                            <option value="values" ng-repeat="values in sortByList" ng-bind="values"></option>
+                        </select>
+                    </span>
+                </div>
+                <div class="col-sm-7 padding-left-0 padding-right-0" style="text-align:right">
+                    Pagination 
+                </div>
+            </div>
+            <div class="row">
+                <div class="main-border">
+                    <div class="applicants" ng-repeat="applicant in Applicants">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <i class="glyphicon glyphicon-user font-size-6"></i>
+                            </div>
+                            <div class="col-sm-3">
+                                <div style="padding-top:5px; marging-top:10px;"></div>
+                                <a style="color:#00AEEC" href="#"><label ng-bind="applicant.Name"></label></a><br />
+                                <div style="padding-top:5px;marging-top:10px;"></div>
+                                <span ng-bind="applicant.joined" class="city-detail"></span>
+                            </div>
+                            <div class="col-sm-4 pull-right">
+                                <span>
+
+                                    <button type="button" class="btn btn-primary pull-right" ng-model="shortlisted" ng-click="moveApplicant(applicant, Applicants, shortlistedApplicants)" title="click to shortlist the applicant">Contact</button>
+                                    <a id="removeIconHover" ng-mouseenter="makeItWhite='circle-white'; makeItYellow='star-yellow'" ng-mouseleave="makeItWhite=''; makeItYellow=''" title="mark as favourite">
+                                        <div class="circle pull-right star-icon" ng-class="makeItWhite">
+                                            <i class="icon-star font-size-1-5 icon-attr" ng-class="makeItYellow"> </i>
+                                        </div>
+                                    </a>
+                                </span>
+                                <p>&nbsp;</p>
+                                <p>&nbsp;</p>
+                                <span ng-bind="applicant.city" class="city-detail pull-right"></span>
+                            </div>
+                        </div>
+                        <div class="row padding-left-15">
+                            <div style="padding-top:5px;marging-top:5px;margin-right: 0px;margin-left: 0px;"></div>
+                            <span ng-bind="applicant.bodyText" ng-show="!applicant.value"></span>
+                            <div style="padding-top:5px;marging-top:5px;margin-right: 0px;margin-left: 0px;"></div> 
+                            <hr class="user-hr" ng-if="$index !== lengthOfApplicants-1" />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <footer>
