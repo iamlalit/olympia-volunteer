@@ -135,7 +135,7 @@
         <div class="row">
             <div class="col-lg-3 center-block">
                 <div class="form-group complete-profile">
-                    <input type="submit" class="btn btn-success btn-site" value="Complete my Profile" />
+                    <a href="../CreateProfileForm/createProfileForm.html" class="btn btn-success btn-site">Complete my Profile</a>
                 </div>
             </div>
         </div>
@@ -146,25 +146,11 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-4" ng-repeat="profile in profileModel">
                 <div class="profile-wrapper">
-                    <img src="../img/4createyourprofile.png" />
-                    <label>Amy McDougall</label>
-                    <p>Writer/Translator</p>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="profile-wrapper">
-                    <img src="../img/4createyourprofile1.png" />
-                    <label>Betsy Chang</label>
-                    <p>Customer Service agent</p>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="profile-wrapper">
-                    <img src="../img/4createyourprofile2.png" />
-                    <label>Darius Kasperitis</label>
-                    <p>Senior Ruby on Rails Developer</p>
+                    <img src="{{profile.imgLink}}" />
+                    <label ng-bind="profile.name">Amy McDougall</label>
+                    <p ng-bind="profile.skill">Writer/Translator</p>
                 </div>
             </div>
         </div>

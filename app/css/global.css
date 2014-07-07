@@ -105,6 +105,9 @@
 .margin-left-4{
 	margin-left: 0px;
 }
+.margin-bottom-15{
+    margin-bottom:15px;
+}
 
 .displan-none{
 	display: none;
@@ -180,4 +183,24 @@ a {
 /* Heading */
 hr {
     border-top:1px solid #d2d2d2;
+}
+/* Jansy Uploader*/
+.btn-file {
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.btn-file > input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-size: 23px;
+  cursor: pointer;
+  filter: alpha(opacity=0);
+  opacity: 0;
+
+  direction: ltr;
 }
