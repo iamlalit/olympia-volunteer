@@ -262,3 +262,12 @@ footer .footer-text:hover{
     text-align:right;
 }
 /* footer ends */
+.underline{
+    text-decoration: underline;
+}
+
+div.color-palette {
+  display: inline-block;
+  width: 111px;
+  height: 120px;
+}
