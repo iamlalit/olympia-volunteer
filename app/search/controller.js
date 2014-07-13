@@ -17,7 +17,8 @@ app.controller('searchVolCtrl', function($scope){
 	$scope.numListTime = 8;
 
 	$scope.sortByList = ['Best Match', 'Newest Applicants', 'Oldest Applicants', 'Feedback'];
-	$scope.Applicants = [];
+	
+      $scope.Applicants = [];
 	$scope.Applicants.push({Name:"Marleen Bosch",
             job: 'QA Analyst',
             city: 'Amsterdam, Noord Holland', 
@@ -78,5 +79,110 @@ app.controller('searchVolCtrl', function($scope){
             selected: false,      
             value: false
     }); 
-	$scope.lengthOfApplicants = $scope.Applicants.length;
+      $scope.Applicants.push({Name:"Driel Brouwer",
+            job: 'QA Engineer',
+            city: 'Aalsmeerderbrug, Noord Holland', 
+            bodyText: 'United African Organization is a dynamic coalotion of African community-based organizations that promotes social and economic justice, civic participation, and empowerment of African immigrants and refugees in Illinois',
+            bodyTextFull: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.',
+            status: '2/4 diploma/certificate/skills',     
+            statusColor: 'red',
+            joined: 'Joined 2 months ago',
+            invited: false,
+            selected: false,      
+            value: false
+    }); 
+      
+      $scope.favouriteApplicants = [];
+      $scope.groupedItems = [];
+      $scope.applicantsPerPage = 5;
+      $scope.pagedItems = [];
+      $scope.currentPage = 0;
+      $scope.lengthOfApplicants = $scope.Applicants.length;
+      $scope.lengthOfFavouriteApplicants = $scope.favouriteApplicants.length;
+      // calculate page in place
+      $scope.groupToPages = function () {
+        $scope.pagedItems = [];
+        
+        for (var i = 0; i < $scope.lengthOfApplicants; i++) {
+            if (i % $scope.applicantsPerPage === 0) {
+                $scope.pagedItems[Math.floor(i / $scope.applicantsPerPage)] = [ $scope.Applicants[i] ];
+            } else {
+                $scope.pagedItems[Math.floor(i / $scope.applicantsPerPage)].push($scope.Applicants[i]);
+            }
+        }
+        $scope.lengthOfApplicantsPerPage = $scope.pagedItems[$scope.currentPage].length;
+
+        for (var i = 0; i < $scope.lengthOfApplicants; i++) {
+            if (i % $scope.applicantsPerPage === 0) {
+                $scope.pagedItems[Math.floor(i / $scope.applicantsPerPage)] = [ $scope.Applicants[i] ];
+            } else {
+                $scope.pagedItems[Math.floor(i / $scope.applicantsPerPage)].push($scope.Applicants[i]);
+            }
+        }
+        $scope.lengthOfApplicantsPerPage = $scope.pagedItems[$scope.currentPage].length;
+      };
+      $scope.groupToPages();
+      $scope.range = function (start, end) {
+            var ret = [];
+            if (!end) {
+                  end = start;
+                  start = 0;
+            }
+            for (var i = start; i < end; i++) {
+                ret.push(i);
+            }
+            return ret;
+      };
+      $scope.prevPage = function () {
+            if ($scope.currentPage > 0) {
+                  $scope.currentPage--;
+            }
+            $scope.lengthOfApplicantsPerPage = $scope.pagedItems[$scope.currentPage].length;
+      };
+      $scope.nextPage = function () {
+            if ($scope.currentPage < $scope.pagedItems.length - 1) {
+                  $scope.currentPage++;
+            }
+            $scope.lengthOfApplicantsPerPage = $scope.pagedItems[$scope.currentPage].length;
+      };
+      $scope.setPage = function () {
+            $scope.currentPage = this.n;
+            $scope.lengthOfApplicantsPerPage = $scope.pagedItems[$scope.currentPage].length;
+      };
+      $scope.moveApplicant = function(item, from, to) {
+            var idx=from.indexOf(item);
+            if (idx != -1) {
+                  from.splice(idx, 1);
+                  to.push(item);
+            }
+      };
+      $scope.copyApplicant = function(item, from, to) {
+            var idx=from.indexOf(item);
+            //to check for uncommon objects
+            var check = true;
+            if (idx != -1) {
+                  for (var i = 0; i <= $scope.lengthOfFavouriteApplicants; i++) {
+                        if(JSON.stringify(item) === JSON.stringify($scope.favouriteApplicants[i]) ){
+                              check = false;
+                        }
+                  };
+                  if(check == true){
+                        to.push(item);      
+                  }
+            }
+            $scope.lengthOfFavouriteApplicants = $scope.favouriteApplicants.length;
+      };
+      $scope.deleteApplicant = function(item, from){
+            var idx=from.indexOf(item);
+            if (idx != -1) {
+                  from.splice(idx, 1);
+            }     
+            $scope.lengthOfFavouriteApplicants = $scope.favouriteApplicants.length;
+      }
+      $scope.clearSearch = function(){
+            $scope.Applicants = [];
+            $scope.pagedItems = [];
+            $scope.lengthOfApplicants = $scope.Applicants.length;
+            $scope.lengthOfApplicantsPerPage = $scope.pagedItems.length;
+      }
 });
