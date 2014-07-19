@@ -100,34 +100,66 @@ Date: 6/12/2014
             <div class="col-sm-3 padding-left-0">
                 <div class="box">
                     <div class="data-box">
-                        <b>Categories</b>
-                        <div class="checkbox" ng-repeat="category in categories" ng-if="$index <= numListCategory">
-                            <label>
-                              <input type="checkbox" value="{{category}}"> {{category }}
-                            </label>
+                        <div class="box-heading">
+                            <b>Categories</b>
                         </div>
-                        <span><a href="" ng-click="numListCategory = 100" ng-hide="numListCategory !== 4">More &gt;&gt;</a></span>
-                        <span><a href="" ng-click="numListCategory = 4" ng-hide="numListCategory == 4">Less &lt;&lt;</a></span>
+                        <div class="box-content">
+                            <div class="checkbox" ng-repeat="category in categories">
+                                <label>
+                                  <input type="checkbox" value="{{category}}"> {{category }}
+                                </label>
+                            </div>
+                        </div>
                     </div>
                     <div class="data-box">
-                        <b>Skills</b>
-                        <div class="checkbox" ng-repeat="skill in skills" ng-if="$index <= numListSkill">
-                            <label>
-                              <input type="checkbox" value="{{skill | limitTo: 2}}"> {{skill}}
-                            </label>
+                        <div class="box-heading">
+                            <b>Skills</b>
                         </div>
-                        <span><a href="" ng-click="numListSkill = 100" ng-hide="numListSkill !== 4">More &gt;&gt;</a></span>
-                        <span><a href="" ng-click="numListSkill = 4" ng-hide="numListSkill == 4">Less &lt;&lt;</a></span>
+                        <div class="box-content">
+                            <div class="checkbox" ng-repeat="skill in skills">
+                                <label>
+                                  <input type="checkbox" value="{{skill}}"> {{skill}}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="data-box">
+                        <div class="box-heading">
+                            <b>Diploma/Certificates</b>
+                        </div>
+                        <div class="box-content">
+                            <div class="checkbox" ng-repeat="diploma in diplomas">
+                                <label>
+                                  <input type="checkbox" value="{{diploma}}"> {{diploma}}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="data-box">
+                        <div class="box-heading">
+                            <b>Working time preference</b>
+                        </div>
+                        <div class="box-content">
+                            <div class="checkbox" ng-repeat="time in timePreference">
+                                <label>
+                                    <input type="checkbox" value="{{time}}"> {{ time }}
+                                </label>
+                            </div>
+                        </div>
                     </div>
                     <div class="data-box">
-                        <b>Working time preference</b>
-                        <div class="checkbox" ng-repeat="time in timePreference" ng-if="$index <= numListTime">
-                            <label>
-                              <input type="checkbox" id="dow3" value="{{ time}}"> {{ time }}
-                            </label>
+                        <div class="box-heading">
+                            <b>Languages</b>
                         </div>
-                        <span><a href="" ng-click="numListTime = 100" ng-hide="numListTime !== 8">More &gt;&gt;</a></span>
-                        <span><a href="" ng-click="numListTime = 8" ng-hide="numListTime == 8">Less &lt;&lt;</a></span>
+                        <div class="box-content">
+                            <div class="checkbox" ng-repeat="language in languages">
+                                <label>
+                                    <input type="checkbox" value="{{language}}"> {{ language }}
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -145,7 +177,7 @@ Date: 6/12/2014
                     </span>
                 </div>
                 <div class="col-sm-7 padding-left-0 padding-right-0 align-right">
-                    <ul class="pagination" ng-hide="showClearSearch">
+                    <ul class="pagination" ng-hide="showClearSearch || showfavourite">
                         <li ng-class="{disabled: currentPage == 0}"><span ng-click="prevPage()"> Previous </span></li>
                         <li ng-repeat="n in range(pagedItems.length)" ng-class="{active: n == currentPage}" ng-click="setPage()"><span>{{n+1}}</span></li>
                         <li ng-class="{disabled: currentPage == pagedItems.length - 1}"><span ng-click="nextPage()"> Next </span></li>
@@ -167,7 +199,7 @@ Date: 6/12/2014
                             </div>
                             <div class="col-sm-4 pull-right">
                                 <span>
-                                    <button type="button" class="btn btn-primary pull-right" ng-model="shortlisted" title="click to shortlist the applicant">Contact</button>
+                                    <button type="button" class="btn btn-primary pull-right" ng-model="shortlisted" data-toggle="modal" data-target="#contactApplicantModal" ng-click="openModal(applicant)" title="click to shortlist the applicant">Contact</button>
                                     <a id="removeIconHover" ng-mouseenter="makeItWhite='circle-white'; makeItYellow='star-yellow'" ng-mouseleave="makeItWhite=''; makeItYellow=''" title="mark as favourite">
                                         <div class="circle pull-right star-icon" ng-class="makeItWhite"  ng-click="copyApplicant(applicant, Applicants, favouriteApplicants)">
                                             <i class="icon-star font-size-1-5 icon-attr" ng-class="makeItYellow"></i>
@@ -204,7 +236,7 @@ Date: 6/12/2014
                             </div>
                             <div class="col-sm-4 pull-right">
                                 <span>
-                                    <button type="button" class="btn btn-primary pull-right" title="click to shortlist the applicant">Contact</button>
+                                    <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#contactApplicantModal" title="click to shortlist the applicant" ng-click="openModal(applicant)">Contact</button>
                                     <a id="removeIconHover" ng-mouseenter="makeItWhite='circle-white'; makeItYellow='star-yellow'" ng-mouseleave="makeItWhite=''; makeItYellow=''" title="remove from favourite" ng-click="deleteApplicant(applicant, favouriteApplicants)" >
                                         <div class="circle pull-right star-icon" ng-class="makeItWhite">
                                             <i class="icon-star font-size-1-5 icon-attr" ng-class="makeItYellow"> </i>
@@ -300,37 +332,59 @@ Date: 6/12/2014
         </div>
     </footer>
     
-    <!-- Hidden modal box-->
-    <div class="modal fade" id="hiddenBig" tabindex="-1" role="dialog" aria-labelledby="hiddenBig" aria-hidden="true">
+    <!-- contact applicant modal box-->
+    <div ng-controller="modalVolCtrl" class="modal fade" id="contactApplicantModal" tabindex="-1" role="dialog" aria-labelledby="contactApplicantModal" aria-hidden="true">
         <div class="modal-dialog modal-md">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h2 class="modal-title" id="myModalLabel">Hidden</h2>
+                    <button type="button" class="close big-close" data-dismiss="modal" ng-click="dismissModal()" aria-hidden="true">&times;</button>
+                    <h2 class="modal-title" id="myModalLabel">Invite Volunteer to Discuss Job</h2>
                 </div>
-                <form role="form">
+                <form role="form" class="padding-container-12">
                     <div class="modal-body">
-                        <div class="row" style="padding-left:50px;">
-                            <div class="wrap1 col-sm-12" ng-repeat="hiddenData in hiddenModalData">
-                                <div class="circle" ng-class="makeItRed" ng-mouseenter="makeItRed='circle-red'; makeItWhite='icon-attr-white'; textRed='text-red'" ng-mouseleave="makeItRed=''; makeItWhite=''; textRed=''" data-dismiss="modal">
-                                    <i class="icon-remove font-size-1-5 icon-attr" ng-class="makeItWhite"> </i>
+                        <div class="applicants">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <i class="glyphicon glyphicon-user font-size-4"></i>
                                 </div>
-                                <label style="padding-left:30px; padding-top:9px;" ng-class="textRed">{{hiddenData}}</label>
+                                <div class="col-sm-6">
+                                    <a style="color:#00AEEC" href="#"><label ng-bind="modalApplicant.Name"></label></a><br />
+                                    <div style="padding-top:5px;marging-top:10px;"></div>
+                                    <span ng-bind="modalApplicant.city" class="city-detail"></span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-1"></div>
-                            <div class="col-sm-10" style="color:#858383;text-align:center">
-                                The volunteer will not be notified. Your feedback helps to improve our volunteer recommendation.
+                            <div class="row">
+                                <div class="col-sm-12 margin-top-5">
+                                    <label>Job Posting &nbsp;</label>
+
+                                    <span id="optional-text">(NOTE: Please select job to invite volunteer)</span>
+                                </div>
                             </div>
-                            <div class="col-sm-1"></div>
+                            <div class="row padding-left-15" >
+                                <select class="form-control select-option">
+                                    <option value="{{values.jobTitle}}" ng-repeat="values in jobPost" ng-bind="values.jobTitle" ng-if="values.status == 'Open'"></option>
+                                </select>
+                            </div>
+                            <div class="row padding-left-15 margin-top-10" >
+                                <label>Message &nbsp;</label>
+                            </div>
+                            <div class="row padding-left-15" >
+                                <textarea class="text-area" cols="70" rows="7" id="modalMessage"></textarea>
+                            </div>
+                            <div class="row padding-left-15 margin-top-10" >
+                                <button type="submit" class="btn btn-success" data-dismiss="modal">Send Invitation</button>
+                                <button type="submit" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            </div>
+                            <div class="row padding-left-15 margin-top-10" >
+                                <p>Already now this volunteer?&nbsp;<span><a href="#">Hire now</a></span></p>
+                            </div>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    <!-- Hidden modal box-->
+    <!-- contact applicant modal box-->
 
     <script src="../lib/jquery/dist/jquery.min.js"></script>
     <script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>

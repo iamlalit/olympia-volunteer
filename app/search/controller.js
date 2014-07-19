@@ -3,16 +3,34 @@
 var app = angular.module('searchVolController', []);
 
 app.controller('searchVolCtrl', function($scope){
-	$scope.categories = ['Aggriculture', 'Animals', 'Arts', 'Communications access', 
+	//Dummy data
+      $scope.categories = ['Aggriculture', 'Animals', 'Arts', 'Communications access', 
 	'Community development', 'conflict resolution'];
-	$scope.skills = ['Accounting', 'Crime $ Safety', 'Cooking', 'Communication', 'Disaster Relief', 
-	'Problem Solving'];
-	$scope.timePreference = ['Monday - Full day', 'Tuesday - Full day', 'Wednesday - Full day', 'Thursday - Full day', 'Friday - Full day', 'Saturday - Full day', 'Sunday - Full day', 
+	
+      $scope.skills = ['Answering Telephones', 'Accounting', 'Administration', 'Business Correspondence', 'Client Relations', 'Communication',
+            'Crowd Control', 'Crime & Safety', 'Customer Service', 'Cooking', 'Clerical', 'Document Management', 'Disaster Relief', 
+            'Event Coordination', 'Employee Relations', 'Legal Familiarity', 'Meeting Planning', 'Office Administration',
+            'Organizational Skills', 'Problem Solving', 'Public Relations', 'Public Speaking', 'People Management', 'Receptionist', 'Stenography', 
+            'Travel Arrangements', 'Word Processing', 'Written Communication'];
+	
+      $scope.diplomas = ['First Aid Diploma', 'Community Service Coordination', 'Football Referee License', 'Active Volunteering', 'Training and Assessmement', 
+                  'Program Coordination', 'Effective Communication', 'Negotiation', 
+                  'Customer Service', 'Risk Management'];
+
+      $scope.languages = ['Afrikaans','Albanian', 'Arabic', 'Armenian', 'Azerbaijani', 'Basque', 'Belarusian', 'Bengali', 'Bosnian', 'Bulgarian', 
+            'Catalan', 'Cebuano', 'Chinese', 'Danish', 'Dutch', 'English', 'Esperanto', 'Estonian', 'Filipino', 'French', 'Georgian', 
+            'German', 'Greek', 'Hausa', 'Hebrew', 'Hindi', 'Hungarian', 'Indonesian', 'Irish', 'Italian', 'Japanese', 
+            'Korean', 'Lao', 'Latin', 'Mongolian', 'Norwegian', 'Persian', 'Portuguese', 'Punjabi', 'Romanian', 'Russian', 'Serbian', 
+            'Spanish',  'Swedish', 'Thai', 'Turkish', 'Ukrainian', 'Urdu', 'Vietnamese', 'Welsh', 'Yoruba',
+             'Zulu'];
+
+      $scope.timePreference = ['Monday - Full day', 'Tuesday - Full day', 'Wednesday - Full day', 'Thursday - Full day', 'Friday - Full day', 'Saturday - Full day', 'Sunday - Full day', 
 	'Monday - Morning', 'Tuesday - Morning', 'Wednesday - Morning', 'Thursday - Morning', 'Friday - Morning', 'Saturday - Morning', 'Sunday - Morning', 
 	'Monday - Afternoon', 'Tuesday - Afternoon', 'Wednesday - Afternoon', 'Thursday - Afternoon', 'Friday - Afternoon', 'Saturday - Afternoon', 'Sunday - Afternoon', 
 	'Monday - Evening', 'Tuesday - Evening', 'Wednesday - Evening', 'Thursday - Evening', 'Friday - Evening', 'Saturday - Evening', 'Sunday - Evening', 
-	'Monday - Late Night', 'Tuesday - Late Night', 'Wednesday - Late Night', 'Thursday - Late Night', 'Friday - Late Night', 'Saturday - Late Night', 'Sunday - Late Night']
-	$scope.numListCategory = 4;
+	'Monday - Late Night', 'Tuesday - Late Night', 'Wednesday - Late Night', 'Thursday - Late Night', 'Friday - Late Night', 'Saturday - Late Night', 'Sunday - Late Night'];
+	
+      $scope.numListCategory = 4;
 	$scope.numListSkill = 4;
 	$scope.numListTime = 8;
 
@@ -99,7 +117,11 @@ app.controller('searchVolCtrl', function($scope){
       $scope.currentPage = 0;
       $scope.lengthOfApplicants = $scope.Applicants.length;
       $scope.lengthOfFavouriteApplicants = $scope.favouriteApplicants.length;
+      
       // calculate page in place
+      $scope.calculateLength = function(){
+            $scope.lengthOfApplicantsPerPage = $scope.pagedItems[$scope.currentPage].length;
+      }
       $scope.groupToPages = function () {
         $scope.pagedItems = [];
         
@@ -110,16 +132,7 @@ app.controller('searchVolCtrl', function($scope){
                 $scope.pagedItems[Math.floor(i / $scope.applicantsPerPage)].push($scope.Applicants[i]);
             }
         }
-        $scope.lengthOfApplicantsPerPage = $scope.pagedItems[$scope.currentPage].length;
-
-        for (var i = 0; i < $scope.lengthOfApplicants; i++) {
-            if (i % $scope.applicantsPerPage === 0) {
-                $scope.pagedItems[Math.floor(i / $scope.applicantsPerPage)] = [ $scope.Applicants[i] ];
-            } else {
-                $scope.pagedItems[Math.floor(i / $scope.applicantsPerPage)].push($scope.Applicants[i]);
-            }
-        }
-        $scope.lengthOfApplicantsPerPage = $scope.pagedItems[$scope.currentPage].length;
+        $scope.calculateLength();
       };
       $scope.groupToPages();
       $scope.range = function (start, end) {
@@ -137,25 +150,23 @@ app.controller('searchVolCtrl', function($scope){
             if ($scope.currentPage > 0) {
                   $scope.currentPage--;
             }
-            $scope.lengthOfApplicantsPerPage = $scope.pagedItems[$scope.currentPage].length;
+            $scope.calculateLength();
       };
       $scope.nextPage = function () {
             if ($scope.currentPage < $scope.pagedItems.length - 1) {
                   $scope.currentPage++;
             }
-            $scope.lengthOfApplicantsPerPage = $scope.pagedItems[$scope.currentPage].length;
+            $scope.calculateLength();
       };
       $scope.setPage = function () {
             $scope.currentPage = this.n;
-            $scope.lengthOfApplicantsPerPage = $scope.pagedItems[$scope.currentPage].length;
+            $scope.calculateLength();
       };
-      $scope.moveApplicant = function(item, from, to) {
-            var idx=from.indexOf(item);
-            if (idx != -1) {
-                  from.splice(idx, 1);
-                  to.push(item);
-            }
-      };
+
+
+      
+      //Specific functions
+      //to add applicant into favourite applicant list
       $scope.copyApplicant = function(item, from, to) {
             var idx=from.indexOf(item);
             //to check for uncommon objects
@@ -172,6 +183,7 @@ app.controller('searchVolCtrl', function($scope){
             }
             $scope.lengthOfFavouriteApplicants = $scope.favouriteApplicants.length;
       };
+      //to remove the applicant from favourite applicants list
       $scope.deleteApplicant = function(item, from){
             var idx=from.indexOf(item);
             if (idx != -1) {
@@ -179,10 +191,39 @@ app.controller('searchVolCtrl', function($scope){
             }     
             $scope.lengthOfFavouriteApplicants = $scope.favouriteApplicants.length;
       }
+      //to clear all th search result
       $scope.clearSearch = function(){
             $scope.Applicants = [];
             $scope.pagedItems = [];
             $scope.lengthOfApplicants = $scope.Applicants.length;
             $scope.lengthOfApplicantsPerPage = $scope.pagedItems.length;
       }
+      $scope.dismissModal = function() { }
+      $scope.openModal = function(object) {
+            $scope.modalApplicant = object;
+       }
+
+
+});
+
+
+$(window).load(function() {
+      console.log("ansdakjasdh");
+      
+});
+
+app.controller('modalVolCtrl', function($scope) {
+      $scope.jobPost = [{jobTitle: "Volunteer Grant Writers", client:"Posted 1 month ago by Sander Noteborn" ,Applicants: 50, messaged: 3, hired:2, status:"Open"},
+          {jobTitle: "Outreach Volunteer", client:"Posted 2 years ago by Sander Noteborn", Applicants: 27, messaged: 1, hired:0, status:"Closed"},
+          {jobTitle: "Volunteer Coordinator - Volunteer", client:"Posted 4 days ago by Sander Noteborn", Applicants: 34, messaged: 1, hired:1, status:"Open"},
+          {jobTitle: "Crowd Control Volunteering", client:"Posted 6 weeks ago by Sander Noteborn", Applicants: 43, messaged: 3, hired:0, status:"Open"},
+          {jobTitle: "Football Refree Volunteer", client:"Posted 2 months ago by Sander Noteborn", Applicants: 27, messaged: 2, hired:0, status:"Closed"},
+          {jobTitle: "Volunteering Coordinator", client:"Posted 3 weeks ago by Sander Noteborn", Applicants: 34, messaged: 5, hired:3, status:"Open"},
+          {jobTitle: "Crowd Control Volunteer", client:"Posted 2 weeks ago by Sander Noteborn", Applicants: 43, messaged: 4, hired:2, status:"Closed"},
+          {jobTitle: "Football Refree Volunteering", client:"Posted 1 month ago by Sander Noteborn", Applicants: 34, messaged: 1, hired:0, status:"Closed"},
+          {jobTitle: "Public Relation Intern - Volunteer", client:"Posted 10 days ago by Sander Noteborn", Applicants: 34, messaged: 3, hired:2, status:"Open"}];
+      var message = "Hello, \n\n"+
+                  "I'd like to personally invite you to apply to my job. Please review the job post and apply you are available \n\n"+
+                  "Rob";
+      $("#modalMessage").val(message);
 });

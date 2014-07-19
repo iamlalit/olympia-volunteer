@@ -5,6 +5,7 @@
 	position: relative;
 	top: 2px;
 }
+
 .box{
 	border: 3px solid #ebebeb;
 	background-color: #ffffff;
@@ -14,10 +15,33 @@
 	border-radius:10px;
 	background-color: #f5f5f2;
 }
-
 .box .data-box{
 	padding-top: 20px;
 }
+/* Scroll bar in for scrolling, now in searchVol */
+.box .data-box .box-content{
+	height:130px;
+	font-size: 13px;
+	overflow-y:scroll;
+	width: 208px;
+}
+.box .data-box .box-content::-webkit-scrollbar{
+width:10px;
+background-color:#ffffff;
+}
+.box .data-box .box-content::-webkit-scrollbar-thumb{
+background-color:#a5a5a5;
+border-radius:5px;
+width:7px;
+} 
+.box .data-box .box-content::-webkit-scrollbar-track{
+border-radius:10px;
+-webkit-box-shadow:0 0 6px gray inset;
+} 
+.box .data-box:last-child{
+	padding-bottom: 20px;
+}
+
 .row .left-box{
 	margin-right: 20px;
 }
@@ -63,8 +87,9 @@ border-radius: 4px;
 }
 .pagination>li>a, .pagination>li>span {
 position: relative;
-float: none;
-padding: 5px 10px;
+float: initial;
+padding: 3px 8px;
+font-size: 11px;
 line-height: 1.42857143;
 text-decoration: none;
 color: #428bca;
@@ -86,4 +111,8 @@ cursor: pointer;
 .show-clear label{
 	position: relative;
 	top: 42%;
+}
+#removeIconHover .active{
+	background-color: black;
+	color: black;
 }
