@@ -206,12 +206,6 @@ app.controller('searchVolCtrl', function($scope){
 
 });
 
-
-$(window).load(function() {
-      console.log("ansdakjasdh");
-      
-});
-
 app.controller('modalVolCtrl', function($scope) {
       $scope.jobPost = [{jobTitle: "Volunteer Grant Writers", client:"Posted 1 month ago by Sander Noteborn" ,Applicants: 50, messaged: 3, hired:2, status:"Open"},
           {jobTitle: "Outreach Volunteer", client:"Posted 2 years ago by Sander Noteborn", Applicants: 27, messaged: 1, hired:0, status:"Closed"},
@@ -223,7 +217,7 @@ app.controller('modalVolCtrl', function($scope) {
           {jobTitle: "Football Refree Volunteering", client:"Posted 1 month ago by Sander Noteborn", Applicants: 34, messaged: 1, hired:0, status:"Closed"},
           {jobTitle: "Public Relation Intern - Volunteer", client:"Posted 10 days ago by Sander Noteborn", Applicants: 34, messaged: 3, hired:2, status:"Open"}];
       var message = "Hello, \n\n"+
-                  "I'd like to personally invite you to apply to my job. Please review the job post and apply you are available \n\n"+
+                  "I'd like to personally invite you to apply to my job. Please review the job post and apply if you are available \n\n"+
                   "Rob";
       $("#modalMessage").val(message);
 });

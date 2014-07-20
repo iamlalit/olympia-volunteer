@@ -62,16 +62,19 @@
                             </ul>
                         </li>
                         <li class='pull-right'><a href="#" id="icons-header-right"><span class="glyphicon glyphicon-exclamation-sign"></a></li>
-                        <li class="dropdown pull-right" style="margin-top:5px;" id="username">
-                            <a href="#" class="dropdown-toggle" id="hover-header-right" data-toggle="dropdown" ng-if="organisationMenu">Organisation &nbsp;<b class="caret blue"></b></a>
-                            <a href="#" class="dropdown-toggle" id="hover-header-right" data-toggle="dropdown" ng-if="volunteerMenu">Volunteer &nbsp;<b class="caret blue"></b></a>
-                            <ul class="dropdown-menu header-right-dropdown">
-                                <li role="presentation"><a role="menuitem" ng-model="Client" href="#"><img src="../img/client-icon.png">&nbsp;&nbsp;&nbsp;Organisation</a></li>
+                        <li class="dropdown pull-right" style="margin-top:5px;" id="username" ng-init="client = false; organization = true">
+                            <a href="#" class="dropdown-toggle"  id="hover-header-right" data-toggle="dropdown"  ng-if="organization == true">Organization &nbsp;<b class="caret blue"></b></a>
+                            <a href="#" class="dropdown-toggle"  id="hover-header-right" data-toggle="dropdown" ng-if="client == true">Volunteer &nbsp;<b class="caret blue"></b></a>
+                            <ul class="dropdown-menu header-right-dropdown" ng-init=" addActive2 = 'make-it-white'">
+                                <li role="presentation" ><a role="menuitem" ng-model="organization" ng-click="organization = true; client = false; addActive2 = 'make-it-white';addActive1=''" href="#" id="tab-header-1" ng-class="addActive2"><img src="../img/client-icon.png">&nbsp;&nbsp;&nbsp;Organization</a></li>
                                 <li role="presentation" class="divider"></li>
-                                <li role="presentation"><a role="menuitem" ng-model="Client" href="#"><img src="../img/user-icon.svg" height="25" width="25">&nbsp;&nbsp;&nbsp;Volunteer</a></li>
+                                <li role="presentation" ><a role="menuitem" ng-model="client" ng-click="organization = false; client = true; addActive1 = 'make-it-white';addActive2=''" href="#" ng-class="addActive1"><img src="../img/user-icon.svg" height="25" width="25">&nbsp;&nbsp;&nbsp;Volunteer</a></li>
                                 <li role="presentation" class="divider"></li>
-                                <li role="presentation" id="separate-highlight" disabled>
-                                    <a role="menuitem" style="text-align:right;">Logout</a>
+                                <li role="presentation" id="separate-highlight"> 
+                                    <span><a role="menuitem"  href="#" ng-if="client == true">Volunteer</a></span>
+                                    <span><a role="menuitem"  href="#" ng-if="organization == true">Organization</a></span>
+                                    <span><a role="menuitem"  href="../login/login.html">Logout</a></span>
+
                                 </li>
                             </ul>
                         </li>

@@ -7,7 +7,7 @@ loginController.controller('loginCredentialCheck', ['$scope', function ($scope) 
         var password = $('#pass').val();
         if (((email == 'volunteer@email.com' && password == 'password') || (email == 'volunteer%40email.com' && password == 'password')) || ((email == 'organisation@email.com' && password == 'password') || (email == 'organisation%40email.com' && password == 'password'))) {
             if (email == 'organisation@email.com' || email == 'organisation%40email.com') {
-                document.location.href = "../langinPage/landing.html" + '?form=signup&name=organisation'
+                document.location.href = "../search/searchVol.html" + '?form=signup&name=organisation'
             } else {
                 document.location.href = "../SearchJob/searchJob.html" + '?form=signup&name=volunteer'
             }
