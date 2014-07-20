@@ -81,18 +81,17 @@ Date: 6/12/2014
         </nav>
     </header>
     <!-- Page Header Section End-->
-    <div class="container" ng-init="showrecent = true" >
+    <div class="container" ng-init="showrecent = true;hideIt = false" >
         <div class="row">
             <div class="col-sm-3 padding-left-0">
                 <span><a href="" ng-click="showfavourite = true; showrecent = false">Your favourite volunteer</a></span><br>
-                <span><a href="">Your saved search</a></span><br>
                 <span><a href="" ng-click="showrecent = true; showfavourite = false">Your recent search</a></span>
             </div>
             <div class="col-sm-9 padding-left-0 padding-right-0">
                 <div class="col-sm-5 padding-left-0">
                     <span class="text-center" id='heading-form' >Search Volunteers</span>
                 </div>
-                <div class="col-sm-7 padding-left-0 padding-right-0" style="text-align:right">
+                <div class="col-sm-7 padding-left-0 padding-right-0 hidden" style="text-align:right">
                     <span>If you like this search, you can</span>
                     <button type="button" class="btn btn-default"><i class="icon-plus-sign plus-sign"></i>&nbsp;Save your search</button>
                 </div>
@@ -166,19 +165,22 @@ Date: 6/12/2014
                 </div>
             </div>
             <div class="col-sm-9 padding-left-0 padding-right-0">
-                <div class="col-sm-5 padding-left-0">
-                    <span>
+                <div class="col-sm-4 padding-left-0">
+                    <span class="clear-search">
                         <b ng-show="showrecent">{{lengthOfApplicants}}</b> 
                         <b ng-show="showfavourite">{{lengthOfFavouriteApplicants}}</b> 
-                        Volunteers found &nbsp;&nbsp;&nbsp;<a href="" title="Clear Search" ng-click="clearSearch(); showClearSearch = true">Clear Search<br /></a></span>
+                        Volunteers found &nbsp;&nbsp;<a href="" title="Clear Search" ng-click="clearSearch(); showClearSearch = true">Clear Search</a>
+                    </span>
+                </div>
+                <div class="col-sm-5 align-center">
                     <span>
-                        <label>Sort By: &nbsp;</label>
+                        <label>Sort By: </label>
                         <select class="form-control select-option">
                             <option value="values" ng-repeat="values in sortByList" ng-bind="values"></option>
                         </select>
                     </span>
                 </div>
-                <div class="col-sm-7 padding-left-0 padding-right-0 align-right">
+                <div class="col-sm-3 padding-left-0 padding-right-0 align-right">
                     <ul class="pagination" ng-hide="showClearSearch || showfavourite">
                         <li ng-class="{disabled: currentPage == 0}"><span ng-click="prevPage()"> Previous </span></li>
                         <li ng-repeat="n in range(pagedItems.length)" ng-class="{active: n == currentPage}" ng-click="setPage()"><span>{{n+1}}</span></li>
@@ -191,7 +193,7 @@ Date: 6/12/2014
                     <div class="applicants" ng-repeat="applicant in pagedItems[currentPage]">
                         <div class="row">
                             <div class="col-sm-2">
-                                <i class="glyphicon glyphicon-user font-size-6"></i>
+                                <i class="glyphicon glyphicon-user font-size-4"></i>
                             </div>
                             <div class="col-sm-3">
                                 <div style="padding-top:5px; marging-top:10px;"></div>
@@ -201,15 +203,13 @@ Date: 6/12/2014
                             </div>
                             <div class="col-sm-4 pull-right">
                                 <span>
-                                    <button type="button" class="btn btn-primary pull-right" ng-model="shortlisted" data-toggle="modal" data-target="#contactApplicantModal" ng-click="openModal(applicant)" title="click to shortlist the applicant">Contact</button>
+                                    <button type="button" class="btn btn-primary pull-right small-btn" ng-model="shortlisted" data-toggle="modal" data-target="#contactApplicantModal" ng-click="openModal(applicant)" title="click to shortlist the applicant">Contact</button>
                                     <a id="removeIconHover" ng-mouseenter="makeItWhite='circle-white'; makeItYellow='star-yellow'" ng-mouseleave="makeItWhite=''; makeItYellow=''" title="mark as favourite">
                                         <div class="circle pull-right star-icon" ng-class="makeItWhite"  ng-click="copyApplicant(applicant, Applicants, favouriteApplicants)">
                                             <i class="icon-star font-size-1-5 icon-attr" ng-class="makeItYellow"></i>
                                         </div>
                                     </a>
                                 </span>
-                                <p>&nbsp;</p>
-                                <p>&nbsp;</p>
                                 <span ng-bind="applicant.city" class="city-detail pull-right"></span>
                             </div>
                         </div>
@@ -228,7 +228,7 @@ Date: 6/12/2014
                     <div class="applicants" ng-repeat="applicant in favouriteApplicants">
                         <div class="row">
                             <div class="col-sm-2">
-                                <i class="glyphicon glyphicon-user font-size-6"></i>
+                                <i class="glyphicon glyphicon-user font-size-4"></i>
                             </div>
                             <div class="col-sm-3">
                                 <div style="padding-top:5px; marging-top:10px;"></div>
@@ -238,15 +238,13 @@ Date: 6/12/2014
                             </div>
                             <div class="col-sm-4 pull-right">
                                 <span>
-                                    <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#contactApplicantModal" title="click to shortlist the applicant" ng-click="openModal(applicant)">Contact</button>
+                                    <button type="button" class="btn btn-primary pull-right small-btn" data-toggle="modal" data-target="#contactApplicantModal" title="click to shortlist the applicant" ng-click="openModal(applicant)">Contact</button>
                                     <a id="removeIconHover" ng-mouseenter="makeItWhite='circle-white'; makeItYellow='star-yellow'" ng-mouseleave="makeItWhite=''; makeItYellow=''" title="remove from favourite" ng-click="deleteApplicant(applicant, favouriteApplicants)" >
                                         <div class="circle pull-right star-icon" ng-class="makeItWhite">
                                             <i class="icon-star font-size-1-5 icon-attr" ng-class="makeItYellow"> </i>
                                         </div>
                                     </a>
                                 </span>
-                                <p>&nbsp;</p>
-                                <p>&nbsp;</p>
                                 <span ng-bind="applicant.city" class="city-detail pull-right"></span>
                             </div>
                         </div>
@@ -371,7 +369,7 @@ Date: 6/12/2014
                                 <label>Message &nbsp;</label>
                             </div>
                             <div class="row padding-left-15" >
-                                <textarea class="text-area" cols="70" rows="7" id="modalMessage"></textarea>
+                                <textarea class="text-area" cols="88" rows="7" id="modalMessage"></textarea>
                             </div>
                             <div class="row padding-left-15 margin-top-10" >
                                 <button type="submit" class="btn btn-success" data-dismiss="modal">Send Invitation</button>

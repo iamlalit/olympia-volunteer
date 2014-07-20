@@ -239,3 +239,15 @@ hr {
 .text-area:focus {
   border: 2px solid #00AEEC;
 }
+
+/*Small button without padding */
+.small-btn {
+	padding: 2px 5px;
+}
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+select {
+	height: 32px;
+}

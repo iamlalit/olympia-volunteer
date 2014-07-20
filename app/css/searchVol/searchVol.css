@@ -83,7 +83,10 @@ border-radius:10px;
 display: inline-block;
 padding-left: 0;
 margin: 8px 0;
+margin-right: -8px;
 border-radius: 4px;
+position: relative;
+top: -2px;
 }
 .pagination>li>a, .pagination>li>span {
 position: relative;
@@ -95,7 +98,7 @@ text-decoration: none;
 color: #428bca;
 background-color: #fff;
 border: 2px solid #ddd;
-margin-left: 13px;
+margin-left: 4px;
 border-radius: 5px;
 }
 .pagination>li>a:hover, 
@@ -104,7 +107,9 @@ color: #428bca;
 border-color: #00aeec;
 cursor: pointer;
 }
-
+.pagination>li:last-child span{
+	margin-left: 0px;
+}
 .show-clear{
 	height:	300px;
 }
@@ -115,4 +120,26 @@ cursor: pointer;
 #removeIconHover .active{
 	background-color: black;
 	color: black;
+}
+.clear-search {
+    position: relative;
+    top: 6px;
+}
+
+/* favourite star circle */
+.circle {
+    width: 28px !important;
+    height: 28px !important;
+    margin-bottom: 8px !important;
+    margin-left:5px !important;
+    -webkit-border-radius: 14px !important;
+    -moz-border-radius: 14px !important;
+    border-radius: 14px !important;    
+    background-color: #CFCCCC ;
+    cursor:pointer;
+}
+.icon-attr{
+	display: inline-block !important;
+	margin-top: 5px !important;
+	margin-left: 5px !important;
 }
