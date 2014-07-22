@@ -204,9 +204,9 @@ Date: 6/12/2014
                             <div class="col-sm-4 pull-right">
                                 <span>
                                     <button type="button" class="btn btn-primary pull-right small-btn" ng-model="shortlisted" data-toggle="modal" data-target="#contactApplicantModal" ng-click="openModal(applicant)" title="click to shortlist the applicant">Contact</button>
-                                    <a id="removeIconHover" ng-mouseenter="makeItWhite='circle-white'; makeItYellow='star-yellow'" ng-mouseleave="makeItWhite=''; makeItYellow=''" title="mark as favourite">
-                                        <div class="circle pull-right star-icon" ng-class="makeItWhite"  ng-click="copyApplicant(applicant, Applicants, favouriteApplicants)">
-                                            <i class="icon-star font-size-1-5 icon-attr" ng-class="makeItYellow"></i>
+                                    <a id="removeIconHover" ng-click="autoScroll = true; makeItYellow='star-yellow'" ng-mouseleave="makeItWhite=''; makeItYellow=''" title="mark as favourite">
+                                        <div class="circle pull-right star-icon" ng-class="{'circle-white': autoScroll}"  ng-click="copyApplicant(applicant, Applicants, favouriteApplicants)">
+                                            <i class="icon-star font-size-1-5 icon-attr" ng-class="{'star-yellow': autoScroll}"></i>
                                         </div>
                                     </a>
                                 </span>
