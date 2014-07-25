@@ -1,10 +1,4 @@
-﻿<!--
-view app page html part
-author: Lalit Sachdeva
-Date: 6/12/2014
--->
-
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" ng-app="searchVolController">
 <head>
     <meta charset="utf-8">
@@ -204,9 +198,14 @@ Date: 6/12/2014
                             <div class="col-sm-4 pull-right">
                                 <span>
                                     <button type="button" class="btn btn-primary pull-right small-btn" ng-model="shortlisted" data-toggle="modal" data-target="#contactApplicantModal" ng-click="openModal(applicant)" title="click to shortlist the applicant">Contact</button>
-                                    <a id="removeIconHover" ng-click="makeItYellow='star-yellow'" ng-mouseleave="makeItWhite=''; makeItYellow=''" title="mark as favourite">
-                                        <div class="circle pull-right star-icon" ng-class="{'circle-white': applicant.selected || removeIt}"  ng-click="copyApplicant(applicant, Applicants, favouriteApplicants)">
-                                            <i class="icon-star font-size-1-5 icon-attr" ng-class="{'star-yellow': applicant.selected || removeIt}"></i>
+                                    <a id="removeIconHover" ng-if="!(applicant.selected || removeIt)" title="mark as favourite">
+                                        <div class="circle pull-right star-icon" ng-click="copyApplicant(applicant, Applicants, favouriteApplicants)">
+                                            <i class="icon-star font-size-1-5 icon-attr"></i>
+                                        </div>
+                                    </a>
+                                    <a id="removeIconHover" ng-if="applicant.selected || removeIt" title="remove from favourite" ng-click="copyApplicant(applicant, Applicants, favouriteApplicants)" >
+                                        <div class="circle pull-right star-icon circle-white">
+                                            <i class="icon-star font-size-1-5 icon-attr star-yellow"> </i>
                                         </div>
                                     </a>
                                 </span>

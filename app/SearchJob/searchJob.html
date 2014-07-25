@@ -1,21 +1,22 @@
 ﻿<!DOCTYPE html>
-<html ng-app="landingController">
+<html ng-app="searchJobController">
 <head>
-    <title>Create an Account</title>
+    <meta charset="utf-8">
+    <title>OLYMPIA</title>
+    
+    <link href="../img/olympia-fav.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../css/font-awesome.css" rel="stylesheet" />
-    <link href="../css/global.css" rel="stylesheet" />
-    <!-- fornt for heading -->
+    <link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/postJob/postJob.css"/>
+    <link rel="stylesheet" href="../css/searchVol/searchVol.css"/>
+    <link href="../css/global.css" rel="stylesheet">
+    <link href="../css/viewApp/viewApp.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700&subset=latin,cyrillic-ext,greek-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
-    <!-- font for main content -->
-    <link href="//fonts.googleapis.com/css?family=PT+Sans:400italic,400,700italic,700" />
-    <link href="../css/postJob/postjob.css" rel="stylesheet" />
-    <link href="../css/viewApp/viewApp.css" rel="stylesheet" />
-    <link href="../css/global.css" rel="stylesheet" />
 
-    <link href="searchJob.css" rel="stylesheet" />
 </head>
-<body ng-controller="landingPage">
+
+<body ng-controller="searchJob">
     <!-- Page Header Section Start-->
     <header>
         <div class="navbar navbar-default" role="navigation">
@@ -33,16 +34,8 @@
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <!-- Organisation Menu Start-->
-                    <ul class="nav navbar-nav" ng-if="organisationMenu">
-                        <li class="active"><a href="#" class='menu-interval'>Search Volunteer</a></li>
-                        <li><a href="../postJob/postjob.html" class='menu-interval'>Post a Job</a></li>
-                        <li><a href="../jobPost/jobPost.html" class='menu-interval'>Job Postings</a></li>
-                        <li><a href="#" class='menu-interval'>Messages</a></li>
-                    </ul>
-                    <!-- Organisation Menu End here -->
                     <!-- Volunteer Menu Start-->
-                    <ul class="nav navbar-nav" ng-if="volunteerMenu">
+                    <ul class="nav navbar-nav">
                         <li class="active"><a href="#" class='menu-interval'>Search Job</a></li>
                         <li><a href="#" class='menu-interval'>Job Applications</a></li>
                         <li><a href="#" class='menu-interval'>Recommendations</a></li>
@@ -82,101 +75,191 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </div>
-        <nav class="hidden">
-            <div class="container">
-                <div class="row hidden">
-                    <div class="col-lg-2">
-                        <div class="form-group">
-                            <select class="search">
-                                <option>Job</option>
-                                <option>Option1</option>
-                                <option>Option2</option>
-                                <option>Option3</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="form-group">
-                            <input type="text" name="firstname" id="firstname" class="form-control search" placeholder="Keyword (e.g. name, interest or skills)">
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="form-group">
-                            <input type="text" name="firstname" id="firstname" class="form-control search" placeholder="City or postcode">
-                        </div>
-                    </div>
-                    <div class="col-lg-2">
-                        <div class="form-group">
-                            <select class="search">
-                                <option>30KM</option>
-                                <option>40Km</option>
-                                <option>50KM</option>
-                                <option>60KM</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-lg-1">
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-default btn-search" value="Search" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
     </header>
-    <!-- Page Header Section End-->
-    <div class="container hidden">
+       <!-- Page Header Section End-->
+      <div class="container" ng-init="showrecent = true;hideIt = false" >
         <div class="row">
-            <div class="col-lg-12">
-                <h2 class="profile-heading">Create your Profile</h2>
-                <p>
-                    A great profile is your key to getting hired. Highlights your strengths with an accurate description of your skills, work history, and education.
-                    Our staff will review for quality, so take time to fill your profile out completely and professional.
-                    <a href="#">Learn more about profiles</a>
-                </p>
+            <div class="col-sm-3 padding-left-0">
+                <span><a href="" ng-click="showfavourite = true; showrecent = false">Your saved search</a></span><br>
+                <span><a href="" ng-click="showrecent = true; showfavourite = false">Your recent search</a></span>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 center-block">
-                <div class="form-group complete-profile">
-                    <input type="submit" class="btn btn-success btn-site" value="Complete my Profile" />
+            <div class="col-sm-9 padding-left-0 padding-right-0">
+                <div class="col-sm-5 padding-left-0">
+                    <span class="text-center" id='heading-form' >Search Job</span>
+                </div>
+                <div class="col-sm-7 padding-left-0 padding-right-0 hidden" style="text-align:right">
+                    <span>If you like this search, you can</span>
+                    <button type="button" class="btn btn-default"><i class="icon-plus-sign plus-sign"></i>&nbsp;Save your search</button>
                 </div>
             </div>
         </div>
-        <hr />
         <div class="row">
-            <div class="col-lg-12">
-                <p class="add-text">Looking for inspiration? Check out these successful volunteer profiles:</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="profile-wrapper">
-                    <img src="../img/4createyourprofile.png" />
-                    <label>Amy McDougall</label>
-                    <p>Writer/Translator</p>
+            <div class="col-sm-3 padding-left-0">
+                <div class="box">
+                    <div class="data-box">
+                        <div class="box-heading">
+                            <b>Categories</b>
+                        </div>
+                        <div class="box-content">
+                            <div class="checkbox" ng-repeat="category in categories">
+                                <label>
+                                  <input type="checkbox" value="{{category}}"> {{category }}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="data-box">
+                        <div class="box-heading">
+                            <b>Skills</b>
+                        </div>
+                        <div class="box-content">
+                            <div class="checkbox" ng-repeat="skill in skills">
+                                <label>
+                                  <input type="checkbox" value="{{skill}}"> {{skill}}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="data-box">
+                        <div class="box-heading">
+                            <b>Diploma/Certificates</b>
+                        </div>
+                        <div class="box-content">
+                            <div class="checkbox" ng-repeat="diploma in diplomas">
+                                <label>
+                                  <input type="checkbox" value="{{diploma}}"> {{diploma}}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="data-box">
+                        <div class="box-heading">
+                            <b>Working time preference</b>
+                        </div>
+                        <div class="box-content">
+                            <div class="checkbox" ng-repeat="time in timePreference">
+                                <label>
+                                    <input type="checkbox" value="{{time}}"> {{ time }}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="data-box">
+                        <div class="box-heading">
+                            <b>Languages</b>
+                        </div>
+                        <div class="box-content">
+                            <div class="checkbox" ng-repeat="language in languages">
+                                <label>
+                                    <input type="checkbox" value="{{language}}"> {{ language }}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="profile-wrapper">
-                    <img src="../img/4createyourprofile1.png" />
-                    <label>Betsy Chang</label>
-                    <p>Customer Service agent</p>
+            <div class="col-sm-9 padding-left-0 padding-right-0">
+                <div class="col-sm-4 padding-left-0">
+                    <span class="clear-search">
+                        <b ng-show="showrecent">{{lengthOfJobs}}</b> 
+                        <b ng-show="showfavourite">{{lengthOfFavouriteJobs}}</b> 
+                        Jobs found &nbsp;&nbsp;<a href="" title="Clear Search" ng-click="clearSearch(); showClearSearch = true">Clear Search</a>
+                    </span>
+                </div>
+                <div class="col-sm-4 align-center">
+                    <span>
+                        <label>Sort By: </label>
+                        <select class="form-control select-option">
+                            <option value="values" ng-repeat="values in sortByList" ng-bind="values"></option>
+                        </select>
+                    </span>
+                </div>
+                <div class="col-sm-4 padding-left-0 padding-right-0 align-right">
+                    <ul class="pagination" ng-hide="showClearSearch || showfavourite">
+                        <li ng-class="{disabled: currentPage == 0}"><span ng-click="prevPage()"> Previous </span></li>
+                        <li ng-repeat="n in range(pagedItems.length)" ng-class="{active: n == currentPage}" ng-click="setPage()"><span>{{n+1}}</span></li>
+                        <li ng-class="{disabled: currentPage == pagedItems.length - 1}"><span ng-click="nextPage()"> Next </span></li>
+                     </ul>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="profile-wrapper">
-                    <img src="../img/4createyourprofile2.png" />
-                    <label>Darius Kasperitis</label>
-                    <p>Senior Ruby on Rails Developer</p>
+            <div class="row">
+                <div class="main-border" ng-show="showrecent">
+                    <div class="applicants" ng-repeat="Job in pagedItems[currentPage]" ng-init="autoScroll = false">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <i class="glyphicon glyphicon-user font-size-4"></i>
+                            </div>
+                            <div class="col-sm-3">
+                                <div style="padding-top:5px; marging-top:10px;"></div>
+                                <a style="color:#00AEEC" href="#"><label ng-bind="Job.Name"></label></a><br />
+                                <div style="padding-top:5px;marging-top:10px;"></div>
+                                <span ng-bind="Job.joined" class="city-detail"></span>
+                            </div>
+                            <div class="col-sm-4 pull-right">
+                                <span>
+                                    <button type="button" class="btn btn-primary pull-right small-btn" ng-model="shortlisted" data-toggle="modal" data-target="#contactJobModal" ng-click="openModal(job)" title="click to shortlist the Job">Contact</button>
+                                    <a id="removeIconHover" ng-if="!(Job.selected || removeIt)" title="mark as favourite">
+                                        <div class="circle pull-right star-icon" ng-click="copyJob(Job, Jobs, favouriteJobs)">
+                                            <i class="icon-star font-size-1-5 icon-attr"></i>
+                                        </div>
+                                    </a>
+                                    <a id="removeIconHover" ng-if="Job.selected || removeIt" title="remove from favourite" ng-click="copyJob(Job, Jobs, favouriteJobs)" >
+                                        <div class="circle pull-right star-icon circle-white">
+                                            <i class="icon-star font-size-1-5 icon-attr star-yellow"> </i>
+                                        </div>
+                                    </a>
+                                </span>
+                                <span ng-bind="Job.city" class="city-detail pull-right"></span>
+                            </div>
+                        </div>
+                        <div class="row padding-left-15">
+                            <div style="padding-top:5px;marging-top:5px;margin-right: 0px;margin-left: 0px;"></div>
+                            <span ng-bind="Job.bodyText" ng-show="!Job.value"></span>
+                            <div style="padding-top:5px;marging-top:5px;margin-right: 0px;margin-left: 0px;"></div> 
+                            <hr class="user-hr" ng-if="$index !== lengthOfJobsPerPage - 1" />
+                        </div>
+                    </div>
+                    <div class="align-center show-clear" ng-show="showClearSearch">
+                        <label>Cleared all search results, <br />Please search again to find the Jobs</label>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 center-block">
-                <h1 class="coming-soon">Coming Soon</h1>
+                <div class="main-border" ng-show="showfavourite">
+                    <div class="applicants" ng-repeat="Job in favouriteJobs">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <i class="glyphicon glyphicon-user font-size-4"></i>
+                            </div>
+                            <div class="col-sm-3">
+                                <div style="padding-top:5px; marging-top:10px;"></div>
+                                <a style="color:#00AEEC" href="#"><label ng-bind="Job.Name"></label></a><br />
+                                <div style="padding-top:5px;marging-top:10px;"></div>
+                                <span ng-bind="Job.joined" class="city-detail"></span>
+                            </div>
+                            <div class="col-sm-4 pull-right">
+                                <span>
+                                    <button type="button" class="btn btn-primary pull-right small-btn" data-toggle="modal" data-target="#contactJobModal" title="click to shortlist the Job" ng-click="openModal(job)">Contact</button>
+                                    <a id="removeIconHover" title="remove from favourite" ng-click="deleteJob(Job, favouriteJobs, Jobs);removeIt = false" >
+                                        <div class="circle pull-right star-icon circle-white" ng-class="makeItWhite">
+                                            <i class="icon-star font-size-1-5 icon-attr star-yellow" ng-class="makeItYellow"> </i>
+                                        </div>
+                                    </a>
+                                </span>
+                                <span ng-bind="Job.city" class="city-detail pull-right"></span>
+                            </div>
+                        </div>
+                        <div class="row padding-left-15">
+                            <div style="padding-top:5px;marging-top:5px;margin-right: 0px;margin-left: 0px;"></div>
+                            <span ng-bind="Job.bodyText" ng-show="!Job.value"></span>
+                            <div style="padding-top:5px;marging-top:5px;margin-right: 0px;margin-left: 0px;"></div> 
+                            <hr class="user-hr" ng-if="$index !== lengthOfFavouriteJobs - 1" />
+                        </div>
+                    </div>
+                    <div class="align-center show-clear" ng-show="lengthOfFavouriteJobs == 0">
+                        <label>No favourite Job available</label>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -249,6 +332,59 @@
             </div>
         </div>
     </footer>
+
+     <div ng-controller="modalVolCtrl" class="modal fade" id="contactJobModal" tabindex="-1" role="dialog" aria-labelledby="contactJobModal" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close big-close" data-dismiss="modal" ng-click="dismissModal()" aria-hidden="true">&times;</button>
+                    <h2 class="modal-title" id="myModalLabel">Invite Volunteer to Discuss Job</h2>
+                </div>
+                <form role="form" class="padding-container-12">
+                    <div class="modal-body">
+                        <div class="Jobs">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <i class="glyphicon glyphicon-user font-size-4"></i>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a style="color:#00AEEC" href="#"><label ng-bind="modalJob.Name"></label></a><br />
+                                    <div style="padding-top:5px;marging-top:10px;"></div>
+                                    <span ng-bind="modalJob.city" class="city-detail"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 margin-top-5">
+                                    <label>Job Posting &nbsp;</label>
+
+                                    <span id="optional-text">(NOTE: Please select job to invite volunteer)</span>
+                                </div>
+                            </div>
+                            <div class="row padding-left-15" >
+                                <select class="form-control select-option">
+                                    <option value="{{values.jobTitle}}" ng-repeat="values in jobPost" ng-bind="values.jobTitle" ng-if="values.status == 'Open'"></option>
+                                </select>
+                            </div>
+                            <div class="row padding-left-15 margin-top-10" >
+                                <label>Message &nbsp;</label>
+                            </div>
+                            <div class="row padding-left-15" >
+                                <textarea class="text-area" cols="88" rows="7" id="modalMessage"></textarea>
+                            </div>
+                            <div class="row padding-left-15 margin-top-10" >
+                                <button type="submit" class="btn btn-success" data-dismiss="modal">Send Invitation</button>
+                                <button type="submit" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            </div>
+                            <div class="row padding-left-15 margin-top-10" >
+                                <p>Already now this volunteer?&nbsp;<span><a href="#">Hire now</a></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script src="../lib/jquery/dist/jquery.min.js"></script>
     <script src="../lib/angular/angular.min.js"></script>
     <script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
