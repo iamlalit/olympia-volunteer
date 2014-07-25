@@ -42,7 +42,7 @@ app.controller('searchVolCtrl', function($scope){
             statusColor: 'red',
             joined: 'Joined 1 year ago',
             invited: true,   
-            selected: true,
+            selected: false,
             value: false
     }); 
 	$scope.Applicants.push({Name:"Geertruda Brouwer",
@@ -54,7 +54,7 @@ app.controller('searchVolCtrl', function($scope){
             statusColor: 'green',    
             joined: 'Joined 5 year ago',
             invited: false,
-            selected: true,
+            selected: false,
             value: false
     }); 
 	$scope.Applicants.push({Name:"Jan-Klaassen Groot",
@@ -115,7 +115,7 @@ app.controller('searchVolCtrl', function($scope){
             statusColor: 'red',
             joined: 'Joined 1 year ago',
             invited: true,   
-            selected: true,
+            selected: false,
             value: false
     }); 
   $scope.Applicants.push({Name:"Sterre Jansen",
@@ -127,7 +127,7 @@ app.controller('searchVolCtrl', function($scope){
             statusColor: 'green',    
             joined: 'Joined 5 year ago',
             invited: false,
-            selected: true,
+            selected: false,
             value: false
     }); 
   $scope.Applicants.push({Name:"Geertruda Hoek",
@@ -234,32 +234,44 @@ app.controller('searchVolCtrl', function($scope){
             $scope.calculateLength();
       };
 
-
       
       //Specific functions
       //to add applicant into favourite applicant list
       $scope.copyApplicant = function(item, from, to) {
             var idx=from.indexOf(item);
             //to check for uncommon objects
-            var check = true;
-            if (idx != -1) {
-                  for (var i = 0; i <= $scope.lengthOfFavouriteApplicants; i++) {
-                        if(JSON.stringify(item) === JSON.stringify($scope.favouriteApplicants[i]) ){
-                              check = false;
-                        }
-                  };
-                  if(check == true){
-                        to.push(item);      
-                  }
+            $scope.Applicants[idx].selected = !$scope.Applicants[idx].selected;
+            if($scope.Applicants[idx].selected){
+                
+                var check = true;
+                if (idx != -1) {
+                      for (var i = 0; i <= $scope.lengthOfFavouriteApplicants; i++) {
+                            if(JSON.stringify(item) === JSON.stringify($scope.favouriteApplicants[i]) ){
+                                  check = false;
+                            }
+                      };
+                      if(check == true){
+                            $scope.Applicants[idx].selected = false;
+                            item.selected = true;
+                            to.push(item);
+                      }
+                }   
+
+            }else{
+                console.log("unselect me");
+                $scope.deleteApplicant(item, to,from);
             }
             $scope.lengthOfFavouriteApplicants = $scope.favouriteApplicants.length;
       };
       //to remove the applicant from favourite applicants list
-      $scope.deleteApplicant = function(item, from){
+      $scope.deleteApplicant = function(item, from, to){
             var idx=from.indexOf(item);
+            var idx2=to.indexOf(item);
             if (idx != -1) {
                   from.splice(idx, 1);
-            }     
+            }
+            console.log($scope.Applicants[idx2]);     
+            $scope.Applicants[idx2].selected = false;
             $scope.lengthOfFavouriteApplicants = $scope.favouriteApplicants.length;
       }
       //to clear all th search result

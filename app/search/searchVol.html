@@ -190,7 +190,7 @@ Date: 6/12/2014
             </div>
             <div class="row">
                 <div class="main-border" ng-show="showrecent">
-                    <div class="applicants" ng-repeat="applicant in pagedItems[currentPage]">
+                    <div class="applicants" ng-repeat="applicant in pagedItems[currentPage]" ng-init="autoScroll = false">
                         <div class="row">
                             <div class="col-sm-2">
                                 <i class="glyphicon glyphicon-user font-size-4"></i>
@@ -204,9 +204,9 @@ Date: 6/12/2014
                             <div class="col-sm-4 pull-right">
                                 <span>
                                     <button type="button" class="btn btn-primary pull-right small-btn" ng-model="shortlisted" data-toggle="modal" data-target="#contactApplicantModal" ng-click="openModal(applicant)" title="click to shortlist the applicant">Contact</button>
-                                    <a id="removeIconHover" ng-click="autoScroll = true; makeItYellow='star-yellow'" ng-mouseleave="makeItWhite=''; makeItYellow=''" title="mark as favourite">
-                                        <div class="circle pull-right star-icon" ng-class="{'circle-white': autoScroll}"  ng-click="copyApplicant(applicant, Applicants, favouriteApplicants)">
-                                            <i class="icon-star font-size-1-5 icon-attr" ng-class="{'star-yellow': autoScroll}"></i>
+                                    <a id="removeIconHover" ng-click="makeItYellow='star-yellow'" ng-mouseleave="makeItWhite=''; makeItYellow=''" title="mark as favourite">
+                                        <div class="circle pull-right star-icon" ng-class="{'circle-white': applicant.selected || removeIt}"  ng-click="copyApplicant(applicant, Applicants, favouriteApplicants)">
+                                            <i class="icon-star font-size-1-5 icon-attr" ng-class="{'star-yellow': applicant.selected || removeIt}"></i>
                                         </div>
                                     </a>
                                 </span>
@@ -239,9 +239,9 @@ Date: 6/12/2014
                             <div class="col-sm-4 pull-right">
                                 <span>
                                     <button type="button" class="btn btn-primary pull-right small-btn" data-toggle="modal" data-target="#contactApplicantModal" title="click to shortlist the applicant" ng-click="openModal(applicant)">Contact</button>
-                                    <a id="removeIconHover" ng-mouseenter="makeItWhite='circle-white'; makeItYellow='star-yellow'" ng-mouseleave="makeItWhite=''; makeItYellow=''" title="remove from favourite" ng-click="deleteApplicant(applicant, favouriteApplicants)" >
-                                        <div class="circle pull-right star-icon" ng-class="makeItWhite">
-                                            <i class="icon-star font-size-1-5 icon-attr" ng-class="makeItYellow"> </i>
+                                    <a id="removeIconHover" title="remove from favourite" ng-click="deleteApplicant(applicant, favouriteApplicants, Applicants);removeIt = false" >
+                                        <div class="circle pull-right star-icon circle-white" ng-class="makeItWhite">
+                                            <i class="icon-star font-size-1-5 icon-attr star-yellow" ng-class="makeItYellow"> </i>
                                         </div>
                                     </a>
                                 </span>
