@@ -55,7 +55,7 @@
                             </ul>
                         </li>
                         <li class='pull-right'><a href="#" id="icons-header-right"><span class="glyphicon glyphicon-exclamation-sign"></a></li>
-                        <li class="dropdown pull-right" style="margin-top:5px;" id="username" ng-init="client = false; organization = true">
+                        <li class="dropdown pull-right" style="margin-top:5px;" id="username" ng-init="client = true; organization = false">
                             <a href="#" class="dropdown-toggle"  id="hover-header-right" data-toggle="dropdown"  ng-if="organization == true">Organization &nbsp;<b class="caret blue"></b></a>
                             <a href="#" class="dropdown-toggle"  id="hover-header-right" data-toggle="dropdown" ng-if="client == true">Volunteer &nbsp;<b class="caret blue"></b></a>
                             <ul class="dropdown-menu header-right-dropdown" ng-init=" addActive2 = 'make-it-white'">
@@ -188,34 +188,22 @@
                 <div class="main-border" ng-show="showrecent">
                     <div class="applicants" ng-repeat="Job in pagedItems[currentPage]" ng-init="autoScroll = false">
                         <div class="row">
-                            <div class="col-sm-2">
-                                <i class="glyphicon glyphicon-user font-size-4"></i>
-                            </div>
-                            <div class="col-sm-3">
-                                <div style="padding-top:5px; marging-top:10px;"></div>
+                            <div class="col-sm-8">
                                 <a style="color:#00AEEC" href="#"><label ng-bind="Job.Name"></label></a><br />
-                                <div style="padding-top:5px;marging-top:10px;"></div>
-                                <span ng-bind="Job.joined" class="city-detail"></span>
                             </div>
                             <div class="col-sm-4 pull-right">
                                 <span>
-                                    <button type="button" class="btn btn-primary pull-right small-btn" ng-model="shortlisted" data-toggle="modal" data-target="#contactJobModal" ng-click="openModal(job)" title="click to shortlist the Job">Contact</button>
-                                    <a id="removeIconHover" ng-if="!(Job.selected || removeIt)" title="mark as favourite">
-                                        <div class="circle pull-right star-icon" ng-click="copyJob(Job, Jobs, favouriteJobs)">
-                                            <i class="icon-star font-size-1-5 icon-attr"></i>
-                                        </div>
-                                    </a>
-                                    <a id="removeIconHover" ng-if="Job.selected || removeIt" title="remove from favourite" ng-click="copyJob(Job, Jobs, favouriteJobs)" >
-                                        <div class="circle pull-right star-icon circle-white">
-                                            <i class="icon-star font-size-1-5 icon-attr star-yellow"> </i>
-                                        </div>
-                                    </a>
+                                    <button type="button" class="btn btn-success pull-right small-btn" ng-model="shortlisted" data-toggle="modal" data-target="#contactJobModal" ng-click="openModal(job)" title="click to shortlist the Job">Apply</button>
                                 </span>
-                                <span ng-bind="Job.city" class="city-detail pull-right"></span>
+                            
                             </div>
                         </div>
                         <div class="row padding-left-15">
-                            <div style="padding-top:5px;marging-top:5px;margin-right: 0px;margin-left: 0px;"></div>
+                            <span class="color-999999">Volunteer Job posted by </span>
+                            <span><a ng-bind="Job.company" href=""></a> </span>
+                            <span class="color-999999"> - {{Job.about}}</span>
+                        </div>
+                        <div class="row padding-left-15">
                             <span ng-bind="Job.bodyText" ng-show="!Job.value"></span>
                             <div style="padding-top:5px;marging-top:5px;margin-right: 0px;margin-left: 0px;"></div> 
                             <hr class="user-hr" ng-if="$index !== lengthOfJobsPerPage - 1" />
