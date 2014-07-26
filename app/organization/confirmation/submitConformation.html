@@ -3,15 +3,15 @@
 <head>
 	<meta charset="utf-8">
 	<title>OLYMPIA</title>
-	<link href="../img/olympia-fav.ico" rel="shortcut icon" type="image/x-icon" />
+	<link href="../../img/olympia-fav.ico" rel="shortcut icon" type="image/x-icon" />
 	<!-- fornt for heading -->
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700&subset=latin,cyrillic-ext,greek-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
 	<!-- font for main content -->
 	<link href="//fonts.googleapis.com/css?family=PT+Sans:400italic,400,700italic,700"/>
-	<link href="../lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-	<link href="../css/font-awesome.css" rel="stylesheet">
-	<link rel="stylesheet" href="../css/postjob/postjob.css"/>
-	<link rel="stylesheet" href="../css/global.css"/>
+	<link href="../../lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../css/postjob/postjob.css"/>
+	<link rel="stylesheet" href="../../css/global.css"/>
 </head>
 <body ng-controller="confirmationCtrl">
 
@@ -27,7 +27,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="#"><img src="../img/logo.png"></a>
+		      <a class="navbar-brand" href="#"><img src="../../img/logo.png"></a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -56,17 +56,16 @@
                     <a href="#" class="dropdown-toggle"  id="hover-header-right" data-toggle="dropdown"  ng-if="organization == true">Organization &nbsp;<b class="caret blue"></b></a>
                     <a href="#" class="dropdown-toggle"  id="hover-header-right" data-toggle="dropdown" ng-if="client == true">Volunteer &nbsp;<b class="caret blue"></b></a>
                     <ul class="dropdown-menu header-right-dropdown" ng-init=" addActive2 = 'make-it-white'">
-                        <li role="presentation" ><a role="menuitem" ng-model="organization" ng-click="organization = true; client = false; addActive2 = 'make-it-white';addActive1=''" href="#" id="tab-header-1" ng-class="addActive2"><img src="../img/client-icon.png">&nbsp;&nbsp;&nbsp;Organization</a></li>
+                        <li role="presentation" ><a role="menuitem" ng-model="organization" ng-click="organization = true; client = false; addActive2 = 'make-it-white';addActive1=''" href="#" id="tab-header-1" ng-class="addActive2"><img src="../../img/client-icon.png">&nbsp;&nbsp;&nbsp;Organization</a></li>
                         <li role="presentation" class="divider"></li>
-                        <li role="presentation" ><a role="menuitem" ng-model="client" ng-click="organization = false; client = true; addActive1 = 'make-it-white';addActive2=''" href="#" ng-class="addActive1"><img src="../img/user.svg" height="25" width="25">&nbsp;&nbsp;&nbsp;Volunteer</a></li>
-                        <li role="presentation" class="divider"></li>
-                        <li role="presentation" id="separate-highlight"> 
-                            <span><a role="menuitem"  href="#" ng-if="client == true">Volunteer</a></span>
+                        <li role="presentation" ><a role="menuitem" ng-model="client" ng-click="organization = false; client = true; addActive1 = 'make-it-white';addActive2=''" href="#" ng-class="addActive1"><img src="../../img/user.svg" height="25" width="25">&nbsp;&nbsp;&nbsp;Volunteer</a></li>
+                        <li role="presetion" class="divider"></li>
+                        <li role="presentation" id="srate-highlight"> 
+                            <span><a r="menuitem"  href="#" ng-if="client == true">Volunteer</a></span>
                             <span><a role="menuitem"  href="#" ng-if="organization == true">Organization</a></span>
-                            <span><a role="menuitem"  href="../login/login.html">Logout</a></span>
+                            <span><a role="menuitem"  href="../../login/login.html">Logout</a></span>
 
-                        </li>
-                    </ul>
+                     </li                   </ul>
                 </li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
@@ -219,12 +218,11 @@
 	</div>
 
 	<!-- Scripts -->
-	<script src="../lib/jquery/dist/jquery.min.js"></script>
-	<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>	
-	<script src="../lib/angular/angular.min.js"></script>
+	<script src="../../lib/jquery/dist/jquery.min.js"></script>
+	<script src="../../lib/bootstrap/dist/js/bootstrap.min.js"></script>	
+	<script src="../../lib/angular/angular.min.js"></script>
     
-    <script src="../js/app.js"></script>
-	<script src="confirmationController.js"></script>	
-
-</body>
+    <script src="../../js/app.js"></script>
+	<script src="cirmanContler.j</script>	
+body>
 </html>
