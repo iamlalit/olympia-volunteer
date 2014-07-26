@@ -143,7 +143,7 @@ Date: 6/12/2014
                     <div class="applicants" ng-repeat="applicant in Applicants">
                         <div class="row">
                             <div class="col-sm-2">
-                                <i class="glyphicon glyphicon-user font-size-6 " style="padding-left:13px"></i>
+                                <i class="glyphicon glyphicon-user font-size-4 " style="padding-left:28px"></i>
                             </div>
                             <div class="col-sm-3">
                                 <div style="padding-top:5px; marging-top:5px;"></div>
@@ -151,20 +151,22 @@ Date: 6/12/2014
                                 <div style="padding-top:5px;marging-top:5px;"></div>
                                 <span ng-bind="applicant.city" class="city-detail"></span>
                             </div>
-                            <div class="col-sm-4 pull-right">
+                            <div class="col-sm-5 pull-right">
                                 <span>
                                     <a ng-click="moveApplicant(applicant, Applicants, hiddenApplicants)" id="removeIconHover" data-toggle="modal" data-target="#hiddenBig" ng-mouseenter="makeItRed='circle-red'; makeItWhite='icon-attr-white'" ng-mouseleave="makeItRed=''; makeItWhite='';" title="click to hide the applicant">
-                                        <div class="circle pull-right" ng-class="makeItRed">
-                                            <i class="icon-remove font-size-1-5 icon-attr" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
+                                        <div class="circle1 pull-right" ng-class="makeItRed">
+                                            <i class="icon-remove font-size-18 icon-attr1" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
                                         </div>
                                     </a>
                                 </span>
-                                <button type="button" class="btn btn-success pull-right" ng-model="shortlisted" ng-click="moveApplicant(applicant, Applicants, shortlistedApplicants)" title="click to shortlist the applicant"><i class="icon-ok"> </i>Shortlist</button>
-                                <p>&nbsp;</p>
-                                <p>&nbsp;</p>
-                                <i class="icon-exclamation-sign font-size-1-5" style="color:#b25a01;padding-right:7px;" ng-show="applicant.statusColor == 'red'" hover-popover title="diploma/certificate/skills" ></i>
-                                <i class="icon-exclamation-sign font-size-1-5" style="color:#009e0f;padding-right:7px;" ng-show="applicant.statusColor == 'green'" hover-popover1 title="diploma/certificate/skills"></i> 
-                                <span style="vertical-align:top">{{applicant.status}}</span>
+                                <button type="button" class="btn btn-success pull-right small-btn" ng-model="shortlisted" ng-click="moveApplicant(applicant, Applicants, shortlistedApplicants)" title="click to shortlist the applicant"><i class="icon-ok"> </i>Shortlist</button>
+                                <br />
+                                <br />
+                                <span style="vertical-align:top" class="pull-right">
+                                    <i class="icon-exclamation-sign font-size-1-5" style="color:#b25a01;padding-right:7px;" ng-show="applicant.statusColor == 'red'" hover-popover title="diploma/certificate/skills" ></i>
+                                    <i class="icon-exclamation-sign font-size-1-5" style="color:#009e0f;padding-right:7px;" ng-show="applicant.statusColor == 'green'" hover-popover1 title="diploma/certificate/skills"></i>
+                                    {{applicant.status}}
+                                </span>
                             </div>
                         </div>
                         <div class="row" >
@@ -201,7 +203,7 @@ Date: 6/12/2014
                     <div class="applicants" ng-repeat="applicant in hiddenApplicants">
                         <div class="row">
                             <div class="col-sm-2">
-                                <i class="glyphicon glyphicon-user font-size-6 " style="padding-left:13px"></i>
+                                <i class="glyphicon glyphicon-user font-size-4 " style="padding-left:28px"></i>
                             </div>
                             <div class="col-sm-3">
                                 <div style="padding-top:5px; marging-top:5px;"></div>
@@ -209,19 +211,19 @@ Date: 6/12/2014
                                 <div style="padding-top:5px;marging-top:5px;"></div>
                                 <span ng-bind="applicant.city" class="city-detail"></span>
                             </div>
-                            <div class="col-sm-4 pull-right">
+                            <div class="col-sm-5 pull-right">
                                 <span>
                                     <a ng-click="moveApplicant(applicant, hiddenApplicants, Applicants)" title="click to unhide the applicant" ng-mouseenter="makeItRed='circle-red'; makeItWhite='icon-attr-white'" ng-mouseleave="makeItRed=''; makeItWhite='';" title="click to hide the applicant">
-                                        <div class="circle pull-right" ng-class="makeItRed">
-                                            <i class="icon-remove font-size-1-5 icon-attr" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
+                                        <div class="circle1 pull-right" ng-class="makeItRed">
+                                            <i class="icon-remove font-size-18 icon-attr1" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
                                         </div>
                                     </a>
                                 </span>
-                                <p>&nbsp;</p>
-                                <p>&nbsp;</p>
-                                <i class="icon-exclamation-sign font-size-1-5" style="color:#b25a01;padding-right:7px;" ng-show="applicant.statusColor == 'red'" hover-popover title="diploma/certificate/skills" ></i>
-                                <i class="icon-exclamation-sign font-size-1-5" style="color:#009e0f;padding-right:7px;" ng-show="applicant.statusColor == 'green'" hover-popover1 title="diploma/certificate/skills"></i> 
-                                <span style="vertical-align:top">{{applicant.status}}</span>
+                                <br />
+                                <br />
+                                
+                                <span style="vertical-align:top" class="pull-right"><i class="icon-exclamation-sign font-size-1-5" style="color:#b25a01;padding-right:7px;" ng-show="applicant.statusColor == 'red'" hover-popover title="diploma/certificate/skills" ></i>
+                                <i class="icon-exclamation-sign font-size-1-5" style="color:#009e0f;padding-right:7px;" ng-show="applicant.statusColor == 'green'" hover-popover1 title="diploma/certificate/skills"></i> {{applicant.status}}</span>
                             </div>
                         </div>
                         <div class="row" >
@@ -263,7 +265,7 @@ Date: 6/12/2014
                         </div>
                         <div class="row">
                             <div class="col-sm-2">
-                                <i class="glyphicon glyphicon-user font-size-6 " style="padding-left:13px"></i>
+                                <i class="glyphicon glyphicon-user font-size-4 " style="padding-left:28px"></i>
                             </div>
                             <div class="col-sm-3">
                                 <div style="padding-top:5px; marging-top:5px;"></div>
@@ -271,24 +273,24 @@ Date: 6/12/2014
                                 <div style="padding-top:5px;marging-top:5px;"></div>
                                 <span ng-bind="applicant.city" class="city-detail"></span>
                             </div>
-                            <div class="col-sm-4 pull-right">
+                            <div class="col-sm-5 pull-right">
                                 <span>
                                     <a ng-click="moveApplicant(applicant, shortlistedApplicants, hiddenApplicants)"  id="removeIconHover" data-toggle="modal" data-target="#hiddenBig" ng-mouseenter="makeItRed='circle-red'; makeItWhite='icon-attr-white'" ng-mouseleave="makeItRed=''; makeItWhite='';" title="click to hide the applicant">
-                                        <div class="circle pull-right" ng-class="makeItRed">
-                                            <i class="icon-remove font-size-1-5 icon-attr" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
+                                        <div class="circle1 pull-right" ng-class="makeItRed">
+                                            <i class="icon-remove font-size-18 icon-attr1" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
                                         </div>
                                     </a>
                                     <a>
-                                        <div class="circle pull-right" style="background-color:#009e0f;cursor:default">
-                                            <i class="icon-ok font-size-1-5 icon-attr" style="color:white;display:-webkit-inline-box!important;" title="shortlisted applicant"> </i>
+                                        <div class="circle1 pull-right" style="background-color:#009e0f;cursor:default">
+                                            <i class="icon-ok font-size-18 icon-attr1" style="color:white;display:-webkit-inline-box!important;" title="shortlisted applicant"> </i>
                                         </div>
                                     </a>
                                 </span>
-                                <p>&nbsp;</p>
-                                <p>&nbsp;</p>
-                                <i class="icon-exclamation-sign font-size-1-5" style="color:#b25a01;padding-right:7px;" ng-show="applicant.statusColor == 'red'" hover-popover title="diploma/certificate/skills" ></i>
-                                <i class="icon-exclamation-sign font-size-1-5" style="color:#009e0f;padding-right:7px;" ng-show="applicant.statusColor == 'green'" hover-popover1 title="diploma/certificate/skills"></i> 
-                                <span style="vertical-align:top">{{applicant.status}}</span>
+                                <br />
+                                <br />
+                                 
+                                <span style="vertical-align:top" class="pull-right"><i class="icon-exclamation-sign font-size-1-5" style="color:#b25a01;padding-right:7px;" ng-show="applicant.statusColor == 'red'" hover-popover title="diploma/certificate/skills" ></i>
+                                <i class="icon-exclamation-sign font-size-1-5" style="color:#009e0f;padding-right:7px;" ng-show="applicant.statusColor == 'green'" hover-popover1 title="diploma/certificate/skills"></i>{{applicant.status}}</span>
                             </div>
                         </div>
                         <div class="row" >
@@ -328,7 +330,7 @@ Date: 6/12/2014
                     <div class="applicants" ng-repeat="applicant in messagedApplicants">
                         <div class="row">
                             <div class="col-sm-2">
-                                <i class="glyphicon glyphicon-user font-size-6 " style="padding-left:13px"></i>
+                                <i class="glyphicon glyphicon-user font-size-4 " style="padding-left:28px"></i>
                             </div>
                             <div class="col-sm-3">
                                 <div style="padding-top:5px; marging-top:5px;"></div>
@@ -336,19 +338,19 @@ Date: 6/12/2014
                                 <div style="padding-top:5px;marging-top:5px;"></div>
                                 <span ng-bind="applicant.city" class="city-detail"></span>
                             </div>
-                            <div class="col-sm-4 pull-right">
+                            <div class="col-sm-5 pull-right">
                                 <span>
                                     <a ng-click="moveApplicant(applicant, messagedApplicants, hiddenApplicants)" id="removeIconHover" data-toggle="modal" data-target="#hiddenBig" ng-mouseenter="makeItRed='circle-red'; makeItWhite='icon-attr-white'" ng-mouseleave="makeItRed=''; makeItWhite='';" title="click to hide the applicant">
-                                        <div class="circle pull-right" ng-class="makeItRed">
-                                            <i class="icon-remove font-size-1-5 icon-attr" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
+                                        <div class="circle1 pull-right" ng-class="makeItRed">
+                                            <i class="icon-remove font-size-18 icon-attr1" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
                                         </div>
                                     </a>
                                 </span>
-                                <p>&nbsp;</p>
-                                <p>&nbsp;</p>
-                                <i class="icon-exclamation-sign font-size-1-5" style="color:#b25a01;padding-right:7px;" ng-show="applicant.statusColor == 'red'" hover-popover title="diploma/certificate/skills" ></i>
-                                <i class="icon-exclamation-sign font-size-1-5" style="color:#009e0f;padding-right:7px;" ng-show="applicant.statusColor == 'green'" hover-popover1 title="diploma/certificate/skills"></i> 
-                                <span style="vertical-align:top">{{applicant.status}}</span>
+                                <br />
+                                <br />
+                                
+                                <span style="vertical-align:top" class="pull-right"><i class="icon-exclamation-sign font-size-1-5" style="color:#b25a01;padding-right:7px;" ng-show="applicant.statusColor == 'red'" hover-popover title="diploma/certificate/skills" ></i>
+                                <i class="icon-exclamation-sign font-size-1-5" style="color:#009e0f;padding-right:7px;" ng-show="applicant.statusColor == 'green'" hover-popover1 title="diploma/certificate/skills"></i> {{applicant.status}}</span>
                             </div>
                         </div>
                         <div class="row" >
@@ -386,7 +388,7 @@ Date: 6/12/2014
                     <div class="applicants" ng-repeat="applicant in hiredApplicants">
                         <div class="row">
                             <div class="col-sm-2">
-                                <i class="glyphicon glyphicon-user font-size-6 " style="padding-left:13px"></i>
+                                <i class="glyphicon glyphicon-user font-size-4 " style="padding-left:28px"></i>
                             </div>
                             <div class="col-sm-3">
                                 <div style="padding-top:5px; marging-top:5px;"></div>
@@ -394,12 +396,12 @@ Date: 6/12/2014
                                 <div style="padding-top:5px;marging-top:5px;"></div>
                                 <span ng-bind="applicant.city" class="city-detail"></span>
                             </div>
-                            <div class="col-sm-4 pull-right">
-                                <p>&nbsp;</p>
-                                <p>&nbsp;</p>
-                                <i class="icon-exclamation-sign font-size-1-5" style="color:#b25a01;padding-right:7px;" ng-show="applicant.statusColor == 'red'" hover-popover title="diploma/certificate/skills" ></i>
-                                <i class="icon-exclamation-sign font-size-1-5" style="color:#009e0f;padding-right:7px;" ng-show="applicant.statusColor == 'green'" hover-popover1 title="diploma/certificate/skills"></i> 
-                                <span style="vertical-align:top">{{applicant.status}}</span>
+                            <div class="col-sm-5 pull-right">
+                                <br />
+                                <br />
+                                
+                                <span style="vertical-align:top" class="pull-right"><i class="icon-exclamation-sign font-size-1-5" style="color:#b25a01;padding-right:7px;" ng-show="applicant.statusColor == 'red'" hover-popover title="diploma/certificate/skills" ></i>
+                                <i class="icon-exclamation-sign font-size-1-5" style="color:#009e0f;padding-right:7px;" ng-show="applicant.statusColor == 'green'" hover-popover1 title="diploma/certificate/skills"></i> {{applicant.status}}</span>
                             </div>
                         </div>
                         <div class="row" >
