@@ -72,12 +72,6 @@ border-radius:10px;
 .star-yellow{
 	color: #FDD017 !important;
 }
-.align-center{
-	text-align: center;
-}
-.align-right{
-	text-align:right;
-}
 /*pagination*/
 .pagination {
 display: inline-block;

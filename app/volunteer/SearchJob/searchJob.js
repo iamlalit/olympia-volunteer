@@ -250,6 +250,9 @@ app.controller('searchJob', ['$scope', function ($scope) {
             $scope.modalJob= object;
        }
 
+       $scope.CreateObject = function( job ) {
+            window.location.href = "../jobDetails/jobDetails.html?jobName=" + job.Name +"&jobDate=" + job.about;
+       }
 
 
     //search job logic ends

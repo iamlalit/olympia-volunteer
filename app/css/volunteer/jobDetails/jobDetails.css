@@ -1,108 +1,58 @@
-﻿/*Css updated*/
-.border-heading{
-    display:block;
-    font-size:16px;
-    font-weight:bold;
-    border-radius:5px;
-    margin-top:15px;
-    margin-bottom:10px;
+﻿.container{
+    width:1048px;
 }
-.fileinput{
-    float:left;
-    margin-top:10px;
+.apply-button{
+    width: 324px;
 }
-.fileinput .upload-button-wrap{
-    margin-top:10px;
-    float:left;
-    text-align:center;
-    width:100%;
+.plus-n-minus{
+    position: relative;
+    border: 2px solid #00aecc;
+    width: 18px;
+    height:18px;
+    color: #00aeec;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin:10px 0;
+    vertical-align: sub;
 }
-.fileinput .thumbnail{
-    margin-bottom:10px;
-    display:table-cell;
-    vertical-align:middle;
-    width:150px;
-    height:200px;
-    background:rgba(0,174,236, 0.8);
-    border:1px solid rgba(0,174,236, 0.8);
+.application-icon{
+    position: relative;
+    font-size: 11px;
+    bottom: 4px;
+    left: 3px;
 }
 
-.fileinput .icon-upload{
-    font-size:20px;
-    vertical-align:middle;
-    margin-right:5px;
+.pill{
+    border-radius: 20px;
+    padding: 5px 5px 5px 30px;
+    background-color: #eeeeee;
 }
-.fileinput .upload-text{
-    font-size:15px;
+.plus-n-minus-fha{
+    color: #ffffff;
+    background-color: #00aecc;
 }
-.fileinput .btn-file:hover{
-    border-bottom:1px solid #333;
-    padding-bottom:5px;
-    cursor:pointer;
+.create-hr{border: 1.5px solid #eee; 
+    margin-top: 10px; 
+    margin-bottom:10px
 }
-
-.basic-info{
-    float:left;
-    margin-top:5px;
-    width:40%;
-    padding-left:15px;
+.small-label label{
+    font-weight: 500;
 }
-.basic-info .user-photo{
-    font-size:150px;
-    border:3px solid #d2d2d2;
-    padding:15px 20px;
-    display:block;
-    float:left;
-    border-radius:5px;
-    background:#eee;
+.main-border1.padding-15{
+    padding-bottom:30px;
+    padding-top:15px;
 }
-.basic-info a:hover{
-    color:#0093f0;
-}
-.basic-info .name{
-    font-size:30px;
-    display:block;
-}
-.basic-info .place{
-    font-size:20px;
-    display:block;
-}
-/* About me*/
-.about-me{
-    margin-top:10px;
-}
- .about-me .description {
-    color:#989898;
-    font-size:14px;
-}
-.about-me .number{
-    text-align:right;
-    margin-bottom:0;
-}
-
-/**/
-.col-lg-11 label{
-    width:100%;
-}
-
-/* Hidden ul list*/
-.list-view{
-    list-style:none;
-}
-.list-view li{
-    margin-bottom:10px;
-}
-.list-view li label{
-    width:auto;
-}
-
-/*Preferred Time*/
-div.time-label label{
-    width:100%;
-    float:none;
-    margin-bottom:5px;
-    width:auto;
-}
-#form-component-arrangement-label{
-    float:none;
+.small-pill {
+  display: inline-block;
+  margin: 0;
+  background-color: #eeeeee;
+  text-transform: capitalize;
+  border-radius: 6px;
+  padding:  4px;
+  font-size: 12px;
+  outline: 0;  
+  border: 0;
+  margin-right: 3px;
+  margin-top: 3px;
 }
