@@ -56,7 +56,9 @@
   margin-right: 3px;
   margin-top: 3px;
 }
-
+.small-pill.border-black{
+  border: 3px dashed #111; 
+}
 .custom-file-upload-hidden {
     display: none;
     visibility: hidden;
