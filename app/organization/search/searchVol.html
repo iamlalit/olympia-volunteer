@@ -100,7 +100,7 @@
                         <div class="box-content">
                             <div class="checkbox" ng-repeat="category in categories">
                                 <label>
-                                  <input type="checkbox" value="{{category}}"> {{category }}
+                                  <input type="checkbox" value="{{category}}"> {{category }} ({{$index + $index%4}})
                                 </label>
                             </div>
                         </div>
@@ -112,7 +112,7 @@
                         <div class="box-content">
                             <div class="checkbox" ng-repeat="skill in skills">
                                 <label>
-                                  <input type="checkbox" value="{{skill}}"> {{skill}}
+                                  <input type="checkbox" value="{{skill}}"> {{skill}} ({{($index + $index)%8}})
                                 </label>
                             </div>
                         </div>
@@ -125,7 +125,7 @@
                         <div class="box-content">
                             <div class="checkbox" ng-repeat="diploma in diplomas">
                                 <label>
-                                  <input type="checkbox" value="{{diploma}}"> {{diploma}}
+                                  <input type="checkbox" value="{{diploma}}"> {{diploma}} ({{($index * $index + 1)%9}})
                                 </label>
                             </div>
                         </div>
@@ -138,7 +138,7 @@
                         <div class="box-content">
                             <div class="checkbox" ng-repeat="time in timePreference">
                                 <label>
-                                    <input type="checkbox" value="{{time}}"> {{ time }}
+                                    <input type="checkbox" value="{{time}}"> {{ time }} ({{($index * $index + 5)%9}})
                                 </label>
                             </div>
                         </div>
@@ -150,7 +150,7 @@
                         <div class="box-content">
                             <div class="checkbox" ng-repeat="language in languages">
                                 <label>
-                                    <input type="checkbox" value="{{language}}"> {{ language }}
+                                    <input type="checkbox" value="{{language}}"> {{ language }} ({{($index * $index + 2)%7}})
                                 </label>
                             </div>
                         </div>
