@@ -65,7 +65,7 @@ app.controller('searchJob', ['$scope', function ($scope) {
             bodyText: 'United African Organization is a dynamic coalotion of African community-based organizations that promotes social and economic justice, civic participation, and empowerment of African immigrants and refugees in Illinois',
             about: 'About 6 hours ago',
             invited: false,
-            selected: false,      
+            selected: true,      
             value: false
     }); 
     $scope.Jobs.push({Name:"Photographer",

@@ -71,7 +71,7 @@
 	margin-top:20px; 
 }
 .margin-top-30{
-	margin-top:10px; 
+	margin-top:30px; 
 }
 .margin-top--3{
 	margin-top: -3px;
@@ -271,6 +271,7 @@ hr {
 	border-radius: 3px;
 	outline: 0;
 	font-family: inherit;
+	vertical-align: top;
 }
 .text-area:hover,
 .text-area:focus {
@@ -309,4 +310,24 @@ ul{
 }
 .inline-block{
 	display: inline-block;
+}
+
+.small-pill {
+  display: inline-block;
+  margin: 0;
+  background-color: #eeeeee;
+  text-transform: capitalize;
+  border-radius: 6px;
+  padding:  4px;
+  font-size: 12px;
+  outline: 0;  
+  border: 0;
+  margin-right: 3px;
+  margin-top: 3px;
+}
+.background-green{
+	background-color: #009e0f;
+}
+.color-ffffff{
+	color: #ffffff;
 }

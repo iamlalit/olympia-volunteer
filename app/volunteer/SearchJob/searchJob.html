@@ -190,11 +190,8 @@
                             <div class="col-sm-8">
                                 <a style="color:#00AEEC" href="" ng-click="CreateObject(Job)"><label ng-bind="Job.Name"></label></a><br />
                             </div>
-                            <div class="col-sm-4 pull-right">
-                                <span>
-                                    <button type="button" class="btn btn-success pull-right small-btn" ng-model="shortlisted" data-toggle="modal" data-target="#contactJobModal" ng-click="openModal(job)" title="click to apply the Job">Apply</button>
-                                </span>
-                            
+                            <div class="col-sm-4">
+                                <span ng-if="Job.selected" class="small-pill pull-right background-green color-ffffff"><i class="icon-ok"></i> Applied</span>
                             </div>
                         </div>
                         <div class="row padding-left-15">
