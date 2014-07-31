@@ -1,5 +1,5 @@
 ﻿
-;(function($) {
+(function($) {
 
       // Browser supports HTML5 multiple file?
       var multipleSupport = typeof $('<input/>')[0].multiple !== 'undefined',

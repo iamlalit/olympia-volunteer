@@ -79,6 +79,16 @@
 
         <div class="row margin-rl-0">
             <div class="col-sm-8 padding-rl-0">
+                <div class="alert alert-danger col-sm-12" id="errorMsg">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h2 class="text-center margin-top-0">Please fix the following issues</h2>
+                    <ul id="errorList"></ul>
+                </div>
+            </div>
+            <div class="col-sm-4 padding-rl-0"></div>
+        </div>
+        <div class="row margin-rl-0" id="greenMessage">
+            <div class="col-sm-8 padding-rl-0">
                 <div class="row margin-rl-0 margin-bottom-15 align-center">
                     <span class="font-size-18 small-pill border-black background-green color-ffffff">You are only 1 step away from successfully completing your job application</span>
                 </div>
@@ -120,23 +130,35 @@
                     </ul>
                 </div>
                 <div class="main-border1">
-                    <h4 class="bold inline-block">Cover Letter</h4>
-                    <span id="optional-text" class="italic"> &nbsp;&nbsp;Write few lines to motivate your application</span>
-                    <textarea class="text-area" cols="102" rows="10" maxlength="5000"></textarea>
-                    <p class="pull-right" id="optional-text">5000 characters left</p>
-                    <div class="margin-top-20">
-                        <label >Attachment </label><span id='optional-text'> (optional)</span>
-                        <div class="custom-file-upload">
-                            <input type="file" id="file" name="myfiles[]" multiple />
+                    <form id="jobApplyForm" role="form">
+                        <div>
+                            <label class="bold inline-block">Cover Letter</label>
+                            <span id="optional-text" class="italic"> &nbsp;&nbsp;Write few lines to motivate your application</span>
+                            <textarea class="text-area" cols="102" rows="10" maxlength="5000" id="question1"></textarea>
+                            <p class="pull-right" id="optional-text">5000 characters left</p>
                         </div>
-                    </div>
-                    <div class="margin-top-0">
-                        <p class="italic small">File size should be less than 5MB. Include work samplesor other documents to support your application.</p>
-                    </div>
-                    <div class="margin-top-30 align-center">
-                        <button class="btn btn-success" type="button">Apply to this Job</button>
-                        <button class="btn btn-danger" type="button">Cancel</button>
-                    </div>
+                        <div class="margin-top-10">
+                            <label class="bold inline-block">Why do you think you are a good fit for this particular project?</label>
+                            <textarea class="text-area" cols="102" rows="10" maxlength="5000" id="question2"></textarea>
+                        </div>
+                        <div class="margin-top-10">
+                            <label class="bold inline-block">What challenging part of this job are you most experienced in?</label>
+                            <textarea class="text-area" cols="102" rows="10" maxlength="5000" id="question3"></textarea>
+                        </div>
+                        <div class="margin-top-20">
+                            <label >Attachment </label><span id='optional-text'> (optional)</span><br/>
+                            <div class="custom-file-upload">
+                                <input type="file" id="file" name="myfiles[]" multiple />
+                            </div>
+                        </div>
+                        <div class="margin-top-0">
+                            <p class="italic small">File size should be less than 5MB. Include work samplesor other documents to support your application.</p>
+                        </div>
+                        <div class="margin-top-30 align-center">
+                            <button class="btn btn-success" type="submit">Apply to this Job</button>
+                            <button class="btn btn-danger" type="button">Cancel</button>
+                        </div>
+                    </form>
                 </div>
 
             </div>
@@ -294,6 +316,7 @@
     <script src="../../lib/angular/angular.min.js"></script>
     <script src="../../lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="controller.js"></script>
-    <script src="inputFile.js"></script>    
+    <script src="inputFile.js"></script>
+    <script src="validation.js"></script>    
 </body>
 </html>
