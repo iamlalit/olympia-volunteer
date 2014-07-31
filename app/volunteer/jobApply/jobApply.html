@@ -15,10 +15,10 @@
     <link href="../../css/global.css" rel="stylesheet">
 </head>
 
-<body ng-controller="jobDetails">
+<body ng-controller="jobDetails" ng-cloak>
     <!-- Page Header Section Start-->
     <header>
-        <div class="navbar navbar-default" role="navigation">
+        <div class="navbar navbar-default" role="navigation" ng-cloak>
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -41,7 +41,7 @@
                         <li><a href="#" class='menu-interval'>Messages</a></li>
                     </ul>
                     <!-- Volunteer Menu end here-->
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right" ng-cloak>
                         <li class='pull-right'><a href="#" id="icons-header-right"><span class="glyphicon glyphicon-question-sign"></a></li>
                         <li class='dropdown pull-right'>
                             <a href="#" class="dropdown-toggle" id="icons-header-right" data-toggle="dropdown"><i class='glyphicon glyphicon-cog'></i></a>
@@ -54,15 +54,15 @@
                             </ul>
                         </li>
                         <li class='pull-right'><a href="#" id="icons-header-right"><span class="glyphicon glyphicon-exclamation-sign"></a></li>
-                        <li class="dropdown pull-right" style="margin-top:5px;" id="username" ng-init="client = true; organization = false">
+                        <li class="dropdown pull-right" style="margin-top:5px;" id="username" ng-init="client = true; organization = false" ng-cloak>
                             <a href="#" class="dropdown-toggle"  id="hover-header-right" data-toggle="dropdown"  ng-if="organization == true">Organization &nbsp;<b class="caret blue"></b></a>
                             <a href="#" class="dropdown-toggle"  id="hover-header-right" data-toggle="dropdown" ng-if="client == true">Volunteer &nbsp;<b class="caret blue"></b></a>
                             <ul class="dropdown-menu header-right-dropdown" ng-init=" addActive2 = 'make-it-white'">
-                                <li role="presentation" ><a role="menuitem" ng-model="organization" ng-click="organization = true; client = false; addActive2 = 'make-it-white';addActive1=''" href="#" id="tab-header-1" ng-class="addActive2"><img src="../../img/client-icon.png">&nbsp;&nbsp;&nbsp;Organization</a></li>
+                                <li role="presentation" ng-cloak><a role="menuitem" ng-model="organization" ng-click="organization = true; client = false; addActive2 = 'make-it-white';addActive1=''" href="#" id="tab-header-1" ng-class="addActive2"><img src="../../img/client-icon.png">&nbsp;&nbsp;&nbsp;Organization</a></li>
+                                <li role="presentation" class="divider" ng-cloak></li>
+                                <li role="presentation" ng-cloak><a role="menuitem" ng-model="client" ng-click="organization = false; client = true; addActive1 = 'make-it-white';addActive2=''" href="#" ng-class="addActive1"><img src="../../img/user-icon.svg" height="25" width="25">&nbsp;&nbsp;&nbsp;Volunteer</a></li>
                                 <li role="presentation" class="divider"></li>
-                                <li role="presentation" ><a role="menuitem" ng-model="client" ng-click="organization = false; client = true; addActive1 = 'make-it-white';addActive2=''" href="#" ng-class="addActive1"><img src="../../img/user-icon.svg" height="25" width="25">&nbsp;&nbsp;&nbsp;Volunteer</a></li>
-                                <li role="presentation" class="divider"></li>
-                                <li role="presentation" id="separate-highlight"> 
+                                <li role="presentation" id="separate-highlight" ng-cloak> 
                                     <span><a role="menuitem"  href="#" ng-if="client == true">Volunteer</a></span>
                                     <span><a role="menuitem"  href="#" ng-if="organization == true">Organization</a></span>
                                     <span><a role="menuitem"  href="../../login/login.html">Logout</a></span>
@@ -75,21 +75,21 @@
             </div><!-- /.container-fluid -->
         </div>
     </header>
-    <div class="container">
+    <div class="container" ng-cloak>
 
-        <div class="row margin-rl-0">
+        <div class="row margin-rl-0" ng-cloak>
             <div class="col-sm-8 padding-rl-0">
-                <div class="alert alert-danger col-sm-12" id="errorMsg">
+                <div class="alert alert-danger col-sm-12" id="errorMsg" ng-cloak>
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <h2 class="text-center margin-top-0">Please fix the following issues</h2>
+                    <h2 class="text-center margin-top-0" ng-cloak>Please fix the following issues</h2>
                     <ul id="errorList"></ul>
                 </div>
             </div>
             <div class="col-sm-4 padding-rl-0"></div>
         </div>
-        <div class="row margin-rl-0" id="greenMessage">
-            <div class="col-sm-8 padding-rl-0">
-                <div class="row margin-rl-0 margin-bottom-15 align-center">
+        <div class="row margin-rl-0" id="greenMessage" ng-cloak>
+            <div class="col-sm-8 padding-rl-0" ng-cloak>
+                <div class="row margin-rl-0 margin-bottom-15 align-center" ng-cloak>
                     <span class="font-size-18 small-pill border-black background-green color-ffffff">You are only 1 step away from successfully completing your job application</span>
                 </div>
             </div>
