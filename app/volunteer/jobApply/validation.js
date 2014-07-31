@@ -146,6 +146,7 @@ $(document).ready(function () {
             }, 500);
         } else {
             $('#errorMsg').hide();
+            window.location.href = "../confirmation/confirmation.html";
         }
 
     });
