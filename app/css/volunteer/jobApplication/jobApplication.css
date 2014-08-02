@@ -344,8 +344,6 @@ th.table_content_head
       	font-size:5px;
       }
     }
-
-    
   }
 }
 .pagination{
@@ -493,7 +491,7 @@ min-height: -o-calc(100% - 150px);
 min-height: calc(100% - 150px);
 }
 
-#footer {
+footer {
 height:150px;
 margin: 0;
 clear: both;
