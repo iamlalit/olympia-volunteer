@@ -24,7 +24,7 @@
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle hidden" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -36,9 +36,9 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <!-- Volunteer Menu Start-->
-                    <ul class="nav navbar-nav" ng-if="volunteerMenu">
-                        <li><a href="#" class='menu-interval'>Search Job</a></li>
-                        <li><a href="#" class='menu-interval'>Job Applications</a></li>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#" class='menu-interval'>Search Job</a></li>
+                        <li><a href="../jobApplication/jobApplication.html" class='menu-interval'>Job Applications</a></li>
                         <li><a href="#" class='menu-interval'>Recommendations</a></li>
                         <li><a href="#" class='menu-interval'>Messages</a></li>
                     </ul>
@@ -56,15 +56,19 @@
                             </ul>
                         </li>
                         <li class='pull-right'><a href="#" id="icons-header-right"><span class="glyphicon glyphicon-exclamation-sign"></a></li>
-                        <li class="dropdown pull-right" style="margin-top:5px;" id="username">
-                            <a href="#" class="dropdown-toggle" id="hover-header-right" data-toggle="dropdown">Volunteer &nbsp;<b class="caret blue"></b></a>
-                            <ul class="dropdown-menu header-right-dropdown">
-                                <li role="presentation"><a role="menuitem" ng-model="Client" href="#"><img src="../../img/client-icon.png">&nbsp;&nbsp;&nbsp;Organisation</a></li>
+                        <li class="dropdown pull-right" style="margin-top:5px;" id="username" ng-init="client = true; organization = false">
+                            <a href="#" class="dropdown-toggle"  id="hover-header-right" data-toggle="dropdown"  ng-if="organization == true">Organization &nbsp;<b class="caret blue"></b></a>
+                            <a href="#" class="dropdown-toggle"  id="hover-header-right" data-toggle="dropdown" ng-if="client == true">Volunteer &nbsp;<b class="caret blue"></b></a>
+                            <ul class="dropdown-menu header-right-dropdown" ng-init=" addActive2 = 'make-it-white'">
+                                <li role="presentation" ><a role="menuitem" ng-model="organization" ng-click="organization = true; client = false; addActive2 = 'make-it-white';addActive1=''" href="#" id="tab-header-1" ng-class="addActive2"><img src="../../img/client-icon.png">&nbsp;&nbsp;&nbsp;Organization</a></li>
                                 <li role="presentation" class="divider"></li>
-                                <li role="presentation"><a role="menuitem" ng-model="Client" href="#"><img src="../../img/user-icon.svg" height="25" width="25">&nbsp;&nbsp;&nbsp;Volunteer</a></li>
+                                <li role="presentation" ><a role="menuitem" ng-model="client" ng-click="organization = false; client = true; addActive1 = 'make-it-white';addActive2=''" href="#" ng-class="addActive1"><img src="../../img/user-icon.svg" height="25" width="25">&nbsp;&nbsp;&nbsp;Volunteer</a></li>
                                 <li role="presentation" class="divider"></li>
-                                <li role="presentation" id="separate-highlight" disabled>
-                                    <a role="menuitem" style="text-align:right;">Logout</a>
+                                <li role="presentation" id="separate-highlight"> 
+                                    <span><a role="menuitem"  href="#" ng-if="client == true">Volunteer</a></span>
+                                    <span><a role="menuitem"  href="#" ng-if="organization == true">Organization</a></span>
+                                    <span><a role="menuitem"  href="../../login/login.html">Logout</a></span>
+
                                 </li>
                             </ul>
                         </li>
@@ -74,7 +78,7 @@
         </div>
     </header>
     <!-- Page Header Section End-->
-    <div class="container" ng-if="volunteerMenu">
+    <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <h2 class="profile-heading">Create your Profile</h2>
@@ -573,8 +577,10 @@
                                             </label>
                                         </div>
                                     </div>
+
                                 </li>
-                                <!-- <li style="list-style-type:none" id="dow-popover"> -->
+                                <!--
+                                 <li style="list-style-type:none" id="dow-popover"> -->
                                 <li style="list-style-type:none">
                                     <label id='form-component-arrangement-label'>Days of Week</label>
                                     <span id="optional-text">(optional) </span>
@@ -875,7 +881,6 @@
                                             <div id='extra-space-label'>
                                             </div>
                                         </div>
-
                                         <label>Zipcode</label>
                                         <input type='text' class='form-control' id='form-control-weight' for='inserting address' id='form-text-control' placeholder='Zipcode'>
                                         <div class='row'>
@@ -1037,502 +1042,9 @@
             </div>
         </div>
     </footer>
-    <!-- Some modals -->
-    <!-- Category of work start-->
-    <div class="modal fade" id="categoryWork" tabindex="-1" role="dialog" aria-labelledby="#categoryWorkLabel" aria-hidden="true">
-        <div class="modal-dialog modal-md">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h2 class="modal-title" id="categoryWorkLabel">Which categories best fit your skills</h2>
-                </div>
-                <form role="form">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <div class="col-lg-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill1" value="Answering Telephones"> Unskilled volunteering
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill2" value="Accounting"> Skills-based volunteering
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill3" value="Administration"> Volunteering in developing countries
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill4" value="Business Correspondence"> Virtual volunteering
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill5" value="Client Relations"> Micro-volunteering
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill6" value="Communication"> International work-camps
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill7" value="Crowd Control"> Environmental volunteering
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill8" value="Crime & Safety"> Volunteering in an emergency
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill9" value="Customer Service"> Volunteering in schools
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill10" value="Clerical"> Corporate volunteering
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill11" value="Document Management"> Community voluntary work
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6 text-left">
-                            </div>
-                            <div class="col-lg-6">
-                                <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-success pull-right" data-dismiss="modal" onclick="updateValueVolunteerWork()">OK <i class="glyphicon glyphicon-arrow-right"></i></button>
-                                <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-default btn-danger pull-right" data-dismiss="modal" aria-hidden="true">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- Category of work end here-->
-    <!-- Category of work start-->
-    <div class="modal fade" id="volunteerWork" tabindex="-1" role="dialog" aria-labelledby="#volunteerWorkLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h2 class="modal-title" id="volunteerWorkLabel">Which categories best fit your skills</h2>
-                </div>
-                <form role="form">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <div class="col-lg-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill1" value="Answering Telephones"> Unskilled volunteering
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill2" value="Accounting"> Skills-based volunteering
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill3" value="Administration"> Volunteering in developing countries
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill4" value="Business Correspondence"> Virtual volunteering
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill5" value="Client Relations"> Micro-volunteering
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill6" value="Communication"> International work-camps
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill7" value="Crowd Control"> Environmental volunteering
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill8" value="Crime & Safety"> Volunteering in an emergency
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill9" value="Customer Service"> Volunteering in schools
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill10" value="Clerical"> Corporate volunteering
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill11" value="Document Management"> Community voluntary work
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6 text-left">
-                            </div>
-                            <div class="col-lg-6">
-                                <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-success pull-right" data-dismiss="modal" onclick="updateValueVolunteerWork()">OK <i class="glyphicon glyphicon-arrow-right"></i></button>
-                                <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-default btn-danger pull-right" data-dismiss="modal" aria-hidden="true">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- Category of work end here-->
-    <!-- Skills Modal start-->
-    <div class="modal fade" id="skillBox" tabindex="-1" role="dialog" aria-labelledby="skillBox" aria-hidden="true">
-        <div class="modal-dialog modal-md">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h2 class="modal-title" id="skillBox">Choose skills</h2>
-                </div>
-                <form role="form">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <div class="col-sm-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skillNew1" value="Accounting"> Accounting
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skillNew2" value="Administration"> Administration
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skillNew3" value="Communication"> Communication
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skillNew4" value="Crowd Control"> Crowd Control
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skillNew5" value="Crime & Safety"> Crime & Safety
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skillNew6" value="Disaster Relief"> Disaster Relief
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skillNew7" value="Disaster Relief"> Cooking
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skillNew8" value="Disaster Relief"> Teamwork
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skillNew9" value="Disaster Relief"> Problem Solving
-                                    </label>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6 text-left">
-                            </div>
-                            <div class="col-sm-6">
-                                <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-success pull-right" data-dismiss="modal" onclick="updateValueSkillNewCheck()">OK <i class="glyphicon glyphicon-arrow-right"></i></button>
-                                <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-default btn-danger pull-right" data-dismiss="modal" aria-hidden="true">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Volunteer Work area-->
-    <div class="modal fade" id="volunteerWork" tabindex="-1" role="dialog" aria-labelledby="volunteerWorkLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h2 class="modal-title" id="volunteerWorkLabel">What is your Volunteer Work area?</h2>
-                </div>
-                <form role="form">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <div class="col-sm-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill1" value="Answering Telephones"> Answering Telephones
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill2" value="Accounting"> Accounting
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill3" value="Administration"> Administration
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill4" value="Business Correspondence"> Business Correspondence
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill5" value="Client Relations"> Client Relations
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill6" value="Communication"> Communication
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill7" value="Crowd Control"> Crowd Control
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill8" value="Crime & Safety"> Crime & Safety
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill9" value="Customer Service"> Customer Service
-                                    </label>
-                                </div>
-
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill10" value="Clerical"> Clerical
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill11" value="Document Management"> Document Management
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill12" value="Disaster Relief"> Disaster Relief
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill13" value="Document Management"> Document Management
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill14" value="Event Coordination"> Event Coordination
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill15" value="Employee Relations"> Employee Relations
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill16" value="Legal Familiarity"> Legal Familiarity
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill17" value="Meeting Planning"> Meeting Planning
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill18" value="Office Administration"> Office Administration
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill19" value="Organizational Skills"> Organizational Skills
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill20" value="Public Relations"> Public Relations
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill21" value="Public Speaking"> Public Speaking
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill22" value="People Management"> People Management
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill23" value="Receptionist"> Receptionist
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill24" value="Stenography"> Stenography
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill25" value="Travel Arrangements"> Travel Arrangements
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill26" value="Word Processing"> Word Processing
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="skill27" value="Written Communication"> Written Communication
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6 text-left">
-                            </div>
-                            <div class="col-sm-6">
-                                <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-success pull-right" data-dismiss="modal" onclick="updateValueVolunteerWork()">OK <i class="glyphicon glyphicon-arrow-right"></i></button>
-                                <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-default btn-danger pull-right" data-dismiss="modal" aria-hidden="true">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Diploma Modal -->
-    <div class="modal fade" id="diplomaBox" tabindex="-1" role="dialog" aria-labelledby="diplomaBox" aria-hidden="true">
-        <div class="modal-dialog modal-md">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h2 class="modal-title" id="myModalLabel">Choose Diplomas/Certificates </h2>
-                </div>
-                <form role="form">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <div class="col-sm-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="diploma1" value="First Aid Diploma"> First Aid Diploma
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="diploma2" value="Football Referee License"> Football Referee License
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="diploma3" value="Active Volunteering"> Active Volunteering
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="diploma4" value="Training and Assessmement"> Training and Assessmement
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="diploma5" value="Program Coordination"> Program Coordination
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="diploma6" value="Community Service Coordination"> Community Service Coordination
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="diploma7" value="Effective Communication"> Effective Communication
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="diploma8" value="Negotiation"> Negotiation
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="diploma9" value="Customer Service"> Customer Service
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="diploma10" value="Risk Management"> Risk Management
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6 text-left">
-                            </div>
-                            <div class="col-sm-6">
-                                <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-success pull-right" data-dismiss="modal" onclick="updateValueDiplomaCheck()">OK <i class="glyphicon glyphicon-arrow-right"></i></button>
-                                <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-default btn-danger pull-right" data-dismiss="modal" aria-hidden="true">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
+    
     <!-- Scripts -->
+    
     <script src="../../lib/jquery/dist/jquery.min.js"></script>
     <script src="../../lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../../lib/angular/angular.min.js"></script>
@@ -1546,6 +1058,7 @@
     <script src="../../js/app.js"></script>
     <script src="../../organization/postJob/controller.js"></script>
     <script src="control.js"></script>
+    <script src="controller.js"></script>
     <script src="../../organization/postJob/validation.js"></script>
     <script src="../../lib/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
 </body>
