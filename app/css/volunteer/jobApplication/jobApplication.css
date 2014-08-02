@@ -1,3 +1,6 @@
+html,body{
+    height: 100%
+}
 .container1{
     width:1140px;
     margin: 0 auto;
@@ -102,17 +105,17 @@ table>thead:first-child>tr:first-child>th:last-child div{
 
 table>thead:first-child>tr:first-child>th:nth-child(2) div{
   width:50px;
-  margin-left:55px;
+  margin-left:18px;
 }
 
 table>thead:first-child>tr:first-child>th:nth-child(3) div{
   width:59px;
-  margin-left:48px;
+  margin-left:41px;
 }
 
 table>thead:first-child>tr:first-child>th:nth-child(4) div{
   width:58px;
-  margin-left:35px;
+  margin-left:25px;
 }
 
 table.dataTable tbody tr
@@ -476,4 +479,24 @@ footer .footer-text:hover{
 }
 .width-236{
   width: 236px;
+}
+.container1{
+min-height: 100%;
+position:relative;
+/* Firefox */
+min-height: -moz-calc(100% - 150px);
+/* WebKit */
+min-height: -webkit-calc(100% - 150px);
+/* Opera */
+min-height: -o-calc(100% - 150px);
+/* Standard */
+min-height: calc(100% - 150px);
+}
+
+#footer {
+height:150px;
+margin: 0;
+clear: both;
+width:100%;
+position: relative;
 }

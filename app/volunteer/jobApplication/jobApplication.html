@@ -109,7 +109,7 @@ Date: 6/12/2014
                 </div>
             </div>
             <p style="margin:0px">&nbsp;</p>
-            <div class="row" style="margin-bottom:100px">
+            <div class="row">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-10" style="padding-left:0px;padding-right:0px">
                     <section class=" accrd_table">
@@ -118,14 +118,14 @@ Date: 6/12/2014
                             <td data-title="'Job'" sortable="'jobTitle'">
                                 <span><a href="#">{{user.jobTitle}}</a></span><br/>
                             </td>
-                            <td data-title="'Date'" sortable="'date'" class="text-center">
+                            <td data-title="'Date'" sortable="'date'" class="text-center" >
                                 <span>{{user.date}}</span>
                             </td>
-                            <td data-title="'Status'"  sortable="'status'" class="text-center">
-                                {{user.status}}
+                            <td data-title="'Status'"  sortable="'status'">
+                                <span class="padding-left-42">{{user.status}}</span>
                             </td>
-                            <td data-title="'Client'" sortable="'client'" class="text-center">
-                                <span>{{user.client}}</span>
+                            <td data-title="'Client'" sortable="'client'">
+                                <span class="padding-left-25">{{user.client}}</span>
                             </td>
                             <td data-title="'Reason'" sortable="'reason'" class="width-236" >
                                 <span class="padding-left-42">{{user.reason}}</span>
@@ -139,9 +139,6 @@ Date: 6/12/2014
             </div>
 
         </div>
-
-    <p>&nbsp;</p>
-
     <footer>
         <div class="container1">
             <div class="row">
