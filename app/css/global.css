@@ -335,3 +335,24 @@ ul{
 .font-size-6{
   font-size:6em;
 }
+
+.container1,
+.container{
+min-height: 100%;
+position:relative;
+/* Firefox */
+min-height: -moz-calc(100% - 120px);
+/* WebKit */
+min-height: -webkit-calc(100% - 120px);
+/* Opera */
+min-height: -o-calc(100% - 120px);
+/* Standard */
+min-height: calc(100% - 120px);
+}
+
+footer {
+height:120px;
+clear: both;
+width:100%;
+position: relative;
+}

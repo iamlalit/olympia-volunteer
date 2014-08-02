@@ -16,8 +16,20 @@ landingController.controller('landingPage', ['$scope', function ($scope) {
         {
             'imgLink': '../img/4createyourprofile2.png',
             'name': 'Darius Kasperitis',
-            'skill': 'Senior Ruby on Rails Developer'
+            'skill': 'Python Developer'
+        },
+        {
+            'imgLink': '../img/4createyourprofile2.png',
+            'name': 'Marleen Dijkstra',
+            'skill': 'Ruby on Rails Developer'
+        },
+        {
+            'imgLink': '../img/4createyourprofile1.png',
+            'name': 'Henk-jan Bosch',
+            'skill': 'Crowd Controller'
         }
+    
+
     ];
 
     var urlParams;
