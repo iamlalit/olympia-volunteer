@@ -141,6 +141,96 @@
                 </div> 
             </div>
         </div>
+        <div class="row">
+            <div class="col-sm-11">
+                <hr style="height:1px; background-color:#DDDDDD;">
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-sm-11">
+                <div class='col-sm-1  font-size-4 '>
+                    <span class="icon-cogs"></span>                  
+                </div>
+                <div class="col-sm-6">
+                    <label class="font-size-15">Volunteer Work Interests</label>
+                </div>
+                <div class='col-sm-11' >
+                    <span>
+                        Specify the Volunteer work interest, categories and concerned area.
+                    </span>
+
+                    <div class='row'>
+                        <div class='margin-top-10'>
+                        </div>
+                    </div>
+                    <button type="button"  class="btn btn-primary" id="time">Add Work Interests</button>
+                    <ul class="ishidden" id="group-skills">
+                    
+                        <li style="list-style-type:none" class="check-label">
+                            <div class="row">
+                                <label class="margin-left-28">Time Comittment</label>
+                                <a>
+                                    <i class="glyphicon glyphicon-question-sign blue" id="time-checkbox"></i>
+                                </a>
+                                <span id="optional-text">(optional) </span>
+                                
+                            </div>
+                            <!-- <label class="margin">Time Comittment</label> -->
+                            <div class="col-sm-6 ">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> <a>Occasional(weekly or monthly)</a>
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> <a>A lot(10+ hours/week)</a>
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> <a>Full time(30-40 hours/week)</a>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> <a>One time</a>
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" > <a>For few hours</a>
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> <a>Less than 1 hour </a>
+                                    </label>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="list-style-type:none">
+                            <label id='form-component-arrangement-label'>Days of Week</label>
+                            <span id="optional-text">(optional) </span>
+                            <div  id='form-component-arrangement-input' style="margin-bottom:-10px;">
+                                <input type="text" class='form-control' id='dow-tag' placeholder="Add days of week" />
+                            </div>
+                            <div class="col-sm-12">
+                                <span style="margin-left:-13px;"><a href="#" id="zoomTextarea"id="modal-dow" onclick="updateValueDowText()" title="Click to Zoom" data-toggle="modal" data-target="#dowBox">Add days of week requirements to your job posting</a>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-11">
+                <hr style="height:1px; background-color:#DDDDDD;">
+            </div>  
+        </div>
         <div class="row margin-top-10">
             <div class="col-sm-11">
                 <div class='col-sm-1  font-size-4 '>
@@ -188,6 +278,97 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-sm-11">
+                <hr style="height:1px; background-color:#DDDDDD;">
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-sm-11">
+                <div class='col-sm-1  font-size-4 '>
+                    <span class="glyphicon glyphicon-time"></span>                  
+                </div>
+                <div class="col-sm-6">
+                    <label class="font-size-15">Preferred Time commitments</label>
+                </div>
+                <div class='col-sm-11' >
+                    <span>
+                        Specify the time commitments, schedule and days of week you're looking for in a successful application. Volunteers may still apply if they do not meet your requirement preferences, but they will be clearly notified that they are at a disadvantage.
+                    </span>
+
+                    <div class='row'>
+                        <div class='margin-top-10'>
+                        </div>
+                    </div>
+                    <button type="button"  class="btn btn-primary" id="time">Add Time Comittments</button>
+                    <ul class="ishidden" id="group-skills">
+                    
+                        <li style="list-style-type:none" class="check-label">
+                            <div class="row">
+                                <label class="margin-left-28">Time Comittment</label>
+                                <a>
+                                    <i class="glyphicon glyphicon-question-sign blue" id="time-checkbox"></i>
+                                </a>
+                                <span id="optional-text">(optional) </span>
+                                
+                            </div>
+                            <!-- <label class="margin">Time Comittment</label> -->
+                            <div class="col-sm-6 ">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> <a>Occasional(weekly or monthly)</a>
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> <a>A lot(10+ hours/week)</a>
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> <a>Full time(30-40 hours/week)</a>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> <a>One time</a>
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" > <a>For few hours</a>
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> <a>Less than 1 hour </a>
+                                    </label>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="list-style-type:none">
+                            <label id='form-component-arrangement-label'>Days of Week</label>
+                            <span id="optional-text">(optional) </span>
+                            <div  id='form-component-arrangement-input' style="margin-bottom:-10px;">
+                                <input type="text" class='form-control' id='dow-tag' placeholder="Add days of week" />
+                            </div>
+                            <div class="col-sm-12">
+                                <span style="margin-left:-13px;"><a href="#" id="zoomTextarea"id="modal-dow" onclick="updateValueDowText()" title="Click to Zoom" data-toggle="modal" data-target="#dowBox">Add days of week requirements to your job posting</a>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-11">
+                <hr style="height:1px; background-color:#DDDDDD;">
+            </div>  
+        </div>
+
     </div>
 
     <footer>
@@ -260,6 +441,563 @@
         </div>
     </footer>
 
+
+
+    <!-- Skills Modal-->
+    <div class="modal fade" id="skillBox" tabindex="-1" role="dialog" aria-labelledby="skillBox" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h2 class="modal-title" id="myModalLabel">Choose skills</h2>
+                </div>
+                <form role="form">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="col-sm-4">
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill1" value="Answering Telephones"> Answering Telephones
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill2" value="Accounting"> Accounting
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill3" value="Administration"> Administration
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill4" value="Business Correspondence"> Business Correspondence
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill5" value="Client Relations"> Client Relations
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill6" value="Communication"> Communication
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill7" value="Crowd Control"> Crowd Control
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill8" value="Crime & Safety"> Crime & Safety
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill9" value="Customer Service"> Customer Service
+                                    </label>
+                                </div>
+                                
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill10" value="Clerical"> Clerical
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill11" value="Document Management"> Document Management
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill12" value="Disaster Relief"> Disaster Relief
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill13" value="Document Management"> Document Management
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill14" value="Event Coordination"> Event Coordination
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill15" value="Employee Relations"> Employee Relations
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill16" value="Legal Familiarity"> Legal Familiarity
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill17" value="Meeting Planning"> Meeting Planning
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill18" value="Office Administration"> Office Administration
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill19" value="Organizational Skills"> Organizational Skills
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill20" value="Public Relations"> Public Relations
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill21" value="Public Speaking"> Public Speaking
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill22" value="People Management"> People Management
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill23" value="Receptionist"> Receptionist
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill24" value="Stenography"> Stenography
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill25" value="Travel Arrangements"> Travel Arrangements
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill26" value="Word Processing"> Word Processing
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="skill27" value="Written Communication"> Written Communication
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 text-left">
+                            </div>
+                            <div class="col-sm-6">
+                                <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-success pull-right" data-dismiss="modal" onclick="updateValueSkillCheck()">OK <i class="glyphicon glyphicon-arrow-right"></i></button>
+                                <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-default btn-danger pull-right" data-dismiss="modal" aria-hidden="true" >Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Diploma Modal -->
+    <div class="modal fade" id="diplomaBox" tabindex="-1" role="dialog" aria-labelledby="diplomaBox" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h2 class="modal-title" id="myModalLabel">Choose Diplomas/Certificates </h2>
+                </div>
+                <form role="form">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="col-sm-6">
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="diploma1" value="First Aid Diploma"> First Aid Diploma
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="diploma2" value="Football Referee License"> Football Referee License
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="diploma3" value="Active Volunteering"> Active Volunteering
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="diploma4" value="Training and Assessmement"> Training and Assessmement
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="diploma5" value="Program Coordination"> Program Coordination
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="diploma6" value="Community Service Coordination"> Community Service Coordination
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="diploma7" value="Effective Communication"> Effective Communication
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="diploma8" value="Negotiation"> Negotiation
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="diploma9" value="Customer Service"> Customer Service
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="diploma10" value="Risk Management"> Risk Management
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 text-left">
+                            </div>
+                            <div class="col-sm-6">
+                                <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-success pull-right" data-dismiss="modal" onclick="updateValueDiplomaCheck()">OK <i class="glyphicon glyphicon-arrow-right"></i></button>
+                                <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-default btn-danger pull-right" data-dismiss="modal" aria-hidden="true" >Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- days of week -->
+    <div class="modal fade" id="dowBox" tabindex="-1" role="dialog" aria-labelledby="dowBox" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h2 class="modal-title" id="myModalLabel">Days of week</h2>
+                </div>
+                <form role="form">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-1">
+                                </div>
+                                <div class="col-sm-2">
+                                    <label>Full day</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label>Morning</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label>Afternoon</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label>Evening</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label>Late Night</label>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:5px;margin-bottom:5px;">
+                                <div class="col-sm-12 margin-left-5">
+                                    <hr style="height:1px; background-color:#DDDDDD;margin-top:5px;margin-bottom:5px;">
+                                </div>  
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1">
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow1" value="All Weekdays - Full day"> All Weekdays
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow2" value="Weekends - Full day"> Weekends
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow10" value="All Weekdays - Morning"> All Weekdays
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow11" value="Weekends - Morning"> Weekends
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow21" value="All Weekdays - Afternoon"> All Weekdays
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow22" value="Weekends - Afternoon"> Weekends
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow31" value="All Weekdays - Evening"> All Weekdays
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow32" value="Weekends - Evening"> Weekends
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow41" value="All Weekdays - Late Night"> All Weekdays
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow42" value="Weekends - Late Night"> Weekends
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:5px;margin-bottom:5px;">
+                                <div class="col-sm-12 margin-left-5">
+                                    <hr style="height:1px; background-color:#DDDDDD;margin-top:5px;margin-bottom:5px;">
+                                </div>  
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1">
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow3" value="Monday - Full day"> Monday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow4" value="Tuesday - Full day"> Tuesday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow5" value="Wednesday - Full day"> Wednesday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow6" value="Thursday - Full day"> Thursday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow7" value="Friday - Full day"> Friday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow8" value="Saturday - Full day"> Saturday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow9" value="Sunday - Full day"> Sunday
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow13" value="Monday - Morning"> Monday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow14" value="Tuesday - Morning"> Tuesday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow15" value="Wednesday - Morning"> Wednesday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow16" value="Thursday - Morning"> Thursday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow17" value="Friday - Morning"> Friday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow18" value="Saturday - Morning"> Saturday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow19" value="Sunday - Morning"> Sunday
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow23" value="Monday - Afternoon"> Monday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow24" value="Tuesday - Afternoon"> Tuesday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow25" value="Wednesday - Afternoon"> Wednesday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow26" value="Thursday - Afternoon"> Thursday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow27" value="Friday - Afternoon"> Friday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow28" value="Saturday - Afternoon"> Saturday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow29" value="Sunday - Afternoon"> Sunday
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow33" value="Monday - Evening"> Monday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow34" value="Tuesday - Evening"> Tuesday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow35" value="Wednesday - Evening"> Wednesday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow36" value="Thursday - Evening"> Thursday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow37" value="Friday - Evening"> Friday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow38" value="Saturday - Evening"> Saturday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow39" value="Sunday - Evening"> Sunday
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-2">
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow43" value="Monday - Late Night"> Monday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow44" value="Tuesday - Late Night"> Tuesday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow45" value="Wednesday - Late Night"> Wednesday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow46" value="Thursday - Late Night"> Thursday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow47" value="Friday - Late Night"> Friday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow48" value="Saturday - Late Night"> Saturday
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox" id="dow49" value="Sunday - Late Night"> Sunday
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 text-left">
+                            </div>
+                            <div class="col-sm-6">
+                                <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-success pull-right" data-dismiss="modal" onclick="updateValueDowCheck()">OK <i class="glyphicon glyphicon-arrow-right"></i></button>
+                                <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-default btn-danger pull-right" data-dismiss="modal" aria-hidden="true" >Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <!-- Scripts -->
     
     <script src="../../lib/jquery/dist/jquery.min.js"></script>
