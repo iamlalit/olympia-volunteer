@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html ng-app="landingController">
+<head>
+    <meta charset="utf-8">
+    <title>OLYMPIA</title>
+    
+    <link href="../../img/olympia-fav.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="../../css/olympia-icons.css"/>
+    <link rel="stylesheet" href="../../css/bootstrap-tagsinput/bootstrap-tagsinput.css"/>
+    <link rel="stylesheet" href="../../lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"/>
+    <link href="../../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/organization/postJob/postJob.css"/>
+    <link href="../../css/global.css" rel="stylesheet">
+    <link href="../../css/organization/viewApp/viewApp.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700&subset=latin,cyrillic-ext,greek-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+    <link href="../../css/volunteer/createProfileForm/createProfileForm.css" rel="stylesheet" />
+</head>
+
+<body ng-controller="landingPage">
+    <!-- Page Header Section Start-->
+    <header>
+        <div class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="../../img/logo.png"></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <!-- Volunteer Menu Start-->
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#" class='menu-interval'>Search Job</a></li>
+                        <li><a href="#" class='menu-interval'>Job Applications</a></li>
+                        <li><a href="#" class='menu-interval'>Recommendations</a></li>
+                        <li><a href="#" class='menu-interval'>Messages</a></li>
+                    </ul>
+                    <!-- Volunteer Menu end here-->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class='pull-right'><a href="#" id="icons-header-right"><span class="glyphicon glyphicon-question-sign"></a></li>
+                        <li class='dropdown pull-right'>
+                            <a href="#" class="dropdown-toggle" id="icons-header-right" data-toggle="dropdown"><i class='glyphicon glyphicon-cog'></i></a>
+                            <ul class="dropdown-menu">
+                                <li role="presentation"><a role="menuitem" href="#"><i class='glyphicon glyphicon-user blue'></i> My Account</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li role="presentation"><a role="menuitem" href="#"><i class='glyphicon glyphicon-cog blue'></i> Change Password</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li role="presentation"><a role="menuitem" href="#"><i class='glyphicon glyphicon-cog blue'></i> Notification Settings</a></li>
+                            </ul>
+                        </li>
+                        <li class='pull-right'><a href="#" id="icons-header-right"><span class="glyphicon glyphicon-exclamation-sign"></a></li>
+                        <li class="dropdown pull-right" style="margin-top:5px;" id="username" ng-init="client = true; organization = false">
+                            <a href="#" class="dropdown-toggle"  id="hover-header-right" data-toggle="dropdown"  ng-if="organization == true">Organization &nbsp;<b class="caret blue"></b></a>
+                            <a href="#" class="dropdown-toggle"  id="hover-header-right" data-toggle="dropdown" ng-if="client == true">Volunteer &nbsp;<b class="caret blue"></b></a>
+                            <ul class="dropdown-menu header-right-dropdown" ng-init=" addActive2 = 'make-it-white'">
+                                <li role="presentation" ><a role="menuitem" ng-model="organization" ng-click="organization = true; client = false; addActive2 = 'make-it-white';addActive1=''" href="#" id="tab-header-1" ng-class="addActive2"><img src="../../img/client-icon.png">&nbsp;&nbsp;&nbsp;Organization</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li role="presentation" ><a role="menuitem" ng-model="client" ng-click="organization = false; client = true; addActive1 = 'make-it-white';addActive2=''" href="#" ng-class="addActive1"><img src="../../img/user-icon.svg" height="25" width="25">&nbsp;&nbsp;&nbsp;Volunteer</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li role="presentation" id="separate-highlight"> 
+                                    <span><a role="menuitem"  href="#" ng-if="client == true">Volunteer</a></span>
+                                    <span><a role="menuitem"  href="#" ng-if="organization == true">Organization</a></span>
+                                    <span><a role="menuitem"  href="../../login/login.html">Logout</a></span>
+
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </div>
+    </header>
+
+    <div class="container-body">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel-title">
+                    <span>Create your Profile</span>
+                </div>
+                <p>
+                    Create your volunteer profile so we can show you the best matching jobs.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="pill margin-top-10">
+                    <h5 class="font-size-16"><strong>Basic information</strong></h5>
+                </div> 
+                <div class="row margin-rl-0 margin-top-10">
+                    <div class="col-sm-1">
+                        <i class="glyphicon glyphicon-user font-size-4"></i>
+                    </div>
+                    <div class="col-sm-3">
+                        <div>
+                            <i class="glyphicon glyphicon-pencil pointer brand-blue"></i>
+                            <h4 class="inline-block padding-left-5 bold">Rob Boersma</h4>
+                        </div>
+                        <div>
+                            <i class="glyphicon glyphicon-pencil pointer brand-blue"></i>
+                            <span class="padding-left-5">Amsterdan, Noord Holland</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row  margin-rl-0 margin-top-5">
+                    <div class="circle-green pointer">
+                        <i class="icon-plus icon-white-plus" title="Add a image"> </i>
+                    </div>
+                    <span title="Add a image"><a href="#">Add photo</a></span>
+                </div>
+                <div class="col-sm-8 padding-rl-0">
+                    <div class="row margin-rl-0">
+                        <label class="bold">About me</label>
+                    </div>
+                    <textarea class="text-area" cols="106" rows="7" maxlength="5000" id="question1"></textarea>
+                    <p id="optional-text" class="number-max">5000 characters left</p>
+                    <p id="optional-text" class="italic">Make a brief description of yourself. Include a short summary of your volunteer goals and relevant experience. This is your oppotunity to sell yourself.</p>
+                </div>
+                <div class="col-sm-8 padding-rl-0">
+                    <div class="row margin-rl-0">
+                        <label class="bold">I'm looking for</label>
+                    </div>
+                    <textarea class="text-area" cols="106" rows="7" maxlength="5000" id="question1"></textarea>
+                    <p id="optional-text" class="pull-right">5000 characters left</p>
+                    <p id="optional-text" class="italic">Say a bit about your availability, willingness to travel, skills etc</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="pill margin-top-10">
+                    <h5 class="font-size-16"><strong>Customise your profile</strong></h5>
+                </div> 
+            </div>
+        </div>
+        <div class="row margin-top-10">
+            <div class="col-sm-11">
+                <div class='col-sm-1  font-size-4 '>
+                    <span class="glyphicon glyphicon-list-alt"></span>                  
+                </div>
+                <div class="col-sm-6">
+                    <label class="font-size-15">Preferred Skills and Diplomas</label>
+                </div>
+                <div class='col-sm-11' >
+                    <span>
+                        Specify the skills and diplomas/certificates you are looking for in a successful application. Volunteers may still apply if they do not meet your preferences, but they will be clearly notified that they are at a disadvantage.
+                    </span>
+
+                    <div class='row'>
+                        <div class='margin-top-10'>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="button" id="skills" value="Add Skills / Certificates" name="Add Skills / Certificates">Add Skills / Certificates</button>
+                    <ul class="ishidden" id="group-skills">
+                        <!-- <li style="list-style-type:none; padding-bottom:30px;" id="skills-popover"> -->
+                        <li style="list-style-type:none; padding-bottom:30px;">                             
+                            <label >What Skills are needed?</label>
+                            <span id="optional-text">(optional) </span>
+                            <div  id='form-component-arrangement-input'>
+                                <input type="text" class='form-control' id='skill-tag' placeholder="Add skills" />
+                            </div>
+                            <div class="col-sm-12">
+                                <span style="margin-left:-13px;"><a href="#" id="zoomTextarea" id="modal-skill" onclick="updateValueSkillText()" title="Click to Zoom" data-toggle="modal" data-target="#skillBox">Add skills requirements to your job posting</a>
+                                </span>
+                            </div>
+                        </li>
+                        <!-- <li style="list-style-type:none" id="diploma-popover"> -->
+                        <li style="list-style-type:none">
+                            <label >What Diploma/Certificates are needed?</label>
+                            <span id="optional-text">(optional) </span>
+                            <div  id='form-component-arrangement-input'>
+                                <input type="text" class='input-text' id='diploma-tag' placeholder="Add Diploma/Certificates" />
+                            </div>
+                            <div class="col-sm-12">
+                                <span style="margin-left:-13px;"><a href="#" id="zoomTextarea" id="modal-diploma" onclick="updateValueDiplomaText()" title="Click to Zoom" data-toggle="modal" data-target="#diplomaBox">Add Diploma/Certificates requirements to your job posting</a>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container1">
+            <div class="row">
+                <div class="col-lg-2">
+                    <ul class="footer-link-list" style="padding-left:80px">
+                        <li>
+                            <a href="#" class="footer-text">About Us </a>
+                        </li>
+                        <li><a href="#" class="footer-text">Blog </a></li>
+                        <li><a href="#" class="footer-text">Feedback </a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <ul class="footer-link-list" style="padding-left:40px">
+                        <li>
+                            <a href="#" class="footer-text">Comunnity</a>
+                        </li>
+                        <li><a href="#" class="footer-text">Trust & Safety </a></li>
+                        <li><a href="#" class="footer-text">Help & Support </a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <ul class="footer-link-list" style="padding-left:30px">
+                        <li>
+                            <a href="#" class="footer-text">Enterprise Solution</a>
+                        </li>
+                        <li><a href="#" class="footer-text">Terms of Services </a></li>
+                        <li><a href="#" class="footer-text">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <ul class="footer-link-list" style="padding-left:30px">
+                        <li>
+                            <a href="#" class="footer-text">Tools</a>
+                        </li>
+                        <li><a href="#" class="footer-text">Client Resources</a></li>
+                        <li><a href="#" class="footer-text">Help & Support</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <div class="social-network-icon-wrap" style="padding-right:60px">
+                        <a href="#" class="footer-select social-network-icons">
+                            <span class="footer-circle footer-circle-linkedin pull-right">
+                                <i class="icon-linkedin font-size-20 icon-attr1"> </i>
+                            </span>
+                        </a>
+                        <a href="#" class="social-network-icons">
+                            <span class="footer-circle footer-circle-facebook pull-right">
+                                <i class="icon-facebook font-size-20 icon-attr1"> </i>
+                            </span>
+                        </a>
+                        <a href="#" class="social-network-icons">
+                            <span class="footer-circle footer-circle-twitter pull-right">
+                                <i class="icon-twitter font-size-20 icon-attr1"> </i>
+                            </span>
+                        </a>
+                        <a href="#" class="social-network-icons">
+                            <span class="footer-circle footer-circle-google pull-right">
+                                <i class="icon-google-plus font-size-20 icon-attr1"> </i>
+                            </span>
+                        </a>
+                    </div>
+                    <span class="footer-copyrights" id='footer-copyrights' style="padding-right:60px">
+                        <span>&#169;&nbsp;Olympia Volunteer Corporation</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    
+    <script src="../../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../lib/angular/angular.min.js"></script>
+    <!-- date picker Scripts -->
+    <script src="../../lib/moment/moment.js"></script>
+    <script src="../../lib/moment/min/moment.min.js"></script>
+    <script src="../../lib/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <!--tag inputs -->
+    <script src="../../lib/bootstrap.taginput.js"></script>
+    <script src="../../lib/bootstrap3-typeahead.js"></script>
+    <script src="../../js/app.js"></script>
+    <script src="../../organization/postJob/controller.js"></script>
+    <script src="control.js"></script>
+    <script src="controller.js"></script>
+    <script src="../../organization/postJob/validation.js"></script>
+    <script src="../../lib/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
+</body>
+</html>

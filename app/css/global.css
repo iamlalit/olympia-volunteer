@@ -3,6 +3,9 @@
 
 .padding-left-0{
 	padding-left: 0px;
+}
+.padding-left-5{
+	padding-left: 5px;
 } 
 .padding-left-15{
 	padding-left: 15px;
@@ -215,6 +218,9 @@ hr {
 .color-green{
 	color: #009e0f;
 }
+.brand-blue{
+	color: #00aeec;
+}
 .align-center{
 	text-align: center;
 }
@@ -337,7 +343,8 @@ ul{
 }
 
 .container1,
-.container{
+.container,
+.container-body{
 min-height: 100%;
 position:relative;
 /* Firefox */
