@@ -163,62 +163,29 @@
                         <div class='margin-top-10'>
                         </div>
                     </div>
-                    <button type="button"  class="btn btn-primary" id="time">Add Work Interests</button>
-                    <ul class="ishidden" id="group-skills">
-                    
-                        <li style="list-style-type:none" class="check-label">
-                            <div class="row">
-                                <label class="margin-left-28">Time Comittment</label>
-                                <a>
-                                    <i class="glyphicon glyphicon-question-sign blue" id="time-checkbox"></i>
-                                </a>
-                                <span id="optional-text">(optional) </span>
-                                
-                            </div>
-                            <!-- <label class="margin">Time Comittment</label> -->
-                            <div class="col-sm-6 ">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> <a>Occasional(weekly or monthly)</a>
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> <a>A lot(10+ hours/week)</a>
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> <a>Full time(30-40 hours/week)</a>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> <a>One time</a>
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" > <a>For few hours</a>
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> <a>Less than 1 hour </a>
-                                    </label>
-                                </div>
-                            </div>
-                        </li>
-                        <li style="list-style-type:none">
-                            <label id='form-component-arrangement-label'>Days of Week</label>
+                    <button type="button"  class="btn btn-primary" id="work">Add Work Interests</button>
+                     <ul class="ishidden" id="group-skills">
+                        <!-- <li style="list-style-type:none; padding-bottom:30px;" id="skills-popover"> -->
+                        <li style="list-style-type:none; padding-bottom:30px;">                             
+                            <label >What categories best fit your skills?</label>
                             <span id="optional-text">(optional) </span>
-                            <div  id='form-component-arrangement-input' style="margin-bottom:-10px;">
-                                <input type="text" class='form-control' id='dow-tag' placeholder="Add days of week" />
+                            <div  id='form-component-arrangement-input'>
+                                <input type="text" class='form-control' id='volunteer-work-tag' placeholder="Add categories" />
                             </div>
                             <div class="col-sm-12">
-                                <span style="margin-left:-13px;"><a href="#" id="zoomTextarea"id="modal-dow" onclick="updateValueDowText()" title="Click to Zoom" data-toggle="modal" data-target="#dowBox">Add days of week requirements to your job posting</a>
+                                <span style="margin-left:-13px;"><a href="#" id="zoomTextarea" id="modal-skill" onclick="updateValueVolunteerWorkText()" title="Click to Zoom" data-toggle="modal" data-target="#VolunteerWork">Add categories</a>
+                                </span>
+                            </div>
+                        </li>
+                        <!-- <li style="list-style-type:none" id="diploma-popover"> -->
+                        <li style="list-style-type:none">
+                            <label >What is your Volunteer work area?</label>
+                            <span id="optional-text">(optional) </span>
+                            <div  id='form-component-arrangement-input'>
+                                <input type="text" class='input-text' id='diploma-tag' placeholder="Add volunteer work area" />
+                            </div>
+                            <div class="col-sm-12">
+                                <span style="margin-left:-13px;"><a href="#" id="zoomTextarea" id="modal-diploma" onclick="updateValueDiplomaText()" title="Click to Zoom" data-toggle="modal" data-target="#diplomaBox">Add your work area</a>
                                 </span>
                             </div>
                         </li>
@@ -252,25 +219,25 @@
                     <ul class="ishidden" id="group-skills">
                         <!-- <li style="list-style-type:none; padding-bottom:30px;" id="skills-popover"> -->
                         <li style="list-style-type:none; padding-bottom:30px;">                             
-                            <label >What Skills are needed?</label>
+                            <label >Add skills you would like to offer as volunteer work</label>
                             <span id="optional-text">(optional) </span>
                             <div  id='form-component-arrangement-input'>
                                 <input type="text" class='form-control' id='skill-tag' placeholder="Add skills" />
                             </div>
                             <div class="col-sm-12">
-                                <span style="margin-left:-13px;"><a href="#" id="zoomTextarea" id="modal-skill" onclick="updateValueSkillText()" title="Click to Zoom" data-toggle="modal" data-target="#skillBox">Add skills requirements to your job posting</a>
+                                <span style="margin-left:-13px;"><a href="#" id="zoomTextarea" id="modal-skill" onclick="updateValueSkillText()" title="Click to Zoom" data-toggle="modal" data-target="#skillBox">Add skills requirements</a>
                                 </span>
                             </div>
                         </li>
                         <!-- <li style="list-style-type:none" id="diploma-popover"> -->
                         <li style="list-style-type:none">
-                            <label >What Diploma/Certificates are needed?</label>
+                            <label >Add your Diploma/Certificates to your Profile</label>
                             <span id="optional-text">(optional) </span>
                             <div  id='form-component-arrangement-input'>
                                 <input type="text" class='input-text' id='diploma-tag' placeholder="Add Diploma/Certificates" />
                             </div>
                             <div class="col-sm-12">
-                                <span style="margin-left:-13px;"><a href="#" id="zoomTextarea" id="modal-diploma" onclick="updateValueDiplomaText()" title="Click to Zoom" data-toggle="modal" data-target="#diplomaBox">Add Diploma/Certificates requirements to your job posting</a>
+                                <span style="margin-left:-13px;"><a href="#" id="zoomTextarea" id="modal-diploma" onclick="updateValueDiplomaText()" title="Click to Zoom" data-toggle="modal" data-target="#diplomaBox">Add Diploma/Certificates requirements</a>
                                 </span>
                             </div>
                         </li>
@@ -369,6 +336,15 @@
             </div>  
         </div>
 
+         <div class="row">
+            <div class="col-sm-12 center-block">
+                <div class="col-sm-4"></div>
+                <div class="form-group col-sm-4 complete-profile">
+                    <button onclick="window.location.href='../volunteer/CreateProfileForm/createProfileForm.html'" class="btn btn-success ">Save Profile and Continue</button>
+                </div>
+            </div>
+        </div>  
+
     </div>
 
     <footer>
@@ -442,6 +418,92 @@
     </footer>
 
 
+    <!-- Volunteer work categories Modal -->
+    <div class="modal fade" id="VolunteerWork" tabindex="-1" role="dialog" aria-labelledby="VolunteerWork" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h2 class="modal-title" id="myModalLabel">Which categories best fits your skills? </h2>
+                </div>
+                <form role="form">
+                    <div class="modal-body">
+                        <p>Select upto 10 categories that match your professional experience. Choosing carefully helps clients find you in the marketplace.</p>
+                        <p id="optional-text">You have 10 categories remaining to select</p>
+                        <div class="form-group">
+                            <div class="col-sm-6">
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="volunteerWrk1" value="Unskilled volunteering"> Unskilled volunteering
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="volunteerWrk2" value="Environmental volunteering"> Environmental volunteering
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="volunteerWrk3" value="Skills-based volunteering"> Skills-based volunteering
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="volunteerWrk4" value="Volunteering in an emergency"> Volunteering in an emergency
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="volunteerWrk5" value="Program Coordination"> Volunteering in developing countries
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="volunteerWrk6" value="Volunteering in schools"> Volunteering in schools
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="volunteerWrk7" value="Virtual Volunteering"> Virtual Volunteering
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="volunteerWrk8" value="Micro-volunteering"> Micro-volunteering
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="volunteerWrk9" value="Community voluntary work"> Community voluntary work
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="volunteerWrk10" value="International work-camps"> International work-camps
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="volunteerWrk11" value="Corporate volunteering"> Corporate volunteering
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 text-left">
+                            </div>
+                            <div class="col-sm-6">
+                                <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-success pull-right" data-dismiss="modal" onclick="updateValueVolunteerWork()">OK <i class="glyphicon glyphicon-arrow-right"></i></button>
+                                <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-default btn-danger pull-right" data-dismiss="modal" aria-hidden="true" >Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- Skills Modal-->
     <div class="modal fade" id="skillBox" tabindex="-1" role="dialog" aria-labelledby="skillBox" aria-hidden="true">
@@ -689,6 +751,7 @@
             </div>
         </div>
     </div>
+
     <!-- days of week -->
     <div class="modal fade" id="dowBox" tabindex="-1" role="dialog" aria-labelledby="dowBox" aria-hidden="true">
         <div class="modal-dialog modal-lg">

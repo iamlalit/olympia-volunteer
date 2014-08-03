@@ -858,24 +858,49 @@ function updateValueScreeningText(){
   }
 };
 
-//validating form
-$(document).ready(function(){
-  $("#message1span").hide();
-  $("#message2span").hide();
-  $("#message3span").hide();
-})
-function getValidateTitle(){
-  var title = $("#form-control-weight").val();
-  console.log(title)
-  $("#message1span").hide();
-  $("#message2span").hide();
-  $("#message3span").hide();
-  if(title == "" && title.length != 0){
-    $("#message3span").show();
-  }else if(title.length <= 5){
-    $("#message1span").show();
-  }else if(title.length >= 50){
-    $("#message2span").show();
-  } 
+var volunteer_work_set = ['Answering Telephones', 'Accounting', 'Administration', 'Business Correspondence', 'Client Relations', 'Communication',
+                  'Crowd Control', 'Crime & Safety', 'Customer Service', 'Clerical', 'Document Management', 'Disaster Relief', 
+                  'Document Management', 'Event Coordination', 'Employee Relations', 'Legal Familiarity', 'Meeting Planning', 'Office Administration',
+                  'Organizational Skills', 'Public Relations', 'Public Speaking', 'People Management', 'Receptionist', 'Stenography', 
+                  'Travel Arrangements', 'Word Processing', 'Written Communication'];
+$('#volunteer-work-tag').tagsinput({
+  typeahead: {
+    source: volunteer_work_set,
+    sorter: function (items) {
+        return items.sort();
+    }
+  }
+});
+
+function updateValueVolunteerWork(){
+  var listOfVolunteerWork = [];
+  for( i=1 ; i <= 27 ; i++){
+    if($("#volunteerWork" + i +"").is(":checked")){
+     listOfVolunteerWork.push($("#volunteerWork" + i +"").val());
+    }
+  }
+  console.log(listOfSkill);
+  $('#volunteer-work-tag').tagsinput('removeAll');
+  $("#volunteer-work-tag").tagsinput("refresh");
+  for(i = 0 ; i < listOfVolunteerWork.length ; i++){
+    $("#volunteer-work-tag").tagsinput('add', listOfVolunteer[i]);
+  }
 }
 
+function updateValueSkillText(){
+  
+  $("#skill-tag").tagsinput("refresh");
+  var tagsValue = $("#skill-tag").val();
+  var tagsList = tagsValue.split(",");
+  console.log(tagsList);
+  for( i=1 ; i <= 27 ; i++){
+        $("#skill" + i + "").prop("checked", false);
+  }
+  for( i=1 ; i <= 27 ; i++){
+    for( j = 0 ; j < tagsList.length ; j++ ){
+      if($("#skill" + i + "").val() === tagsList[j]){
+        $("#skill" + i + "").prop("checked", true);
+      }
+    }
+  }
+}

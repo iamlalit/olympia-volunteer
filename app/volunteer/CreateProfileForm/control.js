@@ -393,6 +393,17 @@ $( "#time" ).click(function() {
         //Do Stop
     }
 });
+$( "#work" ).click(function() {
+  $( this ).next( "ul" ).toggle();
+  if($(this).is('.btn-primary')){
+        $(this).removeClass('btn-primary').addClass('btn-danger');
+        $( this ).text("Hide Work Interests")
+    }else{
+        $(this).removeClass('btn-danger').addClass('btn-primary');
+        $( this ).text("Add Work Interests")
+        //Do Stop
+    }
+});
 $( "#miscleaneous" ).click(function() {
   $( this ).next( "ul" ).toggle();
   if($(this).is('.btn-primary')){
@@ -998,4 +1009,50 @@ function updateValueDiplomaText() {
             }
         }
     }
+}
+
+
+var volunteer_work_set = ['Unskilled volunteering', 'Environmental volunteering', 'Skills-based volunteering', 'Volunteering in an emergency',
+                          'Volunteering in developing countries', 'Volunteering in schools', 'Virtual Volunteering', 'Corporate volunteering',
+                          'Micro-volunteering', 'Community voluntary work', 'International work-camps'];
+$('#volunteer-work-tag').tagsinput({
+  typeahead: {
+    source: volunteer_work_set,
+    sorter: function (items) {
+        return items.sort();
+    }
+  }
+});
+
+function updateValueVolunteerWork() {
+    var listOfVolunteerWork = [];
+    for (i = 1 ; i <= 10 ; i++) {
+        if ($("#volunteerWrk" + i + "").is(":checked")) {
+            listOfVolunteerWork.push($("#volunteerWrk" + i + "").val());
+        }
+    }
+    console.log(listOfVolunteerWork);
+    $('#volunteer-work-tag').tagsinput('removeAll');
+    $("#volunteer-work-tag").tagsinput("refresh");
+    for (i = 0 ; i < listOfVolunteerWork.length ; i++) {
+        $("#volunteer-work-tag").tagsinput('add', listOfVolunteerWork[i]);
+    }
+}
+
+function updateValueVolunteerWorkText(){
+  
+  $("#volunteer-work-tag").tagsinput("refresh");
+  var tagsValue = $("#volunteer-work-tag").val();
+  var tagsList = tagsValue.split(",");
+  console.log(tagsList);
+  for( i=1 ; i <= 11 ; i++){
+        $("#volunteerWrk" + i + "").prop("checked", false);
+  }
+  for( i=1 ; i <= 11 ; i++){
+    for( j = 0 ; j < tagsList.length ; j++ ){
+      if($("#volunteerWrk" + i + "").val() === tagsList[j]){
+        $("#volunteerWrk" + i + "").prop("checked", true);
+      }
+    }
+  }
 }
