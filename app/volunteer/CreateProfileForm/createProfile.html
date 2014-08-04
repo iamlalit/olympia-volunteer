@@ -509,11 +509,11 @@
 
         <div class="row margin-top-10" ng-init="showSocialAccount=true">
             <div class="col-sm-11">
-                <div class='col-sm-1  font-size-4 '>
+                <div class='col-sm-1 padding-right-0 padding-left-25  font-size-4 '>
                     <span class="icon-linkedin-sign vertical-align-top"></span>                  
                 </div>
                 <div class="col-sm-6">
-                    <label class="font-size-15">Volunteer Social Accounts</label>
+                    <label class="font-size-15">Your Social networks</label>
                 </div>
                 <div class='col-sm-11' >
                     <span>
@@ -526,30 +526,38 @@
                     </div>
                     <button class="btn btn-primary" type="button" ng-click="showSocialAccount = !showSocialAccount" ng-show="showSocialAccount">Add Social Account</button>
                     <button class="btn btn-danger" type="button"  ng-click="showSocialAccount = !showSocialAccount" ng-hide="showSocialAccount">Hide Social Account</button>
-                    <ul class="ishidden" id="group-skills">
+                    <ul id="group-skills" ng-show="!showSocialAccount">
                         <!-- <li style="list-style-type:none; padding-bottom:30px;" id="skills-popover"> -->
-                        <li style="list-style-type:none; padding-bottom:30px;">                             
-                            <label >Add skills you would like to offer as volunteer work</label>
-                            <span id="optional-text">(optional) </span>
-                            <div  id='form-component-arrangement-input'>
-                                <input type="text" class='form-control' id='skill-tag' placeholder="Add skills" />
+                        <li style="list-style-type:none; padding-bottom:10px;">                             
+                            <label >Visible to everyone on facebook, linkedin and twitter</label> 
+                            <div class="row">
+                                <div class='col-sm-1 align-right'>
+                                    <span class="icon-facebook font-size-2"></span>  
+                                </div>
+                                <div class="col-sm-2 padding-right-0">
+                                    <span><a href="" class="font-size-20">facebook</a></label>
+                                </div>
+                                <div class='col-sm-9 padding-rl-0'><i class="glyphicon glyphicon-pencil pointer brand-blue pencil-icon"></i></div>
                             </div>
-                            <div class="col-sm-12">
-                                <span style="margin-left:-13px;"><a href="#" id="zoomTextarea" id="modal-skill" onclick="updateValueSkillText()" title="Click to Zoom" data-toggle="modal" data-target="#skillBox">Add skills requirements</a>
-                                </span>
+                            <div class="row">
+                                <div class='col-sm-1 align-right'>
+                                    <span class="icon-linkedin font-size-2"></span>  
+                                </div>
+                                <div class="col-sm-2">
+                                    <span><a href="" class="font-size-20">linkedin</a></label>
+                                </div>
+                                <div class='col-sm-9 padding-rl-0'><i class="glyphicon glyphicon-pencil pointer brand-blue pencil-icon"></i></div>
                             </div>
-                        </li>
-                        <!-- <li style="list-style-type:none" id="diploma-popover"> -->
-                        <li style="list-style-type:none">
-                            <label >Add your Diploma/Certificates to your Profile</label>
-                            <span id="optional-text">(optional) </span>
-                            <div  id='form-component-arrangement-input'>
-                                <input type="text" class='input-text' id='diploma-tag' placeholder="Add Diploma/Certificates" />
-                            </div>
-                            <div class="col-sm-12">
-                                <span style="margin-left:-13px;"><a href="#" id="zoomTextarea" id="modal-diploma" onclick="updateValueDiplomaText()" title="Click to Zoom" data-toggle="modal" data-target="#diplomaBox">Add Diploma/Certificates requirements</a>
-                                </span>
-                            </div>
+                            <div class="row">
+                                <div class='col-sm-1 align-right'>
+                                    <span class="icon-twitter font-size-2"></span>  
+                                </div>
+                                <div class="col-sm-2">
+                                    <span><a href="" class="font-size-20">twitter</a></label>
+                                </div>
+                                <div class='col-sm-9 padding-rl-0'><i class="glyphicon glyphicon-pencil pointer brand-blue pencil-icon"></i></div>
+                            </div>      
+
                         </li>
                     </ul>
                 </div>
@@ -559,6 +567,38 @@
             <div class="col-sm-12">
                 <hr style="height:1px; background-color:#DDDDDD;">
             </div>  
+        </div>
+        <div class="row margin-top-10" ng-init="showSocialAccount=true">
+            <div class='col-sm-1 padding-right-0 padding-left-25 font-size-4 '>
+                    <span class="icon-eye-close vertical-align-top"></span>                  
+                </div>
+                <div class="col-sm-6">
+                    <label class="font-size-15">Profile Visibility</label>
+                </div>
+                <div class='col-sm-11' >
+                    <span>
+                        Specify who can view your profile and who else cannot. Volunteers may still apply if they do not meet your preferences, but they will be clearly notified that they are at a disadvantage.
+                    </span>
+                    <ul>
+                        <!-- <li style="list-style-type:none; padding-bottom:30px;" id="skills-popover"> -->
+                        <li style="list-style-type:none; padding-bottom:10px;">                             
+                            <div class="radio">
+                                <label>
+                                  <input type="radio" id="rv1" name="profileVisibility" checked=""> &nbsp;Everyone - Anyone can see your profile whether they are logged into Volunteer.
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                  <input type="radio" id="rv1" name="profileVisibility"> &nbsp;Volunteer Users only - Only Volunteer users who are logged into volunteer can see yoour profile.
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                  <input type="radio" id="rv1" name="profileVisibility"> &nbsp;Hidden - Organization can see your profile only ifyou have applied to their volunteer job.
+                                </label>
+                            </div>
+                        </li>
+                </div>
         </div>
 
          <div class="row">
