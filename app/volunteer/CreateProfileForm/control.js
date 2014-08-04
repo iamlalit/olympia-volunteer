@@ -420,10 +420,10 @@ $( "#location" ).click(function() {
   $( this ).next( "ul" ).toggle();
   if($(this).is('.btn-primary')){
       $(this).removeClass('btn-primary').addClass('btn-danger');
-      $( this ).text("Hide Job Location");
+      $( this ).text("Hide Address");
     }else{
       $(this).removeClass('btn-danger').addClass('btn-primary');
-      $( this ).text("Add Job Location");
+      $( this ).text("Add Address");
       //Do Stop
     }
 });
