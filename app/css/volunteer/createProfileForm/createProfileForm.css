@@ -147,7 +147,6 @@ div.time-label label{
 .bootstrap-tagsinput{
     display: inline-block;
     padding: 5px  5px;
-    height: 36px;
     font-size: 13px;
     color: #444444;
     width: 900px;
@@ -163,4 +162,12 @@ div.time-label label{
 }
 .modal-body p{
     font-size: 12px;
+}
+ul li #zoomTextarea {
+    position: relative;
+    top: -7px;
+}
+ul li #zoomTextarea1{
+    position: relative;
+    top: 1px;
 }

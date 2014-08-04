@@ -1011,7 +1011,7 @@ function updateValueDiplomaText() {
     }
 }
 
-
+//volunteer work value
 var volunteer_work_set = ['Unskilled volunteering', 'Environmental volunteering', 'Skills-based volunteering', 'Volunteering in an emergency',
                           'Volunteering in developing countries', 'Volunteering in schools', 'Virtual Volunteering', 'Corporate volunteering',
                           'Micro-volunteering', 'Community voluntary work', 'International work-camps'];
@@ -1026,12 +1026,12 @@ $('#volunteer-work-tag').tagsinput({
 
 function updateValueVolunteerWork() {
     var listOfVolunteerWork = [];
-    for (i = 1 ; i <= 10 ; i++) {
+    for (i = 1 ; i <= 12 ; i++) {
         if ($("#volunteerWrk" + i + "").is(":checked")) {
             listOfVolunteerWork.push($("#volunteerWrk" + i + "").val());
         }
     }
-    console.log(listOfVolunteerWork);
+    console.log($("#volunteerWrk11").val());
     $('#volunteer-work-tag').tagsinput('removeAll');
     $("#volunteer-work-tag").tagsinput("refresh");
     for (i = 0 ; i < listOfVolunteerWork.length ; i++) {
@@ -1045,13 +1045,62 @@ function updateValueVolunteerWorkText(){
   var tagsValue = $("#volunteer-work-tag").val();
   var tagsList = tagsValue.split(",");
   console.log(tagsList);
-  for( i=1 ; i <= 11 ; i++){
+  for( i=1 ; i <= 12 ; i++){
         $("#volunteerWrk" + i + "").prop("checked", false);
   }
-  for( i=1 ; i <= 11 ; i++){
+  for( i=1 ; i <= 12 ; i++){
     for( j = 0 ; j < tagsList.length ; j++ ){
       if($("#volunteerWrk" + i + "").val() === tagsList[j]){
         $("#volunteerWrk" + i + "").prop("checked", true);
+      }
+    }
+  }
+}
+//volunteer work area
+var volunteer_set = ['Agriculture', 'Animals', 'Arts', 'Civic engegement', 'Communications access', 'Community development', 'Conflict resolution',
+                      'Consumer protection', 'Crime & Safety', 'Disability', 'Disaster relief', 'Drug abuse', 'Economic development', 'Education',
+                      'Energy conservation', 'Environment', 'Family', 'Government reform', 'Health & Medicine', 'Housing and homelessness', 
+                      'Human rights', 'Human services', 'Immigration', 'International cooperation', 'International relations', 
+                      'Job & workplace', 'Legal assistance', 'LGBT', 'Library or resource center', 'Media', 'Men', 'Mental health', 'Microedit', 
+                      'Multi-service agency', 'Museums and history', 'Network of nonprofits', 'Personal finance', 'Philanthropy', 'Politics', 
+                      'Poverty and hunger', 'Prison reform', 'Professional association', 'Race and ethnicity', 'Religion and spirituality', 
+                      'Research and science', 'Rural', 'Social enterprise', 'Sports and recreation', 'Technology', 
+                      'Travel and transportation', 'Urban', 'Veterans', 'Victim support', 'Volunteering', 'Women', 'Youth'];
+$('#volunteer-tag').tagsinput({
+  typeahead: {
+    source: volunteer_set,
+    sorter: function (items) {
+        return items.sort();
+    }
+  }
+});
+function updateValueVolunteerInterest() {
+    var listOfVolunteerWork = [];
+    for (i = 1 ; i <= 57 ; i++) {
+        if ($("#v" + i + "").is(":checked")) {
+            listOfVolunteerWork.push($("#v" + i + "").val());
+        }
+    }
+    $('#volunteer-tag').tagsinput('removeAll');
+    $("#volunteer-tag").tagsinput("refresh");
+    for (i = 0 ; i < listOfVolunteerWork.length ; i++) {
+        $("#volunteer-tag").tagsinput('add', listOfVolunteerWork[i]);
+    }
+}
+
+function updateValueVolunteerInterestText(){
+  
+  $("#volunteer-tag").tagsinput("refresh");
+  var tagsValue = $("#volunteer-tag").val();
+  var tagsList = tagsValue.split(",");
+  console.log(tagsList);
+  for( i=1 ; i <= 57 ; i++){
+        $("#v" + i + "").prop("checked", false);
+  }
+  for( i=1 ; i <= 57 ; i++){
+    for( j = 0 ; j < tagsList.length ; j++ ){
+      if($("#v" + i + "").val() === tagsList[j]){
+        $("#v" + i + "").prop("checked", true);
       }
     }
   }

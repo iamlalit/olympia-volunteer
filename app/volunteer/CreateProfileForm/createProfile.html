@@ -122,7 +122,7 @@
                     </div>
                     <textarea class="text-area" cols="106" rows="7" maxlength="5000" id="question1"></textarea>
                     <p id="optional-text" class="number-max">5000 characters left</p>
-                    <p id="optional-text" class="italic">Make a brief description of yourself. Include a short summary of your volunteer goals and relevant experience. This is your oppotunity to sell yourself.</p>
+                    <p id="optional-text">Make a brief description of yourself. Include a short summary of your volunteer goals and relevant experience. This is your oppotunity to sell yourself.</p>
                 </div>
                 <div class="col-sm-8 padding-rl-0">
                     <div class="row margin-rl-0">
@@ -130,7 +130,7 @@
                     </div>
                     <textarea class="text-area" cols="106" rows="7" maxlength="5000" id="question1"></textarea>
                     <p id="optional-text" class="pull-right">5000 characters left</p>
-                    <p id="optional-text" class="italic">Say a bit about your availability, willingness to travel, skills etc</p>
+                    <p id="optional-text">Say a bit about your availability, willingness to travel, skills etc</p>
                 </div>
             </div>
         </div>
@@ -182,10 +182,10 @@
                             <label >What is your Volunteer work area?</label>
                             <span id="optional-text">(optional) </span>
                             <div  id='form-component-arrangement-input'>
-                                <input type="text" class='input-text' id='diploma-tag' placeholder="Add volunteer work area" />
+                                <input type="text" class='input-text' id='volunteer-tag' placeholder="Add volunteer work area" />
                             </div>
                             <div class="col-sm-12">
-                                <span style="margin-left:-13px;"><a href="#" id="zoomTextarea" id="modal-diploma" onclick="updateValueDiplomaText()" title="Click to Zoom" data-toggle="modal" data-target="#diplomaBox">Add your work area</a>
+                                <span style="margin-left:-13px;"><a href="#" id="zoomTextarea" id="modal-diploma" onclick="updateValueVolunteerInterestText()" title="Click to Zoom" data-toggle="modal" data-target="#VolunteerWorkBox">Add your work area</a>
                                 </span>
                             </div>
                         </li>
@@ -281,38 +281,40 @@
                             </div>
                             <!-- <label class="margin">Time Comittment</label> -->
                             <div class="col-sm-6 ">
+
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox"> <a>Occasional(weekly or monthly)</a>
+                                      <input type="checkbox" id="wt1" value="All Weekdays - Late Night"> Occasional(weekly or monthly)
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox"> <a>A lot(10+ hours/week)</a>
+                                      <input type="checkbox" id="wt2" value="All Weekdays - Late Night"> A lot(10+ hours/week)
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox"> <a>Full time(30-40 hours/week)</a>
+                                      <input type="checkbox" id="wt3" value="All Weekdays - Late Night"> Full time(30-40 hours/week)
                                     </label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox"> <a>One time</a>
+                                      <input type="checkbox" id="wt4" value="All Weekdays - Late Night"> One time
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" > <a>For few hours</a>
+                                      <input type="checkbox" id="wt5" value="All Weekdays - Late Night"> For few hours
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox"> <a>Less than 1 hour </a>
+                                      <input type="checkbox" id="wt6" value="All Weekdays - Late Night"> Less than 1 hour
                                     </label>
                                 </div>
+                                
                             </div>
                         </li>
                         <li style="list-style-type:none">
@@ -322,7 +324,7 @@
                                 <input type="text" class='form-control' id='dow-tag' placeholder="Add days of week" />
                             </div>
                             <div class="col-sm-12">
-                                <span style="margin-left:-13px;"><a href="#" id="zoomTextarea"id="modal-dow" onclick="updateValueDowText()" title="Click to Zoom" data-toggle="modal" data-target="#dowBox">Add days of week requirements to your job posting</a>
+                                <span style="margin-left:-13px;"><a href="#" id="zoomTextarea1" onclick="updateValueDowText()" title="Click to Zoom" data-toggle="modal" data-target="#dowBox">Add days of week requirements to your job posting</a>
                                 </span>
                             </div>
                         </li>
@@ -337,11 +339,14 @@
         </div>
 
          <div class="row">
-            <div class="col-sm-12 center-block">
+            <div class="col-sm-12 margin-top-30">
                 <div class="col-sm-4"></div>
-                <div class="form-group col-sm-4 complete-profile">
-                    <button onclick="window.location.href='../volunteer/CreateProfileForm/createProfileForm.html'" class="btn btn-success ">Save Profile and Continue</button>
+                <div class="form-group col-sm-5 complete-profile">
+                    <button class="btn btn-success" >Save Profile and Continue</button>
+                    <button class="btn btn-danger" >Cancel</button>
+                    
                 </div>
+
             </div>
         </div>  
 
@@ -481,13 +486,11 @@
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                      <input type="checkbox" id="volunteerWrk10" value="International work-camps"> International work-camps
-                                    </label>
+                                      <input type="checkbox" id="volunteerWrk10" value="International work-camps"> International work-camps</label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                      <input type="checkbox" id="volunteerWrk11" value="Corporate volunteering"> Corporate volunteering
-                                    </label>
+                                      <input type="checkbox" id="volunteerWrk11" value="Corporate volunteering" /> Corporate volunteering</label>
                                 </div>
                             </div>
                         </div>
@@ -496,6 +499,325 @@
                             </div>
                             <div class="col-sm-6">
                                 <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-success pull-right" data-dismiss="modal" onclick="updateValueVolunteerWork()">OK <i class="glyphicon glyphicon-arrow-right"></i></button>
+                                <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-default btn-danger pull-right" data-dismiss="modal" aria-hidden="true" >Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+     <!-- Volunteer work area Modal-->
+    <div class="modal fade" id="VolunteerWorkBox" tabindex="-1" role="dialog" aria-labelledby="VolunteerWorkBox" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h2 class="modal-title" id="myModalLabel">What is your Volunteer work area?</h2>
+                </div>
+                <form role="form">
+                    <div class="modal-body">
+                        <p>Select area of Volunteer work that applies to you.</p>
+                        <div class="form-group">
+                            <div class="col-sm-3">
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v1" value="Agriculture"> Agriculture
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v2" value="Animals"> Animals
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v3" value="Arts"> Arts
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v4" value="Civic engegement"> Civic engegement
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v5" value="Communications access"> Communications access
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v6" value="Community development"> Community development
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v7" value="Conflict resolution"> Conflict resolution
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v8" value="Consumer protection"> Consumer protection
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v9" value="Crime & Safety"> Crime & Safety
+                                    </label>
+                                </div>
+                                
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v10" value="Disability"> Disability
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v11" value="Disaster relief"> Disaster relief
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v12" value="Drug abuse"> Drug abuse
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v13" value="Economic development"> Economic development
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v14" value="Education"> Education
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v15" value="Energy conservation"> Energy conservation
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v16" value="Environment"> Environment
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v17" value="Family"> Family
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v18" value="Government reform"> Government reform
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v19" value="Health & Medicine"> Health & Medicine
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v20" value="Housing and homelessness"> Housing and homelessness
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v21" value="Human rights"> Human rights
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v22" value="Human services"> Human services
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v23" value="Immigration"> Immigration
+                                    </label>
+                                </div>
+                                
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v24" value="International cooperation"> International cooperation
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v25" value="International relations"> International relations
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v26" value="Job & workplace"> Job & workplace
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v27" value="Legal assistance"> Legal assistance
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v28" value="LGBT"> LGBT
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v29" value="Library or resource center"> Library or resource center
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v30" value="Media"> Media
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v31" value="Men"> Men
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v32" value="Mental health"> Mental health
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v33" value="Microedit"> Microedit
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v34" value="Multi-service agency"> Multi-service agency
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v35" value="Museums and history"> Museums and history
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v36" value="Network of nonprofits"> Network of nonprofits
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v37" value="Personal finance"> Personal finance
+                                    </label>
+                                </div>
+                                
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v38" value="Philanthropy"> Philanthropy
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v39" value="Politics"> Politics
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v40" value="Poverty and hunger"> Poverty and hunger
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v41" value="Prison reform"> Prison reform
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v42" value="Professional association"> Professional association
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v43" value="Race and ethnicity"> Race and ethnicity
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v44" value="Religion and spirituality"> Religion and spirituality
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v45" value="Research and science"> Research and science
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v46" value="Rural"> Rural
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v47" value="Social enterprise"> Social enterprise
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v48" value="Sports and recreation"> Sports and recreation
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v49" value="Technology"> Technology
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v50" value="Travel and transportation"> Travel and transportation
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v51" value="Urban"> Urban
+                                    </label>
+                                </div>
+                                
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v52" value="Veterans"> Veterans
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v53" value="Victim support"> Victim support
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v54" value="Volunteering"> Volunteering
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v55" value="Women"> Women
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" id="v56" value="Youth"> Youth
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 text-left">
+                            </div>
+                            <div class="col-sm-6">
+                                <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-success pull-right" data-dismiss="modal" onclick="updateValueVolunteerInterest()">OK <i class="glyphicon glyphicon-arrow-right"></i></button>
                                 <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-default btn-danger pull-right" data-dismiss="modal" aria-hidden="true" >Cancel</button>
                             </div>
                         </div>
