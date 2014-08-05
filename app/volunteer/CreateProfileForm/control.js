@@ -280,6 +280,31 @@ $( "#time-checkbox" ).hover(function(event) {
     $(".check-label div.popover-content").replaceWith(element_time_comittment);
     $("#time-checkbox").popover('show');
 });
+/*area of Study */
+var element_area_study = "<p style='text-align:left; width:250px;color: #7c7c7a;font-family: Helvetica,Arial,sans-serif;font-size: 13px;'>Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>";
+$("#areaOfStudy").popover({
+      title: "Area of Study",
+      trigger: "hover"
+});
+$( "#areaOfStudy" ).hover(function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    $(".check-label div.popover-content").replaceWith(element_area_study);
+    $("#areaOfStudy").popover('show');
+});
+
+/*Description school */
+var element_description = "<p style='text-align:left; width:250px;color: #7c7c7a;font-family: Helvetica,Arial,sans-serif;font-size: 13px;'>Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>";
+$("#descriptionSchool").popover({
+      title: "Description",
+      trigger: "hover"
+});
+$( "#descriptionSchool" ).hover(function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    $(".check-label div.popover-content").replaceWith(element_description);
+    $("#descriptionSchool").popover('show');
+});
 
 /* checkboxes for schedule on hover */
 var element_schedule = "<p style='text-align:left; width:250px;color: #7c7c7a;font-family: Helvetica,Arial,sans-serif;font-size: 13px;'>Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>";
@@ -1105,3 +1130,4 @@ function updateValueVolunteerInterestText(){
     }
   }
 }
+
