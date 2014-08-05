@@ -258,7 +258,6 @@ hr {
 	font-family: inherit;
 	vertical-align: top;
 }
-.text-area:hover,
 .text-area:focus {
   border: 2px solid #00AEEC;
 }
@@ -274,7 +273,6 @@ input[type='text'] {
     outline: 0;
     cursor: text;   
 }
-input[type='text']:hover,
 input[type='text']:focus {
     border-color: #00aeec;   
 }
@@ -290,9 +288,13 @@ select {
     outline: 0;
     cursor: pointer;   	
 }
-select:hover,
 select:focus {
 	border-color: #00aeec;   	
+}
+.has-error select,
+.has-error input,
+.has-error textarea {
+border-color: #C70909;
 }
 
 /*Small button without padding */
@@ -407,12 +409,10 @@ position: relative;
 .vertical-align-top {
 	vertical-align: text-top;
 }
-
 .hr{
 	height:1px; 
 	background-color: #F0F0ED;
 }
-
 .hr1{
 	border-top: 2px dashed #DDDDDD;
 	margin-bottom: 5px;

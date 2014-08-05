@@ -880,27 +880,6 @@ function updateValueScreeningText(){
   }
 };
 
-//validating form
-$(document).ready(function(){
-  $("#message1span").hide();
-  $("#message2span").hide();
-  $("#message3span").hide();
-})
-function getValidateTitle(){
-  var title = $("#form-control-weight").val();
-  console.log(title)
-  $("#message1span").hide();
-  $("#message2span").hide();
-  $("#message3span").hide();
-  if(title == "" && title.length != 0){
-    $("#message3span").show();
-  }else if(title.length <= 5){
-    $("#message1span").show();
-  }else if(title.length >= 50){
-    $("#message2span").show();
-  } 
-}
-
 //Work Category
 var category_set = ['Unskilled volunteering', 'Skills-based volunteering', 'Volunteering in developing countries', 'Virtual volunteering', 'Micro-volunteering',
                   'International work-camps', 'Environmental volunteering', 'Volunteering in an emergency', 'Volunteering in schools', 'Corporate volunteering',

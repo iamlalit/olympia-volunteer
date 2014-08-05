@@ -160,21 +160,6 @@ div.time-label label{
 .bootstrap-tagsinput:focus {
   border-color: #00aeec;
 }
-input[type='text'] {
-    display: inline-block;
-    padding: 5px  5px;
-    font-size: 13px;
-    color: #444444;
-    background-color: #ffffff;
-    border: 2px solid #dddddd;
-    border-radius: 4px;
-    outline: 0;
-    cursor: text;   
-}
-input[type='text']:hover,
-input[type='text']:focus {
-    border-color: #00aeec;   
-}
 .modal-body p{
     font-size: 12px;
 }
