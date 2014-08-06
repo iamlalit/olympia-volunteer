@@ -656,9 +656,10 @@
                         </div>
                         <span title="Add a image"><a href="#">Add a Volunteer Experience</a></span>
                     </div>
-                    <div class="margin-top-15">&nbsp;</div>
-                    <p class="align-center bold italic">No Job/Volunteer Experience has been shared yet</p>
-                    <p class="align-center italic">Please click on "Add a Volunteer Experience" to add information about your Job/Volunteer Experience</p>
+                    <div class="margin-top-35" ng-if="lengthOfSchools == 0">
+                        <p class="align-center bold italic">No Job/Volunteer Experience has been shared yet</p>
+                        <p class="align-center italic">Please click on "Add a Volunteer Experience" to add information about your Job/Volunteer Experience</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -669,7 +670,6 @@
                 <div class="form-group col-sm-5 complete-profile">
                     <button class="btn btn-success" >Save Profile and Continue</button>
                     <button class="btn btn-danger" >Cancel</button>
-                    
                 </div>
             </div>
         </div>  

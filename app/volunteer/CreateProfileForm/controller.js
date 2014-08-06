@@ -6,13 +6,14 @@ landingController.controller('landingPage', ['$scope', function ($scope) {
 	errorDiv = $('#errorMsg'),
 	errorList = $('#errorList');
     $('#errorMsg').hide();
+    var schoolAns1 = $("#schoolAns1");
+    var schoolAns2 = $("#schoolAns2");
+    var schoolAns3 = $("#schoolAns3");
+    var schoolAns4 = $("#schoolAns4");
+    var schoolAns5 = $("#schoolAns5");
     $scope.updateSchoolDetails = function(obj, check){
 
-        var schoolAns1 = $("#schoolAns1");
-        var schoolAns2 = $("#schoolAns2");
-        var schoolAns3 = $("#schoolAns3");
-        var schoolAns4 = $("#schoolAns4");
-        var schoolAns5 = $("#schoolAns5");
+        
 
         if(schoolAns1.val() == '' || schoolAns1.val() == null){
         	if (errorList.find('.errormessage-schoolAns1').length == 0) {
@@ -232,5 +233,10 @@ landingController.controller('landingPage', ['$scope', function ($scope) {
         $scope.school.startDate = 0;
         $scope.school.endDate = 0;
     	$('#addSchool').modal('hide');
+        schoolAns1.parent().removeClass('has-error');
+        schoolAns2.parent().removeClass('has-error');
+        schoolAns3.parent().removeClass('has-error');
+        schoolAns4.parent().removeClass('has-error');
+        schoolAns5.parent().removeClass('has-error');
     }
 }]);
