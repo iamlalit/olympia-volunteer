@@ -656,9 +656,23 @@
                         </div>
                         <span><a href="#" id="zoomTextarea1" title="Click to add Job" data-toggle="modal" data-target="#addJob">Add a Volunteer Experience</a></span>
                     </div>
-                    <div class="margin-top-35" ng-if="lengthOfSchools == 0">
+                    <div class="margin-top-35" ng-if="lengthOfJobs == 0">
                         <p class="align-center bold italic">No Job/Volunteer Experience has been shared yet</p>
                         <p class="align-center italic">Please click on "Add a Volunteer Experience" to add information about your Job/Volunteer Experience</p>
+                    </div>
+
+                    <div class="margin-top-35" ng-if="lengthOfJobs != 0">
+                        <div ng-repeat="school in listOfJobs track by $index">
+                            <label ng-bind="school.name"></label>
+                            <p class="margin-bottom-0"><label class="margin-bottom-0">Location - </label>&nbsp;<span ng-bind="job"></span></p>
+                            <p class="margin-bottom-0"><label class="margin-bottom-0">Title - </label>&nbsp;<span ng-bind="school.areaOfStudy"></span></p>
+                            <p class="margin-bottom-0"><label class="margin-bottom-0">From - </label>&nbsp;<span ng-bind="school.startDate"></span>&nbsp;&nbsp;<label class="margin-bottom-0">To - </label>&nbsp;<span ng-bind="school.endDate"></span></p>
+                            <div class="row" ng-if="$index !== lengthOfSchools-1">
+                                <div class="col-sm-12 padding-right-5">
+                                    <div class="hr1"></div>
+                                </div>  
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1387,18 +1401,18 @@
         <div class="modal-dialog modal-md">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close big-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <button type="button" class="close big-close" ng-click="jobCancel()" aria-hidden="true">&times;</button>
                     <h2 class="modal-title" id="myModalLabel">Add Job</h2>
                 </div>
-                <form role="form" name="schoolForm" id="schoolForm" novalidate>
+                <form role="form" name="jobForm" id="jobForm" novalidate>
                     <div class="modal-body">
-                        <div class="row">
+                        <div class="row" id="errorMsg1">
                             <div class="col-lg-12">
                                 <div class="col-sm-1"></div>
-                                <div class="alert alert-danger col-sm-10" id="errorMsg">
+                                <div class="alert alert-danger col-sm-10">
                                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                                     <h4 class="text-center margin-top-0">Please fix the following issues</h4>
-                                    <ul id="errorList" style="margin-bottom:35px"></ul>
+                                    <ul id="errorList1" style="margin-bottom:35px"></ul>
                                 </div>
                                 <div class="col-sm-1"></div>
                             </div>
@@ -1408,129 +1422,129 @@
                                 <label>Organization</label>
                             </div>
                             <div class="col-sm-12">
-                                <input type="text" class="col-sm-12" ng-model="school.name" id="schoolAns1" ng-required/>
+                                <input type="text" class="col-sm-12" ng-model="school.name" id="jobAns1" ng-required/>
                             </div>
                             <div class="col-sm-12 margin-top-10 check-label">
                                 <label>Location</label>
                             </div>
                             <div class="col-sm-12">
                                 <div  class="col-sm-6 padding-left-0">
-                                    <input type="text" ng-model="school.areaOfStudy" class="col-sm-12" id="schoolAns3" ng-required placeholder="City"/>
+                                    <input type="text" ng-model="job.city" class="col-sm-12" id="jobAns2" ng-required placeholder="City"/>
                                 </div>
                                 <div class="col-sm-6 padding-right-0">
-                                    <select class='col-sm-12'>
-                                        <option value='Ipsum'>Afghanistan</option>
-                                        <option value='Consectetur'>Akrotiri</option>
-                                        <option value='Ipsum'>Albania</option>
-                                        <option value='Consectetur'>Algeria</option>
-                                        <option value='Ipsum'>Angola</option>
-                                        <option value='Consectetur'>Antarctica</option>
-                                        <option value='Ipsum'>Antigua and Barbuda</option>
-                                        <option value='Consectetur'>Argentina</option>
-                                        <option value='Ipsum'>Australia</option>
-                                        <option value='Consectetur'>Austria</option>
-                                        <option value='Ipsum'>Bahamas, The</option>
-                                        <option value='Consectetur'>Bangladesh</option>
-                                        <option value='Ipsum'>Bassas da India</option>
-                                        <option value='Consectetur'>Belarus</option>
-                                        <option value='Ipsum'>Belgium</option>
-                                        <option value='Consectetur'>Bermuda</option>
-                                        <option value='Ipsum'>Bhutan</option>
-                                        <option value='Consectetur'>Brazil</option>
-                                        <option value='Ipsum'>British Indian Ocean Territory</option>
-                                        <option value='Consectetur'>British Virgin Islands</option>
-                                        <option value='Ipsum'>Bulgaria</option>
-                                        <option value='Consectetur'>Burma</option>
-                                        <option value='Ipsum'>Burundi</option>
-                                        <option value='Consectetur'>Cambodia</option>
-                                        <option value='Ipsum'>Cameroon</option>
-                                        <option value='Consectetur'>Canada</option>
-                                        <option value='Ipsum'>China</option>
-                                        <option value='Consectetur'>Cocos (Keeling) Islands</option>
-                                        <option value='Ipsum'>Colombia</option>
-                                        <option value='Consectetur'>Comoros</option>
-                                        <option value='Ipsum'>Congo, Democratic Republic of the</option>
-                                        <option value='Consectetur'>Congo, Republic of the</option>
-                                        <option value='Ipsum'>Cook Islands</option>
-                                        <option value='Consectetur'>Cuba</option>
-                                        <option value='Ipsum'>Cyprus</option>
-                                        <option value='Consectetur'>Denmark</option>
-                                        <option value='Ipsum'>Dominican Republic</option>
-                                        <option value='Consectetur'>Ecuador</option>
-                                        <option value='Ipsum'>Egypt</option>
-                                        <option value='Consectetur'>Ethiopia</option>
-                                        <option value='Ipsum'>Finland</option>
-                                        <option value='Consectetur'>France</option>
-                                        <option value='Ipsum'>Georgia</option>
-                                        <option value='Consectetur'>Germany</option>
-                                        <option value='Ipsum'>Greece</option>
-                                        <option value='Consectetur'>Greenland</option>
-                                        <option value='Ipsum'>Guinea</option>
-                                        <option value='Consectetur'>Holy See (Vatican City)</option>
-                                        <option value='Ipsum'>Hong Kong</option>
-                                        <option value='Consectetur'>Iceland</option>
-                                        <option value='Ipsum'>India</option>
-                                        <option value='Consectetur'>Indonesia</option>
-                                        <option value='Ipsum'>Iran</option>
-                                        <option value='Consectetur'>Iraq</option>
-                                        <option value='Ipsum'>Ireland</option>
-                                        <option value='Consectetur'>Israel</option>
-                                        <option value='Ipsum'>Italy</option>
-                                        <option value='Consectetur'>Jamaica</option>
-                                        <option value='Ipsum'>Japan</option>
-                                        <option value='Consectetur'>Jersey</option>
-                                        <option value='Ipsum'>Kazakhstan</option>
-                                        <option value='Consectetur'>Kenya</option>
-                                        <option value='Ipsum'>Korea</option>
-                                        <option value='Consectetur'>Kuwait</option>
-                                        <option value='Ipsum'>Laos</option>
-                                        <option value='Consectetur'>Lebanon</option>
-                                        <option value='Ipsum'>Liberia</option>
-                                        <option value='Consectetur'>Macau</option>
-                                        <option value='Ipsum'>Malaysia</option>
-                                        <option value='Consectetur'>Maldives</option>
-                                        <option value='Ipsum'>Mauritius</option>
-                                        <option value='Consectetur'>Mexico</option>
-                                        <option value='Ipsum'>Mozambique</option>
-                                        <option value='Consectetur'>Namibia</option>
-                                        <option value='Ipsum'>Nepal</option>
-                                        <option value='Consectetur' selected="selected">Netherlands</option>
-                                        <option value='Ipsum'>New Zealand</option>
-                                        <option value='Consectetur'>Norway</option>
-                                        <option value='Ipsum'>Oman</option>
-                                        <option value='Consectetur'>Pakistan</option>
-                                        <option value='Ipsum'>Peru</option>
-                                        <option value='Consectetur'>Philippines</option>
-                                        <option value='Ipsum'>Poland</option>
-                                        <option value='Consectetur'>Portugal</option>
-                                        <option value='Ipsum'>Qatar</option>
-                                        <option value='Consectetur'>Romania</option>
-                                        <option value='Ipsum'>Russia</option>
-                                        <option value='Consectetur'>Saudi Arabia</option>
-                                        <option value='Ipsum'>Sierra Leone</option>
-                                        <option value='Consectetur'>Singapore</option>
-                                        <option value='Ipsum'>Solomon Islands</option>
-                                        <option value='Consectetur'>Somalia</option>
+                                    <select class='col-sm-12' ng-model="job.country" ng-init="job.country = 'Netherlands'">
+                                        <option value='Afghanistan'>Afghanistan</option>
+                                        <option value='Akrotiri'>Akrotiri</option>
+                                        <option value='Albania'>Albania</option>
+                                        <option value='Algeria'>Algeria</option>
+                                        <option value='Angola'>Angola</option>
+                                        <option value='Antarctica'>Antarctica</option>
+                                        <option value='Antigua and Barbuda'>Antigua and Barbuda</option>
+                                        <option value='Argentina'>Argentina</option>
+                                        <option value='Australia'>Australia</option>
+                                        <option value='Austria'>Austria</option>
+                                        <option value='Bahamas, The'>Bahamas, The</option>
+                                        <option value='Bangladesh'>Bangladesh</option>
+                                        <option value='Bassas da India'>Bassas da India</option>
+                                        <option value='Belarus'>Belarus</option>
+                                        <option value='Belgium'>Belgium</option>
+                                        <option value='Bermuda'>Bermuda</option>
+                                        <option value='Bhutan'>Bhutan</option>
+                                        <option value='Brazil'>Brazil</option>
+                                        <option value='British Indian Ocean Territory'>British Indian Ocean Territory</option>
+                                        <option value='British Virgin Islands'>British Virgin Islands</option>
+                                        <option value='Bulgaria'>Bulgaria</option>
+                                        <option value='Burma'>Burma</option>
+                                        <option value='Burundi'>Burundi</option>
+                                        <option value='Cambodia'>Cambodia</option>
+                                        <option value='Cameroon'>Cameroon</option>
+                                        <option value='Canada'>Canada</option>
+                                        <option value='China'>China</option>
+                                        <option value='Cocos (Keeling) Islands'>Cocos (Keeling) Islands</option>
+                                        <option value='Colombia'>Colombia</option>
+                                        <option value='Comoros'>Comoros</option>
+                                        <option value='Congo, Democratic Republic of the'>Congo, Democratic Republic of the</option>
+                                        <option value='Congo, Republic of the'>Congo, Republic of the</option>
+                                        <option value='Cook Islands'>Cook Islands</option>
+                                        <option value='Cuba'>Cuba</option>
+                                        <option value='Cyprus'>Cyprus</option>
+                                        <option value='Denmark'>Denmark</option>
+                                        <option value='Dominican Republic'>Dominican Republic</option>
+                                        <option value='Ecuador'>Ecuador</option>
+                                        <option value='Egypt'>Egypt</option>
+                                        <option value='Ethiopia'>Ethiopia</option>
+                                        <option value='Finland'>Finland</option>
+                                        <option value='France'>France</option>
+                                        <option value='Georgia'>Georgia</option>
+                                        <option value='Germany'>Germany</option>
+                                        <option value='Greece'>Greece</option>
+                                        <option value='Greenland'>Greenland</option>
+                                        <option value='Guinea'>Guinea</option>
+                                        <option value='Holy See (Vatican City)'>Holy See (Vatican City)</option>
+                                        <option value='Hong Kong'>Hong Kong</option>
+                                        <option value='Iceland'>Iceland</option>
+                                        <option value='India'>India</option>
+                                        <option value='Indonesia'>Indonesia</option>
+                                        <option value='Iran'>Iran</option>
+                                        <option value='Iraq'>Iraq</option>
+                                        <option value='Ireland'>Ireland</option>
+                                        <option value='Israel'>Israel</option>
+                                        <option value='Italy'>Italy</option>
+                                        <option value='Jamaica'>Jamaica</option>
+                                        <option value='Japan'>Japan</option>
+                                        <option value='Jersey'>Jersey</option>
+                                        <option value='Kazakhstan'>Kazakhstan</option>
+                                        <option value='Kenya'>Kenya</option>
+                                        <option value='Korea'>Korea</option>
+                                        <option value='Kuwait'>Kuwait</option>
+                                        <option value='Laos'>Laos</option>
+                                        <option value='Lebanon'>Lebanon</option>
+                                        <option value='Liberia'>Liberia</option>
+                                        <option value='Macau'>Macau</option>
+                                        <option value='Malaysia'>Malaysia</option>
+                                        <option value='Maldives'>Maldives</option>
+                                        <option value='Mauritius'>Mauritius</option>
+                                        <option value='Mexico'>Mexico</option>
+                                        <option value='Mozambique'>Mozambique</option>
+                                        <option value='Namibia'>Namibia</option>
+                                        <option value='Nepal'>Nepal</option>
+                                        <option value='Netherlands' selected="selected">Netherlands</option>
+                                        <option value='New Zealand'>New Zealand</option>
+                                        <option value='Norway'>Norway</option>
+                                        <option value='Oman'>Oman</option>
+                                        <option value='Pakistan'>Pakistan</option>
+                                        <option value='Peru'>Peru</option>
+                                        <option value='Philippines'>Philippines</option>
+                                        <option value='Poland'>Poland</option>
+                                        <option value='Portugal'>Portugal</option>
+                                        <option value='Qatar'>Qatar</option>
+                                        <option value='Romania'>Romania</option>
+                                        <option value='Russia'>Russia</option>
+                                        <option value='Saudi Arabia'>Saudi Arabia</option>
+                                        <option value='Sierra Leone'>Sierra Leone</option>
+                                        <option value='Singapore'>Singapore</option>
+                                        <option value='Solomon Islands'>Solomon Islands</option>
+                                        <option value='Somalia'>Somalia</option>
 
-                                        <option value='Ipsum'>South Africa</option>
-                                        <option value='Consectetur'>Spain</option>
-                                        <option value='Ipsum'>Sri Lanka</option>
-                                        <option value='Consectetur'>Sweden</option>
-                                        <option value='Ipsum'>Switzerland</option>
-                                        <option value='Consectetur'>Syria</option>
-                                        <option value='Ipsum'>Taiwan</option>
-                                        <option value='Consectetur'>Thailand</option>
-                                        <option value='Ipsum'>Turkey</option>
-                                        <option value='Consectetur'>Uganda</option>
-                                        <option value='Ipsum'>Ukraine</option>
-                                        <option value='Consectetur'>United Arab Emirates</option>
-                                        <option value='Ipsum'>United Kingdom</option>
-                                        <option value='Consectetur'>United States</option>
-                                        <option value='Ipsum'>Venezuela</option>
-                                        <option value='Consectetur'>Vietnam</option>
-                                        <option value='Ipsum'>Yemen</option>
-                                        <option value='Consectetur'>Zambia</option>
-                                        <option value='Ipsum'>Zimbabwe</option>
+                                        <option value='South Africa'>South Africa</option>
+                                        <option value='Spain'>Spain</option>
+                                        <option value='Sri Lanka'>Sri Lanka</option>
+                                        <option value='Sweden'>Sweden</option>
+                                        <option value='Switzerland'>Switzerland</option>
+                                        <option value='Syria'>Syria</option>
+                                        <option value='Taiwan'>Taiwan</option>
+                                        <option value='Thailand'>Thailand</option>
+                                        <option value='Turkey'>Turkey</option>
+                                        <option value='Uganda'>Uganda</option>
+                                        <option value='Ukraine'>Ukraine</option>
+                                        <option value='United Arab Emirates'>United Arab Emirates</option>
+                                        <option value='United Kingdom'>United Kingdom</option>
+                                        <option value='United States'>United States</option>
+                                        <option value='Venezuela'>Venezuela</option>
+                                        <option value='Vietnam'>Vietnam</option>
+                                        <option value='Yemen'>Yemen</option>
+                                        <option value='Zambia'>Zambia</option>
+                                        <option value='Zimbabwe'>Zimbabwe</option>
                                     </select>
                                 </div>
                             </div>
@@ -1538,13 +1552,13 @@
                                 <label>Title</label>
                             </div>
                             <div class="col-sm-12">
-                                <input type="text" class="col-sm-12" ng-model="school.degree" id="schoolAns2" ng-required/>
+                                <input type="text" class="col-sm-12" ng-model="job.title" id="jobAns3" ng-required/>
                             </div>
                             <div class="col-sm-12 margin-top-10">
                                 <label>Period</label>
                             </div>
                             <div class="col-sm-6 padding-right-0">
-                                <select class="col-sm-6">
+                                <select class="col-sm-6"  id="jonAns4" ng-init="job.month1 = 0" ng-model="job.month1">
                                     <option value="0" select="selected">Month</option>
                                     <option value="1">January</option>
                                     <option value="2">February</option>
@@ -1560,7 +1574,7 @@
                                     <option value="12">December</option>
                                 </select>
                                 <label class="pull-right"> &nbsp;&nbsp;&nbsp;_ </label>
-                                <select class="col-sm-5 pull-right" ng-model="school.startDate" ng-init="school.startDate = 0" id="schoolAns4" ng-required>
+                                <select class="col-sm-5 pull-right" ng-model="job.startDate" ng-init="job.startDate = 0" id="jobAns5" ng-required>
                                     <option value="0" select="selected">Year</option>
                                     <option value="2014">2014</option>
                                     <option value="2013">2013</option>
@@ -1640,7 +1654,7 @@
                                 </select>
                             </div>
                             <div class="col-sm-6">
-                                <select class="col-sm-6 width-140">
+                                <select class="col-sm-6 width-140" id="jobAns6" ng-init="job.month2 = 0" ng-model="job.month2">
                                     <option value="0" select="selected">Month</option>
                                     <option value="1">January</option>
                                     <option value="2">February</option>
@@ -1655,7 +1669,7 @@
                                     <option value="11">November</option>
                                     <option value="12">December</option>
                                 </select>
-                                <select class="col-sm-5 pull-right width-121" ng-model="school.startDate" ng-init="school.startDate = 0" id="schoolAns4" ng-required>
+                                <select class="col-sm-5 pull-right width-121" ng-model="job.endDate" ng-init="job.endDate = 0" id="jobAns7" ng-required>
                                     <option value="0" select="selected">Year</option>
                                     <option value="2014">2014</option>
                                     <option value="2013">2013</option>
@@ -1739,7 +1753,7 @@
                                 <div  class="col-sm-6">
                                     <div class="checkbox">
                                         <label>
-                                          <input type="checkbox"> I currently work here
+                                          <input type="checkbox" id="setCurrentDate" ng-model="setCurrentDate" ng-change="setDate()"> I currently work here
                                         </label>
                                     </div>
                                 </div>
@@ -1750,7 +1764,7 @@
                                 <a>
                                     <i class="glyphicon glyphicon-question-sign blue pointer" id="descriptionSchool"></i>
                                 </a>
-                                <span id="optional-text">(optional){{schoolAns2.$required}} </span> 
+                                <span id="optional-text">(optional) </span> 
                             </div>
                             <div class="col-sm-12">
                                 <textarea class="col-sm-12 text-area" rows="5" cols="60"></textarea>
@@ -1759,9 +1773,9 @@
                         <div class="row">
                             <div class="col-sm-3">&nbsp;</div>
                             <div class="col-sm-9">
-                                <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-default btn-danger" ng-click="schoolCancel()" aria-hidden="true" >Cancel</button>
-                                <button style="margin: 20px 10px 30px 0;" type="submit" class="btn btn-success" ng-click="updateSchoolDetails(school, 0)" ng-disabled="schoolForm.$invalid">Save and Add More</button>
-                                <button style="margin: 20px 0 30px 0;" type="submit" class="btn btn-success" ng-click="updateSchoolDetails(school, 1)" ng-disabled="schoolForm.$invalid">Save</button>
+                                <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-default btn-danger" ng-click="jobCancel()" aria-hidden="true" >Cancel</button>
+                                <button style="margin: 20px 10px 30px 0;" type="submit" class="btn btn-success" ng-click="updateJobDetails(job, 0)">Save and Add More</button>
+                                <button style="margin: 20px 0 30px 0;" type="submit" class="btn btn-success" ng-click="updateJobDetails(job, 1)">Save</button>
                             </div>
                         </div>
                     </div>
