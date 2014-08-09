@@ -26,7 +26,7 @@ landingController.controller('landingPage', ['$scope', function ($scope) {
     $scope.lengthOfJobs = $scope.listOfJobs.length;
 
 
-    $scope.updateSchoolDetails = function(obj, check){
+    $scope.updateSchoolDetails = function(obj, check, index){
         if(schoolAns1.val() == '' || schoolAns1.val() == null){
         	if (errorList.find('.errormessage-schoolAns1').length == 0) {
                 $('<li />', { html: 'School name required !', class: 'col-sm-6 errormessage-schoolAns1' })
@@ -110,120 +110,120 @@ landingController.controller('landingPage', ['$scope', function ($scope) {
 	            }
         }
 
-    schoolAns1.change(function() {
-        if(schoolAns1.val() == '' || schoolAns1.val() == null){
-        	if (errorList.find('.errormessage-schoolAns1').length == 0) {
-                $('<li />', { html: 'School name required !', class: 'col-sm-6 errormessage-schoolAns1' })
-                .appendTo(errorList)
-                .click(function () {
-                    schoolAns1.focus();
-                })
-                $('#errorMsg').show();
-                schoolAns1.parent().addClass('has-error');
+        schoolAns1.change(function() {
+            if(schoolAns1.val() == '' || schoolAns1.val() == null){
+            	if (errorList.find('.errormessage-schoolAns1').length == 0) {
+                    $('<li />', { html: 'School name required !', class: 'col-sm-6 errormessage-schoolAns1' })
+                    .appendTo(errorList)
+                    .click(function () {
+                        schoolAns1.focus();
+                    })
+                    $('#errorMsg').show();
+                    schoolAns1.parent().addClass('has-error');
+                }
+            }else {
+    	            if (schoolAns1.parent().hasClass('has-error')) {
+    	                schoolAns1.parent().removeClass('has-error')
+    	            };
+    	            if (errorList.find('.errormessage-schoolAns1').length > 0) {
+    	                errorList.find('.errormessage-schoolAns1').remove();
+    	            }
             }
-        }else {
-	            if (schoolAns1.parent().hasClass('has-error')) {
-	                schoolAns1.parent().removeClass('has-error')
-	            };
-	            if (errorList.find('.errormessage-schoolAns1').length > 0) {
-	                errorList.find('.errormessage-schoolAns1').remove();
-	            }
-        }
-    });
+        });
 
-    schoolAns2.change(function() {
-        if(schoolAns2.val() == '' || schoolAns2.val() == null){
-        	if (errorList.find('.errormessage-schoolAns2').length == 0) {
-                $('<li />', { html: 'Degree required !', class: 'col-sm-6 errormessage-schoolAns2' })
-                .appendTo(errorList)
-                .click(function () {
-                    schoolAns2.focus();
-                })
-                $('#errorMsg').show();
-                schoolAns2.parent().addClass('has-error');
+        schoolAns2.change(function() {
+            if(schoolAns2.val() == '' || schoolAns2.val() == null){
+            	if (errorList.find('.errormessage-schoolAns2').length == 0) {
+                    $('<li />', { html: 'Degree required !', class: 'col-sm-6 errormessage-schoolAns2' })
+                    .appendTo(errorList)
+                    .click(function () {
+                        schoolAns2.focus();
+                    })
+                    $('#errorMsg').show();
+                    schoolAns2.parent().addClass('has-error');
+                }
+            }else {
+    	            if (schoolAns2.parent().hasClass('has-error')) {
+    	                schoolAns2.parent().removeClass('has-error')
+    	            };
+    	            if (errorList.find('.errormessage-schoolAns2').length > 0) {
+    	                errorList.find('.errormessage-schoolAns2').remove();
+    	            }
             }
-        }else {
-	            if (schoolAns2.parent().hasClass('has-error')) {
-	                schoolAns2.parent().removeClass('has-error')
-	            };
-	            if (errorList.find('.errormessage-schoolAns2').length > 0) {
-	                errorList.find('.errormessage-schoolAns2').remove();
-	            }
-        }
-    });
+        });
 
-    schoolAns3.change(function() {
-        if(schoolAns3.val() == '' || schoolAns3.val() == null){
-        	if (errorList.find('.errormessage-schoolAns3').length == 0) {
-                $('<li />', { html: 'Arear of Study required !', class: 'col-sm-6 errormessage-schoolAns3' })
-                .appendTo(errorList)
-                .click(function () {
-                    schoolAns3.focus();
-                })
-                $('#errorMsg').show();
-                schoolAns3.parent().addClass('has-error');
+        schoolAns3.change(function() {
+            if(schoolAns3.val() == '' || schoolAns3.val() == null){
+            	if (errorList.find('.errormessage-schoolAns3').length == 0) {
+                    $('<li />', { html: 'Arear of Study required !', class: 'col-sm-6 errormessage-schoolAns3' })
+                    .appendTo(errorList)
+                    .click(function () {
+                        schoolAns3.focus();
+                    })
+                    $('#errorMsg').show();
+                    schoolAns3.parent().addClass('has-error');
+                }
+            }else {
+    	            if (schoolAns3.parent().hasClass('has-error')) {
+    	                schoolAns3.parent().removeClass('has-error')
+    	            };
+    	            if (errorList.find('.errormessage-schoolAns3').length > 0) {
+    	                errorList.find('.errormessage-schoolAns3').remove();
+    	            }
             }
-        }else {
-	            if (schoolAns3.parent().hasClass('has-error')) {
-	                schoolAns3.parent().removeClass('has-error')
-	            };
-	            if (errorList.find('.errormessage-schoolAns3').length > 0) {
-	                errorList.find('.errormessage-schoolAns3').remove();
-	            }
-        }
-    });
+        });
 
-    schoolAns4.change(function() {
+        schoolAns4.change(function() {
 
-	    if(parseInt($('#schoolAns4 option:selected').val()) == 0 || parseInt($('#schoolAns5 option:selected').val()) == 0){
-			if (errorList.find('.errormessage-schoolAns4').length == 0) {
-                $('<li />', { html: 'Date Attended required !', class: 'col-sm-6 errormessage-schoolAns4' })
-                .appendTo(errorList)
-                .click(function () {
-                	console.log("clicked");
-                    $("#schoolAns4").find('option:first').focus();
-                })
-                $('#errorMsg').show();
-                schoolAns4.parent().addClass('has-error');
-                schoolAns5.parent().addClass('has-error');
-            }
-        }else {
-        	console.log("updated");
-	            if (schoolAns4.parent().hasClass('has-error') || schoolAns5.parent().hasClass('has-error')) {
-	                schoolAns4.parent().removeClass('has-error');
-	                schoolAns5.parent().removeClass('has-error');
-	            };
-	            if (errorList.find('.errormessage-schoolAns4').length > 0) {
-	                errorList.find('.errormessage-schoolAns4').remove();
-	            }
-	        }
-    });
+    	    if(parseInt($('#schoolAns4 option:selected').val()) == 0 || parseInt($('#schoolAns5 option:selected').val()) == 0){
+    			if (errorList.find('.errormessage-schoolAns4').length == 0) {
+                    $('<li />', { html: 'Date Attended required !', class: 'col-sm-6 errormessage-schoolAns4' })
+                    .appendTo(errorList)
+                    .click(function () {
+                    	console.log("clicked");
+                        $("#schoolAns4").find('option:first').focus();
+                    })
+                    $('#errorMsg').show();
+                    schoolAns4.parent().addClass('has-error');
+                    schoolAns5.parent().addClass('has-error');
+                }
+            }else {
+            	console.log("updated");
+    	            if (schoolAns4.parent().hasClass('has-error') || schoolAns5.parent().hasClass('has-error')) {
+    	                schoolAns4.parent().removeClass('has-error');
+    	                schoolAns5.parent().removeClass('has-error');
+    	            };
+    	            if (errorList.find('.errormessage-schoolAns4').length > 0) {
+    	                errorList.find('.errormessage-schoolAns4').remove();
+    	            }
+    	        }
+        });
 
-    schoolAns5.change(function() {
+        schoolAns5.change(function() {
 
-	    if(parseInt($('#schoolAns4 option:selected').val()) == 0 || parseInt($('#schoolAns5 option:selected').val()) == 0){
-			if (errorList.find('.errormessage-schoolAns4').length == 0) {
-                $('<li />', { html: 'Date Attended required !', class: 'col-sm-6 errormessage-schoolAns4' })
-                .appendTo(errorList)
-                .click(function () {
-                	console.log("clicked");
-                    $("#schoolAns4").find('option:first').focus();
-                })
-                $('#errorMsg').show();
-                schoolAns4.parent().addClass('has-error');
-                schoolAns5.parent().addClass('has-error');
-            }
-        }else {
-        	console.log("updated");
-	            if (schoolAns4.parent().hasClass('has-error') || schoolAns5.parent().hasClass('has-error')) {
-	                schoolAns4.parent().removeClass('has-error');
-	                schoolAns5.parent().removeClass('has-error');
-	            };
-	            if (errorList.find('.errormessage-schoolAns4').length > 0) {
-	                errorList.find('.errormessage-schoolAns4').remove();
-	            }
-	        }
-    });
+    	    if(parseInt($('#schoolAns4 option:selected').val()) == 0 || parseInt($('#schoolAns5 option:selected').val()) == 0){
+    			if (errorList.find('.errormessage-schoolAns4').length == 0) {
+                    $('<li />', { html: 'Date Attended required !', class: 'col-sm-6 errormessage-schoolAns4' })
+                    .appendTo(errorList)
+                    .click(function () {
+                    	console.log("clicked");
+                        $("#schoolAns4").find('option:first').focus();
+                    })
+                    $('#errorMsg').show();
+                    schoolAns4.parent().addClass('has-error');
+                    schoolAns5.parent().addClass('has-error');
+                }
+            }else {
+            	console.log("updated");
+    	            if (schoolAns4.parent().hasClass('has-error') || schoolAns5.parent().hasClass('has-error')) {
+    	                schoolAns4.parent().removeClass('has-error');
+    	                schoolAns5.parent().removeClass('has-error');
+    	            };
+    	            if (errorList.find('.errormessage-schoolAns4').length > 0) {
+    	                errorList.find('.errormessage-schoolAns4').remove();
+    	            }
+    	        }
+        });
         if (errorList.children('li').length > 0) {
             $('#errorMsg').show();
         } else {
@@ -236,6 +236,9 @@ landingController.controller('landingPage', ['$scope', function ($scope) {
         }
         if(check == 1 && !errorList.children('li').length > 0){
         	$('#addSchool').modal('hide');
+        }
+        if(check == 2){
+            console.log($scope.listOfSchools[index].name);
         }
     }
     $scope.schoolCancel = function(){
@@ -563,6 +566,10 @@ landingController.controller('landingPage', ['$scope', function ($scope) {
         if(check == 1 && !(errorList1.children('li').length > 0)){
             $('#addJob').modal('hide');
         }
+
+        if(check == 2){
+            $('#addJob').modal('hide');
+        }
     }
     $scope.setDate = function() {
         if ($scope.setCurrentDate == true) {
@@ -578,8 +585,13 @@ landingController.controller('landingPage', ['$scope', function ($scope) {
             $scope.job.endDate = 0;
             jobAns6.parent().addClass('has-error');
             jobAns7.parent().addClass('has-error');
-
         }   
     }
-    
+ 
+    //edit functionality
+    $scope.openSchoolModel = function(school, index) {
+        $('#addSchool').modal('show');
+        console.log($scope.listOfSchools[index]);
+    }
+
 }]);

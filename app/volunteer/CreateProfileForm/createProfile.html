@@ -624,7 +624,13 @@
                     
                     <div class="margin-top-35" ng-if="lengthOfSchools != 0">
                         <div ng-repeat="school in listOfSchools track by $index">
-                            <label ng-bind="school.name"></label>
+                            <div class='padding-rl-0'>
+                                <label ng-bind="school.name" class="margin-right-15"></label>
+                                <span ng-click="updateSchoolDetails(job, 2, $index)">
+                                    <i class="glyphicon glyphicon-pencil pointer brand-blue"></i>
+                                    <a href="">Edit</a>
+                                </span>
+                            </div>
                             <p class="margin-bottom-0"><label class="margin-bottom-0">Degree - </label>&nbsp;<span ng-bind="school.degree"></span></p>
                             <p class="margin-bottom-0"><label class="margin-bottom-0">Area Of Study - </label>&nbsp;<span ng-bind="school.areaOfStudy"></span></p>
                             <p class="margin-bottom-0"><label class="margin-bottom-0">From - </label>&nbsp;<span ng-bind="school.startDate"></span>&nbsp;&nbsp;<label class="margin-bottom-0">To - </label>&nbsp;<span ng-bind="school.endDate"></span></p>
@@ -662,12 +668,12 @@
                     </div>
 
                     <div class="margin-top-35" ng-if="lengthOfJobs != 0">
-                        <div ng-repeat="school in listOfJobs track by $index">
-                            <label ng-bind="school.name"></label>
-                            <p class="margin-bottom-0"><label class="margin-bottom-0">Location - </label>&nbsp;<span ng-bind="job"></span></p>
-                            <p class="margin-bottom-0"><label class="margin-bottom-0">Title - </label>&nbsp;<span ng-bind="school.areaOfStudy"></span></p>
-                            <p class="margin-bottom-0"><label class="margin-bottom-0">From - </label>&nbsp;<span ng-bind="school.startDate"></span>&nbsp;&nbsp;<label class="margin-bottom-0">To - </label>&nbsp;<span ng-bind="school.endDate"></span></p>
-                            <div class="row" ng-if="$index !== lengthOfSchools-1">
+                        <div ng-repeat="job in listOfJobs track by $index">
+                            <p class="margin-bottom-0"><label class="margin-bottom-0">Title - </label>&nbsp;<span ng-bind="job.title"></span></p>
+                            <label ng-bind="job.name"></label>
+                            <p class="margin-bottom-0"><label class="margin-bottom-0">Location - </label>&nbsp;<span ng-bind="job.city"></span> &nbsp;<span ng-bind="job.country"></span></p>
+                            <p class="margin-bottom-0"><label class="margin-bottom-0">From - </label>&nbsp;<span ng-bind="job.month1"></span>, &nbsp;<span ng-bind="job.startDate"></span>&nbsp;&nbsp;<label class="margin-bottom-0">To - </label>&nbsp;<span ng-bind="job.month2"></span>, &nbsp;<span ng-bind="job.endDate"></span></p>
+                            <div class="row" ng-if="$index !== lengthOfJobs-1">
                                 <div class="col-sm-12 padding-right-5">
                                     <div class="hr1"></div>
                                 </div>  
@@ -1376,7 +1382,7 @@
                                 <a>
                                     <i class="glyphicon glyphicon-question-sign blue pointer" id="descriptionSchool"></i>
                                 </a>
-                                <span id="optional-text">(optional){{schoolAns2.$required}} </span> 
+                                <span id="optional-text">(optional) </span> 
                             </div>
                             <div class="col-sm-12">
                                 <textarea class="col-sm-12 text-area" rows="5" cols="60"></textarea>
@@ -1386,8 +1392,8 @@
                             <div class="col-sm-3">&nbsp;</div>
                             <div class="col-sm-9">
                                 <button style="margin: 20px 10px 30px 0;" type="button" class="btn btn-default btn-danger" ng-click="schoolCancel()" aria-hidden="true" >Cancel</button>
-                                <button style="margin: 20px 10px 30px 0;" type="submit" class="btn btn-success" ng-click="updateSchoolDetails(school, 0)" ng-disabled="schoolForm.$invalid">Save and Add More</button>
-                                <button style="margin: 20px 0 30px 0;" type="submit" class="btn btn-success" ng-click="updateSchoolDetails(school, 1)" ng-disabled="schoolForm.$invalid">Save</button>
+                                <button style="margin: 20px 10px 30px 0;" type="submit" class="btn btn-success" ng-click="updateSchoolDetails(school, 0, null)" ng-disabled="schoolForm.$invalid">Save and Add More</button>
+                                <button style="margin: 20px 0 30px 0;" type="submit" class="btn btn-success" ng-click="updateSchoolDetails(school, 1, null)" ng-disabled="schoolForm.$invalid">Save</button>
                             </div>
                         </div>
                     </div>
@@ -1422,7 +1428,7 @@
                                 <label>Organization</label>
                             </div>
                             <div class="col-sm-12">
-                                <input type="text" class="col-sm-12" ng-model="school.name" id="jobAns1" ng-required/>
+                                <input type="text" class="col-sm-12" ng-model="job.name" id="jobAns1" ng-required/>
                             </div>
                             <div class="col-sm-12 margin-top-10 check-label">
                                 <label>Location</label>
