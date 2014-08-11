@@ -1,60 +1,58 @@
 ﻿var app = angular.module('jobDetailsController', []);
 app.controller('jobDetails', ['$scope', function ($scope) {
-    $scope.applicantData = [];
-    $scope.applicantData.push({'city': 'Amsterdam',
-      'date': '10 days ago',
-      'initiated': "Volunteer"
-    }); 
-    $scope.applicantData.push({'city': 'Boekel',
-      'date': '5 days ago',
-      'initiated': "Client"
-    }); 
-    $scope.applicantData.push({'city': 'Bregtdorp',
-      'date': '1 day ago',
-      'initiated': "Volunteer"
-    }); 
-    $scope.applicantData.push({'city': 'Driemond',
-      'date': '5 hours ago',
-      'initiated': "Client"
-    }); 
-    $scope.applicantData.push({'city': 'Callantsoog',
-      'date': '10 days ago',
-      'initiated': "Volunteer"
-    }); 
-    $scope.applicantData.push({'city': 'De Westen',
-      'date': '10 hours ago',
-      'initiated': "Client"
-    }); 
-    $scope.applicantData.push({'city': 'Keinsmerbrug',
-      'date': '1 day ago',
-      'initiated': "Volunteer"
-    }); 
-    $scope.applicantData.push({'city': 'Krommeniedijk',
-      'date': '2 days ago',
-      'initiated': "Volunteer"
-    }); 
-    $scope.applicantData.push({'city': 'Mennonietenbuurt',
-      'date': '8 hours ago',
-      'initiated': "Volunteer"
-    }); 
-    $scope.applicantData.push({'city': 'Oude-Niedorp',
-      'date': '15 days ago',
-      'initiated': "Volunteer"
-    }); 
-    $scope.lengthOfApplicantData = $scope.applicantData.length;
+    $scope.volunteerSkills = ['Cooking', 'Education', 'Caring for People', 'Communication', 'Crowd control', 'Damage control', 'First aid'];
+
     $scope.variableMoreLess = 3;
-
+    $scope.listOfSchools = [];
+    $scope.listOfJobs = [];
     $scope.areaFocuses = ["Disability", "Education", "Energy conservation", "Government reform", "Housing and homelessness"];
-    $scope.postJobSkills = ["Crowd control", "Cooking", "Communication"];
-    $scope.postJobDiploma = ["Program coordinator", "Negotiation"];
-    $scope.postJobTime = ["Full time(30-40 hours/week)"];
-    $scope.postJobEstimated = ["Less than 3 months", "Less than 1 months"];
-    $scope.postJobTimeReq = ["Weekends - Full day", "Monday - Late Night"];
-    $scope.postJobSchedule = ["Flexible schedule"];
-    $scope.postJobIVO = ["Housing available"];
-    $scope.postJobLanguage = ["English", "Dutch"];
-    $scope.postJobMiscellaneous = ["Training provided", "Fee required"];
+    $scope.contactVolWork = ["Micro - volunteering", "Orphanage", "Politics", "Volunteering in schools", "Research & science", "Eco-tourism"];
+    $scope.contactVolDiploma = ["Program coordinator", "Negotiation", "Communication", "Football match refree"];
+    $scope.contactVolTime = ["Weekends - Full day", "Monday - Late Night", "Thursday - Evening"];
 
+    $scope.listOfSchools.push({
+      'name': 'London School of Economics(University of London)',
+      'degree': 'Politics and International Relations',
+      'startDate': 'Jul 2010',
+      'endDate': 'Jun 2012',
+      'areaOfStudy': 'Economics'
+    });
+
+    $scope.listOfSchools.push({
+      'name': 'Harvard University School of Medicine',
+      'degree': 'Politics and International Relations',
+      'startDate': 'Jul 2010',
+      'endDate': 'Jun 2012',
+      'areaOfStudy': 'Economics'
+    });
+
+    $scope.listOfSchools.push({
+      'name': 'Tufts University School of Medicine',
+      'degree': 'Politics and International Relations',
+      'startDate': 'Jul 2010',
+      'endDate': 'Jun 2012',
+      'areaOfStudy': 'Economics'
+    });
+    $scope.lengthOfSchools = $scope.listOfSchools.length;
+
+    $scope.listOfJobs.push({
+      'name': 'Micro Finance Volunteering Oppurtunities',
+      'organization': 'Red Cross NL',
+      'startDate': 'Jul 2010',
+      'endDate': 'Jun 2012',
+      'description': 'Micro Projects Volunteering Program is mainly focused on rural Women & Youth empowerments programs in Nepal. This program generally supports the rural women & youths by means of short term professional training for various income generating schemes in order to make the system fruitful.'
+    });
+
+    $scope.listOfJobs.push({
+      'name': 'Volunteer Event @ Durfee-Thompson School',
+      'organization': 'Red Cross NL',
+      'startDate': 'Jul 2010',
+      'endDate': 'Jun 2012',
+      'description': 'Micro Projects Volunteering Program is mainly focused on rural Women & Youth empowerments programs in Nepal. This program generally supports the rural women & youths by means of short term professional training for various income generating schemes in order to make the system fruitful.'
+    });
+
+
+    $scope.lengthOfJobs = $scope.listOfJobs.length;
     function getParameterByName(name) {
       name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
       var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
