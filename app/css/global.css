@@ -1,11 +1,8 @@
-/*Base*/
 ul{
     list-style:none;
     margin:0;
     padding:0;
 }
-/*global Classes*/
-/*colors*/
 .red{
 	color:red;
 }
@@ -60,7 +57,11 @@ a {
 .form-group .form-control:focus{
     border-color:#33ccff;
 }
-
+/*errors listings*/
+.errorList {
+  list-style-type: disc;
+  padding-left: 15px;
+}
 /* Buttons */
 .btn-site{
     width:100%;
@@ -79,19 +80,19 @@ hr {
   overflow: hidden;
   vertical-align: middle;
 }
-    .btn-file > input {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        font-size: 23px;
-        cursor: pointer;
-        filter: alpha(opacity=0);
-        opacity: 0;
-        direction: ltr;
-    }
+.btn-file > input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-size: 23px;
+    cursor: pointer;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    direction: ltr;
+}
 .color-green{
 	color: #009e0f;
 }
@@ -414,8 +415,8 @@ position: relative;
 .float-left{
 	float: left;
 }
-.list-style-none{
-	list-style-type: none;
+.list-style-disc{
+	list-style-type: disc;
 }
 
 /*###############*/
