@@ -67,5 +67,4 @@ app.controller('jobDetails', ['$scope', function ($scope) {
   $scope.applyToJob = function(){
     window.location.href = "../jobApply/jobApply.html?jobName=" + $scope.jobName +"&jobDate=" + $scope.jobDate;
   }
-
 }]);
