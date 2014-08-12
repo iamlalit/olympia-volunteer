@@ -13,6 +13,7 @@
     <link href="../../css/organization/viewApp/viewApp.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700&subset=latin,cyrillic-ext,greek-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
     <link href="../../css/volunteer/jobDetails/jobDetails.css" rel="stylesheet">
+        <link href="../../css/volunteer/volunteerProfile/volunteerProfile.css" rel="stylesheet">
 </head>
 
 <body ng-controller="jobDetails">
@@ -76,164 +77,145 @@
         </div>
     </header>
     <div class="container">
-        <div class="row margin-rl-0">
-            <div class="col-sm-12 padding-rl-0">
-                <!-- Navigation back to page-->
-                <span>
-                    <a href="../Searchjob/Searchjob.html" class="navigation">
-                        <i class="icon-chevron-left black-arrow"></i>Back to Job Postings
-                    </a>
-                </span>
+        <div class="row margin-rl-0 margin-top-10">
+            <div class="col-sm-1">
+                <i class="glyphicon glyphicon-user font-size-4"></i>
+            </div>
+            <div class="col-sm-3">
+                <div>
+                    <h4 class="inline-block padding-left-5 bold">Sandy Noteborn</h4>
+                </div>
+                <div>
+                    <span class="padding-left-5">Amsterdan, Noord Holland</span>
+                </div>
             </div>
         </div>
         <div class="row margin-rl-0">
             <div class="col-sm-8 padding-rl-0">
-                <div class="main-border1">
-                    <div class="panel-title">
-                        <span ng-bind="jobName"></span>
+                <div class="row margin-rl-0">
+                    <div class="col-sm-12 padding-rl-0 margin-top-10 margin-bottom-10">
+                        <div class="row margin-rl-0 margin-top--3">
+                            <span class="small-pill margin-left-10" ng-repeat="volunteerSkill in volunteerSkills" ng-bind="volunteerSkill"></span>
+                        </div>
                     </div>
-                    <div>
-                        <strong>Event Type: </strong><span>Event&nbsp;</span>
-                        <strong>Posted: </strong><span ng-bind="jobDate"></span>
-                    </div>
-                    <br />
-                    <h4 class="margin-top-0 margin-bottom-0 bold">Job Description</h4>
-                    <p>As a Quality assurance enginner, you will work cross functionality with your team to release new versions of our product on a weekly release cycle. This is an exciting oppurtunity to be an advocate for our users.</p>
-                    <p>Additionally you will be a critical factor in the development and success of the engineering department test automation and continous integration efforts.</p>
+                </div>
+                <div class="main-border1" ng-init="showMoreLess = false">
+                    <h4 class="margin-top-0 margin-bottom-0 bold">About Volunteer</h4>
+                    <p>I am four-year student in Biology working towards a Master's degree. I have fundamental basis in Ecology, Plant physiology and development and i have ever done several research projects in laboratories working on Evolutionary Biology.</p>
+                    <p>I am really interested in environment protection and wild life conservation. I have also a French Activity leader Certificate and I am a coordinator in summer camps. I really like to spend time with children.
+                        <span ng-click="showMoreLess = !showMoreLess" ng-show="showMoreLess == false"><a href="">more&gt;&gt;</a></span>
+                        <span ng-click="showMoreLess = !showMoreLess" ng-show="showMoreLess == true"><a href="">less&lt;&lt;</a></span>
+                    </p>
+                    
+                    <p ng-show="showMoreLess == true">I have a good command of English. I'm an eco-friendly person conerned about the environmental issues. I'm a loving caring person. I'm serious about evrything. I'm looking for an oppurtunity to help othersin a different way and experience a colourful life.</p>
 
-                    <br />
-                    <h5 class="margin-top-0 margin-bottom-0 bold">Responsibilities</h5>
-                    <ul>
-                        <li>Create test case and concurrently test multiple features</li>
-                        <li>Collaborate and communicate with engineering and product teams both in Ukraine and United States</li>
-                        <li>Develop, maintain and automate regression test cases for various test features</li>
-                        <li>Identify, analyze, and document problems with program functionality and/or content</li>
-                        <li>Review software documentation to ensure technical accuracy</li>
-                    </ul>
+                    <hr class="user-hr">
+
+                    <h4 class="margin-top-0 margin-bottom-0 bold">Employment/Volunteering job history</h4>
+                    
+                    <div ng-repeat="job in listOfJobs track by $index">
+                        <div class='padding-rl-0'>
+                            <span class="margin-right-15"><a href="" ng-bind="job.name"></a></span>
+                        </div>
+                        <p class="margin-bottom-0"><label class="margin-bottom-0">Organization - </label>&nbsp;<span ng-bind="job.organization"></span></p>
+                        <p class="margin-bottom-0"><label class="margin-bottom-0">Area Of Study - </label>&nbsp;<span ng-bind="job.areaOfStudy"></span></p>
+                        <p class="margin-bottom-0"><label class="margin-bottom-0">From - </label>&nbsp;<span ng-bind="job.startDate"></span>&nbsp;&nbsp;<label class="margin-bottom-0">To - </label>&nbsp;<span ng-bind="job.endDate"></span></p>
+                        <p class="margin-bottom-0"><label class="margin-bottom-0">Description - </label>&nbsp;<span ng-bind="job.description"></span></p>
+                        <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();" class="image-scroller">
+                            <img src="../../img/scrolling1.jpg" width="200" height="140" alt="smile"/>
+                            <img src="../../img/scrolling2.png" width="200" height="140" alt="smile"/>
+                            <img src="../../img/scrolling1.jpg" width="200" height="140" alt="smile"/>
+                            
+                        </marquee>
+                        <div class="row" ng-if="$index !== lengthOfJobs-1">
+                            <div class="col-sm-12 padding-right-5">
+                                <div class="hr1"></div>
+                            </div>  
+                        </div>
+                    </div>
+
+                    <hr class="user-hr" style="margin-top:20px">
+
+                    <h4 class="margin-top-0 margin-bottom-0 bold">Schools</h4>
+                    
+                    <div ng-repeat="school in listOfSchools track by $index">
+                        <div class='padding-rl-0'>
+                            <span class="margin-right-15"><a href="" ng-bind="school.name"></a></span>
+                        </div>
+                        <p class="margin-bottom-0"><label class="margin-bottom-0">Degree - </label>&nbsp;<span ng-bind="school.degree"></span></p>
+                        <p class="margin-bottom-0"><label class="margin-bottom-0">Area Of Study - </label>&nbsp;<span ng-bind="school.areaOfStudy"></span></p>
+                        <p class="margin-bottom-0"><label class="margin-bottom-0">From - </label>&nbsp;<span ng-bind="school.startDate"></span>&nbsp;&nbsp;<label class="margin-bottom-0">To - </label>&nbsp;<span ng-bind="school.endDate"></span></p>
+                        <div class="row" ng-if="$index !== lengthOfSchools-1">
+                            <div class="col-sm-12 padding-right-5">
+                                <div class="hr1"></div>
+                            </div>  
+                        </div>
+                    </div>
                 </div>
-                <div class="pill pointer" ng-click="openIt = !openIt" ng-init="openIt = false" ng-mouseover="hoverActive='plus-n-minus-fha'" ng-mouseleave="hoverActive=''">
-                    <div class="plus-n-minus" ng-class="hoverActive">
-                        <span class="icon-plus application-icon" ng-if="!openIt"></span>
-                        <span class="icon-minus application-icon" ng-if="openIt"></span>
-                    </div>
-                    <div class="inline-block">
-                        &nbsp;<strong>Applicants({{lengthOfApplicantData}})&nbsp;</strong><span class="italic color-777777 padding-left-130">Applicants from below cities have already applied for this job</span>
-                    </div>
-                </div>
-                <div class="row margin-rl-0" ng-if="openIt">
-                    <div class="margin-top-10">
-                        <label class="col-sm-1 padding-rl-0">&nbsp;</label>
-                        <label class="col-sm-4 padding-rl-0">Volunteer City</label>
-                        <label class="col-sm-4 padding-rl-0">Date Applied</label>
-                        <label class="col-sm-3 padding-rl-0">Initiated by</label>
-                    </div>
-                </div>
-                <div class="main-border1 padding-top-0 padding-rl-0 padding-15" ng-if="openIt">
-                    <div ng-repeat="applicant in applicantData" class="small-label" ng-if="$index <= variableMoreLess">
-                        <label class="col-sm-1 padding-rl-0">&nbsp;</label>
-                        <label class="col-sm-4 padding-rl-0">{{applicant.city}}</label>
-                        <label class="col-sm-4 padding-rl-0">{{applicant.date}}</label>
-                        <label class="col-sm-3 padding-rl-0">{{applicant.initiated}}</label>
-                        <hr class="create-hr">
-                    </div>
-                    <div>
-                        <span class="col-sm-1 padding-rl-0">&nbsp;</span>
-                        <span class="col-sm-11 padding-rl-0" ng-click="variableMoreLess = 100"  ng-show="variableMoreLess == 3">({{lengthOfApplicantData-variableMoreLess}})&nbsp;<a>more</a></span>
-                        <span class="col-sm-11 padding-rl-0" ng-click="variableMoreLess = 3" ng-show="variableMoreLess == 100"><a>less</a></span>
-                    </div>
-                </div>
-                <div class="pill margin-top-20">
-                    <h5><strong>Similar Jobs on Volunteer</strong></h5>
-                </div>                
-                <ul class="margin-top-10 list-style-none">
-                    <li><span><a>Middle School Tutor</a></span></li>
-                    <li><span><a>GED Social Studies Co-Teacher</a></span></li>
-                    <li><span><a>Research Assistant - Green Sea Turtle Programme</a></span></li>
-                    <li><span><a>It's National Mentoring Month - Become a mentor and change a life!</a></span></li>
-                    <li><span><a>Resource Development Committee</a></span></li>
-                </ul>
             </div>
             <div class="col-sm-4 padding-right-0">
                 <div class="margin-bottom-10">
-                    <button class="btn btn-success apply-button" type="button" ng-click="applyToJob()">Apply to this Job</button>
+                    <button class="btn btn-success apply-button" type="button" ng-click="contactVolunteer()">Contact Volunteer</button>
                 </div>
                 <div class="main-border1">
-                    <h5 class="bold">Organization</h5>
-                    <div class="row">
-                        <div class="col-sm-2">
-                            <img src="../../img/redCross.jpg" height="50" width="50">
+                    <div class="row margin-rl-0">
+                        <div class="col-sm-4 padding-rl-0">
+                            <h5 class="bold">Follow me on:</h5>
                         </div>
-                        <div class="col-sm-10">
-                            <span><a href="#">Red Cross NL</a></span>
-                            <p>Riders Club is more than just a way to get from here to there. Riders Club is a way to maintain freedom. Our mission is very simple: We provide scheduled transportation for mobile seniors. <span><a href="#" class="pull-right">more >></a></span></p>
-                            
+                        <div class="col-sm-8">
+                            <div class="social-network-icon-wrap" style="padding-right:30px">
+                                <a href="#" class="social-network-icons">
+                                    <span class="footer-circle footer-circle-twitter pull-right">
+                                        <i class="icon-twitter font-size-20 icon-attr1"> </i>
+                                    </span>
+                                </a>
+                                <a href="#" class="footer-select social-network-icons">
+                                    <span class="footer-circle footer-circle-linkedin pull-right">
+                                        <i class="icon-linkedin font-size-20 icon-attr1"> </i>
+                                    </span>
+                                </a>
+                                <a href="#" class="social-network-icons">
+                                    <span class="footer-circle footer-circle-facebook pull-right">
+                                        <i class="icon-facebook font-size-20 icon-attr1"> </i>
+                                    </span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <label class="margin-bottom-0" >Area of foucs</label>
                     <div class="row margin-rl-0 margin-top--3">
-                        <span class="small-pill" ng-repeat="areaOfFocus in areaFocuses">{{areaOfFocus}}</span>
+                        <div class="col-sm-4 padding-rl-0">
+                            <label>Birthday:</label>
+                        </div>
+                        <div class="col-sm-8">
+                            <span>July 23</span>
+                        </div>
                     </div>
-                </div>
-
-                <div class="main-border1" ng-init="hideMap = false">
-                    <h5 class="bold">Location (s)</h5>
-                    <div class="grid">
-                        <p><label>A - </label> Evert va de Beekstraat 202, 1118 CP Coevorden, Netherlands</p>
-                        <p><label>B - </label> Evert va de Beekstraat 342, 25 AB Vroomshoop, Netherlands
-                            <a href="" class="pull-right" ng-click="hideMap = true" ng-show="!hideMap">Hide map</a>
-                            <a href="" class="pull-right" ng-click="hideMap = false" ng-show="hideMap">Show map</a>
-                            </p>
+                    <div class="col-sm-12 padding-rl-0">
+                        <label>Phone number:</label>
+                        <span>+44-9765456711</span>
                     </div>
-                    <div class="grid" ng-if="!hideMap">
-                        <img src="../../img/map.png" height="200" width="290">
+                    <div class="row margin-bottom-0">
+                        &nbsp;
                     </div>
                 </div>
 
                 <div class="main-border1">
-                    <label class="margin-bottom-0">Skills needed:</label>
+                    <label class="margin-bottom-0">Volunteer work interests:</label>
                     <div class="row margin-rl-0 margin-bottom-15 margin-top--3">
-                        <span class="small-pill" ng-repeat="skills in postJobSkills">{{skills}}</span>
+                        <span class="small-pill" ng-repeat="volWork in contactVolWork" ng-bind="volWork"></span>
                     </div>
-                    <label class="margin-bottom-0">Diploam/Certificates needed:</label>
+                    <label class="margin-bottom-0">Diploam/Certificates:</label>
                     <div class="row margin-rl-0 margin-bottom-15 margin-top--3">
-                        <span class="small-pill" ng-repeat="diploma in postJobDiploma">{{diploma}}</span>
+                        <span class="small-pill" ng-repeat="diploma in contactVolDiploma" ng-bind="diploma"></span>
                     </div>
-                    <label class="margin-bottom-0">Time commitment:</label>
+                    <label class="margin-bottom-0">Working time preferences:</label>
                     <div class="row margin-rl-0 margin-bottom-15 margin-top--3">
-                        <span class="small-pill" ng-repeat="time in postJobTime">{{time}}</span>
+                        <span class="small-pill" ng-repeat="volTime in contactVolTime" ng-bind="volTime"></span>
                     </div>
-                    <label class="margin-bottom-0">Estimated duration:</label>
-                    <div class="row margin-rl-0 margin-bottom-15 margin-top--3">
-                        <span class="small-pill" ng-repeat="estimation in postJobEstimated">{{estimation}}</span>
-                    </div>
-                    <label class="margin-bottom-0">Working time requirements:</label>
-                    <div class="row margin-rl-0 margin-bottom-15 margin-top--3">
-                        <span class="small-pill" ng-repeat="timereq in postJobTimeReq">{{timereq}}</span>
-                    </div>
-                    <label class="margin-bottom-0">Schedule:</label>
-                    <div class="row margin-rl-0 margin-bottom-15 margin-top--3">
-                        <span class="small-pill" ng-repeat="schedule in postJobSchedule">{{schedule}}</span>
-                    </div>
-                    <label class="margin-bottom-0">international VOlunteer options:</label>
-                    <div class="row margin-rl-0 margin-bottom-15 margin-top--3">
-                        <span class="small-pill" ng-repeat="ivo in postJobIVO">{{ivo}}</span>
-                    </div>
-                    <label class="margin-bottom-0">Language:</label>
-                    <div class="row margin-rl-0 margin-bottom-15 margin-top--3">
-                        <span class="small-pill" ng-repeat="language in postJobLanguage">{{language}}</span>
-                    </div>
-                    <label class="margin-bottom-0">Miscellaneous:</label>
-                    <div class="row margin-rl-0 margin-bottom-15 margin-top--3">
-                        <span class="small-pill" ng-repeat="miscellaneous in postJobMiscellaneous">{{miscellaneous}}</span>
-                    </div>
-             
                 </div>
             </div>
         </div>
     </div>
-
-
-
 
     <footer>
         <div class="container1">

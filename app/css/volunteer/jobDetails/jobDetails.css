@@ -22,7 +22,6 @@
     bottom: 4px;
     left: 3px;
 }
-
 .pill{
     border-radius: 20px;
     padding: 5px 5px 5px 30px;
@@ -43,19 +42,7 @@
     padding-bottom:30px;
     padding-top:15px;
 }
-.small-pill {
-  display: inline-block;
-  margin: 0;
-  background-color: #eeeeee;
-  text-transform: capitalize;
-  border-radius: 6px;
-  padding:  4px;
-  font-size: 12px;
-  outline: 0;  
-  border: 0;
-  margin-right: 3px;
-  margin-top: 3px;
-}
+
 .small-pill.border-black{
   border: 3px dashed #111; 
 }
@@ -87,9 +74,9 @@
     float: left; /* IE 9 Fix */ 
 }
 .file-upload-input:hover, .file-upload-input:focus { 
-        outline: none; 
-         border: 2px solid #00AEEC;
-    }
+    outline: none; 
+    border: 2px solid #00AEEC;
+}
 .file-upload-button {
     display: inline-block;
     padding: 4px 12px;
@@ -112,4 +99,7 @@
     background-color: #428bca;
     border-color: #357ebd;
     float: left; /* IE 9 Fix */
+}
+ul{
+    padding-left: 15px;
 }
