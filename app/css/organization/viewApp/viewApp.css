@@ -113,7 +113,7 @@ Date: 6/12/2014
 	display: inline-block;
 	color: #858383;
 	margin-left: 9px;
-	margin-top:9px;
+	margin-top:7px;
 }
 .icon-attr1{
     display: inline-block;
@@ -354,6 +354,6 @@ div a label:hover{
 .icon-attr11{
     color: #858383;
     display: inline-block !important;
-    margin-top: 7px !important;
+    margin-top: 6px !important;
     margin-left: 7px !important;
 }
