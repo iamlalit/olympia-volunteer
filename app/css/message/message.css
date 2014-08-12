@@ -48,6 +48,13 @@ Description: Messages
 }
 
 /*Inbox*/
+.no-message{
+    font-size:21px;
+    font-weight:300;
+    text-align:center;
+    color:#7c7c7a;
+    display:block;
+}
 .message-wrapper{
     border:3px solid #f2f2f0;
     border-radius:4px;
