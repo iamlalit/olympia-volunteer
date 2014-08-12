@@ -124,7 +124,6 @@ hr {
 .text-area:focus {
   border: 2px solid #00AEEC;
 }
-
 input[type='text'] {
     display: inline-block;
     padding: 5px  5px;
@@ -139,7 +138,6 @@ input[type='text'] {
 input[type='text']:focus {
     border-color: #00aeec;   
 }
-
 select {
 	display: inline-block;
     padding: 5px  5px;
@@ -180,10 +178,6 @@ footer{
 .color-777777{
 	color: #777777;
 }
-
-ul{
-	padding-left: 15px;
-}
 .pointer{
 	cursor: pointer;
 }
@@ -193,7 +187,6 @@ ul{
 .inline-block{
 	display: inline-block;
 }
-
 .small-pill {
   display: inline-block;
   margin: 0;
