@@ -1,0 +1,24 @@
+﻿/*##############
+
+owner: harsh,
+Created on : 11th August 2014
+Description: Messages
+
+################*/
+.message-sidebar{
+    padding:0;
+}
+.message-sidebar > li a{
+    padding:8px 10px 6px 12px;
+    color:#867d87;
+    display:block;
+    border-radius:5px;
+}
+.message-sidebar > li a:hover{
+    background:#f2f2f0;
+    text-decoration:none;    
+}
+.message-sidebar > li a.selected{
+    background:#f2f2f0;
+    color:#0093f0;
+}
