@@ -5,7 +5,7 @@ Date: 6/12/2014
 -->
 
 <!doctype html>
-<html lang="en" ng-app="jobApplicationcontroller">
+<html lang="en" ng-app="messageApp">
 <head>
     <meta charset="utf-8">
     <title>OLYMPIA</title>
@@ -22,7 +22,7 @@ Date: 6/12/2014
     <link href="../css/global.css" rel="stylesheet" />
     <link href="../css/message/message.css" rel="stylesheet" />
 </head>
-<body ng-controller='jobAPPlicationCtrl'>
+<body ng-controller='messageController'>
     <!-- Page Header Section Start-->
     <header>
         <div class="navbar navbar-default" role="navigation">
@@ -95,9 +95,7 @@ Date: 6/12/2014
                 <div class="row-fluid">
                     <div class="col-lg-12 padding-right-0">
                         <ul class="message-sidebar">
-                            <li><a href="#" class="selected margin-top-10">Inbox</a></li>
-                            <li><a href="#" class="margin-top-10">Sent</a></li>
-                            <li><a href="#" class="margin-top-10">Archive</a></li>
+                            <li ng-repeat="row in messageSidebar"><a href="#" class="margin-top-10" ng-class="{selected: $index==0}" ng-bind="row.name"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -139,7 +137,6 @@ Date: 6/12/2014
                     <div class="col-lg-4">&nbsp;</div>
                 </div>
                 <!--Compose a mail end-->
-
                 <!--Inbox start-->
                 <div class="row-fluid hidden">
                     <div class="col-lg-12 margin-bottom-15 padding-right-0">
@@ -176,7 +173,6 @@ Date: 6/12/2014
                     </div>
                 </div>
                 <!--Inbox end-->
-
                 <!--Send start-->
                 <div class="row-fluid hidden">
                     <div class="col-lg-12 margin-bottom-15 padding-right-0">
@@ -212,7 +208,6 @@ Date: 6/12/2014
                     </div>
                 </div>
                 <!--Send end-->
-
                 <!--Archieve start-->
                 <div class="row-fluid">
                     <div class="col-lg-12 margin-bottom-15 padding-right-0">
@@ -295,12 +290,11 @@ Date: 6/12/2014
         </div>
     </footer>
 
-    <script src="../../lib/jquery/dist/jquery.min.js"></script>
-    <script src="../../lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../../lib/angular/angular.min.js"></script>
-    <script src="../../lib/ng-table/ng-table.min.js"></script>
-    <script src="../../js/app.js"></script>
-    <script src="controller.js"></script>
+    <script src="../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../lib/angular/angular.min.js"></script>
+    <script src="../lib/ng-table/ng-table.min.js"></script>
+    <script src="messageController.js"></script>
 
 
 </body>
