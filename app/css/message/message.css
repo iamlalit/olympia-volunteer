@@ -22,3 +22,27 @@ Description: Messages
     background:#f2f2f0;
     color:#0093f0;
 }
+
+/* Form Control */
+.form-group.upload label{
+    vertical-align:middle;
+    color:#0093f0;
+    font-size:15px;
+    font-weight:500;
+}
+.form-group.upload label:hover {
+    text-decoration:underline;
+    cursor:pointer;
+}
+.form-group.upload label i{
+    font-size:9px;
+    vertical-align:middle;
+    margin-right:3px;
+    margin-bottom:6px;
+}
+.btn-cancel{
+    background:none;
+    color:#0093f0;
+    font-size:13px;
+    font-weight:700;
+}
