@@ -155,7 +155,7 @@ Date: 6/12/2014
                                 <span>
                                     <a ng-click="moveApplicant(applicant, Applicants, hiddenApplicants)" id="removeIconHover" data-toggle="modal" data-target="#hiddenBig" ng-mouseenter="makeItRed='circle-red'; makeItWhite='icon-attr-white'" ng-mouseleave="makeItRed=''; makeItWhite='';" title="click to hide the applicant">
                                         <div class="circle11 pull-right" ng-class="makeItRed">
-                                            <span class="fa fa-remove font-size-18 icon-attr11" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
+                                            <span class="fa fa-times font-size-18 icon-attr11" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
                                         </div>
                                     </a>
                                 </span>
@@ -215,7 +215,7 @@ Date: 6/12/2014
                                 <span>
                                     <a ng-click="moveApplicant(applicant, hiddenApplicants, Applicants)" title="click to unhide the applicant" ng-mouseenter="makeItRed='circle-red'; makeItWhite='icon-attr-white'" ng-mouseleave="makeItRed=''; makeItWhite='';" title="click to hide the applicant">
                                         <div class="circle11 pull-right" ng-class="makeItRed">
-                                            <span class="fa fa-remove font-size-18 icon-attr11" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
+                                            <span class="fa fa-times font-size-18 icon-attr11" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
                                         </div>
                                     </a>
                                 </span>
@@ -277,7 +277,7 @@ Date: 6/12/2014
                                 <span>
                                     <a ng-click="moveApplicant(applicant, shortlistedApplicants, hiddenApplicants)"  id="removeIconHover" data-toggle="modal" data-target="#hiddenBig" ng-mouseenter="makeItRed='circle-red'; makeItWhite='icon-attr-white'" ng-mouseleave="makeItRed=''; makeItWhite='';" title="click to hide the applicant">
                                         <div class="circle11 pull-right" ng-class="makeItRed">
-                                            <span class="fa fa-remove font-size-18 icon-attr11" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
+                                            <span class="fa fa-times font-size-18 icon-attr11" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
                                         </div>
                                     </a>
                                     <a>
@@ -342,7 +342,7 @@ Date: 6/12/2014
                                 <span>
                                     <a ng-click="moveApplicant(applicant, messagedApplicants, hiddenApplicants)" id="removeIconHover" data-toggle="modal" data-target="#hiddenBig" ng-mouseenter="makeItRed='circle-red'; makeItWhite='icon-attr-white'" ng-mouseleave="makeItRed=''; makeItWhite='';" title="click to hide the applicant">
                                         <div class="circle11 pull-right" ng-class="makeItRed">
-                                            <span class="fa fa-remove font-size-18 icon-attr11" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
+                                            <span class="fa fa-times font-size-18 icon-attr11" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
                                         </div>
                                     </a>
                                 </span>
@@ -462,7 +462,7 @@ Date: 6/12/2014
                     </div>
                     <div class="wrap1" ng-click="showApplicant = false; showHidden = true; showShortlisted = false; showMessaged=false;showHired=false; myVar4='circle-blue';myVar44='icon-attr-white'; myVar1=''; myVar11=''; myVar2='';  myVar22=''; myVar3=''; myVar33=''; myVar5=''; myVar55=''">
                         <div class="circle"  ng-class="myVar4">
-                            <span class="fa fa-remove font-size-1-5 icon-attr" ng-class="myVar44" title="click to see hidden applicants"> </i>
+                            <span class="fa fa-times font-size-1-5 icon-attr" ng-class="myVar44" title="click to see hidden applicants"> </i>
                         </div>
                         <label style="padding-left:20px;cursor:pointer" title="click to see hidden applicants">Hidden</label>
                         <label style="padding-left:55px; margin-top:8px;cursor:pointer" ng-bind="lengthOfHiddenApplicants" title="click to see hidden applicants">{{lengthOfHiddenApplicants}}</label>
@@ -570,7 +570,7 @@ Date: 6/12/2014
                         <div class="row" style="padding-left:50px;">
                             <div class="wrap1 col-sm-12" ng-repeat="hiddenData in hiddenModalData">
                                 <div class="circle" ng-class="makeItRed" ng-mouseenter="makeItRed='circle-red'; makeItWhite='icon-attr-white'; textRed='text-red'" ng-mouseleave="makeItRed=''; makeItWhite=''; textRed=''" data-dismiss="modal">
-                                    <span class="fa fa-remove font-size-1-5 icon-attr" ng-class="makeItWhite"> </i>
+                                    <span class="fa fa-times font-size-1-5 icon-attr" ng-class="makeItWhite"> </i>
                                 </div>
                                 <label style="padding-left:30px; padding-top:9px;" ng-class="textRed">{{hiddenData}}</label>
                             </div>
