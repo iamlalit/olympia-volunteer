@@ -28,6 +28,15 @@ a {
     color:#0093f0
 }
 
+.blue{
+    color:#0093f0;
+    cursor:pointer;
+    text-decoration:none;
+}
+.blue:hover{
+    text-decoration:underline;
+}
+
 
 /* Header*/
 .navbar{

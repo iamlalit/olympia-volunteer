@@ -46,3 +46,79 @@ Description: Messages
     font-size:13px;
     font-weight:700;
 }
+
+/*Inbox*/
+.no-message{
+    font-size:21px;
+    font-weight:300;
+    text-align:center;
+    color:#7c7c7a;
+    display:block;
+}
+.message-wrapper{
+    border:3px solid #f2f2f0;
+    border-radius:4px;
+}
+.message-wrapper-heading{
+    border-bottom:1px solid #f2f2f0;
+    padding:7px 0;
+}
+.btn-mark{
+    border:2px solid #d2d2cd;
+    border-radius:5px;
+    padding:3px 10px;
+    color:#a7a7a2;
+    font-weight:800;
+    font-size:12px;
+}
+.btn-mark:hover{
+    color:#a7a7a2;
+    text-decoration:underline;
+}
+.btn-mark i{
+    font-size:12px;
+    margin-right:5px;
+}
+.message-wrapper-body{
+
+}
+.message-wrapper-body .row-fluid .col-lg-2, .message-wrapper-body .row-fluid .col-lg-8{
+    padding-top:7px;
+    padding-bottom:7px;
+}
+.user-block{
+    border:1px solid #d2d2cd;
+    background:#f2f2f0;
+    font-size:17px;
+    color:#a7a7a2;
+    border-radius:4px;
+    padding:7px 3px 2px 3px;
+    width:35px;
+    text-align:center;
+    display:inline-block;
+}
+.message-wrapper-body .sender-name{
+    font-size:13px;
+    font-weight:normal;
+    margin:0;
+}
+.message-wrapper-body .sender-date{
+    font-size:10px;
+    font-weight:normal;
+    margin:0;
+}
+.message-wrapper-body .message-title{
+    font-size:13px;
+    font-weight:normal;
+    margin:0;
+}
+.message-wrapper-body .message-body{
+    font-size:13px;
+    font-weight:normal;
+    margin:0;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+    width:90%;
+    padding-top:2px;
+}
