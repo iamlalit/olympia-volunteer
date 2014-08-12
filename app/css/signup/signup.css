@@ -123,18 +123,18 @@ a.orange{
 .sign-up-form .social-text a{
     text-decoration:underline;
 }
-.sign-up-form .social-text .icon-facebook-sign{
+.sign-up-form .social-text .fa-facebook-square{
     color:#3b5998;
     font-size:20px;
     vertical-align:-2px;
     padding-right:4px;
 }
-.sign-up-form .social-text .icon-linkedin-sign{
+.sign-up-form .social-text .fa-linkedin-square{
     color:#1777b1;
     font-size:20px;
     vertical-align:-2px;
 }
-.sign-up-form .social-text .icon-google-plus-sign{
+.sign-up-form .social-text .fa-google-plus-square{
     color:#d93c39;
     font-size:20px;
     vertical-align:-2px;

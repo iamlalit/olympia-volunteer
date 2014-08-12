@@ -462,8 +462,8 @@ footer .footer-text:hover{
 .icon-attr1{
     display: inline-block;
     color: #858383;
-    margin-left: 5px;
-    margin-top:9px;
+    margin-left: 4px;
+    /*margin-top:9px;*/
 }
 .icon-attr-white{
   color: #ffffff!important; 

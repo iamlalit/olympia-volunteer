@@ -86,7 +86,7 @@ Date: 6/12/2014
             <div class="col-lg-11">
                 <!-- Navigation back to page-->
                 <a href="../jobPost/jobPost.html" class="navigation" >
-                    <i class="icon-chevron-left black-arrow" style="float:left;margin-left:-15px;margin-top:-5px"></i><div class="blue-heading">Back to Job Postings</div>
+                    <span class="fa fa-chevron-left black-arrow" style="float:left;margin-left:-15px;margin-top:-5px"></i><div class="blue-heading">Back to Job Postings</div>
                 </a>
             </div>
         </div>
@@ -155,16 +155,16 @@ Date: 6/12/2014
                                 <span>
                                     <a ng-click="moveApplicant(applicant, Applicants, hiddenApplicants)" id="removeIconHover" data-toggle="modal" data-target="#hiddenBig" ng-mouseenter="makeItRed='circle-red'; makeItWhite='icon-attr-white'" ng-mouseleave="makeItRed=''; makeItWhite='';" title="click to hide the applicant">
                                         <div class="circle11 pull-right" ng-class="makeItRed">
-                                            <i class="icon-remove font-size-18 icon-attr11" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
+                                            <span class="fa fa-remove font-size-18 icon-attr11" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
                                         </div>
                                     </a>
                                 </span>
-                                <button type="button" class="btn btn-success pull-right small-btn" ng-model="shortlisted" ng-click="moveApplicant(applicant, Applicants, shortlistedApplicants)" title="click to shortlist the applicant"><i class="icon-ok"> </i>Shortlist</button>
+                                <button type="button" class="btn btn-success pull-right small-btn" ng-model="shortlisted" ng-click="moveApplicant(applicant, Applicants, shortlistedApplicants)" title="click to shortlist the applicant"><span class="fa fa-check"> </i>Shortlist</button>
                                 <br />
                                 <br />
                                 <span style="vertical-align:top" class="pull-right">
-                                    <i class="icon-exclamation-sign font-size-1-5" style="color:#b25a01;padding-right:7px;" ng-show="applicant.statusColor == 'red'" hover-popover title="diploma/certificate/skills" ></i>
-                                    <i class="icon-exclamation-sign font-size-1-5" style="color:#009e0f;padding-right:7px;" ng-show="applicant.statusColor == 'green'" hover-popover1 title="diploma/certificate/skills"></i>
+                                    <span class="fa fa-exclamation-sign font-size-1-5" style="color:#b25a01;padding-right:7px;" ng-show="applicant.statusColor == 'red'" hover-popover title="diploma/certificate/skills" ></i>
+                                    <span class="fa fa-exclamation-sign font-size-1-5" style="color:#009e0f;padding-right:7px;" ng-show="applicant.statusColor == 'green'" hover-popover1 title="diploma/certificate/skills"></i>
                                     {{applicant.status}}
                                 </span>
                             </div>
@@ -215,15 +215,15 @@ Date: 6/12/2014
                                 <span>
                                     <a ng-click="moveApplicant(applicant, hiddenApplicants, Applicants)" title="click to unhide the applicant" ng-mouseenter="makeItRed='circle-red'; makeItWhite='icon-attr-white'" ng-mouseleave="makeItRed=''; makeItWhite='';" title="click to hide the applicant">
                                         <div class="circle11 pull-right" ng-class="makeItRed">
-                                            <i class="icon-remove font-size-18 icon-attr11" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
+                                            <span class="fa fa-remove font-size-18 icon-attr11" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
                                         </div>
                                     </a>
                                 </span>
                                 <br />
                                 <br />
                                 
-                                <span style="vertical-align:top" class="pull-right"><i class="icon-exclamation-sign font-size-1-5" style="color:#b25a01;padding-right:7px;" ng-show="applicant.statusColor == 'red'" hover-popover title="diploma/certificate/skills" ></i>
-                                <i class="icon-exclamation-sign font-size-1-5" style="color:#009e0f;padding-right:7px;" ng-show="applicant.statusColor == 'green'" hover-popover1 title="diploma/certificate/skills"></i> {{applicant.status}}</span>
+                                <span style="vertical-align:top" class="pull-right"><span class="fa fa-exclamation-sign font-size-1-5" style="color:#b25a01;padding-right:7px;" ng-show="applicant.statusColor == 'red'" hover-popover title="diploma/certificate/skills" ></i>
+                                <span class="fa fa-exclamation-sign font-size-1-5" style="color:#009e0f;padding-right:7px;" ng-show="applicant.statusColor == 'green'" hover-popover1 title="diploma/certificate/skills"></i> {{applicant.status}}</span>
                             </div>
                         </div>
                         <div class="row" >
@@ -277,20 +277,20 @@ Date: 6/12/2014
                                 <span>
                                     <a ng-click="moveApplicant(applicant, shortlistedApplicants, hiddenApplicants)"  id="removeIconHover" data-toggle="modal" data-target="#hiddenBig" ng-mouseenter="makeItRed='circle-red'; makeItWhite='icon-attr-white'" ng-mouseleave="makeItRed=''; makeItWhite='';" title="click to hide the applicant">
                                         <div class="circle11 pull-right" ng-class="makeItRed">
-                                            <i class="icon-remove font-size-18 icon-attr11" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
+                                            <span class="fa fa-remove font-size-18 icon-attr11" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
                                         </div>
                                     </a>
                                     <a>
                                         <div class="circle11 pull-right" style="background-color:#009e0f;cursor:default">
-                                            <i class="icon-ok font-size-18 icon-attr11" style="color:white;display:-webkit-inline-box!important;" title="shortlisted applicant"> </i>
+                                            <span class="fa fa-check font-size-18 icon-attr11" style="color:white;display:-webkit-inline-box!important;" title="shortlisted applicant"> </i>
                                         </div>
                                     </a>
                                 </span>
                                 <br />
                                 <br />
                                  
-                                <span style="vertical-align:top" class="pull-right"><i class="icon-exclamation-sign font-size-1-5" style="color:#b25a01;padding-right:7px;" ng-show="applicant.statusColor == 'red'" hover-popover title="diploma/certificate/skills" ></i>
-                                <i class="icon-exclamation-sign font-size-1-5" style="color:#009e0f;padding-right:7px;" ng-show="applicant.statusColor == 'green'" hover-popover1 title="diploma/certificate/skills"></i>{{applicant.status}}</span>
+                                <span style="vertical-align:top" class="pull-right"><span class="fa fa-exclamation-sign font-size-1-5" style="color:#b25a01;padding-right:7px;" ng-show="applicant.statusColor == 'red'" hover-popover title="diploma/certificate/skills" ></i>
+                                <span class="fa fa-exclamation-sign font-size-1-5" style="color:#009e0f;padding-right:7px;" ng-show="applicant.statusColor == 'green'" hover-popover1 title="diploma/certificate/skills"></i>{{applicant.status}}</span>
                             </div>
                         </div>
                         <div class="row" >
@@ -342,15 +342,15 @@ Date: 6/12/2014
                                 <span>
                                     <a ng-click="moveApplicant(applicant, messagedApplicants, hiddenApplicants)" id="removeIconHover" data-toggle="modal" data-target="#hiddenBig" ng-mouseenter="makeItRed='circle-red'; makeItWhite='icon-attr-white'" ng-mouseleave="makeItRed=''; makeItWhite='';" title="click to hide the applicant">
                                         <div class="circle11 pull-right" ng-class="makeItRed">
-                                            <i class="icon-remove font-size-18 icon-attr11" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
+                                            <span class="fa fa-remove font-size-18 icon-attr11" style="display:-webkit-inline-box!important;" ng-class="makeItWhite"> </i>
                                         </div>
                                     </a>
                                 </span>
                                 <br />
                                 <br />
                                 
-                                <span style="vertical-align:top" class="pull-right"><i class="icon-exclamation-sign font-size-1-5" style="color:#b25a01;padding-right:7px;" ng-show="applicant.statusColor == 'red'" hover-popover title="diploma/certificate/skills" ></i>
-                                <i class="icon-exclamation-sign font-size-1-5" style="color:#009e0f;padding-right:7px;" ng-show="applicant.statusColor == 'green'" hover-popover1 title="diploma/certificate/skills"></i> {{applicant.status}}</span>
+                                <span style="vertical-align:top" class="pull-right"><span class="fa fa-exclamation-sign font-size-1-5" style="color:#b25a01;padding-right:7px;" ng-show="applicant.statusColor == 'red'" hover-popover title="diploma/certificate/skills" ></i>
+                                <span class="fa fa-exclamation-sign font-size-1-5" style="color:#009e0f;padding-right:7px;" ng-show="applicant.statusColor == 'green'" hover-popover1 title="diploma/certificate/skills"></i> {{applicant.status}}</span>
                             </div>
                         </div>
                         <div class="row" >
@@ -400,8 +400,8 @@ Date: 6/12/2014
                                 <br />
                                 <br />
                                 
-                                <span style="vertical-align:top" class="pull-right"><i class="icon-exclamation-sign font-size-1-5" style="color:#b25a01;padding-right:7px;" ng-show="applicant.statusColor == 'red'" hover-popover title="diploma/certificate/skills" ></i>
-                                <i class="icon-exclamation-sign font-size-1-5" style="color:#009e0f;padding-right:7px;" ng-show="applicant.statusColor == 'green'" hover-popover1 title="diploma/certificate/skills"></i> {{applicant.status}}</span>
+                                <span style="vertical-align:top" class="pull-right"><span class="fa fa-exclamation-sign font-size-1-5" style="color:#b25a01;padding-right:7px;" ng-show="applicant.statusColor == 'red'" hover-popover title="diploma/certificate/skills" ></i>
+                                <span class="fa fa-exclamation-sign font-size-1-5" style="color:#009e0f;padding-right:7px;" ng-show="applicant.statusColor == 'green'" hover-popover1 title="diploma/certificate/skills"></i> {{applicant.status}}</span>
                             </div>
                         </div>
                         <div class="row" >
@@ -441,35 +441,35 @@ Date: 6/12/2014
                         <div class="main-border1 status">
                     <div class="wrap1"  ng-click="showApplicant = true; showHidden = false; showShortlisted = false; showMessaged=false;showHired=false; myVar1='circle-blue'; myVar11='icon-attr-white'; myVar2=''; myVar22=''; myVar3=''; myVar33=''; myVar4=''; myVar44=''; myVar5=''; myVar55=''">
                         <div class="circle" ng-class="myVar1" ng-init="myVar1='circle-blue'">
-                            <i class="icon-user font-size-1-5 icon-attr" ng-class="myVar11" ng-init="myVar11='icon-attr-white'" title="click to see all the applicants"> </i>
+                            <span class="fa fa-user font-size-1-5 icon-attr" ng-class="myVar11" ng-init="myVar11='icon-attr-white'" title="click to see all the applicants"> </i>
                         </div>
                         <label style="padding-left:20px;cursor:pointer;" ng-model="ApplicantTab" title="click to see all the applicants">Applicants</label>
                         <label style="padding-left:30px; margin-top:8px;cursor:pointer" title="click to see all the applicants">{{lengthOfApplicants}}</label>
                     </div>
                     <div class="wrap1"  ng-click="showApplicant = false; showHidden = false; showShortlisted = true; showMessaged=false;showHired=false; myVar2='circle-blue';myVar22='icon-attr-white'; myVar1=''; myVar11=''; myVar3=''; myVar33=''; myVar4=''; myVar44=''; myVar5=''; myVar55=''">
                         <div class="circle"  ng-class="myVar2">
-                            <i class="icon-ok font-size-1-5 icon-attr" ng-class="myVar22"  title="click to see the shortlisted applicants" > </i>
+                            <span class="fa fa-check font-size-1-5 icon-attr" ng-class="myVar22"  title="click to see the shortlisted applicants" > </i>
                         </div>
                         <label style="padding-left:20px;cursor:pointer;" title="click to see the shortlisted applicants">Shortlisted</label>
                         <label style="padding-left:28px; margin-top:8px; cursor:pointer" title="click to see the shortlisted applicants">{{lengthOfshortlistedApplicants}}</label>
                     </div>
                     <div class="wrap1" style="cursor:pointer"  ng-click="showApplicant = false; showHidden = false; showShortlisted = false; showMessaged=true;showHired=false; myVar3='circle-blue'; myVar33='icon-attr-white'; myVar1=''; myVar11=''; myVar2='';  myVar22=''; myVar4=''; myVar44=''; myVar5=''; myVar55=''">
                         <div class="circle"  ng-class="myVar3">
-                            <i class="icon-envelope font-size-1-5 icon-attr" ng-class="myVar33" title="click to see messaged applicants"> </i>
+                            <span class="fa fa-envelope font-size-1-5 icon-attr" ng-class="myVar33" title="click to see messaged applicants"> </i>
                         </div>
                         <label style="padding-left:20px;cursor:pointer" title="click to see messaged applicants">Messaged</label>
                         <label style="padding-left:33px; margin-top:8px;cursor:pointer" title="click to see messaged applicants">{{lengthOfMessagedApplicants}}</label>
                     </div>
                     <div class="wrap1" ng-click="showApplicant = false; showHidden = true; showShortlisted = false; showMessaged=false;showHired=false; myVar4='circle-blue';myVar44='icon-attr-white'; myVar1=''; myVar11=''; myVar2='';  myVar22=''; myVar3=''; myVar33=''; myVar5=''; myVar55=''">
                         <div class="circle"  ng-class="myVar4">
-                            <i class="icon-remove font-size-1-5 icon-attr" ng-class="myVar44" title="click to see hidden applicants"> </i>
+                            <span class="fa fa-remove font-size-1-5 icon-attr" ng-class="myVar44" title="click to see hidden applicants"> </i>
                         </div>
                         <label style="padding-left:20px;cursor:pointer" title="click to see hidden applicants">Hidden</label>
                         <label style="padding-left:55px; margin-top:8px;cursor:pointer" ng-bind="lengthOfHiddenApplicants" title="click to see hidden applicants">{{lengthOfHiddenApplicants}}</label>
                     </div>
                     <div class="wrap1" ng-click="showApplicant = false; showHidden = false; showShortlisted = false; showMessaged=false;showHired=true;  myVar5='circle-blue';myVar55='icon-attr-white'; myVar1=''; myVar11=''; myVar2='';  myVar22=''; myVar3=''; myVar33=''; myVar4=''; myVar44=''">
                         <div class="circle"  ng-class="myVar5">
-                            <i class="icon-envelope font-size-1-5 icon-attr" ng-class="myVar55" title="click to see hired applicants"> </i>
+                            <span class="fa fa-envelope font-size-1-5 icon-attr" ng-class="myVar55" title="click to see hired applicants"> </i>
                         </div>
                         <label style="padding-left:20px;cursor:pointer" title="click to see hired applicants">Hired</label>
                         <label style="padding-left:65px; margin-top:8px;cursor:pointer" title="click to see hired applicants">{{lengthOfHiredApplicants}}</label>
@@ -530,22 +530,22 @@ Date: 6/12/2014
                     <div class="social-network-icon-wrap"  style="padding-right:60px">
                         <a href="#" class="footer-select social-network-icons">
                             <span class="footer-circle footer-circle-linkedin pull-right">
-                                <i class="icon-linkedin font-size-20 icon-attr1"> </i>
+                                <span class="fa fa-linkedin font-size-20 icon-attr1"> </i>
                             </span>
                         </a>
                         <a href="#" class="social-network-icons">
                             <span class="footer-circle footer-circle-facebook pull-right">
-                                <i class="icon-facebook font-size-20 icon-attr1"> </i>
+                                <span class="fa fa-facebook font-size-20 icon-attr1"> </i>
                             </span>
                         </a>
                         <a href="#" class="social-network-icons">
                             <span class="footer-circle footer-circle-twitter pull-right">
-                                <i class="icon-twitter font-size-20 icon-attr1"> </i>
+                                <span class="fa fa-twitter font-size-20 icon-attr1"> </i>
                             </span>
                         </a>
                         <a href="#" class="social-network-icons">
                             <span class="footer-circle footer-circle-google pull-right">
-                                <i class="icon-google-plus font-size-20 icon-attr1"> </i>
+                                <span class="fa fa-google-plus font-size-20 icon-attr1"> </i>
                             </span>
                         </a>
                     </div>
@@ -570,7 +570,7 @@ Date: 6/12/2014
                         <div class="row" style="padding-left:50px;">
                             <div class="wrap1 col-sm-12" ng-repeat="hiddenData in hiddenModalData">
                                 <div class="circle" ng-class="makeItRed" ng-mouseenter="makeItRed='circle-red'; makeItWhite='icon-attr-white'; textRed='text-red'" ng-mouseleave="makeItRed=''; makeItWhite=''; textRed=''" data-dismiss="modal">
-                                    <i class="icon-remove font-size-1-5 icon-attr" ng-class="makeItWhite"> </i>
+                                    <span class="fa fa-remove font-size-1-5 icon-attr" ng-class="makeItWhite"> </i>
                                 </div>
                                 <label style="padding-left:30px; padding-top:9px;" ng-class="textRed">{{hiddenData}}</label>
                             </div>
