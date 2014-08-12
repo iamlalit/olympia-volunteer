@@ -46,9 +46,10 @@ a {
 }
 .form-group label{
     font-size:13px;
+    font-weight:normal;
 }
 .form-group .form-control{
-    border-radius:2px;
+    /* Removed border radius 2px in order to keep textbox rounded corner consistent*/
     border:3px solid #d2d2cd;
     box-shadow:none;
     padding-top:15px;
@@ -122,7 +123,7 @@ hr {
 	color: #333333;
 	background-color: #ffffff;
 	border: 2px solid #cccccc;
-	border-radius: 3px;
+	border-radius: 4px;
 	outline: 0;
 	font-family: inherit;
 	vertical-align: top;
@@ -435,6 +436,7 @@ position: relative;
     width:100%;
     height:35px;
     line-height:35px;
+    border:3px solid #d2d2cd;
 }
 .input-search-wrap span{
     position:absolute;
