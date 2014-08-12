@@ -1,16 +1,18 @@
 ﻿var messageApp = angular.module('messageApp', []);
 
 messageApp.controller('messageController', ['$scope', function ($scope) {
-    $scope.compose = false;
+    $scope.compose = true;
     $scope.inbox = false;
     $scope.send = false;
     $scope.archive = false;
+    $scope.currentnode = null;
     $scope.messageSidebar = [
         { 'name': 'Inbox' },
         { 'name': 'Sent' },
         { 'name': 'Archive' }
     ];
     $scope.toggle = function ($index) {
+        $scope.currentnode = $index;
         if ($index == 0) {
             $scope.inbox = true;
             $scope.compose = false;
