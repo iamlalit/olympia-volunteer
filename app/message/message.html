@@ -83,7 +83,6 @@ Date: 6/12/2014
         </div>
     </header>
     <!-- Page Header Section End-->
-
     <div class="container">
         <div class="row">
             <div class="col-lg-2 margin-top-10">
@@ -105,7 +104,8 @@ Date: 6/12/2014
                     <div class="col-lg-4 margin-bottom-15 padding-right-0">
                         <div class="input-search-wrap">
                             <input type="text" placeholder="search" />
-                            <span class="glyphicon glyphicon-search"></span>
+                            <span class="glyphicon glyphicon-search">
+                            </span>
                         </div>
                     </div>
                     <div class="col-lg-8">
@@ -143,12 +143,12 @@ Date: 6/12/2014
                         <div class="message-wrapper">
                             <div class="message-wrapper-heading row-fluid">
                                 <div class="col-lg-2 padding-right-0">
-                                    <input type="checkbox" value="" />
+                                    <input type="checkbox" ng-model="message.checkall"/>
                                 </div>
                                 <div class="col-lg-10 align-left padding-rl-0">
-                                    <a href="#" class="btn btn-mark">Mark as read</a>
-                                    <a href="#" class="btn btn-mark">Mark as unread</a>
-                                    <a href="#" class="btn btn-mark"><i class="fa fa-archive"></i>Archive</a>
+                                    <a href="#" class="btn btn-mark" ng-class="{selected: message.checkall==true}">Mark as read</a>
+                                    <a href="#" class="btn btn-mark" ng-class="{selected: message.checkall==true}">Mark as unread</a>
+                                    <a href="#" class="btn btn-mark" ng-class="{selected: message.checkall==true}"><i class="fa fa-archive"></i>Archive</a>
                                 </div>
                             </div>
                             <div class="message-wrapper-body">
@@ -179,11 +179,11 @@ Date: 6/12/2014
                         <div class="message-wrapper">
                             <div class="message-wrapper-heading row-fluid">
                                 <div class="col-lg-2 padding-right-0">
-                                    <input type="checkbox" value="" />
+                                    <input type="checkbox" value="" ng-model="message.checkall" />
                                 </div>
                                 <div class="col-lg-10 align-left padding-rl-0">
-                                    <a href="#" class="btn btn-mark">Mark as read</a>
-                                    <a href="#" class="btn btn-mark">Mark as unread</a>
+                                    <a href="#" class="btn btn-mark" ng-class="{selected: message.checkall==true}">Mark as read</a>
+                                    <a href="#" class="btn btn-mark" ng-class="{selected: message.checkall==true}">Mark as unread</a>
                                 </div>
                             </div>
                             <div class="message-wrapper-body">

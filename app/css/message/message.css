@@ -86,8 +86,11 @@ html, body{
     font-weight:800;
     font-size:12px;
 }
-.btn-mark:hover{
-    color:#a7a7a2;
+.btn-mark.selected{
+    color:#0093f0;
+}
+.btn-mark.selected:hover{
+    color:#0093f0;
     text-decoration:underline;
 }
 .btn-mark i{
