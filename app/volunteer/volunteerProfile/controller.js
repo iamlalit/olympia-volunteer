@@ -17,7 +17,6 @@ app.controller('jobDetails', ['$scope', function ($scope) {
       'endDate': 'Jun 2012',
       'areaOfStudy': 'Economics'
     });
-
     $scope.listOfSchools.push({
       'name': 'Harvard University School of Medicine',
       'degree': 'Politics and International Relations',
@@ -25,7 +24,6 @@ app.controller('jobDetails', ['$scope', function ($scope) {
       'endDate': 'Jun 2012',
       'areaOfStudy': 'Economics'
     });
-
     $scope.listOfSchools.push({
       'name': 'Tufts University School of Medicine',
       'degree': 'Politics and International Relations',
@@ -34,7 +32,6 @@ app.controller('jobDetails', ['$scope', function ($scope) {
       'areaOfStudy': 'Economics'
     });
     $scope.lengthOfSchools = $scope.listOfSchools.length;
-
     $scope.listOfJobs.push({
       'name': 'Micro Finance Volunteering Oppurtunities',
       'organization': 'Red Cross NL',
@@ -42,7 +39,6 @@ app.controller('jobDetails', ['$scope', function ($scope) {
       'endDate': 'Jun 2012',
       'description': 'Micro Projects Volunteering Program is mainly focused on rural Women & Youth empowerments programs in Nepal. This program generally supports the rural women & youths by means of short term professional training for various income generating schemes in order to make the system fruitful.'
     });
-
     $scope.listOfJobs.push({
       'name': 'Volunteer Event @ Durfee-Thompson School',
       'organization': 'Red Cross NL',
@@ -50,8 +46,6 @@ app.controller('jobDetails', ['$scope', function ($scope) {
       'endDate': 'Jun 2012',
       'description': 'Micro Projects Volunteering Program is mainly focused on rural Women & Youth empowerments programs in Nepal. This program generally supports the rural women & youths by means of short term professional training for various income generating schemes in order to make the system fruitful.'
     });
-
-
     $scope.lengthOfJobs = $scope.listOfJobs.length;
     function getParameterByName(name) {
       name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");

@@ -52,10 +52,8 @@ nav{
 .navbar-default .navbar-nav > li{
     margin-top:10px;
 }
-
 .navbar-default .navbar-nav > li > a{
-    color: #ffffff;
-    
+    color: #ffffff;  
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus{
@@ -85,9 +83,7 @@ nav{
    color:#ffffff;
    cursor: default;
    background-color: #33bef0;
-
 }
-
 .navbar-right  li  a#icons-header-right{
     margin-top: 0px;
     padding-left: 9px;
@@ -151,14 +147,12 @@ top: -19px;
 content: "▲";
 cursor: default;
 }
-
 /*header ends*/
 h1{
     font-size: 30px; 
     font-family: Roboto Slab;
     font-weight: 500;
-    color: #444;
-  
+    color: #444; 
 }
 h2{
     font-size: 26px;
@@ -179,11 +173,6 @@ h4{
 .blue{
     color:#00aeec;
 }
-
-
-
-
-
 /*Footer starts*/
 .footer-circle {
 	padding-right: 0px;
@@ -244,10 +233,10 @@ footer .footer-text:hover{
     margin-left: 5px;
     margin-top:9px;
 }
-.icon-google-plus,
-.icon-linkedin,
-.icon-facebook,
-.icon-twitter
+.fa-google-plus,
+.fa-linkedin,
+.fa-facebook,
+.fa-twitter
 {
 	margin-left: 12px;
 	margin-top: 12px;
@@ -265,9 +254,14 @@ footer .footer-text:hover{
 .underline{
     text-decoration: underline;
 }
-
 div.color-palette {
   display: inline-block;
   width: 111px;
   height: 120px;
+  color: yellow;
+  text-align: center;
+  margin: auto;
+  position: relative;
+  top: 0; left: 0; bottom: 0; right: 0;
+  font-size: 2em;
 }

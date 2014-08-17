@@ -129,7 +129,7 @@ hr {
 	padding: 5px;
 	margin: 0;
 	font-size: rem(12);
-	color: #333333;
+	color: #444444;
 	background-color: #ffffff;
 	border: 2px solid #cccccc;
 	border-radius: 4px;
@@ -140,6 +140,10 @@ hr {
 .text-area:focus {
   border: 2px solid #00AEEC;
 }
+.text-area.error,
+.text-area.error:focus {
+  border: 2px solid #C70909;
+}
 input[type='text'] {
     display: inline-block;
     padding: 5px;
@@ -147,11 +151,23 @@ input[type='text'] {
     color: #444444;
     background-color: #ffffff;
     border-radius: 4px;
+    border: 2px solid #eeeeee;
     outline: 0;
     cursor: text;   
 }
 input[type='text']:focus {
     border-color: #00aeec;   
+}
+input[disabled] {
+    background-color: #f5f5f2;
+    border: 2px solid #eeeeee;
+    color: #444444;
+}
+input[type='text'].error {
+    border: 2px solid #C70909;
+}
+input[type='text'].error:focus {
+    border-color: #C70909;
 }
 select {
 	display: inline-block;
