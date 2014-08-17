@@ -411,10 +411,10 @@ $( "#time" ).click(function() {
   $( this ).next( "ul" ).toggle();
   if($(this).is('.btn-primary')){
         $(this).removeClass('btn-primary').addClass('btn-danger');
-        $( this ).text("Hide Time Comittments")
+        $( this ).text("Hide Time Preferences")
     }else{
         $(this).removeClass('btn-danger').addClass('btn-primary');
-        $( this ).text("Add Time Comittments")
+        $( this ).text("Add Time Preferences")
         //Do Stop
     }
 });
@@ -734,6 +734,11 @@ function updateValueDowCheck(){
      listOfDow.push($("#dow" + i +"").val());
     }
   }
+  for( i=41 ; i <= 49 ; i++){
+    if($("#dow" + i +"").is(":checked")){
+     listOfDow.push($("#dow" + i +"").val());
+    }
+  }
   console.log(listOfDow);
   $('#dow-tag').tagsinput('removeAll');
   $("#dow-tag").tagsinput("refresh");
@@ -748,10 +753,10 @@ function updateValueDowText(){
   var tagsValue = $("#dow-tag").val();
   var tagsList = tagsValue.split(",");
   console.log(tagsList);
-  for( i=1 ; i <= 36 ; i++){
+  for( i=1 ; i <= 49 ; i++){
         $("#dow" + i + "").prop("checked", false);
   }
-  for( i=1 ; i <= 36 ; i++){
+  for( i=1 ; i <= 49 ; i++){
     for( j = 0 ; j < tagsList.length ; j++ ){
       if($("#dow" + i + "").val() === tagsList[j]){
         $("#dow" + i + "").prop("checked", true);

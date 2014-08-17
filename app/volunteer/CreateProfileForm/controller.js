@@ -247,6 +247,7 @@ landingController.controller('landingPage', ['$scope', function ($scope) {
         $scope.school = {};
         $scope.school.startDate = 0;
         $scope.school.endDate = 0;
+        $scope.school.description = '';
     	$('#addSchool').modal('hide');
         schoolAns1.parent().removeClass('has-error');
         schoolAns2.parent().removeClass('has-error');
@@ -273,6 +274,7 @@ landingController.controller('landingPage', ['$scope', function ($scope) {
         $scope.job.month2 = 0;
         $scope.job.country = 'Netherlands';
         $scope.setCurrentDate = false;
+        $scope.job.description = '';
     }
 
     $scope.updateJobDetails = function(obj, check){

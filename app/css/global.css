@@ -169,6 +169,10 @@ input[type='text'].error {
 input[type='text'].error:focus {
     border-color: #C70909;
 }
+.bootstrap-tagsinput input[type='text'] {
+  border: none;
+  padding: 0px;
+}
 select {
 	display: inline-block;
     padding: 5px  5px;
@@ -198,7 +202,7 @@ border-color: #C70909;
   visibility: hidden !important;
 }
 select {
-	height: 32px;
+	height: 34px;
 }
 footer{
     margin-top:17px;
