@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Change Password</title>
     <link href="../img/olympia-fav.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="../lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"/>
     <link href="../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="../css/font-awesome.css" rel="stylesheet">
@@ -46,7 +47,7 @@
                             <ul class="dropdown-menu">
                                 <li role="presentation"><a role="menuitem" href="#"><i class='glyphicon glyphicon-user blue'></i> My Account</a></li>
                                 <li role="presentation" class="divider"></li>
-                                <li role="presentation"><a role="menuitem" href="#"><i class='glyphicon glyphicon-cog blue'></i> Change Password</a></li>
+                                <li role="presentation"><a role="menuitem" href="../changePassword/changePassword.html"><i class='glyphicon glyphicon-cog blue'></i> Change Password</a></li>
                                 <li role="presentation" class="divider"></li>
                                 <li role="presentation"><a role="menuitem" href="#"><i class='glyphicon glyphicon-cog blue'></i> Notification Settings</a></li>
                             </ul>
@@ -78,59 +79,61 @@
             <div class="col-sm-3">
             </div>
             <div class="col-sm-6">
-                <div class="row" ng-cloak>
-                    <div class="alert alert-danger col-sm-12" id="errorMsg" ng-cloak>
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <h2 class="text-center margin-top-0" ng-cloak>Please fix the following issues</h2>
-                        <ul id="errorList" class="errorList"></ul>
+                <div class="row">
+                    <div class="pill margin-top-20">
+                        <span class="panel-title">My Account</span>
+                    </div> 
+                </div>
+                <p>&nbsp;</p>
+                <div class="row">
+                    <label>User ID</label>
+                </div>
+                <div class="row">
+                    <span>sander_mrbrown</span>
+                </div>
+                <div class="row margin-top-15">
+                    <label>Email</label>
+                </div>
+                <div class="row">
+                    <input type="text" placeholder="e.g. abc@email.com" class="col-sm-9" maxlength="14" minlength="8" ng-model="account.email" id="password2">
+                </div>
+                <div class="row margin-top-15">
+                    <label>Phone</label><span id="optional-text">&nbsp;(optional)</span>
+                </div>
+                <div class="row">
+                    <input type="text" placeholder="Phone number" class="col-sm-9" maxlength="14" minlength="8" ng-model="account.phone" id="password3">
+                </div>
+                <div class="row margin-top-15">
+                    <label>Date of Birth</label><span id="optional-text">&nbsp;(optional)</span>
+                </div>
+                <div class="row">
+                    <div class='col-sm-5 padding-rl-0'>
+                        <div class="form-group" >
+                            <div class='input-group date' id='datetimepicker8'>
+                                <input type='text' id='datepicker1' style="width:174px;border-top-right-radius: 0;border-bottom-right-radius: 0;"/>
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="public"> make it public on volunteer page?
+                            </label>
+                        </div>
                     </div>
                 </div>
-                <form>
-                    <div class="row">
-                        <div class="panel-title padding-left-0">
-                            <span>Change Password</span>
-                        </div>
+                <div class="row">
+                    <div class="margin-top-30 align-center col-sm-12">
+                        <button class="btn btn-success" type="submit" ng-click="">Update</button>
+                        <button class="btn btn-danger" type="button" ng-click="cancel()">Cancel</button>
                     </div>
-                    <div class="row">
-                        <p>In order to change your password, you must first enter your old Password.</p>
-                        <p>A strong password…</p>
-                        <ul class="errorList">
-                            <li>is 14 characters (eight minimum) in length</li>
-                            <li>is a combination of letters (lower case or upper case) and at least one number or other non-letter character</li>
-                        </ul>
-                    </div>
-                    <p>&nbsp;</p>
-                    <div class="row">
-                        <label>Old Password</label>
-                    </div>
-                    <div class="row">
-                        <input type="text" placeholder="Old password" class="col-sm-9" maxlength="14" minlength="8" ng-model="password.old" id="password1">
-                    </div>
-                    <div class="row margin-top-15">
-                        <label>New Password</label>
-                    </div>
-                    <div class="row">
-                        <input type="text" placeholder="New password" class="col-sm-9" maxlength="14" minlength="8" ng-model="password.newp" id="password2">
-                    </div>
-                    <div class="row margin-top-15">
-                        <label>Retype New Password</label>
-                    </div>
-                    <div class="row">
-                        <input type="text" placeholder="Retype new password" class="col-sm-9" maxlength="14" minlength="8" ng-model="password.retype" id="password3">
-                    </div>
-                    <div class="row">
-                        <div class="margin-top-30 align-center col-sm-9">
-                            <button class="btn btn-success" type="submit" ng-click="changePassword()">Change Password</button>
-                            <button class="btn btn-danger" type="button" ng-click="cancel()">Cancel</button>
-                        </div>
-                    </div>
-                </form>
-
+                </div>
             </div>
             <div class="col-sm-3">
             </div>
         </div>
-        
     </div>
 
 
@@ -207,6 +210,10 @@
     <script src="../lib/jquery/dist/jquery.min.js"></script>
     <script src="../lib/angular/angular.min.js"></script>
     <script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- date picker Scripts -->
+    <script src="../lib/moment/moment.js"></script>
+    <script src="../lib/moment/min/moment.min.js"></script>
+    <script src="../lib/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
     <script src="controller.js"></script>
 </body>
 </html>

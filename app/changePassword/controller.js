@@ -1,11 +1,6 @@
 ﻿var changePasswordController = angular.module('changePasswordController', [])
 
 .controller('changePasswordCntrl', ['$scope', function ($scope) {
-    $scope.cancel = function() {
-        $scope.password.old = '';
-        $scope.password.newp = '';
-        $scope.password.retype = '';
-    }
     var
     errorDiv = $('#errorMsg'),
     errorList = $('#errorList'),
@@ -13,6 +8,15 @@
     password2 = $('#password2'),
     password3 = $('#password3');
     $('#errorMsg').hide();
+    $scope.cancel = function() {
+        $scope.password.old = '';
+        $scope.password.newp = '';
+        $scope.password.retype = '';
+        errorList.find('.errormessage-password1').remove();
+        errorList.find('.errormessage-password2').remove();
+        errorList.find('.errormessage-password3').remove();
+        $('#errorMsg').hide();
+    }
 
     $scope.changePassword = function() {
         console.log("in password")
