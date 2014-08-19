@@ -56,34 +56,35 @@ Date: 6/12/2014
                         <li class="active"><a href="#" class='menu-interval'>Messages</a></li>
                     </ul>
                     <!-- organization ends here start-->
-
                     <ul class="nav navbar-nav navbar-right">
-                        <li class='pull-right'><a href="#" id="icons-header-right"><span class="glyphicon glyphicon-question-sign"></span></a></li>
+                        <li class='pull-right'><a href="#" id="icons-header-right"><span class="glyphicon glyphicon-question-sign"></a></li>
                         <li class='dropdown pull-right'>
                             <a href="#" class="dropdown-toggle" id="icons-header-right" data-toggle="dropdown"><i class='glyphicon glyphicon-cog'></i></a>
                             <ul class="dropdown-menu">
-                                <li role="presentation" ng-if="typeOfOwner == 'volunteer'"><a role="menuitem" href="../myAccount/myAccount.html"><i class='glyphicon glyphicon-user blue'></i> My Account</a></li>
+                                <li role="presentation"><a role="menuitem" href="#"><i class='glyphicon glyphicon-user blue'></i> My Profile</a></li>
                                 <li role="presentation" class="divider"></li>
-                                <li role="presentation"><a role="menuitem" href="../changePassword/changePassword.html"><i class='glyphicon glyphicon-cog blue'></i> Change Password</a></li>
+                                <li role="presentation"><a role="menuitem" href="../myAccount/myAccount.html?owner={{typeOfOwner}}"><i class='fa fa-wrench blue'></i> My Account</a></li>
+                                <li role="presentation" class="divider"></li>
+                                <li role="presentation"><a role="menuitem" href="../changePassword/changePassword.html?owner=organization"><i class='glyphicon glyphicon-cog blue'></i> Change Password</a></li>
                                 <li role="presentation" class="divider"></li>
                                 <li role="presentation"><a role="menuitem" href="#"><i class='glyphicon glyphicon-cog blue'></i> Notification Settings</a></li>
                             </ul>
                         </li>
-                        <li class='pull-right'><a href="#" id="icons-header-right"><span class="glyphicon glyphicon-exclamation-sign"></span></a></li>
-                        <li class="dropdown pull-right" style="margin-top:5px;" id="username" ng-init="client = true; organization = false">
-                            <a href="#" class="dropdown-toggle" id="hover-header-right" data-toggle="dropdown" ng-if="organization == true">Organization &nbsp;<b class="caret blue"></b></a>
-                            <a href="#" class="dropdown-toggle" id="hover-header-right" data-toggle="dropdown" ng-if="client == true">Volunteer &nbsp;<b class="caret blue"></b></a>
+                        <li class='pull-right'><a href="#" id="icons-header-right"><span class="glyphicon glyphicon-exclamation-sign"></a></li>
+                        <li class="dropdown pull-right" style="margin-top:5px;" id="username">
+                            <a href="#" class="dropdown-toggle"  id="hover-header-right" data-toggle="dropdown"  ng-if="typeOfOwner == 'organization'">Organization &nbsp;<b class="caret blue"></b></a>
+                            <a href="#" class="dropdown-toggle"  id="hover-header-right" data-toggle="dropdown" ng-if="typeOfOwner == 'volunteer'">Volunteer &nbsp;<b class="caret blue"></b></a>
                             <ul class="dropdown-menu header-right-dropdown" ng-init=" addActive2 = 'make-it-white'">
-                                <li role="presentation"><a role="menuitem" ng-model="organization" ng-click="organization = true; client = false; addActive2 = 'make-it-white';addActive1=''" href="#" id="tab-header-1" ng-class="addActive2"><img src="../../img/client-icon.png">&nbsp;&nbsp;&nbsp;Organization</a></li>
+                                <li role="presentation" ><a role="menuitem" href="../organization/search/searchVol.html" id="tab-header-1" ng-class="{'make-it-white':typeOfOwner == 'organization'}"><img src="../img/client-icon.png">&nbsp;&nbsp;&nbsp;Organization</a></li>
                                 <li role="presentation" class="divider"></li>
-                                <li role="presentation"><a role="menuitem" ng-model="client" ng-click="organization = false; client = true; addActive1 = 'make-it-white';addActive2=''" href="#" ng-class="addActive1"><img src="../../img/user-icon.svg" height="25" width="25">&nbsp;&nbsp;&nbsp;Volunteer</a></li>
+                                <li role="presentation" ><a role="menuitem" href="../volunteer/searchJob/searchJob.html"  ng-class="{'make-it-white':typeOfOwner == 'volunteer'}"><img src="../img/user-icon.svg" height="25" width="25">&nbsp;&nbsp;&nbsp;Volunteer</a></li>
                                 <li role="presentation" class="divider"></li>
-                                <li role="presentation" id="separate-highlight">
-                                    <!--<span><a role="menuitem" href="#" ng-if="client == true">Volunteer</a></span>-->
-                                    <span><a role="menuitem" href="#" ng-if="organization == true">Organization</a></span>
-                                    <span><a role="menuitem" href="../../login/login.html">Logout</a></span>
-
+                                <li role="presentation" id="separate-highlight"> 
+                                    <span><a role="menuitem" href="../myAccount/myAccount.html?owner=volunteer" ng-if="typeOfOwner == 'volunteer'">sander_mrbrown</a></span>
+                                    <span><a role="menuitem" href="../myAccount/myAccount.html?owner=organization" ng-if="typeOfOwner == 'organization'">sander_mrbrown</a></span>
+                                    <span><a role="menuitem"  href="../login/login.html">Logout</a></span>
                                 </li>
+
                             </ul>
                         </li>
                     </ul>
@@ -108,7 +109,7 @@ Date: 6/12/2014
                     </div>
                 </div>
             </div>
-            <div class="col-lg-10 margin-top-10">
+            <div class="col-lg-10 margin-top-10" ng-init="toggle(0)">
                 <div class="row-fluid">
                     <div class="col-lg-4 margin-bottom-15 padding-right-0">
                         <div class="input-search-wrap">
@@ -152,29 +153,29 @@ Date: 6/12/2014
                         <div class="message-wrapper">
                             <div class="message-wrapper-heading row-fluid">
                                 <div class="col-lg-2 padding-right-0">
-                                    <input type="checkbox" ng-model="message.checkall"/>
+                                    <input type="checkbox" ng-model="checkall" ng-change="checkAll()"/>
                                 </div>
                                 <div class="col-lg-10 align-left padding-rl-0">
                                     <a href="#" class="btn btn-mark" ng-class="{selected: message.checkall==true}">Mark as read</a>
                                     <a href="#" class="btn btn-mark" ng-class="{selected: message.checkall==true}">Mark as unread</a>
-                                    <a href="#" class="btn btn-mark" ng-class="{selected: message.checkall==true}"><i class="fa fa-archive"></i>Archive</a>
+                                    <a href="#" class="btn btn-mark" ng-class="{selected: message.checkall==true}" ng-click="moveMessage()"><i class="fa fa-archive"></i>Archive</a>
                                 </div>
                             </div>
                             <div class="message-wrapper-body">
-                                <div class="row-fluid">
+                                <div class="row-fluid" ng-repeat="message in messageInbox">
                                     <div class="col-lg-2 padding-right-0">
-                                        <input type="checkbox" value="" />
+                                        <input type="checkbox" ng-model="message.checked" />
                                         <span class="user-block margin-left-10">
                                             <i class="glyphicon glyphicon-user"></i>
                                         </span>
                                     </div>
                                     <div class="col-lg-2 align-left padding-rl-0">
-                                        <label class="sender-name">Rob Boersma (2)</label>
-                                        <label class="sender-date">June 18</label>
+                                        <label class="sender-name" ng-bind="message.name"></label>
+                                        <label class="sender-date" ng-bind="message.date"></label>
                                     </div>
                                     <div class="col-lg-8 align-left padding-rl-0">
-                                        <label class="message-title blue">Lorem ipsum title</label>
-                                        <label class="message-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt, tortor id ultricies eleifend, dui erat dapibus massa, quis aliquet lacus quam id leo.</label>
+                                        <label class="message-title blue"  ng-bind="message.title"></label>
+                                        <label class="message-body"  ng-bind="message.content"></label>
                                     </div>
                                 </div>
                             </div>
@@ -196,7 +197,7 @@ Date: 6/12/2014
                                 </div>
                             </div>
                             <div class="message-wrapper-body">
-                                <div class="row-fluid">
+                                <div class="row-fluid" ng-repeat="message in messageSent">
                                     <div class="col-lg-2 padding-right-0">
                                         <input type="checkbox" value="" />
                                         <span class="user-block margin-left-10">
@@ -204,12 +205,12 @@ Date: 6/12/2014
                                         </span>
                                     </div>
                                     <div class="col-lg-2 align-left padding-rl-0">
-                                        <label class="sender-name">Rob Boersma (2)</label>
-                                        <label class="sender-date">June 18</label>
+                                        <label class="sender-name" ng-bind="message.name"></label>
+                                        <label class="sender-date" ng-bind="message.date"></label>
                                     </div>
                                     <div class="col-lg-8 align-left padding-rl-0">
-                                        <label class="message-title blue">Lorem ipsum title</label>
-                                        <label class="message-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt, tortor id ultricies eleifend, dui erat dapibus massa, quis aliquet lacus quam id leo.</label>
+                                        <label class="message-title blue"  ng-bind="message.title"></label>
+                                        <label class="message-body"  ng-bind="message.content"></label>
                                     </div>
                                 </div>
                             </div>
@@ -218,7 +219,7 @@ Date: 6/12/2014
                 </div>
                 <!--Send end-->
                 <!--Archieve start-->
-                <div class="row-fluid" ng-show="archive==true">
+                <div class="row-fluid" ng-show="archive==true && lengthOfArchive == 0">
                     <div class="col-lg-12 margin-bottom-15 padding-right-0">
                         <h1 class="no-message">
                             You have no archived messages
@@ -226,6 +227,39 @@ Date: 6/12/2014
                     </div>
                 </div>
                 <!--Archieve end-->
+                <div class="row-fluid" ng-show="archive==true && lengthOfArchive != 0">
+                    <div class="col-lg-12 margin-bottom-15 padding-right-0">
+                        <div class="message-wrapper">
+                            <div class="message-wrapper-heading row-fluid">
+                                <div class="col-lg-2 padding-right-0">
+                                    <input type="checkbox" ng-model="message.checkall"/>
+                                </div>
+                                <div class="col-lg-10 align-left padding-rl-0">
+                                    <a href="#" class="btn btn-mark" ng-class="{selected: message.checkall==true}">Mark as read</a>
+                                    <a href="#" class="btn btn-mark" ng-class="{selected: message.checkall==true}">Mark as unread</a>
+                                </div>
+                            </div>
+                            <div class="message-wrapper-body">
+                                <div class="row-fluid" ng-repeat="message in messageArchive">
+                                    <div class="col-lg-2 padding-right-0">
+                                        <input type="checkbox" ng-model="message.checked" />
+                                        <span class="user-block margin-left-10">
+                                            <i class="glyphicon glyphicon-user"></i>
+                                        </span>
+                                    </div>
+                                    <div class="col-lg-2 align-left padding-rl-0">
+                                        <label class="sender-name" ng-bind="message.name"></label>
+                                        <label class="sender-date" ng-bind="message.date"></label>
+                                    </div>
+                                    <div class="col-lg-8 align-left padding-rl-0">
+                                        <label class="message-title blue"  ng-bind="message.title"></label>
+                                        <label class="message-body"  ng-bind="message.content"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
