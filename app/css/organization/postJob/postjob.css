@@ -115,12 +115,12 @@
 .navbar-right .dropdown-menu li a:hover,
 .navbar-right .dropdown-menu li a:focus{
 	background-color:#ffffff;
-	border-radius: 4px;
+	border: #444444;
+	color: black;
 }
 .navbar-right .dropdown-menu li a:active{
 	background-color: #ffffff;
 	border-radius: 4px;
-	color: black;
 }
 .navbar-right ul.dropdown-menu li.divider{
 	margin-top: 0px;
