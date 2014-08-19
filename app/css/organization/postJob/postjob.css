@@ -130,9 +130,6 @@
 .navbar-right .dropdown-menu li#separate-highlight {
 	background-color: #E5E5E5;
 }
-.navbar-right .dropdown-menu li#separate-highlight span a{
-	padding-right: 82px;
-}
 .navbar-right .dropdown-menu li#separate-highlight span:last-child a{
 	padding-right: 0px;
 }
@@ -145,7 +142,7 @@
 	padding-right: 15px;
 }
 .navbar-right .dropdown-menu li#separate-highlight span a{
-	padding-right: 73px;
+	padding-right: 40px;
 }
 .make-it-white{
 	background-color: #ffffff !important;

@@ -339,11 +339,11 @@ signUp.controller("signupController", ['$scope', function ($scope) {
                 $('#errorMsg').hide();
                 if (volunteerValue == 'true') {
                     //window.location.href = '../langinPage/landing.html' + '?form=signup&fname=' + firstname.val() + '&user=volunteer'
-                    window.location.href = '../langinPage/landing.html' + '?form=signup&name=volunteer&fname=' + firstname.val();
+                    window.location.href = '../langinPage/landing.html' + '?form=signup&owner=volunteer&fname=' + firstname.val() + '&lname=' + lastname.val() + '&email=' + email.val();
                 }
                 if (organisationValue == 'true') {
                     //window.location.href = '../langinPage/landing.html' + '?form=signup&fname=' + firstname.val() + '&user=organisation'
-                    window.location.href = '../langinPage/landing.html' + '?form=signup&name=organisation&fname=' + firstname.val();
+                    window.location.href = '../organization/search/searchVol.html' + '?form=signup&owner=organisation&fname=' + firstname.val() + '&lname=' + lastname.val() + '&email=' + email.val();
                 }                
             }
 

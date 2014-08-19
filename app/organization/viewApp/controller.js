@@ -13,7 +13,7 @@ app.controller('viewAppCtrl', function($scope){
     $scope.hiddenModalData = ["Okay, but not quite right", "Poor comments in work history", "Poor quality of work letter", "Other", "Report to volunteer"];
 	$scope.Applicants.push({Name:"Marleen Bosch",
             job: 'QA Analyst',
-            city: 'Amsterdam', 
+            city: 'Amsterdam, Noord Holland', 
             bodyText: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper...',
             bodyTextFull: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.',
             status: '2/4 diploma/certificate/skills',  
@@ -24,7 +24,7 @@ app.controller('viewAppCtrl', function($scope){
     }); 
 	$scope.Applicants.push({Name:"Geertruda Brouwer",
             job: 'QA Specialist',
-            city: 'Rotterdam', 
+            city: 'Rotterdam, Noord Holland', 
             bodyText: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper...',
             bodyTextFull: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.',
             status: '4/4 diploma/certificate/skills', 
@@ -35,7 +35,7 @@ app.controller('viewAppCtrl', function($scope){
     }); 
 	$scope.Applicants.push({Name:"Jan-Klaassen Groot",
             job: 'QA Engineer',
-            city: 'Utrecht', 
+            city: 'Utrecht, Noord Holland', 
             bodyText: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper...',
             bodyTextFull: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.',
             status: '2/4 diploma/certificate/skills',     
@@ -46,7 +46,7 @@ app.controller('viewAppCtrl', function($scope){
     }); 
 	$scope.Applicants.push({Name:"Geertruda Dekker",
             job: 'Automation Engineer',
-            city: 'Tilburg', 
+            city: 'Tilburg, Noord Holland', 
             bodyText: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper...',
             bodyTextFull: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.',
             status: '2/4 diploma/certificate/skills',     
@@ -57,7 +57,7 @@ app.controller('viewAppCtrl', function($scope){
     }); 
 	$scope.Applicants.push({Name:"Hendrik Brouwer",
             job: 'QA Analyst',
-            city: 'Breda', 
+            city: 'Breda, Noord Holland', 
             bodyText: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper...',
             bodyTextFull: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.',
             status: '2/4 diploma/certificate/skills',     
@@ -86,6 +86,14 @@ app.controller('viewAppCtrl', function($scope){
         $scope.lengthOfMessagedApplicants = $scope.messagedApplicants.length;
         $scope.lengthOfHiredApplicants = $scope.hiredApplicants.length;
     };
+    function getParameterByName(name) {
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+          results = regex.exec(location.search);
+      return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+      $scope.jobTitle = getParameterByName('jobTitle');
+
 });
 
 var element_title = "<i class='icon-exclamation-sign font-size-1-7' style='color:#009e0f;padding-right:7px;'></i><span style='vertical-align:top;'>Football refree license</span><br/>" +

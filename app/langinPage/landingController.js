@@ -44,7 +44,7 @@ landingController.controller('landingPage', ['$scope', function ($scope) {
 
     console.log(urlParams);
 
-    var userType = urlParams.name;
+    var userType = urlParams.owner;
     var formType = urlParams.form;
     
     if (userType == 'organisation') {

@@ -43,7 +43,7 @@ Date: 6/12/2014
                     <!-- Volunteer Menu Start-->
                     <ul class="nav navbar-nav" ng-if="typeOfOwner == 'volunteer'">
                         <li><a href="../Volunteer/searchJob/searchJob.html" class='menu-interval'>Search Job</a></li>
-                        <li><a href="../Volunteer/jobApplications/jobApplications.html" class='menu-interval'>Job Applications</a></li>
+                        <li><a href="../Volunteer/jobApplication/jobApplication.html" class='menu-interval'>Job Applications</a></li>
                         <li><a href="#" class='menu-interval'>Recommendations</a></li>
                         <li class="active"><a href="#" class='menu-interval'>Messages</a></li>
                     </ul>
@@ -62,9 +62,9 @@ Date: 6/12/2014
                         <li class='dropdown pull-right'>
                             <a href="#" class="dropdown-toggle" id="icons-header-right" data-toggle="dropdown"><i class='glyphicon glyphicon-cog'></i></a>
                             <ul class="dropdown-menu">
-                                <li role="presentation"><a role="menuitem" href="#"><i class='glyphicon glyphicon-user blue'></i> My Account</a></li>
+                                <li role="presentation" ng-if="typeOfOwner == 'volunteer'"><a role="menuitem" href="../myAccount/myAccount.html"><i class='glyphicon glyphicon-user blue'></i> My Account</a></li>
                                 <li role="presentation" class="divider"></li>
-                                <li role="presentation"><a role="menuitem" href="#"><i class='glyphicon glyphicon-cog blue'></i> Change Password</a></li>
+                                <li role="presentation"><a role="menuitem" href="../changePassword/changePassword.html"><i class='glyphicon glyphicon-cog blue'></i> Change Password</a></li>
                                 <li role="presentation" class="divider"></li>
                                 <li role="presentation"><a role="menuitem" href="#"><i class='glyphicon glyphicon-cog blue'></i> Notification Settings</a></li>
                             </ul>
@@ -72,7 +72,7 @@ Date: 6/12/2014
                         <li class='pull-right'><a href="#" id="icons-header-right"><span class="glyphicon glyphicon-exclamation-sign"></span></a></li>
                         <li class="dropdown pull-right" style="margin-top:5px;" id="username" ng-init="client = true; organization = false">
                             <a href="#" class="dropdown-toggle" id="hover-header-right" data-toggle="dropdown" ng-if="organization == true">Organization &nbsp;<b class="caret blue"></b></a>
-                            <!--<a href="#" class="dropdown-toggle" id="hover-header-right" data-toggle="dropdown" ng-if="client == true">Volunteer &nbsp;<b class="caret blue"></b></a>-->
+                            <a href="#" class="dropdown-toggle" id="hover-header-right" data-toggle="dropdown" ng-if="client == true">Volunteer &nbsp;<b class="caret blue"></b></a>
                             <ul class="dropdown-menu header-right-dropdown" ng-init=" addActive2 = 'make-it-white'">
                                 <li role="presentation"><a role="menuitem" ng-model="organization" ng-click="organization = true; client = false; addActive2 = 'make-it-white';addActive1=''" href="#" id="tab-header-1" ng-class="addActive2"><img src="../../img/client-icon.png">&nbsp;&nbsp;&nbsp;Organization</a></li>
                                 <li role="presentation" class="divider"></li>

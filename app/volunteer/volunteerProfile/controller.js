@@ -53,10 +53,7 @@ app.controller('jobDetails', ['$scope', function ($scope) {
           results = regex.exec(location.search);
       return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
-  $scope.jobName = getParameterByName('jobName');
-  $scope.jobDate = getParameterByName('jobDate');
+  $scope.volunteerName = getParameterByName('name');
+  $scope.volunteerCity = getParameterByName('city');
 
-  $scope.applyToJob = function(){
-    window.location.href = "../jobApply/jobApply.html?jobName=" + $scope.jobName +"&jobDate=" + $scope.jobDate;
-  }
 }]);

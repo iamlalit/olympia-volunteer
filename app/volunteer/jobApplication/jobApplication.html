@@ -110,7 +110,7 @@
                         <table ng-table="tableParams" class="table">
                         <tr ng-repeat="user in $data | filter:statusShow.status">
                             <td data-title="'Job'" sortable="'jobTitle'">
-                                <span><a href="#">{{user.jobTitle}}</a></span><br/>
+                                <span><a href="../jobDetails/jobDetails.html?jobName={{user.jobTitle}}&jobDate={{user.date}}">{{user.jobTitle}}</a></span><br/>
                             </td>
                             <td data-title="'Date'" sortable="'date'" class="text-center" >
                                 <span>{{user.date}}</span>
