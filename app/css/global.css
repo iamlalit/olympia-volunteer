@@ -331,8 +331,20 @@ position: relative;
 .padding-top-7 {
   padding-top: 7px;
 }
+.padding-top-10 {
+  padding-top: 10px;
+}
+.padding-top-15 {
+  padding-top: 15px;
+}
 .padding-right-0{
 	padding-right: 0px;
+}
+.padding-bottom-10 {
+  padding-bottom: 10px;
+}
+.padding-right-22{
+  padding-right: 22px;
 }
 .padding-right-5{
 	padding-right: 5px;
@@ -413,6 +425,9 @@ position: relative;
 }
 .margin-left--15 {
 	margin-left: -15px;
+}
+.margin-right-20{
+  margin-right: 20px;
 }
 .margin-right-15{
 	margin-right: 15px;

@@ -54,7 +54,7 @@
                         <li role="presentation" class="divider"></li>
                         <li role="presentation"><a role="menuitem" href="../../changePassword/changePassword.html?owner=organization"><i class='glyphicon glyphicon-cog'></i> Change Password</a></li>
                         <li role="presentation" class="divider"></li>
-                        <li role="presentation"><a role="menuitem" href="#"><i class='fa fa-bell'></i> Notification Settings</a></li>
+                        <li role="presentation"><a role="menuitem" href="../../notificationSettings/notificationSettings.html?owner=organization"><i class='fa fa-bell'></i> Notification Settings</a></li>
                     </ul>
                 </li>
                 <li class='pull-right' ><a href="#" id="icons-header-right"><span class="glyphicon glyphicon-exclamation-sign"></a></li>
@@ -86,7 +86,7 @@
                 <span>My Organization Profile</span>
             </div>
         </div>
-        <div class="row pill margin-top-20">
+        <div class="row pill margin-top-20 ishidden">
              <h5 class="font-size-16"><strong>Contact Information</strong></h5>
         </div>
         <form name="organizationProfile">
@@ -141,7 +141,7 @@
                 <input type="text" class="col-sm-6" ng-model="organization.website" placeholder="e.g. www.abc.com">
             </div>
             <div class="row pill margin-top-20">
-                <h5 class="font-size-16"><strong>Other details</strong></h5>
+                <h5 class="font-size-16"><strong>Customise your profile</strong></h5>
             </div>
             <div class="row">
                 <hr style="height:1px; background-color:#DDDDDD;">
@@ -152,7 +152,7 @@
                         <span class="fa fa-gears vertical-align-top"></span>                  
                     </div>
                     <div class="col-sm-6">
-                        <label class="font-size-15">Add Details</label>
+                        <label class="font-size-15">Organization Details</label>
                     </div>
                     <div class='col-sm-11' >
                         <span>
@@ -232,8 +232,8 @@
             </div>
 
 
-            <div class="row pill margin-top-20">
-                <h5 class="font-size-16"><strong>Locations</strong></h5>
+            <div class="row pill margin-top-20 ishidden">
+                <h5 class="font-size-16"><strong>Organization Locations</strong></h5>
             </div>
             <div class="row">
                 <hr style="height:1px; background-color:#DDDDDD;">
@@ -244,7 +244,7 @@
                         <span class="fa fa-home vertical-align-top"></span>                  
                     </div>
                     <div class="col-sm-6">
-                        <label class="font-size-15">Add Location</label>
+                        <label class="font-size-15">Organization Location</label>
                     </div>
                     <div class='col-sm-11' >
                         <span>

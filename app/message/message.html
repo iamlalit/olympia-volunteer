@@ -63,12 +63,22 @@ Date: 6/12/2014
                             <ul class="dropdown-menu">
                                 <li role="presentation"><a role="menuitem" href="#"><i class='glyphicon glyphicon-user'></i> My Profile</a></li>
                                 <li role="presentation" class="divider"></li>
-                                <li role="presentation"><a role="menuitem" href="../myAccount/myAccount.html?owner={{typeOfOwner}}"><i class='fa fa-wrench'></i> My Account</a></li>
+                                <li role="presentation">
+                                    <a role="menuitem" href="../myAccount/myAccount.html?owner=organization" ng-if="typeOfOwner == 'organization'"><i class='fa fa-wrench'></i> My Account</a>
+                                    <a role="menuitem" href="../myAccount/myAccount.html?owner=volunteer" ng-if="typeOfOwner == 'volunteer'"><i class='fa fa-wrench'></i> My Account</a>
+                                </li>
                                 <li role="presentation" class="divider"></li>
-                                <li role="presentation"><a role="menuitem" href="../changePassword/changePassword.html?owner=organization"><i class='glyphicon glyphicon-cog'></i> Change Password</a></li>
+                                <li role="presentation">
+                                    <a role="menuitem" href="../changePassword/changePassword.html?owner=organization" ng-if="typeOfOwner == 'organization'"><i class='glyphicon glyphicon-cog'></i> Change Password</a>
+                                    <a role="menuitem" href="../changePassword/changePassword.html?owner=volunteer" ng-if="typeOfOwner == 'volunteer'"><i class='glyphicon glyphicon-cog'></i> Change Password</a>
+                                </li>
                                 <li role="presentation" class="divider"></li>
-                                <li role="presentation"><a role="menuitem" href="#"><i class='fa fa-bell'></i> Notification Settings</a></li>
+                                <li role="presentation">
+                                    <a role="menuitem" href="../notificationSettings/notificationSettings.html?owner=volunteer" ng-if="typeOfOwner == 'volunteer'"><i class='fa fa-bell'></i> Notification Settings</a>
+                                    <a role="menuitem" href="../notificationSettings/notificationSettings.html?owner=organization" ng-if="typeOfOwner == 'organization'"><i class='fa fa-bell'></i> Notification Settings</a>
+                                </li>
                             </ul>
+
                         </li>
                         <li class='pull-right'><a href="#" id="icons-header-right"><span class="glyphicon glyphicon-exclamation-sign"></a></li>
                         <li class="dropdown pull-right" style="margin-top:5px;" id="username">
