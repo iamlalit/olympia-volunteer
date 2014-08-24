@@ -1,10 +1,4 @@
-﻿<!--
-view app page html part
-author: Lalit Sachdeva
-Date: 6/12/2014
--->
-
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" ng-app="messageApp">
 <head>
     <meta charset="utf-8">
@@ -61,7 +55,10 @@ Date: 6/12/2014
                         <li class='dropdown pull-right'>
                             <a href="#" class="dropdown-toggle" id="icons-header-right" data-toggle="dropdown"><i class='glyphicon glyphicon-cog'></i></a>
                             <ul class="dropdown-menu">
-                                <li role="presentation"><a role="menuitem" href="#"><i class='glyphicon glyphicon-user'></i> My Profile</a></li>
+                                <li role="presentation">
+                                    <a role="menuitem" href="../volunteer/createProfileForm/createProfile.html" ng-if="typeOfOwner == 'volunteer'"><i class='glyphicon glyphicon-user'></i> My Profile</a>
+                                    <a role="menuitem" href="../organization/organizationProfile/organizationProfile.html" ng-if="typeOfOwner == 'organization'"><i class='glyphicon glyphicon-user'></i> My Profile</a>
+                                </li>
                                 <li role="presentation" class="divider"></li>
                                 <li role="presentation">
                                     <a role="menuitem" href="../myAccount/myAccount.html?owner=organization" ng-if="typeOfOwner == 'organization'"><i class='fa fa-wrench'></i> My Account</a>
