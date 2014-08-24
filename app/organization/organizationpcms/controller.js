@@ -18,5 +18,4 @@ app.controller('jobDetails', ['$scope', function ($scope) {
       return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
   $scope.organizationName = getParameterByName('organizationName');
-  $scope.organizationName = "Red Cross NL"
 }]);
