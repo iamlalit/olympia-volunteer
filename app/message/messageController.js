@@ -47,7 +47,7 @@ messageApp.controller('messageController', ['$scope', function ($scope) {
         title: "Lorem ipsum title",
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt, tortor id ultricies eleifend, dui erat dapibus massa, quis aliquet lacus quam id leo."
     });
-    $scope.messageInbox.push({name:"Jan-Klaassen Bosch",
+    $scope.messageInbox.push({name:"Klaassen Bosch",
         date: "August 1",
         checked: false,
         title: "Lorem ipsum title",
@@ -83,12 +83,12 @@ messageApp.controller('messageController', ['$scope', function ($scope) {
         title: "Lorem ipsum title",
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt, tortor id ultricies eleifend, dui erat dapibus massa, quis aliquet lacus quam id leo."
     });
-    $scope.messageSent.push({name:"Rob Brouwer",
+    $scope.messageSent.push({name:"Rob-jan Brouwer",
         date: "January 10",
         title: "Lorem ipsum title",
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt, tortor id ultricies eleifend, dui erat dapibus massa, quis aliquet lacus quam id leo."
     });
-    $scope.messageSent.push({name:"Jan-Klaassen Dijkstra",
+    $scope.messageSent.push({name:"Klaassen Dijkstra",
         date: "January 8",
         title: "Lorem ipsum title",
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt, tortor id ultricies eleifend, dui erat dapibus massa, quis aliquet lacus quam id leo."
@@ -109,9 +109,7 @@ messageApp.controller('messageController', ['$scope', function ($scope) {
             }
         };
         for (var i = list.length-1; i >=0; i--) {
-            console.log(list[i]);
             $scope.messageInbox.splice(list[i], 1);
-            console.log($scope.messageInbox)
         };
         $scope.lengthOfInbox = $scope.messageInbox.length;
         $scope.lengthOfSent = $scope.messageSent.length;
@@ -122,7 +120,6 @@ messageApp.controller('messageController', ['$scope', function ($scope) {
     };
     //check all to be true
     $scope.checkAll = function () {
-
         if($scope.checkall) {
             console.log("0");
             for (var i = 0; i < $scope.lengthOfInbox; i++) {
@@ -139,4 +136,8 @@ messageApp.controller('messageController', ['$scope', function ($scope) {
         return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
     }
     $scope.typeOfOwner = getParameterByName('owner');
+    $scope.passedMessaged = []
+    $scope.passMessage = function(message) {
+        $scope.passedMessaged = message;
+    }
 }]);
