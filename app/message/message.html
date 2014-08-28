@@ -101,7 +101,7 @@
         </div>
     </header>
     <!-- Page Header Section End-->
-    <div class="container" ng-init="newMessage = false">
+    <div class="container">
         <div class="row">
             <div class="col-lg-2 margin-top-10">
                 <div class="row-fluid">
@@ -112,7 +112,7 @@
                 <div class="row-fluid">
                     <div class="col-lg-12 padding-right-0">
                         <ul class="message-sidebar">
-                            <li ng-repeat="row in messageSidebar"><a href="#" class="margin-top-10" name="row.name" ng-class="{selected: currentnode==$index}" ng-bind="row.name" ng-click="toggle($index);$parent.showMessage = true;$parent.newMessage = false"></a></li>
+                            <li ng-repeat="row in messageSidebar"><a href="#" class="margin-top-10" name="row.name" ng-class="{selected: currentnode==$index}" ng-bind="row.name" ng-click="toggle($index);$parent.showMessage = true;"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -173,11 +173,11 @@
                                 <div class="row-fluid" ng-repeat="message in messageInbox">
                                     <div class="col-lg-2 padding-right-0">
                                         <input type="checkbox" ng-model="message.checked" />
-                                        <span class="user-block margin-left-10" ng-click="passMessage(message);$parent.showMessage = !showMessage;newMessage = false;">
+                                        <span class="user-block margin-left-10" ng-click="passMessage(message);$parent.showMessage = !showMessage;toggle(3)">
                                             <i class="glyphicon glyphicon-user"></i>
                                         </span>
                                     </div>
-                                    <div ng-click="passMessage(message);$parent.showMessage = false;newMessage = false;">
+                                    <div ng-click="passMessage(message);$parent.showMessage = false;toggle(3)">
                                         <div class="col-lg-2 align-left padding-rl-0">
                                             <label class="sender-name" ng-bind="message.name"></label>
                                             <label class="sender-date" ng-bind="message.date"></label>
@@ -207,18 +207,18 @@
                                 </div>
                             </div>
                             <div class="message-wrapper-body">
-                                <div class="row-fluid" ng-repeat="message in messageSent" ng-click="passMessage(message);$parent.showMessage = false;newMessage = false;">
+                                <div class="row-fluid" ng-repeat="message in messageSent">
                                     <div class="col-lg-2 padding-right-0">
                                         <input type="checkbox" value="" />
-                                        <span class="user-block margin-left-10">
+                                        <span class="user-block margin-left-10"  ng-click="passMessage(message);$parent.showMessage = false;toggle(3)">
                                             <i class="glyphicon glyphicon-user"></i>
                                         </span>
                                     </div>
-                                    <div class="col-lg-2 align-left padding-rl-0">
+                                    <div class="col-lg-2 align-left padding-rl-0"  ng-click="passMessage(message);$parent.showMessage = false;toggle(3)">
                                         <label class="sender-name" ng-bind="message.name"></label>
                                         <label class="sender-date" ng-bind="message.date"></label>
                                     </div>
-                                    <div class="col-lg-8 align-left padding-rl-0">
+                                    <div class="col-lg-8 align-left padding-rl-0"  ng-click="passMessage(message);$parent.showMessage = false;toggle(3)">
                                         <label class="message-title blue"  ng-bind="message.title"></label>
                                         <label class="message-body"  ng-bind="message.content"></label>
                                     </div>
@@ -250,18 +250,18 @@
                                 </div>
                             </div>
                             <div class="message-wrapper-body">
-                                <div class="row-fluid" ng-repeat="message in messageArchive" ng-click="passMessage(message);$parent.showMessage = false;newMessage = false;">
+                                <div class="row-fluid" ng-repeat="message in messageArchive">
                                     <div class="col-lg-2 padding-right-0">
                                         <input type="checkbox" ng-model="message.checked" />
-                                        <span class="user-block margin-left-10">
+                                        <span class="user-block margin-left-10"  ng-click="passMessage(message);$parent.showMessage = false;toggle(3)">
                                             <i class="glyphicon glyphicon-user"></i>
                                         </span>
                                     </div>
-                                    <div class="col-lg-2 align-left padding-rl-0">
+                                    <div class="col-lg-2 align-left padding-rl-0"  ng-click="passMessage(message);$parent.showMessage = false;toggle(3)">
                                         <label class="sender-name" ng-bind="message.name"></label>
                                         <label class="sender-date" ng-bind="message.date"></label>
                                     </div>
-                                    <div class="col-lg-8 align-left padding-rl-0">
+                                    <div class="col-lg-8 align-left padding-rl-0"  ng-click="passMessage(message);$parent.showMessage = false;toggle(3)">
                                         <label class="message-title blue"  ng-bind="message.title"></label>
                                         <label class="message-body"  ng-bind="message.content"></label>
                                     </div>
@@ -271,7 +271,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-10 margin-top-10" ng-show="!showMessage && !newMessage">
+            <div class="col-lg-10 margin-top-10" ng-show="!showMessage">
                 <div class="row margin-rl-0">
                     <div class="col-lg-4 padding-right-0 margin-bottom-15">
                         <div class="input-search-wrap">
@@ -300,7 +300,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 pull-right" ng-show="!showMessage && !newMessage">
+                    <div class="col-lg-3 pull-right" ng-show="!showMessage">
                         <span class="user-block">
                             <i class="glyphicon glyphicon-user"></i>
                         </span>
