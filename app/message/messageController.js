@@ -118,13 +118,16 @@ messageApp.controller('messageController', ['$scope', function ($scope) {
             $scope.messageArchive[i].checked = false;
         };
     };
-    //check all to be true
+    //check all to be true and false
     $scope.checkAll = function () {
         if($scope.checkall) {
-            console.log("0");
             for (var i = 0; i < $scope.lengthOfInbox; i++) {
                 $scope.messageInbox[i].checked = true;
             };  
+        }else {
+            for (var i = 0; i < $scope.lengthOfInbox; i++) {
+                $scope.messageInbox[i].checked = false;
+            };
         }
     }
     //volunteer or organization
@@ -136,6 +139,7 @@ messageApp.controller('messageController', ['$scope', function ($scope) {
         return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
     }
     $scope.typeOfOwner = getParameterByName('owner');
+    //to display the message in detail
     $scope.passedMessaged = []
     $scope.passMessage = function(message) {
         $scope.passedMessaged = message;
