@@ -123,7 +123,7 @@
                         <p class="margin-bottom-0"><label class="margin-bottom-0">Organization - </label>&nbsp;<span ng-bind="job.organization"></span></p>
                         <p class="margin-bottom-0"><label class="margin-bottom-0">From - </label>&nbsp;<span ng-bind="job.startDate"></span>&nbsp;&nbsp;<label class="margin-bottom-0">To - </label>&nbsp;<span ng-bind="job.endDate"></span></p>
                         <p class="margin-bottom-0"><label class="margin-bottom-0">Description - </label>&nbsp;<span ng-bind="job.description"></span></p>
-                        <div class="image-scroller">
+                        <div class="image-scroller" ng-if="$index==0">
                             <div class="icon-left">
                                 <i class="fa fa-angle-left" id="left"></i>
                             </div>
