@@ -13,7 +13,8 @@
     <link href="../../css/organization/viewApp/viewApp.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700&subset=latin,cyrillic-ext,greek-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
     <link href="../../css/volunteer/jobDetails/jobDetails.css" rel="stylesheet">
-        <link href="../../css/volunteer/volunteerProfile/volunteerProfile.css" rel="stylesheet">
+    <link href="../../css/slider/slider.css" rel="stylesheet" />
+    <link href="../../css/volunteer/volunteerProfile/volunteerProfile.css" rel="stylesheet">
 </head>
 
 <body ng-controller="jobDetails">
@@ -122,11 +123,21 @@
                         <p class="margin-bottom-0"><label class="margin-bottom-0">Organization - </label>&nbsp;<span ng-bind="job.organization"></span></p>
                         <p class="margin-bottom-0"><label class="margin-bottom-0">From - </label>&nbsp;<span ng-bind="job.startDate"></span>&nbsp;&nbsp;<label class="margin-bottom-0">To - </label>&nbsp;<span ng-bind="job.endDate"></span></p>
                         <p class="margin-bottom-0"><label class="margin-bottom-0">Description - </label>&nbsp;<span ng-bind="job.description"></span></p>
-                        <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();" class="image-scroller">
-                            <img src="../../img/scrolling1.jpg" width="200" height="140" alt="smile"/>
-                            <img src="../../img/scrolling2.png" width="200" height="140" alt="smile"/>
-                            <img src="../../img/scrolling1.jpg" width="200" height="140" alt="smile"/> 
-                        </marquee>
+                        <div class="image-scroller">
+                            <div class="icon-left">
+                                <i class="fa fa-angle-left" id="left"></i>
+                            </div>
+                            <div id="slides">
+                                <img src="../../img/scrolling1.jpg" width="200" height="140" alt="smile" id="image0"/>
+                                <img src="../../img/scrolling2.jpg" width="200" height="140" alt="smile" id="image1"/>
+                                <img src="../../img/scrolling3.png" width="200" height="140" alt="smile" id="image2"/> 
+                                <img src="../../img/scrolling1.jpg" width="200" height="140" alt="smile" id="image3"/> 
+                                <img src="../../img/scrolling2.jpg" width="200" height="140" alt="smile" id="image4"/> 
+                            </div>
+                            <div class="icon-right">
+                                <i class="fa fa-angle-right" id="right"></i>
+                            </div>
+                        </div>
                         <div class="row" ng-if="$index !== lengthOfJobs-1">
                             <div class="col-sm-12 padding-right-5">
                                 <div class="hr1"></div>
@@ -292,5 +303,6 @@
     <script src="../../lib/angular/angular.min.js"></script>
     <script src="../../lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="controller.js"></script>
+    <script src="../../js/imageSlider/imageSlider.js"></script>    
 </body>
 </html>
