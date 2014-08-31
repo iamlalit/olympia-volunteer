@@ -5,7 +5,6 @@
     <title>OLYMPIA</title>
     <link href="../../img/olympia-fav.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="../../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../../css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="../../css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="../../css/organization/postJob/postJob.css"/>
     <link href="../../css/global.css" rel="stylesheet">
@@ -19,27 +18,12 @@
     <header>
         <div class="navbar navbar-default" role="navigation">
             <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#"><img src="../../img/logo.png"></a>
-                </div>
-
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <!-- Volunteer Menu Start-->
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#" class='menu-interval'>Search Job</a></li>
-                        <li><a href="#" class='menu-interval'>Job Applications</a></li>
-                        <li><a href="#" class='menu-interval'>Recommendations</a></li>
-                        <li><a href="#" class='menu-interval'>Messages</a></li>
-                    </ul>
-                    <!-- Volunteer Menu end here-->
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#"><img src="../../img/logo.png"></a>
+                    </div>
+
                     <ul class="nav navbar-nav navbar-right">
                         <li class='pull-right'><a href="#" id="icons-header-right"><span class="glyphicon glyphicon-question-sign"></a></li>
                         <li class='dropdown pull-right'>
@@ -53,7 +37,7 @@
                             </ul>
                         </li>
                         <li class='pull-right'><a href="#" id="icons-header-right"><span class="glyphicon glyphicon-exclamation-sign"></a></li>
-                        <li class="dropdown pull-right" style="margin-top:5px;" id="username" ng-init="client = true; organization = false">
+                        <li class="dropdown pull-right" id="username" ng-init="client = true; organization = false">
                             <a href="#" class="dropdown-toggle"  id="hover-header-right" data-toggle="dropdown"  ng-if="organization == true">Organization &nbsp;<b class="caret blue"></b></a>
                             <a href="#" class="dropdown-toggle"  id="hover-header-right" data-toggle="dropdown" ng-if="client == true">Volunteer &nbsp;<b class="caret blue"></b></a>
                             <ul class="dropdown-menu header-right-dropdown" ng-init=" addActive1 = 'make-it-white'">
@@ -72,6 +56,19 @@
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
+            <div class="container min-height-36">
+                <div class="col-sm-2">&nbsp;</div>
+                <div class="col-sm-8 padding-rl-0 row margin-rl-0">
+                    <div class="col-sm-1">&nbsp;</div>
+                    <ul class="nav navbar-nav col-sm-11">
+                        <li class="active"><a href="#" class='menu-interval'>Search Job</a></li>
+                        <li><a href="#" class='menu-interval'>Job Applications</a></li>
+                        <li><a href="#" class='menu-interval'>Recommendations</a></li>
+                        <li><a href="#" class='menu-interval'>Messages</a></li>
+                    </ul>
+                </div>
+            </div>
+            
         </div>
     </header>
     <footer>

@@ -493,3 +493,7 @@ position: relative;
     z-index:2;
     color:#33ccff
 }
+/* Minimum Height */
+.min-height-36 {
+  min-height: 36px;
+}

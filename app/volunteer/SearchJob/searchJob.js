@@ -234,7 +234,6 @@ app.controller('searchJob', ['$scope', function ($scope) {
             if (idx != -1) {
                   from.splice(idx, 1);
             }
-            console.log($scope.Jobs[idx2]);     
             $scope.Jobs[idx2].selected = false;
             $scope.lengthOfFavouriteJobs = $scope.favouriteJobs.length;
       }

@@ -14,7 +14,6 @@ $(document).ready(function() {
 	for (var i = top; i <= bottom ; i++) {
 		$("#image" + i + "").css("display", "inline-block");
 	};
-	
 	//action take place on clicking of right
 	$(".icon-right").on("click", function(){
 		//to check for last image is in display or not
@@ -24,10 +23,6 @@ $(document).ready(function() {
 			$("#image" + bottom).css("display", "none");
 			$("#image" + top).css("display", "inline-block");
 			bottom--;
-			// for (var i = top; i < bottom ; i++) {
-			// 	$("#image" + i + "").animate({ "right": "+=0px" }, "fast" );
-			// };	
-
 		} else {
 			console.log("this is the first image");
 		}
@@ -42,10 +37,6 @@ $(document).ready(function() {
 			$("#image" + top).css("display", "none");
 			$("#image" + bottom).css("display", "inline-block");
 			top++;
-			// for (var i = top; i < bottom ; i++) {
-			// 	$("#image" + i + "").animate({ "right": "+=0px" }, "fast" );
-			// };	
 		}
-	});
-	
+	});	
 });
