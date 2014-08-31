@@ -41,9 +41,13 @@
 }
 
 .navbar-default {
-  background-color: #00aeec;
-  border-color: #00aeec;
+  background-color: #cae3f0;
+  border-color: #cae3f0;
   border-bottom: none;
+}
+.navbar-default .navbar-brand img {
+	position: relative;
+	top: -20px;
 }
 .navbar-default .navbar-nav > li{
 	margin-top:10px;
