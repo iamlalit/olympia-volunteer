@@ -97,13 +97,39 @@
 .navbar-right  li  a#hover-header-right:focus{
    color:#ffffff;
    cursor: pointer;
-   background-color: #33bef0;
+   background-color: #1489be;
 }
 .navbar-right  li  a#icons-header-right{
-	margin-top: 7px;
-	padding-left: 9px;
-	padding-right: 9px;
-	font-size:16px;
+	margin-right: 5px;
+	font-size:18px;
+	content: ' ';
+	width: 30px;
+	height: 30px;
+	color: #ffffff;
+	background-color: #aed2e5;
+	border: 1px solid #aed2e5;
+	border-radius: 50%;
+	webkit-box-shadow: inset 0px -2px 0px 0px rgba(6, 113, 169, 0.19);
+	-moz-box-shadow: inset 0px -2px 0px 0px rgba(6, 113, 169, 0.19);
+	box-shadow: inset 0px -2px 0px 0px rgba(6, 113, 169, 0.19);
+}
+.navbar-right  li  a#icons-header-right span,
+.navbar-right  li  a#icons-header-right span.fa-question {
+	position: relative;
+	top: 3px;
+	right: 3px; 
+}
+.navbar-right  li  a#icons-header-right span.fa-question {
+	right: 5px;
+}
+.navbar-right  li  a#icons-header-right i{
+	position: relative;
+	top: 3px;
+	right: 7px; 
+}
+.navbar-right  li  a#icons-header-right:hover,
+.navbar-right  li  a#icons-header-right:focus{
+	background-color: #1489be;
 }
 .blue{
 	color: #0372b8;
